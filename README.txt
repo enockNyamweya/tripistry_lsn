@@ -3,8 +3,6 @@ COS 221 Practical Assignment 5 (Task 5 & REST API Backend Implementation)
 
 Authors:   Angela Ramaboea, Patrick Simuyemba, Nicole Bare, Enock Nyamweya, Angelo Anthony
 Module:    COS 221
-Tutor:     Johan Nel (Johan.nel@tuks.co.za)
-
 
 1. PROJECT OVERVIEW
 
@@ -101,8 +99,6 @@ The system operates on exactly 22 tables. Names are kept case-insensitive for co
 3.2 Schema Enhancements & DB Resolutions
 * Column Syncing: Ensured columns used in the PHP queries (such as StarRating, PricePerNight, CuisineType, PriceRange, Rating, EntryFee, Description, ImageURL) exist directly on their respective tables.
 * Junction Table naming: Unified database tables to map directly with SQL requests (e.g., using INCLUDES_ACCOM and ENROLS consistently).
-* MariaDB/MySQL compatibility: Modified transactional scripts and seeders to remove PostgreSQL syntax (e.g. CASCADE inside TRUNCATE TABLE queries). Moved the transaction boundary after the truncation sequence to prevent implicit DDL commits.
-
 
 4. REST API LAYOUT (TASK B)
 
