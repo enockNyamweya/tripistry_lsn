@@ -1,0 +1,45 @@
+:root {
+    /* Core Colors (From MVP) */
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --secondary: #64748b;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --warning: #f59e0b;
+    
+    /* Backgrounds & Surfaces (From MVP) */
+    --bg-base: #f8fafc;
+    --surface-light: #ffffff;
+    --surface-glass: #ffffff; /* Revert glass to solid white card */
+    --surface-dark: #1e293b;
+    
+    /* Typography (From MVP) */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --text-inverse: #ffffff;
+    
+    /* Borders & UI Elements (From MVP) */
+    --border-light: #e2e8f0;
+    --border-focus: #2563eb;
+    
+    /* Variables (From MVP) */
+    --radius-sm: 4px;
+    --radius-md: 8px; /* MVP radius */
+    --radius-lg: 12px;
+    --radius-pill: 9999px;
+    
+    /* Shadows & Effects (From MVP) */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1); /* MVP shadow */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-glass: none;
+    --glass-border: 1px solid var(--border-light);
+    
+    /* Typography Stack */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

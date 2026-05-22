@@ -1,0 +1,14 @@
+# Environment file
+.env
+.env.local
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary logs
+*.log
