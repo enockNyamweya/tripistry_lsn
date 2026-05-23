@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <?php if ($package['VerificationStatus'] === 'Verified'): ?>
                 <span class="verified-badge">Verified Agency</span>
             <?php endif; ?>
-            <a href="/traveller/chat.php?user=<?php echo $package['AgencyUserID']; ?>" class="btn btn-secondary btn-sm">Message Agency</a>
+            <a href="<?php echo BASE_URL; ?>/traveller/chat.php?user=<?php echo $package['AgencyUserID']; ?>" class="btn btn-secondary btn-sm">Message Agency</a>
             <?php if ($package['AvgRating']): ?>
                 <span class="rating-badge"><?php echo str_repeat('★', round($package['AvgRating'])); ?> <?php echo number_format($package['AvgRating'], 1); ?></span>
             <?php endif; ?>

@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__ . '/env.php';
 
-define('BASE_URL', '/tripistry_lsn');
+$documentRoot = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+$projectRoot = str_replace('\\', '/', dirname(__DIR__));
+$basePath = str_replace($documentRoot, '', $projectRoot);
+define('BASE_URL', $basePath);
 $host = env('DB_HOST', 'localhost');
 $dbname = env('DB_NAME', 'tripistry_lsn');
 $username = env('DB_USER', 'root');

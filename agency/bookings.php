@@ -107,7 +107,7 @@ $summary = $stmt->fetch();
                                 <button type="submit" name="action" value="cancel" class="btn btn-danger btn-sm">Cancel</button>
                             </form>
                         <?php endif; ?>
-                        <a href="/agency/chat.php?user=<?php echo $b['UserID']; ?>" class="btn btn-secondary btn-sm">Message</a>
+                        <a href="<?php echo BASE_URL; ?>/agency/chat.php?user=<?php echo $b['UserID']; ?>" class="btn btn-secondary btn-sm">Message</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

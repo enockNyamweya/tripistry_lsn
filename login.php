@@ -28,14 +28,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login — Tripistry</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
 </head>
 <body>
 <nav class="navbar">
-    <div class="nav-brand"><a href="/index.php">Tripistry</a></div>
+    <div class="nav-brand"><a href="<?php echo BASE_URL; ?>/index.php">Tripistry</a></div>
     <div class="nav-links">
-        <a href="/login.php">Login</a>
-        <a href="/register.php">Register</a>
+        <a href="<?php echo BASE_URL; ?>/login.php">Login</a>
+        <a href="<?php echo BASE_URL; ?>/register.php">Register</a>
     </div>
 </nav>
 <main class="container">
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <p class="auth-link">Don't have an account? <a href="/register.php">Register here</a></p>
+        <p class="auth-link">Don't have an account? <a href="<?php echo BASE_URL; ?>/register.php">Register here</a></p>
         <p class="demo-credentials">
             <strong>Demo:</strong> traveller@test.com / password &nbsp;|&nbsp; admin@tripistry.com / password
         </p>
