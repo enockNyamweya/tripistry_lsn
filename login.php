@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/includes/auth.php';
 
 if (isLoggedIn()) {
-    header('Location: ' . BASE_URL . '/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -15,16 +15,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email) || empty($password)) {
         $error = 'Please fill in all fields.';
     } elseif (loginUser($email, $password)) {
-        header('Location: ' . BASE_URL . '/dashboard.php');
+        header('Location: /dashboard.php');
         exit;
     } else {
         $error = 'Invalid email or password.';
     }
 }
 ?>
-<?php include __DIR__ . '/includes/header.php'; ?>
-
-    <div class="auth-form" style="max-width: 400px; margin: 40px auto; background: var(--glass-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--glass-border); box-shadow: var(--shadow-md);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Tripistry</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand"><a href="/index.php">Tripistry</a></div>
+    <div class="nav-links">
+        <a href="/login.php">Login</a>
+        <a href="/register.php">Register</a>
+    </div>
+</nav>
+<main class="container">
+    <div class="auth-form">
         <h1>Login</h1>
         <?php if ($error): ?>
             <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
@@ -40,10 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <p class="auth-link">Don't have an account? <a href="<?php echo BASE_URL; ?>/register.php">Register here</a></p>
-        <p class="demo-credentials" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
-            <strong>Demo:</strong> traveller@test.com / password &nbsp;|&nbsp; admin@tripistry_lsn.com / password
+        <p class="auth-link">Don't have an account? <a href="/register.php">Register here</a></p>
+        <p class="demo-credentials">
+            <strong>Demo:</strong> traveller@test.com / password &nbsp;|&nbsp; admin@tripistry.com / password
         </p>
     </div>
-
-<?php include __DIR__ . '/includes/footer.php'; ?>
+</main>
+<footer class="footer"><p>&copy; <?php echo date('Y'); ?> Tripistry</p></footer>
+</body>
+</html>

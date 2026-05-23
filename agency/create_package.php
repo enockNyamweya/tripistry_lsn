@@ -1,6 +1,4 @@
-<?php include __DIR__ . '/../includes/header.php'; 
-require_once __DIR__ . '/../includes/PackageService.php';
-requireAgency();
+<?php include __DIR__ . '/../includes/header.php'; requireAgency();
 
 $error = '';
 
@@ -24,41 +22,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($title) || $price <= 0) {
         $error = 'Title and price are required.';
     } else {
-        // Prepare data array for the service layer
-        $packageData = [
-            'title' => $title,
-            'description' => $description,
-            'price' => $price,
-            'duration' => $duration,
-            'is_group_trip' => $isGroupTrip,
-            'status' => $status,
-            'image_url' => $imageURL,
-            'destinations' => $destinations,
-            'flights' => $flights,
-            'accommodations' => $accommodations,
-            'restaurants' => $restaurants,
-            'attractions' => $attractions,
-            'group_trip_data' => []
-        ];
+        $pdo->beginTransaction();
+        try {
+            $stmt = $pdo->prepare('INSERT INTO PACKAGE (Title, Description, Price, DurationDays, StartDate, EndDate, MaxTravellers, IsGroupTrip, ImageURL, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+            $stmt->execute([$title, $description, $price, $duration, $startDate, $endDate, $maxTravellers, $isGroupTrip, $imageURL, $status]);
+            $packageId = $pdo->lastInsertId();
 
-        // Gather group trip details if applicable
-        if ($isGroupTrip) {
-            $groupName = trim($_POST['group_name'] ?? '');
-            $packageData['group_trip_data'] = [
-                'name' => empty($groupName) ? $title . ' Group' : $groupName,
-                'max_participants' => (int)($_POST['max_participants'] ?? $maxTravellers)
-            ];
-        }
+            // Link agency
+            $stmt = $pdo->prepare('INSERT INTO CURATES (UserID, PackageID) VALUES (?, ?)');
+            $stmt->execute([$_SESSION['user_id'], $packageId]);
 
-        // Delegate to the Data Access Layer (Service)
-        $packageService = new PackageService($pdo);
-        $result = $packageService->createPackage($packageData, $_SESSION['user_id']);
-        
-        if ($result) {
+            // Link destinations
+            foreach ($destinations as $did) {
+                $stmt = $pdo->prepare('INSERT IGNORE INTO VISITS (PackageID, DestinationID) VALUES (?, ?)');
+                $stmt->execute([$packageId, (int)$did]);
+            }
+            // Link flights
+            foreach ($flights as $fid) {
+                $stmt = $pdo->prepare('INSERT IGNORE INTO INCLUDES_FLIGHT (PackageID, FlightID) VALUES (?, ?)');
+                $stmt->execute([$packageId, (int)$fid]);
+            }
+            // Link accommodations
+            foreach ($accommodations as $aid) {
+                $stmt = $pdo->prepare('INSERT IGNORE INTO INCLUDES_STAY (PackageID, AccomodationID) VALUES (?, ?)');
+                $stmt->execute([$packageId, (int)$aid]);
+            }
+            // Link restaurants
+            foreach ($restaurants as $rid) {
+                $stmt = $pdo->prepare('INSERT IGNORE INTO PACKAGE_RESTAURANT (PackageID, RestaurantID) VALUES (?, ?)');
+                $stmt->execute([$packageId, (int)$rid]);
+            }
+            // Link attractions
+            foreach ($attractions as $aid) {
+                $stmt = $pdo->prepare('INSERT IGNORE INTO PACKAGE_ATTRACTION (PackageID, AttractionID) VALUES (?, ?)');
+                $stmt->execute([$packageId, (int)$aid]);
+            }
+
+            // Auto-create group trip entry if enabled
+            if ($isGroupTrip) {
+                $groupName = trim($_POST['group_name'] ?? '');
+                $minP = (int)($_POST['min_participants'] ?? 2);
+                $maxP = (int)($_POST['max_participants'] ?? $maxTravellers);
+                $depDate = $_POST['group_departure'] ?? $startDate;
+                $retDate = $_POST['group_return'] ?? $endDate;
+                if (empty($groupName)) $groupName = $title . ' Group';
+                $stmt = $pdo->prepare('INSERT INTO GROUP_TRIP (PackageID, GroupName, MinParticipants, MaxParticipants, Status, DepartureDate, ReturnDate) VALUES (?, ?, ?, ?, ?, ?, ?)');
+                $stmt->execute([$packageId, $groupName, $minP, $maxP, 'Open', $depDate, $retDate]);
+            }
+
+            $pdo->commit();
             header('Location: packages.php?created=1');
             exit;
-        } else {
-            $error = 'An error occurred while creating the package. Please try again.';
+        } catch (Exception $e) {
+            $pdo->rollBack();
+            $error = 'Error creating package: ' . $e->getMessage();
         }
     }
 }
@@ -66,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Fetch all destinations, flights, accommodations etc for selection
 $destinations = $pdo->query('SELECT * FROM DESTINATION ORDER BY Country, City')->fetchAll();
 $flights = $pdo->query('SELECT * FROM FLIGHT ORDER BY DepartureTime')->fetchAll();
-$accommodations = $pdo->query('SELECT * FROM ACCOMMODATION ORDER BY Name')->fetchAll();
+$accommodations = $pdo->query('SELECT * FROM ACCOMODATION ORDER BY Name')->fetchAll();
 $restaurants = $pdo->query('SELECT * FROM RESTAURANT ORDER BY Name')->fetchAll();
 $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll();
 ?>
@@ -97,14 +114,14 @@ $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll()
         <div class="form-row">
             <div class="form-group">
                 <label for="duration">Duration (days)</label>
-                <input type="number" id="duration" name="duration" value="1" min="1">
+                <input type="number" id="duration" name="duration" value="1" min="1" onchange="autoEndDate()">
             </div>
             <div class="form-group">
                 <label for="start_date">Start Date</label>
-                <input type="date" id="start_date" name="start_date">
+                <input type="date" id="start_date" name="start_date" onchange="autoEndDate()">
             </div>
             <div class="form-group">
-                <label for="end_date">End Date</label>
+                <label for="end_date">End Date <small>(auto-calculated)</small></label>
                 <input type="date" id="end_date" name="end_date">
             </div>
             <div class="form-group">
@@ -143,8 +160,22 @@ $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll()
                     <input type="text" id="group_name" name="group_name">
                 </div>
                 <div class="form-group">
-                    <label for="max_participants">Max Capacity</label>
+                    <label for="min_participants">Min Participants</label>
+                    <input type="number" id="min_participants" name="min_participants" value="2" min="2">
+                </div>
+                <div class="form-group">
+                    <label for="max_participants">Max Participants</label>
                     <input type="number" id="max_participants" name="max_participants" value="20" min="2">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="group_departure">Departure Date</label>
+                    <input type="date" id="group_departure" name="group_departure">
+                </div>
+                <div class="form-group">
+                    <label for="group_return">Return Date</label>
+                    <input type="date" id="group_return" name="group_return">
                 </div>
             </div>
         </fieldset>
@@ -177,7 +208,7 @@ $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll()
                 <label>Accommodations</label>
                 <div class="checkbox-list">
                     <?php foreach ($accommodations as $a): ?>
-                        <label><input type="checkbox" name="accommodations[]" value="<?php echo $a['AccommodationID']; ?>">
+                        <label><input type="checkbox" name="accommodations[]" value="<?php echo $a['AccomodationID']; ?>">
                             <?php echo htmlspecialchars($a['Name'] . ' (' . $a['Type'] . ', ' . $a['StarRating'] . '★)'); ?></label>
                     <?php endforeach; ?>
                 </div>
@@ -210,6 +241,19 @@ $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll()
 function toggleGroupFields() {
     document.getElementById('groupTripFields').style.display =
         document.getElementById('is_group_trip').checked ? 'block' : 'none';
+}
+function autoEndDate() {
+    var startEl = document.getElementById('start_date');
+    var daysEl = document.getElementById('duration');
+    var endEl = document.getElementById('end_date');
+    if (startEl && daysEl && endEl) {
+        var start = new Date(startEl.value + 'T00:00:00');
+        var days = parseInt(daysEl.value) || 1;
+        if (!isNaN(start.getTime()) && startEl.value) {
+            start.setDate(start.getDate() + days - 1);
+            endEl.value = start.toISOString().split('T')[0];
+        }
+    }
 }
 </script>
 
