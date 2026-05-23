@@ -1,11 +1,2001 @@
 Airline,FlightNumber,DepartureCity,ArrivalCity,DepartureTime,ArrivalTime,Price
-Emirates,EK761,Johannesburg,Dubai,2026-06-15 13:40:00,2026-06-15 23:59:00,7500.00
-British Airways,BA056,Johannesburg,London,2026-06-16 19:20:00,2026-06-17 05:30:00,9800.00
-South African Airways,SA222,Johannesburg,Cape Town,2026-06-15 08:00:00,2026-06-15 10:10:00,1850.00
-Qatar Airways,QR1364,Johannesburg,Doha,2026-06-18 14:15:00,2026-06-18 23:05:00,6900.00
-Lufthansa,LH573,Johannesburg,Frankfurt,2026-06-19 19:00:00,2026-06-20 05:45:00,11200.00
-Singapore Airlines,SQ479,Cape Town,Singapore,2026-06-20 10:40:00,2026-06-21 06:10:00,12500.00
-Delta Air Lines,DL201,Johannesburg,Atlanta,2026-06-21 11:55:00,2026-06-21 21:15:00,15400.00
-Air France,AF995,Johannesburg,Paris,2026-06-22 18:50:00,2026-06-23 05:40:00,10500.00
-KLM,KL592,Johannesburg,Amsterdam,2026-06-23 23:15:00,2026-06-24 10:20:00,10900.00
-Turkish Airlines,TK041,Cape Town,Istanbul,2026-06-24 18:00:00,2026-06-25 05:30:00,8700.00
+"British Airways",BA8791,Brisbane,Strasbourg,"2026-11-05 06:31:01","2026-11-05 12:17:18",4516.00
+"Singapore Airlines",SQ4783,Mallorca,Dubai,"2026-07-25 16:18:14","2026-07-26 02:58:56",16887.00
+"Qatar Airways",QR3244,Ibiza,Vancouver,"2026-06-25 01:15:30","2026-06-25 05:04:10",17956.00
+Emirates,EK831,"Las Vegas",Paris,"2026-07-06 07:09:39","2026-07-06 11:26:03",9216.00
+"British Airways",BA855,Cairns,Bath,"2026-10-10 07:28:47","2026-10-10 21:23:12",4355.00
+"Singapore Airlines",SQ7082,"New York",Milan,"2026-09-29 23:29:42","2026-09-30 11:12:39",13923.00
+"Turkish Airlines",TK1173,Ibiza,"Los Angeles","2026-08-02 11:00:26","2026-08-02 16:46:45",13897.00
+Lufthansa,LH1263,Montpellier,Leipzig,"2026-11-09 04:29:35","2026-11-09 17:12:01",8445.00
+"Turkish Airlines",TK7861,Bali,Barcelona,"2026-10-09 04:12:27","2026-10-09 12:22:17",14794.00
+"Virgin Atlantic",VS3256,Canberra,Palermo,"2026-09-03 00:30:18","2026-09-03 09:05:42",11180.00
+"British Airways",BA3939,"New York",Nagoya,"2026-09-21 01:46:09","2026-09-21 08:37:53",4173.00
+Emirates,EK5319,Strasbourg,Stellenbosch,"2026-05-27 02:13:51","2026-05-27 12:59:10",8949.00
+KLM,KL3008,Dubai,Montpellier,"2026-07-06 01:42:50","2026-07-06 14:20:47",11722.00
+KLM,KL5270,Valencia,Darwin,"2026-09-28 14:28:59","2026-09-29 05:01:16",2951.00
+FlySafair,FA5948,Adelaide,Paris,"2026-06-06 14:39:06","2026-06-06 21:57:50",13700.00
+"Singapore Airlines",SQ4981,"Quebec City",Manchester,"2026-10-06 01:31:26","2026-10-06 07:14:07",7492.00
+"British Airways",BA4643,Glasgow,Oxford,"2026-08-11 13:28:57","2026-08-12 01:26:43",7192.00
+"Qatar Airways",QR9387,Granada,Tokyo,"2026-05-31 18:37:33","2026-05-31 22:52:45",12055.00
+Emirates,EK1067,Frankfurt,Canberra,"2026-10-11 10:42:05","2026-10-11 14:33:14",17426.00
+"Virgin Atlantic",VS2432,Nantes,Lille,"2026-10-16 13:38:29","2026-10-17 02:19:16",10471.00
+"Delta Air Lines",DL419,Palermo,"Cape Town","2026-06-12 21:44:44","2026-06-13 10:18:47",9185.00
+"Qatar Airways",QR9642,Knysna,Paris,"2026-10-14 11:04:23","2026-10-15 02:23:43",11981.00
+"Turkish Airlines",TK8408,Bali,Kobe,"2026-09-24 23:24:47","2026-09-25 02:13:22",8572.00
+"Air France",AF6668,London,Genoa,"2026-06-30 08:16:34","2026-06-30 18:51:28",13623.00
+"Virgin Atlantic",VS9768,Tokyo,Edmonton,"2026-08-20 09:01:17","2026-08-21 00:17:48",1884.00
+Emirates,EK7050,"New York",Kyoto,"2026-11-11 07:53:32","2026-11-11 18:32:42",5893.00
+"Delta Air Lines",DL4341,Chicago,Sapporo,"2026-07-22 04:59:03","2026-07-22 16:06:26",10457.00
+"Qatar Airways",QR6466,Tokyo,Boston,"2026-06-29 18:27:05","2026-06-30 06:50:28",17942.00
+"Qatar Airways",QR5928,Calgary,Halifax,"2026-07-29 02:24:59","2026-07-29 09:21:12",6438.00
+Lufthansa,LH8274,Stellenbosch,Nuremberg,"2026-10-22 23:10:06","2026-10-23 04:47:39",6947.00
+"British Airways",BA5595,Manchester,Lille,"2026-07-27 13:03:47","2026-07-28 04:31:01",17635.00
+"Turkish Airlines",TK1228,Seville,Victoria,"2026-07-03 03:28:45","2026-07-03 08:03:02",9593.00
+Lufthansa,LH5283,London,Barcelona,"2026-10-03 07:40:51","2026-10-03 14:13:21",13042.00
+"Singapore Airlines",SQ7259,"East London",Seattle,"2026-06-27 05:59:20","2026-06-27 14:54:19",8181.00
+"Delta Air Lines",DL3696,"Port Elizabeth",Canberra,"2026-11-04 19:28:46","2026-11-05 00:04:30",17664.00
+"Virgin Atlantic",VS9741,Frankfurt,Bath,"2026-11-18 02:41:37","2026-11-18 14:55:20",17870.00
+"Delta Air Lines",DL9678,Kobe,Berlin,"2026-10-08 03:02:00","2026-10-08 12:50:13",8439.00
+"British Airways",BA9908,Glasgow,Cologne,"2026-09-19 00:36:15","2026-09-19 07:35:54",13932.00
+FlySafair,FA1553,Hobart,Dubai,"2026-08-25 18:34:53","2026-08-25 21:08:17",2504.00
+"Air France",AF1706,Dresden,Vancouver,"2026-06-05 14:08:20","2026-06-05 17:10:13",17901.00
+"Air France",AF3698,Victoria,Canberra,"2026-09-15 19:20:39","2026-09-15 21:49:16",7098.00
+FlySafair,FA3058,Barcelona,Munich,"2026-09-18 09:08:44","2026-09-18 14:27:48",8763.00
+"Air France",AF3950,Bath,"Gold Coast","2026-10-06 21:28:22","2026-10-07 08:21:08",17374.00
+KLM,KL3382,"Quebec City",Miami,"2026-06-23 19:29:47","2026-06-24 05:46:01",2868.00
+"Qatar Airways",QR6169,Perth,"Gold Coast","2026-06-05 14:43:25","2026-06-06 05:28:37",12185.00
+"Qatar Airways",QR4135,Paris,Tokyo,"2026-08-12 23:37:01","2026-08-13 04:03:50",8459.00
+Emirates,EK7548,Tokyo,Bordeaux,"2026-08-01 19:07:53","2026-08-02 09:44:51",3471.00
+"Turkish Airlines",TK6511,"Gold Coast",Barcelona,"2026-07-30 07:00:53","2026-07-30 11:33:39",9052.00
+FlySafair,FA867,Ibiza,Dresden,"2026-10-26 09:54:27","2026-10-26 21:59:22",13738.00
+"Delta Air Lines",DL3123,Chicago,"Gold Coast","2026-10-21 16:34:09","2026-10-22 05:50:24",12962.00
+Lufthansa,LH6184,Munich,Ottawa,"2026-05-27 13:50:27","2026-05-27 21:53:50",4628.00
+"Qatar Airways",QR7200,Barcelona,Bilbao,"2026-10-02 22:34:23","2026-10-03 03:39:51",5651.00
+"Turkish Airlines",TK8341,Vancouver,Seattle,"2026-08-14 01:05:04","2026-08-14 14:50:14",16729.00
+"Singapore Airlines",SQ1761,Marseille,Johannesburg,"2026-07-08 08:02:49","2026-07-08 20:57:18",9741.00
+"Air France",AF2447,Bordeaux,Toulouse,"2026-05-28 18:22:15","2026-05-29 04:48:44",14785.00
+KLM,KL2046,Liverpool,Edmonton,"2026-10-11 06:28:14","2026-10-11 10:22:01",4533.00
+"British Airways",BA8873,Victoria,Hobart,"2026-09-12 00:12:06","2026-09-12 05:01:18",1807.00
+"Virgin Atlantic",VS998,"San Francisco",Bath,"2026-09-23 00:57:32","2026-09-23 07:00:00",2725.00
+"Delta Air Lines",DL6478,"Las Vegas",Paris,"2026-09-29 19:19:40","2026-09-30 05:46:07",3750.00
+Lufthansa,LH6629,Malaga,Manchester,"2026-10-17 23:51:01","2026-10-18 08:32:57",3359.00
+"Turkish Airlines",TK5322,Dusseldorf,Liverpool,"2026-11-06 13:54:28","2026-11-07 04:26:17",15632.00
+FlySafair,FA9176,Nice,Ottawa,"2026-09-25 09:13:42","2026-09-25 15:50:40",17586.00
+"Virgin Atlantic",VS2779,Adelaide,Tokyo,"2026-08-22 21:58:06","2026-08-23 13:23:16",17192.00
+FlySafair,FA9602,Nantes,Kimberley,"2026-07-18 18:02:26","2026-07-19 00:49:57",6103.00
+"Virgin Atlantic",VS3497,Barcelona,Johannesburg,"2026-08-05 01:47:32","2026-08-05 17:25:55",3041.00
+Emirates,EK4197,"San Francisco",London,"2026-05-30 18:59:35","2026-05-31 02:40:29",5000.00
+KLM,KL5617,Birmingham,Toledo,"2026-10-23 17:21:19","2026-10-24 01:10:24",4577.00
+FlySafair,FA925,Johannesburg,Stuttgart,"2026-10-01 13:25:01","2026-10-01 23:32:49",13348.00
+Lufthansa,LH7394,Nara,Canberra,"2026-09-14 06:15:41","2026-09-14 22:10:19",14976.00
+Emirates,EK9691,Glasgow,Montreal,"2026-06-03 06:24:51","2026-06-03 18:38:36",14881.00
+"Air France",AF1251,Victoria,Genoa,"2026-07-26 00:55:47","2026-07-26 07:59:33",16000.00
+KLM,KL4884,Kimberley,Seattle,"2026-06-26 22:23:08","2026-06-27 00:59:51",3386.00
+"Singapore Airlines",SQ8395,Fukuoka,Melbourne,"2026-06-01 13:53:45","2026-06-01 22:27:29",2029.00
+FlySafair,FA978,Paris,Calgary,"2026-07-01 11:23:47","2026-07-01 20:32:13",17253.00
+"Virgin Atlantic",VS5053,Naples,Dresden,"2026-06-24 11:55:16","2026-06-24 21:09:42",10351.00
+"Air France",AF6592,Dubai,Valencia,"2026-09-01 02:47:42","2026-09-01 06:30:13",7044.00
+"Singapore Airlines",SQ5212,Edmonton,"New York","2026-09-03 12:42:29","2026-09-03 23:12:26",4464.00
+"Turkish Airlines",TK9234,Dubai,Valencia,"2026-08-26 14:37:37","2026-08-27 00:01:26",7096.00
+"Singapore Airlines",SQ781,Montpellier,Turin,"2026-05-30 21:26:32","2026-05-31 13:06:33",13858.00
+"Qatar Airways",QR9142,"New York",Kimberley,"2026-11-05 20:24:29","2026-11-06 03:13:17",4321.00
+FlySafair,FA3116,Knysna,Edmonton,"2026-05-30 11:46:42","2026-05-30 15:22:35",2904.00
+"Virgin Atlantic",VS8479,Bali,Denver,"2026-07-02 05:24:29","2026-07-02 16:02:47",10886.00
+Emirates,EK6976,Glasgow,Belfast,"2026-06-24 05:04:54","2026-06-24 09:08:04",2820.00
+"Turkish Airlines",TK6027,Florence,Dubai,"2026-07-28 15:36:27","2026-07-28 23:34:19",5379.00
+"Air France",AF8717,Bilbao,Edinburgh,"2026-07-17 19:36:33","2026-07-18 08:09:44",10590.00
+"South African Airways",SA4420,Pisa,Darwin,"2026-06-28 02:50:25","2026-06-28 10:06:06",16324.00
+"British Airways",BA6950,Canberra,Belfast,"2026-11-15 05:29:27","2026-11-15 09:18:58",12618.00
+"Turkish Airlines",TK3863,Melbourne,Mallorca,"2026-07-05 13:23:46","2026-07-05 20:37:10",11587.00
+"South African Airways",SA4915,Ottawa,Turin,"2026-10-09 20:28:58","2026-10-10 05:53:02",15570.00
+"British Airways",BA1966,Montreal,"Cape Town","2026-11-14 19:19:41","2026-11-15 02:15:32",12324.00
+"South African Airways",SA5856,Bali,"Las Vegas","2026-10-21 21:48:14","2026-10-22 13:36:13",8691.00
+"South African Airways",SA2249,Florence,Kyoto,"2026-09-05 22:36:14","2026-09-06 12:53:44",3383.00
+"Qatar Airways",QR1961,Valencia,Calgary,"2026-06-16 15:58:12","2026-06-17 02:49:29",7749.00
+"Delta Air Lines",DL2200,Austin,Nantes,"2026-08-14 00:29:02","2026-08-14 13:57:44",3933.00
+Lufthansa,LH4641,Montreal,Lille,"2026-06-07 23:36:04","2026-06-08 10:29:50",10968.00
+"South African Airways",SA7811,Darwin,Hamburg,"2026-06-12 09:09:35","2026-06-12 19:41:07",13983.00
+Emirates,EK6121,Denver,Nagoya,"2026-08-26 21:24:42","2026-08-27 11:29:25",16827.00
+FlySafair,FA3767,Mallorca,Adelaide,"2026-11-18 11:57:11","2026-11-18 18:51:54",9570.00
+KLM,KL7236,Malaga,"San Francisco","2026-09-10 17:42:22","2026-09-11 02:26:49",10631.00
+"Singapore Airlines",SQ1209,Toledo,Brisbane,"2026-11-17 18:11:55","2026-11-18 08:25:50",12331.00
+Emirates,EK5084,Rome,Hiroshima,"2026-08-25 12:36:51","2026-08-25 23:26:07",3619.00
+"Virgin Atlantic",VS2678,Malaga,Osaka,"2026-09-04 10:28:36","2026-09-04 23:59:20",12001.00
+"Delta Air Lines",DL911,Kyoto,Dubai,"2026-07-22 11:25:28","2026-07-22 17:11:04",7374.00
+FlySafair,FA3251,Seville,Adelaide,"2026-10-10 12:32:32","2026-10-11 02:17:54",2595.00
+"Qatar Airways",QR641,Nagoya,Kimberley,"2026-06-27 03:23:15","2026-06-27 11:40:53",17823.00
+"Air France",AF868,Denver,Bordeaux,"2026-05-29 21:12:15","2026-05-30 04:13:57",11379.00
+"Qatar Airways",QR4490,Montpellier,Fukuoka,"2026-09-02 12:48:39","2026-09-02 23:33:04",8046.00
+"Singapore Airlines",SQ2608,Seville,Oxford,"2026-07-09 06:08:04","2026-07-09 14:29:22",13887.00
+FlySafair,FA2998,Bali,"Cape Town","2026-11-18 18:22:29","2026-11-18 23:12:22",2052.00
+"Delta Air Lines",DL6846,Okinawa,Montreal,"2026-10-04 07:40:45","2026-10-04 23:38:20",15684.00
+"Singapore Airlines",SQ4954,Seattle,Hamburg,"2026-08-27 04:09:49","2026-08-27 19:09:10",5234.00
+"Delta Air Lines",DL422,Dresden,Pretoria,"2026-05-25 11:07:43","2026-05-25 18:02:35",15537.00
+Emirates,EK2927,London,Paris,"2026-07-13 11:29:13","2026-07-13 20:35:17",13700.00
+FlySafair,FA2753,Kyoto,Okinawa,"2026-08-05 06:50:29","2026-08-05 15:01:02",4384.00
+"Air France",AF2245,Toulouse,"Port Elizabeth","2026-07-15 01:12:05","2026-07-15 13:33:38",6315.00
+"British Airways",BA2913,Marseille,Adelaide,"2026-11-08 06:38:59","2026-11-08 19:34:29",8418.00
+"Turkish Airlines",TK8558,Valencia,Liverpool,"2026-07-20 17:27:51","2026-07-21 05:59:56",9951.00
+"Air France",AF5975,Bath,"Los Angeles","2026-11-05 08:53:39","2026-11-05 12:47:12",16405.00
+Emirates,EK3876,Oxford,Belfast,"2026-11-11 15:53:17","2026-11-12 02:52:55",13732.00
+Lufthansa,LH6497,Turin,Seville,"2026-06-17 13:29:23","2026-06-17 22:29:42",7856.00
+FlySafair,FA2273,Seattle,"New York","2026-10-17 00:18:04","2026-10-17 15:37:42",5127.00
+"British Airways",BA5171,Montreal,Darwin,"2026-10-17 09:36:46","2026-10-17 15:59:48",7543.00
+"Delta Air Lines",DL9643,Frankfurt,Milan,"2026-07-29 22:57:30","2026-07-30 02:35:41",1932.00
+"Air France",AF3977,Toronto,Montreal,"2026-06-03 06:01:03","2026-06-03 09:37:30",11130.00
+Emirates,EK5104,Melbourne,Chicago,"2026-07-07 13:10:43","2026-07-07 19:35:21",12633.00
+"Virgin Atlantic",VS508,Nice,Tokyo,"2026-09-19 05:31:08","2026-09-19 20:23:49",9933.00
+"Virgin Atlantic",VS5386,Hobart,Tokyo,"2026-07-21 22:19:58","2026-07-22 01:35:46",11444.00
+"Delta Air Lines",DL6059,Berlin,"New York","2026-10-02 04:06:07","2026-10-02 19:51:36",2294.00
+"Singapore Airlines",SQ1623,Dubai,Dusseldorf,"2026-11-12 13:38:38","2026-11-13 05:18:51",8562.00
+"South African Airways",SA4942,Nice,Dresden,"2026-08-04 22:36:59","2026-08-05 08:31:14",2729.00
+"British Airways",BA1802,"New York",London,"2026-08-20 21:12:21","2026-08-21 00:59:52",2497.00
+Emirates,EK4807,"New York",Hobart,"2026-10-25 02:57:47","2026-10-25 14:29:32",14547.00
+"Virgin Atlantic",VS3494,Vancouver,Chicago,"2026-06-01 07:29:22","2026-06-01 12:54:21",7250.00
+FlySafair,FA8476,Manchester,Chicago,"2026-06-06 18:09:31","2026-06-06 21:12:14",5095.00
+"Singapore Airlines",SQ6306,"East London",Seville,"2026-11-13 23:27:24","2026-11-14 10:16:19",13734.00
+KLM,KL697,"Port Elizabeth",Canberra,"2026-09-12 10:49:23","2026-09-13 00:08:28",17408.00
+"Air France",AF5436,Miami,Glasgow,"2026-10-07 09:28:07","2026-10-07 23:00:31",11202.00
+Lufthansa,LH2215,Adelaide,"New York","2026-05-31 11:22:06","2026-05-31 16:30:24",1576.00
+"Singapore Airlines",SQ8128,Sapporo,Nagoya,"2026-11-10 23:50:38","2026-11-11 07:01:49",7645.00
+"Delta Air Lines",DL9322,Bath,Florence,"2026-09-02 03:33:41","2026-09-02 12:09:48",12730.00
+"Delta Air Lines",DL9491,Denver,Berlin,"2026-08-22 17:47:27","2026-08-22 22:12:27",7342.00
+Lufthansa,LH1575,"Cape Town",Valencia,"2026-09-09 10:52:54","2026-09-09 19:35:24",4870.00
+"Air France",AF4125,Durban,Paris,"2026-05-25 04:28:39","2026-05-25 14:31:25",17599.00
+"Singapore Airlines",SQ1845,Madrid,Nagoya,"2026-07-22 15:33:17","2026-07-22 20:40:05",3424.00
+"Virgin Atlantic",VS3703,Adelaide,"Cape Town","2026-08-07 20:22:29","2026-08-08 01:27:58",8652.00
+"Delta Air Lines",DL2257,Darwin,Naples,"2026-08-11 19:19:52","2026-08-12 09:43:49",5613.00
+"Delta Air Lines",DL6838,Cairns,Toulouse,"2026-09-10 14:28:03","2026-09-10 21:03:32",5914.00
+"Delta Air Lines",DL3154,Victoria,Fukuoka,"2026-06-06 02:14:35","2026-06-06 09:26:46",1844.00
+KLM,KL6722,Bloemfontein,Sapporo,"2026-05-26 19:50:11","2026-05-26 23:32:37",8333.00
+Lufthansa,LH5642,"Quebec City",Florence,"2026-10-11 02:59:23","2026-10-11 08:22:17",7705.00
+"Singapore Airlines",SQ6355,Toledo,Bath,"2026-07-13 06:00:04","2026-07-13 17:17:17",15686.00
+"Virgin Atlantic",VS7009,"New York",Miami,"2026-07-13 14:18:20","2026-07-13 17:29:53",3091.00
+Lufthansa,LH6805,Malaga,"Quebec City","2026-06-13 16:34:02","2026-06-14 06:20:06",8986.00
+"Singapore Airlines",SQ4978,Tokyo,Strasbourg,"2026-07-25 07:13:54","2026-07-25 18:03:34",13181.00
+"Delta Air Lines",DL2380,Nuremberg,Boston,"2026-09-19 18:10:39","2026-09-20 03:32:57",17545.00
+"Singapore Airlines",SQ1776,Tokyo,Miami,"2026-08-17 22:46:38","2026-08-18 06:26:55",12791.00
+Lufthansa,LH9088,Brisbane,Hobart,"2026-09-22 10:00:31","2026-09-22 19:55:07",9047.00
+"Turkish Airlines",TK1418,Paris,Canberra,"2026-11-11 14:33:00","2026-11-11 20:18:51",1861.00
+"Qatar Airways",QR6625,Florence,Bologna,"2026-07-22 18:49:39","2026-07-23 01:58:23",1803.00
+"Qatar Airways",QR8404,Bilbao,Leipzig,"2026-08-01 01:50:59","2026-08-01 09:39:27",9191.00
+"Delta Air Lines",DL5248,Bilbao,"Los Angeles","2026-11-10 00:01:02","2026-11-10 05:59:40",13196.00
+"British Airways",BA8078,Durban,Lyon,"2026-09-13 06:27:37","2026-09-13 17:11:54",13513.00
+"Qatar Airways",QR2335,Dubai,Calgary,"2026-10-21 06:20:01","2026-10-21 09:31:26",5136.00
+Emirates,EK1408,"Quebec City","San Francisco","2026-06-21 01:48:38","2026-06-21 03:54:09",8992.00
+"Qatar Airways",QR8064,Bath,Sydney,"2026-10-19 11:48:04","2026-10-19 16:16:49",6295.00
+KLM,KL1559,"Los Angeles",Boston,"2026-07-07 14:02:12","2026-07-07 23:19:03",2106.00
+Emirates,EK3322,Bordeaux,London,"2026-06-14 02:31:22","2026-06-14 05:57:38",12230.00
+"Qatar Airways",QR8010,Toledo,Halifax,"2026-08-16 22:01:48","2026-08-17 09:39:01",14903.00
+"Virgin Atlantic",VS4586,Hamburg,"Quebec City","2026-07-07 11:54:19","2026-07-07 17:20:44",8265.00
+"Air France",AF6068,Genoa,Seville,"2026-06-08 15:54:55","2026-06-09 06:39:37",15290.00
+"Delta Air Lines",DL8116,Nice,Bologna,"2026-06-24 03:56:23","2026-06-24 16:57:01",9240.00
+Emirates,EK1376,Paris,Toledo,"2026-08-11 11:27:39","2026-08-12 02:54:12",17967.00
+"Virgin Atlantic",VS4781,Valencia,Ottawa,"2026-08-12 08:43:59","2026-08-12 17:17:10",16646.00
+"British Airways",BA6830,"Cape Town",Stuttgart,"2026-08-18 19:25:19","2026-08-19 02:54:39",11332.00
+"Delta Air Lines",DL3800,Sapporo,Cologne,"2026-06-19 02:36:05","2026-06-19 07:59:20",17296.00
+"Turkish Airlines",TK7722,Strasbourg,Toronto,"2026-07-28 16:42:18","2026-07-28 19:47:16",16648.00
+"Virgin Atlantic",VS6111,Venice,"Gold Coast","2026-07-10 19:40:23","2026-07-11 08:04:35",11033.00
+"British Airways",BA5035,Knysna,Bilbao,"2026-09-13 16:56:44","2026-09-13 19:00:41",4229.00
+Lufthansa,LH1249,Kimberley,Belfast,"2026-10-26 13:58:42","2026-10-26 18:28:13",10411.00
+Emirates,EK7342,Denver,Calgary,"2026-10-05 04:42:09","2026-10-05 07:40:43",12954.00
+"Qatar Airways",QR5605,Bloemfontein,Ottawa,"2026-06-27 13:02:12","2026-06-27 19:52:03",13616.00
+KLM,KL5765,Toledo,Nuremberg,"2026-06-23 15:43:36","2026-06-23 22:48:22",11207.00
+"Turkish Airlines",TK3312,Madrid,Seattle,"2026-09-14 00:13:10","2026-09-14 11:10:32",11392.00
+"Air France",AF2756,"New York",Florence,"2026-10-26 12:22:09","2026-10-26 23:12:03",6186.00
+"Qatar Airways",QR7753,Granada,Hiroshima,"2026-06-21 00:03:50","2026-06-21 05:09:22",17685.00
+FlySafair,FA1496,Rome,Sydney,"2026-09-27 17:41:59","2026-09-28 01:23:15",6333.00
+"Virgin Atlantic",VS9144,Tokyo,Kyoto,"2026-09-26 00:55:56","2026-09-26 09:19:40",17780.00
+FlySafair,FA2573,Bali,Madrid,"2026-06-13 02:44:38","2026-06-13 09:48:31",6848.00
+"Turkish Airlines",TK3997,Pretoria,Canberra,"2026-07-03 14:59:49","2026-07-04 00:44:56",10176.00
+Emirates,EK6274,Frankfurt,Madrid,"2026-06-03 20:22:43","2026-06-04 03:27:18",3381.00
+Lufthansa,LH3878,Tokyo,Knysna,"2026-07-07 03:15:36","2026-07-07 19:05:43",2622.00
+Lufthansa,LH5969,Lyon,Bordeaux,"2026-11-13 13:26:02","2026-11-14 04:31:10",9878.00
+"British Airways",BA585,London,Nice,"2026-07-04 22:02:31","2026-07-05 12:04:49",13295.00
+"South African Airways",SA8854,"New York",London,"2026-09-06 05:49:53","2026-09-06 17:45:29",15930.00
+"Delta Air Lines",DL5722,Bordeaux,Pretoria,"2026-07-23 23:41:51","2026-07-24 04:39:10",17516.00
+"Virgin Atlantic",VS2240,Granada,Kobe,"2026-06-23 23:52:05","2026-06-24 12:08:04",5653.00
+"Singapore Airlines",SQ2576,"New York",Calgary,"2026-07-12 07:20:30","2026-07-12 19:45:20",11527.00
+"Delta Air Lines",DL6897,"Las Vegas",Hobart,"2026-07-14 03:25:28","2026-07-14 14:32:01",6612.00
+"Turkish Airlines",TK643,Frankfurt,"Las Vegas","2026-09-17 09:41:42","2026-09-17 15:10:36",13024.00
+Lufthansa,LH9424,Kimberley,Manchester,"2026-10-11 10:57:36","2026-10-11 15:42:21",12730.00
+Emirates,EK9763,Seattle,Sydney,"2026-11-03 04:59:32","2026-11-03 10:46:19",11906.00
+Emirates,EK7064,"San Francisco",Lyon,"2026-08-12 20:24:16","2026-08-13 04:27:47",6452.00
+"Singapore Airlines",SQ7107,Seattle,"Gold Coast","2026-09-19 04:57:52","2026-09-19 15:26:36",6866.00
+Lufthansa,LH2476,Tokyo,Kimberley,"2026-06-18 20:17:22","2026-06-19 05:28:01",17987.00
+"Turkish Airlines",TK9540,Nuremberg,Berlin,"2026-07-31 04:07:38","2026-07-31 13:36:00",7418.00
+"South African Airways",SA2736,Berlin,Bali,"2026-09-05 10:05:46","2026-09-05 19:54:20",2235.00
+Emirates,EK8820,Pisa,Ottawa,"2026-09-08 06:37:30","2026-09-08 19:22:26",7810.00
+KLM,KL6547,Paris,Ibiza,"2026-08-05 19:58:28","2026-08-06 08:19:18",16977.00
+Lufthansa,LH3782,Darwin,Paris,"2026-08-01 00:51:58","2026-08-01 14:15:56",15230.00
+"British Airways",BA9491,"San Francisco",Ottawa,"2026-10-19 01:33:02","2026-10-19 05:42:32",6770.00
+FlySafair,FA9892,Hiroshima,Kobe,"2026-08-11 09:18:48","2026-08-11 13:24:48",12164.00
+"Virgin Atlantic",VS6770,Osaka,Nara,"2026-11-13 22:28:58","2026-11-14 08:22:03",2540.00
+Emirates,EK6514,Naples,Dubai,"2026-08-04 02:23:34","2026-08-04 08:09:52",3784.00
+"Turkish Airlines",TK3326,Toulouse,Tokyo,"2026-07-20 05:53:23","2026-07-20 11:48:34",17993.00
+KLM,KL6141,Seville,Whistler,"2026-08-27 16:47:45","2026-08-28 03:06:11",16749.00
+"Qatar Airways",QR5337,Nuremberg,Manchester,"2026-08-17 18:41:23","2026-08-18 02:29:20",8757.00
+Emirates,EK5990,Berlin,Dusseldorf,"2026-07-29 01:45:55","2026-07-29 08:37:05",4219.00
+Lufthansa,LH4400,Bali,Birmingham,"2026-09-29 19:35:23","2026-09-30 09:55:04",9408.00
+Emirates,EK4058,"New York",Seville,"2026-08-28 11:42:24","2026-08-29 02:24:48",8108.00
+"British Airways",BA1476,Miami,"East London","2026-09-30 05:11:41","2026-09-30 08:50:14",9003.00
+"Virgin Atlantic",VS654,Austin,Boston,"2026-08-16 15:51:53","2026-08-16 21:28:37",13903.00
+"Delta Air Lines",DL6411,Valencia,Barcelona,"2026-06-12 14:00:34","2026-06-12 18:14:13",16898.00
+"Qatar Airways",QR6477,Rome,Montpellier,"2026-09-15 13:22:49","2026-09-15 18:50:16",9372.00
+Emirates,EK329,Belfast,Canberra,"2026-08-17 21:45:56","2026-08-18 09:46:44",16649.00
+KLM,KL5838,Granada,Bordeaux,"2026-08-19 10:26:46","2026-08-19 17:28:32",16494.00
+KLM,KL8046,Tokyo,Okinawa,"2026-06-02 03:53:02","2026-06-02 08:36:30",9348.00
+KLM,KL9050,Manchester,Pretoria,"2026-06-08 04:15:57","2026-06-08 12:55:30",5411.00
+"Singapore Airlines",SQ7519,Bath,Cairns,"2026-09-09 14:14:28","2026-09-10 06:06:46",1959.00
+"Singapore Airlines",SQ3514,Dubai,Strasbourg,"2026-07-30 14:30:20","2026-07-30 17:42:38",7556.00
+FlySafair,FA6273,"New York",Hiroshima,"2026-08-03 10:17:59","2026-08-03 23:50:29",16246.00
+"Qatar Airways",QR307,Leipzig,Nantes,"2026-06-18 06:25:28","2026-06-18 20:01:52",2676.00
+"South African Airways",SA4135,Cologne,Bloemfontein,"2026-11-05 17:25:43","2026-11-06 00:21:59",8060.00
+"Air France",AF2841,"Cape Town",Florence,"2026-08-31 07:38:25","2026-08-31 13:23:12",14542.00
+Emirates,EK3816,Kimberley,Bali,"2026-07-08 10:42:09","2026-07-08 20:52:47",9423.00
+"South African Airways",SA1213,Pisa,"Cape Town","2026-06-14 03:39:55","2026-06-14 11:41:40",11597.00
+"Virgin Atlantic",VS6023,Hobart,Fukuoka,"2026-10-11 10:14:37","2026-10-11 18:16:30",5159.00
+"Air France",AF9333,Venice,London,"2026-09-19 12:35:49","2026-09-20 04:01:28",8880.00
+KLM,KL1526,"Gold Coast",Madrid,"2026-09-14 17:39:37","2026-09-15 08:14:41",3990.00
+"South African Airways",SA8717,Nara,Victoria,"2026-07-12 07:26:24","2026-07-12 17:16:11",8241.00
+Lufthansa,LH7529,Bali,Adelaide,"2026-11-04 01:37:30","2026-11-04 10:27:28",15538.00
+"British Airways",BA2135,Genoa,Belfast,"2026-07-17 23:08:15","2026-07-18 08:50:40",2306.00
+Emirates,EK7029,London,Leipzig,"2026-07-09 13:13:05","2026-07-10 02:59:13",7015.00
+KLM,KL5673,Okinawa,Oxford,"2026-09-09 11:26:59","2026-09-10 01:48:41",1822.00
+FlySafair,FA8170,"San Francisco",Chicago,"2026-07-25 16:35:05","2026-07-26 00:14:58",2095.00
+"Qatar Airways",QR1010,Vancouver,Victoria,"2026-05-25 16:41:13","2026-05-26 06:37:25",4604.00
+FlySafair,FA9906,Boston,Kimberley,"2026-07-20 19:27:28","2026-07-20 22:25:47",3539.00
+"Virgin Atlantic",VS4377,Lille,Kimberley,"2026-11-19 10:59:19","2026-11-19 15:12:37",16056.00
+Lufthansa,LH2028,Glasgow,Berlin,"2026-10-31 16:28:41","2026-10-31 19:21:43",7112.00
+Emirates,EK8950,Tokyo,Manchester,"2026-05-25 04:01:45","2026-05-25 08:08:00",12007.00
+"Qatar Airways",QR542,Victoria,Montreal,"2026-09-10 17:31:48","2026-09-10 23:07:39",13426.00
+"Air France",AF6711,Austin,Frankfurt,"2026-06-17 04:42:31","2026-06-17 09:14:09",14733.00
+FlySafair,FA8136,Toulouse,Knysna,"2026-10-25 15:44:37","2026-10-25 23:18:02",3612.00
+"Turkish Airlines",TK837,Stuttgart,Chicago,"2026-11-05 19:19:09","2026-11-06 02:10:13",3543.00
+Emirates,EK9393,"Las Vegas",Malaga,"2026-10-11 10:50:17","2026-10-11 18:57:11",4256.00
+KLM,KL6685,"Cape Town",Munich,"2026-10-06 19:48:01","2026-10-07 09:24:23",8335.00
+FlySafair,FA374,Durban,Edinburgh,"2026-10-30 16:54:33","2026-10-30 20:08:40",2983.00
+KLM,KL5947,Toulouse,Bristol,"2026-06-11 02:26:04","2026-06-11 09:20:35",10502.00
+KLM,KL4536,Bristol,Palermo,"2026-07-10 19:00:51","2026-07-11 03:25:59",16545.00
+"Singapore Airlines",SQ6230,Frankfurt,Montreal,"2026-05-30 04:25:07","2026-05-30 10:23:15",10765.00
+"South African Airways",SA9177,Montreal,Edmonton,"2026-07-22 20:28:57","2026-07-23 07:12:09",12395.00
+"Delta Air Lines",DL9706,Nara,Naples,"2026-06-12 13:10:16","2026-06-12 18:58:35",16028.00
+"Turkish Airlines",TK5428,"Cape Town",Seville,"2026-09-25 16:48:41","2026-09-26 06:01:20",17854.00
+KLM,KL5562,Bath,Toulouse,"2026-09-21 17:57:01","2026-09-22 08:43:57",15689.00
+"South African Airways",SA3635,Adelaide,Lille,"2026-09-18 23:02:48","2026-09-19 08:17:53",17461.00
+"Air France",AF4351,"Cape Town",Kobe,"2026-06-05 10:31:17","2026-06-05 14:59:52",6398.00
+"Qatar Airways",QR3941,Adelaide,Palermo,"2026-11-18 09:53:52","2026-11-19 01:29:23",10606.00
+KLM,KL4510,Kobe,Nagoya,"2026-10-23 11:13:38","2026-10-23 17:08:25",13462.00
+"Virgin Atlantic",VS2267,Adelaide,Nantes,"2026-09-12 04:44:53","2026-09-12 20:30:18",16282.00
+"Virgin Atlantic",VS7045,Calgary,Bloemfontein,"2026-06-09 09:30:09","2026-06-09 23:04:30",15656.00
+"Air France",AF5700,Toulouse,London,"2026-05-26 16:16:43","2026-05-27 04:07:02",4987.00
+"Singapore Airlines",SQ1056,Boston,Nantes,"2026-07-27 16:06:23","2026-07-28 06:57:48",6283.00
+Lufthansa,LH5488,Tokyo,Perth,"2026-08-16 12:13:39","2026-08-17 03:46:55",3494.00
+"Singapore Airlines",SQ4586,Sydney,Bilbao,"2026-09-02 07:55:15","2026-09-02 22:06:46",9124.00
+"Singapore Airlines",SQ6175,"New York",Dusseldorf,"2026-07-24 21:34:25","2026-07-25 05:06:50",6317.00
+"British Airways",BA206,Glasgow,Perth,"2026-10-01 02:57:14","2026-10-01 10:09:40",16057.00
+"Qatar Airways",QR4285,Nuremberg,"Port Elizabeth","2026-06-23 06:24:18","2026-06-23 19:53:37",4146.00
+"Singapore Airlines",SQ4680,"Los Angeles",Pretoria,"2026-08-21 18:49:28","2026-08-22 03:27:33",10102.00
+Lufthansa,LH758,Canberra,Osaka,"2026-10-10 19:37:46","2026-10-11 06:31:21",5152.00
+Emirates,EK6380,Pretoria,Cologne,"2026-08-04 09:37:42","2026-08-04 13:37:44",9855.00
+"Virgin Atlantic",VS7854,Sapporo,"Cape Town","2026-07-15 10:14:06","2026-07-15 23:53:49",2148.00
+FlySafair,FA9737,Bordeaux,Victoria,"2026-10-28 09:03:25","2026-10-28 17:46:29",3980.00
+"Delta Air Lines",DL6388,Strasbourg,Montreal,"2026-07-23 08:48:13","2026-07-24 00:45:47",7680.00
+"Delta Air Lines",DL6219,"Quebec City","New York","2026-11-03 15:26:12","2026-11-03 20:10:30",14069.00
+"Virgin Atlantic",VS8873,Melbourne,Valencia,"2026-10-19 10:41:50","2026-10-19 16:14:03",3983.00
+"Virgin Atlantic",VS6441,Bologna,Granada,"2026-08-19 06:55:05","2026-08-19 10:57:44",12354.00
+"Virgin Atlantic",VS9742,Sapporo,"East London","2026-06-03 01:14:26","2026-06-03 12:46:56",15102.00
+Lufthansa,LH6425,Fukuoka,Stellenbosch,"2026-09-08 04:41:51","2026-09-08 13:33:22",2832.00
+"Qatar Airways",QR9606,Ottawa,Palermo,"2026-06-18 13:00:10","2026-06-19 04:33:43",10418.00
+"Delta Air Lines",DL9603,Stellenbosch,Nara,"2026-10-10 04:46:48","2026-10-10 10:11:21",17116.00
+"Qatar Airways",QR5716,Austin,Birmingham,"2026-05-25 10:57:50","2026-05-26 02:31:13",16290.00
+Lufthansa,LH3368,Paris,Toronto,"2026-07-01 06:33:29","2026-07-01 21:06:19",5386.00
+"Air France",AF460,Dubai,Boston,"2026-07-31 07:04:43","2026-07-31 14:17:46",13037.00
+"Delta Air Lines",DL2282,Bali,Tokyo,"2026-07-20 17:54:02","2026-07-21 09:49:50",6227.00
+FlySafair,FA5716,Perth,Toulouse,"2026-09-21 02:59:36","2026-09-21 14:42:42",5688.00
+Emirates,EK2402,"New York",Nara,"2026-10-22 06:06:29","2026-10-22 13:14:29",14050.00
+FlySafair,FA5663,Rome,"New York","2026-09-09 15:23:36","2026-09-10 00:49:56",7053.00
+FlySafair,FA762,Bologna,Canberra,"2026-10-14 18:12:04","2026-10-15 04:45:53",11048.00
+"South African Airways",SA3377,Tokyo,"Cape Town","2026-07-18 18:26:56","2026-07-18 20:52:29",4228.00
+"Turkish Airlines",TK592,Fukuoka,Birmingham,"2026-07-24 04:04:56","2026-07-24 16:05:54",14576.00
+"Air France",AF9234,Canberra,Bordeaux,"2026-10-07 22:44:35","2026-10-08 09:00:44",11343.00
+"British Airways",BA2521,"Los Angeles",Genoa,"2026-08-02 02:25:26","2026-08-02 06:06:08",12038.00
+"Delta Air Lines",DL7227,Munich,"San Francisco","2026-08-24 22:13:05","2026-08-25 09:31:40",2611.00
+"British Airways",BA2841,Seville,Toledo,"2026-10-25 11:50:16","2026-10-25 17:27:48",9012.00
+Lufthansa,LH3763,Bali,Barcelona,"2026-09-08 08:10:04","2026-09-08 11:25:18",12352.00
+"South African Airways",SA8439,Darwin,Canberra,"2026-06-18 07:40:41","2026-06-18 21:03:38",11068.00
+KLM,KL4070,London,Nice,"2026-06-06 20:29:51","2026-06-07 02:05:20",6453.00
+"Virgin Atlantic",VS4259,Seville,Mallorca,"2026-07-29 16:23:01","2026-07-30 00:52:09",9180.00
+Lufthansa,LH3543,Cologne,Naples,"2026-05-31 03:04:41","2026-05-31 17:27:41",5615.00
+"Virgin Atlantic",VS8929,Halifax,Tokyo,"2026-09-29 10:15:45","2026-09-29 21:12:01",2107.00
+"Virgin Atlantic",VS6784,Naples,Belfast,"2026-08-13 03:27:55","2026-08-13 07:55:26",17409.00
+"Virgin Atlantic",VS7212,Valencia,Kyoto,"2026-06-04 09:42:18","2026-06-04 17:57:07",17451.00
+"South African Airways",SA6753,Paris,Boston,"2026-06-23 04:40:37","2026-06-23 16:40:55",9834.00
+FlySafair,FA660,Munich,Glasgow,"2026-10-22 19:24:20","2026-10-23 07:46:29",1932.00
+Lufthansa,LH378,Hiroshima,Belfast,"2026-07-23 20:19:11","2026-07-24 07:42:25",10220.00
+"South African Airways",SA2260,Nara,Whistler,"2026-06-09 16:48:50","2026-06-10 03:52:07",5763.00
+"Turkish Airlines",TK5097,Ibiza,Berlin,"2026-08-26 17:56:38","2026-08-27 06:49:26",6418.00
+"Singapore Airlines",SQ7179,Florence,"Quebec City","2026-06-13 22:59:26","2026-06-14 09:19:40",8537.00
+FlySafair,FA2306,Milan,Sydney,"2026-06-25 11:59:16","2026-06-25 17:44:19",10094.00
+Lufthansa,LH4560,Okinawa,Venice,"2026-06-23 13:51:38","2026-06-24 03:49:14",9701.00
+"British Airways",BA1473,Munich,Edmonton,"2026-10-22 19:15:12","2026-10-23 06:05:46",15452.00
+"Air France",AF6246,Canberra,Bloemfontein,"2026-11-04 00:22:13","2026-11-04 04:54:59",7163.00
+FlySafair,FA1296,Berlin,Milan,"2026-05-25 07:55:05","2026-05-25 13:11:35",16360.00
+"Singapore Airlines",SQ6846,Osaka,Ibiza,"2026-08-10 06:47:04","2026-08-10 19:43:16",4942.00
+"Virgin Atlantic",VS6451,"East London","New York","2026-07-30 02:23:49","2026-07-30 13:03:29",12401.00
+Emirates,EK5505,Bristol,Cologne,"2026-08-29 14:24:25","2026-08-29 23:27:09",7485.00
+"Delta Air Lines",DL2066,Fukuoka,Lille,"2026-09-08 16:41:41","2026-09-08 22:19:42",17073.00
+"Virgin Atlantic",VS4890,Madrid,Leipzig,"2026-07-16 17:55:04","2026-07-17 06:48:40",8058.00
+"Delta Air Lines",DL6012,Hiroshima,Oxford,"2026-09-10 20:44:09","2026-09-11 09:44:53",12847.00
+FlySafair,FA411,Toulouse,Darwin,"2026-10-18 23:29:35","2026-10-19 03:09:29",4592.00
+KLM,KL8422,"San Francisco",Bloemfontein,"2026-05-26 14:33:00","2026-05-27 03:45:07",3834.00
+"Virgin Atlantic",VS5388,Granada,Lille,"2026-06-27 13:32:38","2026-06-28 03:33:06",7811.00
+KLM,KL1619,Pretoria,Toronto,"2026-08-09 03:26:03","2026-08-09 13:50:35",16564.00
+"Qatar Airways",QR3823,Belfast,Munich,"2026-11-18 03:40:27","2026-11-18 14:59:49",8650.00
+"Singapore Airlines",SQ7637,Manchester,Kimberley,"2026-07-18 00:05:17","2026-07-18 12:48:24",12572.00
+"Air France",AF9271,Toronto,Dusseldorf,"2026-08-15 19:59:23","2026-08-16 02:39:56",12299.00
+KLM,KL7353,"Quebec City",Barcelona,"2026-07-19 03:59:30","2026-07-19 18:54:58",13249.00
+KLM,KL8586,Glasgow,Hiroshima,"2026-06-29 02:03:54","2026-06-29 08:10:34",5237.00
+"Virgin Atlantic",VS6209,Madrid,"San Francisco","2026-06-27 13:56:55","2026-06-27 20:20:47",4314.00
+FlySafair,FA3520,Bali,Hamburg,"2026-08-28 20:22:47","2026-08-29 05:14:22",10651.00
+KLM,KL3608,"Cape Town",Hiroshima,"2026-11-10 19:32:34","2026-11-11 00:39:47",1607.00
+"South African Airways",SA2950,Nuremberg,"Cape Town","2026-07-14 23:36:42","2026-07-15 04:19:13",9126.00
+KLM,KL3912,Rome,Nagoya,"2026-06-14 03:57:24","2026-06-14 06:42:52",13894.00
+"Delta Air Lines",DL618,Kimberley,Nara,"2026-06-11 21:31:07","2026-06-12 11:09:17",4477.00
+"Singapore Airlines",SQ5345,Sydney,Nuremberg,"2026-11-09 16:04:49","2026-11-09 23:58:37",9280.00
+"Turkish Airlines",TK8330,Venice,Whistler,"2026-11-01 09:13:11","2026-11-01 21:00:07",10656.00
+"South African Airways",SA8671,Bali,Marseille,"2026-11-14 20:35:38","2026-11-15 09:26:03",15631.00
+FlySafair,FA6263,Hamburg,Florence,"2026-06-29 14:49:31","2026-06-29 17:41:17",6289.00
+Emirates,EK3956,"Los Angeles",Tokyo,"2026-10-16 13:20:46","2026-10-17 02:35:57",15857.00
+KLM,KL1972,Melbourne,Naples,"2026-09-24 04:05:03","2026-09-24 08:39:00",16454.00
+FlySafair,FA7749,"San Francisco",Paris,"2026-08-28 03:06:11","2026-08-28 06:25:11",6260.00
+"Air France",AF6465,Hobart,Denver,"2026-10-28 17:46:21","2026-10-29 06:51:04",7725.00
+"Virgin Atlantic",VS9968,"Cape Town","Las Vegas","2026-08-26 10:07:24","2026-08-26 17:26:18",1549.00
+"Qatar Airways",QR7974,"New York",Tokyo,"2026-06-05 12:49:47","2026-06-06 02:35:07",13493.00
+Emirates,EK2564,Marseille,Austin,"2026-11-06 12:34:32","2026-11-06 15:24:43",15105.00
+"Air France",AF9866,Austin,Berlin,"2026-06-25 04:38:25","2026-06-25 16:36:03",12623.00
+FlySafair,FA4607,Canberra,Paris,"2026-09-19 03:10:04","2026-09-19 18:31:25",14417.00
+"Qatar Airways",QR6872,Whistler,Cologne,"2026-10-16 09:47:10","2026-10-16 11:55:11",13346.00
+"Singapore Airlines",SQ4358,Austin,Vancouver,"2026-09-16 13:58:44","2026-09-17 00:17:30",16626.00
+Lufthansa,LH1363,London,Bloemfontein,"2026-09-29 18:06:25","2026-09-29 21:52:46",9323.00
+"Singapore Airlines",SQ9178,Canberra,Melbourne,"2026-08-17 08:52:43","2026-08-17 23:03:55",16120.00
+Lufthansa,LH1364,Sydney,"New York","2026-09-06 15:47:17","2026-09-06 19:22:57",15149.00
+"Delta Air Lines",DL3726,Ibiza,Durban,"2026-09-23 10:46:07","2026-09-24 01:19:49",17148.00
+FlySafair,FA3978,Kobe,Victoria,"2026-08-03 19:52:27","2026-08-04 04:09:50",11630.00
+"Qatar Airways",QR2493,Berlin,Birmingham,"2026-08-01 23:01:20","2026-08-02 01:27:34",7367.00
+Emirates,EK2483,Toronto,Ottawa,"2026-11-18 04:43:14","2026-11-18 07:29:38",12712.00
+"Delta Air Lines",DL6124,Marseille,Birmingham,"2026-07-28 14:57:05","2026-07-29 04:22:48",15907.00
+Lufthansa,LH4070,Naples,"Quebec City","2026-06-27 05:33:07","2026-06-27 17:21:13",5769.00
+"Air France",AF5589,Nagoya,Dusseldorf,"2026-07-25 11:18:52","2026-07-26 01:45:19",10114.00
+"Qatar Airways",QR8827,Turin,Canberra,"2026-11-10 09:01:04","2026-11-10 11:18:47",13701.00
+KLM,KL5353,Denver,"New York","2026-10-05 04:21:43","2026-10-05 12:24:22",16990.00
+"Singapore Airlines",SQ7533,"Las Vegas",Canberra,"2026-11-11 19:37:20","2026-11-11 22:35:32",7794.00
+"British Airways",BA2093,Darwin,Berlin,"2026-05-30 20:00:46","2026-05-30 23:12:45",14564.00
+"Air France",AF3629,Vancouver,"Gold Coast","2026-07-30 17:31:17","2026-07-31 05:52:08",7121.00
+KLM,KL9111,Birmingham,Osaka,"2026-07-28 07:39:04","2026-07-28 19:08:03",14688.00
+"Virgin Atlantic",VS6528,Victoria,Cologne,"2026-06-23 23:42:54","2026-06-24 12:15:15",9218.00
+FlySafair,FA5717,Turin,Nara,"2026-07-15 21:20:53","2026-07-16 08:37:36",9170.00
+"South African Airways",SA7434,Boston,Frankfurt,"2026-08-24 21:38:41","2026-08-25 04:10:44",7378.00
+"British Airways",BA5214,Bordeaux,Melbourne,"2026-06-13 02:20:09","2026-06-13 17:21:10",3965.00
+"Singapore Airlines",SQ7665,Turin,Perth,"2026-08-06 21:40:07","2026-08-07 13:29:32",7904.00
+"Singapore Airlines",SQ4097,"New York",London,"2026-08-27 17:22:28","2026-08-27 21:23:28",9032.00
+Lufthansa,LH2549,Rome,Pisa,"2026-09-18 02:17:41","2026-09-18 11:32:03",10186.00
+"South African Airways",SA3885,Valencia,Berlin,"2026-09-06 17:11:52","2026-09-07 08:08:07",10988.00
+"Virgin Atlantic",VS9136,Toulouse,Kimberley,"2026-08-26 19:44:55","2026-08-27 08:12:46",16933.00
+"Delta Air Lines",DL1238,Dubai,"Port Elizabeth","2026-08-24 03:08:47","2026-08-24 15:54:21",12159.00
+"Qatar Airways",QR1254,Turin,Frankfurt,"2026-07-12 02:21:27","2026-07-12 09:58:10",5880.00
+FlySafair,FA9680,Nantes,Venice,"2026-06-10 11:34:49","2026-06-11 02:22:14",6470.00
+"Delta Air Lines",DL6939,Stuttgart,Bologna,"2026-08-07 04:51:32","2026-08-07 07:14:45",15708.00
+"Air France",AF1570,Miami,Nuremberg,"2026-06-03 11:48:41","2026-06-04 00:46:08",15377.00
+FlySafair,FA7646,Bristol,Perth,"2026-06-22 15:01:52","2026-06-23 03:26:40",8174.00
+"Turkish Airlines",TK5840,Dusseldorf,Whistler,"2026-10-24 05:48:08","2026-10-24 11:18:52",16781.00
+"Delta Air Lines",DL2428,Sydney,Tokyo,"2026-07-15 05:34:02","2026-07-15 09:23:11",9070.00
+Lufthansa,LH2538,Oxford,Kyoto,"2026-09-19 05:17:56","2026-09-19 18:49:46",9698.00
+"Air France",AF4583,Hamburg,Toulouse,"2026-10-01 14:40:36","2026-10-01 22:21:55",8734.00
+FlySafair,FA8817,Oxford,Toronto,"2026-10-10 00:47:57","2026-10-10 05:46:19",12809.00
+"Turkish Airlines",TK6846,"East London",Florence,"2026-07-19 07:20:06","2026-07-19 09:47:58",13702.00
+KLM,KL5103,"Cape Town",Tokyo,"2026-05-30 05:13:58","2026-05-30 18:00:48",11692.00
+"Qatar Airways",QR7904,Tokyo,"Cape Town","2026-10-14 04:51:12","2026-10-14 12:26:27",17413.00
+"British Airways",BA8347,Granada,Nantes,"2026-10-14 02:05:56","2026-10-14 05:00:51",14631.00
+"Delta Air Lines",DL2942,Okinawa,Palermo,"2026-09-22 22:56:40","2026-09-23 06:27:22",10449.00
+"Air France",AF8675,"Cape Town",Palermo,"2026-05-28 17:22:28","2026-05-28 20:47:34",15617.00
+Lufthansa,LH2986,Toulouse,Dubai,"2026-09-20 07:49:46","2026-09-20 17:43:51",11792.00
+"Delta Air Lines",DL4060,Bilbao,Johannesburg,"2026-05-26 04:16:28","2026-05-26 13:34:24",9333.00
+"Virgin Atlantic",VS6340,Denver,Johannesburg,"2026-09-11 11:39:25","2026-09-11 19:12:55",8439.00
+"Qatar Airways",QR7937,Victoria,Seattle,"2026-08-29 04:03:11","2026-08-29 14:08:40",5061.00
+"Singapore Airlines",SQ5164,Berlin,Nagoya,"2026-07-21 12:38:42","2026-07-21 17:25:13",13854.00
+"Virgin Atlantic",VS2265,Toledo,"Cape Town","2026-08-19 18:25:50","2026-08-20 01:54:46",9351.00
+Lufthansa,LH8816,Oxford,Okinawa,"2026-05-31 21:16:42","2026-05-31 23:37:21",13906.00
+Lufthansa,LH1241,Bologna,Knysna,"2026-06-06 19:22:02","2026-06-07 06:26:51",13191.00
+KLM,KL2491,Johannesburg,Bilbao,"2026-08-13 18:46:19","2026-08-13 20:54:16",3080.00
+"Delta Air Lines",DL4373,Knysna,"New York","2026-06-21 11:05:42","2026-06-21 13:54:11",12508.00
+"Air France",AF2560,Nagoya,Edmonton,"2026-11-06 20:17:03","2026-11-07 04:43:48",4623.00
+Emirates,EK1562,Lille,Bilbao,"2026-06-14 16:45:48","2026-06-14 21:48:47",7523.00
+"British Airways",BA5031,Florence,Ottawa,"2026-11-04 15:51:47","2026-11-05 07:27:38",11182.00
+"Air France",AF6561,Montreal,"Cape Town","2026-11-01 18:12:43","2026-11-01 23:47:18",3685.00
+KLM,KL9955,Valencia,Malaga,"2026-05-25 01:44:12","2026-05-25 14:55:00",10883.00
+"Turkish Airlines",TK8437,"Port Elizabeth",London,"2026-10-03 02:40:34","2026-10-03 14:05:32",3437.00
+KLM,KL6370,Dubai,Boston,"2026-06-14 11:25:44","2026-06-15 00:54:30",15790.00
+"South African Airways",SA824,Dresden,Manchester,"2026-10-04 00:59:17","2026-10-04 03:28:34",13284.00
+"Turkish Airlines",TK9091,"Quebec City",Denver,"2026-07-03 02:11:07","2026-07-03 14:39:57",16409.00
+"South African Airways",SA6674,Strasbourg,Bloemfontein,"2026-09-26 23:42:56","2026-09-27 08:41:14",17389.00
+"South African Airways",SA635,Canberra,Malaga,"2026-06-11 04:21:43","2026-06-11 09:04:34",13692.00
+"Singapore Airlines",SQ6020,Miami,Munich,"2026-08-13 23:53:34","2026-08-14 04:13:43",9599.00
+Lufthansa,LH8677,"Cape Town",Knysna,"2026-09-24 00:31:41","2026-09-24 03:24:08",16750.00
+Lufthansa,LH9457,"New York",Bali,"2026-06-04 06:09:43","2026-06-04 11:20:58",11643.00
+Lufthansa,LH9889,Toledo,Paris,"2026-09-02 11:43:51","2026-09-03 03:15:04",5718.00
+"Qatar Airways",QR8609,Ibiza,Chicago,"2026-06-21 11:33:09","2026-06-22 02:49:37",2578.00
+"British Airways",BA5363,Victoria,Nara,"2026-10-10 16:17:41","2026-10-11 04:08:25",9441.00
+KLM,KL1992,Bali,Liverpool,"2026-07-17 19:48:20","2026-07-18 06:56:04",3903.00
+"Singapore Airlines",SQ4473,Brisbane,Seville,"2026-10-12 01:31:46","2026-10-12 14:14:07",10372.00
+FlySafair,FA8022,Bali,"Cape Town","2026-07-31 20:25:29","2026-08-01 06:34:58",4310.00
+"Delta Air Lines",DL7383,Adelaide,Lille,"2026-06-23 00:08:38","2026-06-23 03:15:46",16012.00
+FlySafair,FA6921,Manchester,Edinburgh,"2026-07-05 17:44:42","2026-07-06 04:49:05",5235.00
+"Qatar Airways",QR1400,"San Francisco",Florence,"2026-08-22 08:55:55","2026-08-22 19:26:46",9963.00
+"British Airways",BA8097,Glasgow,Dresden,"2026-09-11 15:46:14","2026-09-12 00:12:39",13634.00
+"Air France",AF2107,Nagoya,Hiroshima,"2026-06-23 02:05:55","2026-06-23 10:21:13",17373.00
+FlySafair,FA2327,"New York",Bath,"2026-11-14 19:49:38","2026-11-15 06:57:22",4444.00
+KLM,KL1924,Knysna,Okinawa,"2026-11-19 01:17:32","2026-11-19 13:18:55",1837.00
+"Singapore Airlines",SQ9425,Darwin,Paris,"2026-11-11 11:37:16","2026-11-11 15:21:58",7352.00
+"Singapore Airlines",SQ6402,Strasbourg,Manchester,"2026-07-27 06:03:28","2026-07-27 10:59:07",11305.00
+Emirates,EK7118,Kyoto,Miami,"2026-08-27 14:01:56","2026-08-27 20:37:07",1891.00
+"Turkish Airlines",TK303,Knysna,Rome,"2026-08-09 16:17:22","2026-08-10 03:17:04",16268.00
+"Turkish Airlines",TK9676,Halifax,Nice,"2026-06-02 19:21:58","2026-06-03 01:15:16",8328.00
+Lufthansa,LH2136,Oxford,Granada,"2026-11-01 10:48:12","2026-11-01 21:30:45",5624.00
+"Air France",AF1600,Nagoya,Bristol,"2026-07-23 05:48:41","2026-07-23 15:30:00",6925.00
+"Air France",AF6419,Lille,Canberra,"2026-07-31 00:15:11","2026-07-31 08:19:15",7530.00
+"Turkish Airlines",TK4922,Kyoto,Bloemfontein,"2026-11-12 12:23:12","2026-11-12 22:49:05",14791.00
+"Turkish Airlines",TK7537,Tokyo,Edinburgh,"2026-07-12 06:48:51","2026-07-12 10:12:19",4349.00
+Lufthansa,LH8636,Lyon,Milan,"2026-09-08 06:18:48","2026-09-08 18:54:17",11829.00
+"Singapore Airlines",SQ257,Ottawa,Pisa,"2026-06-10 16:50:00","2026-06-10 19:44:15",4240.00
+"Turkish Airlines",TK4050,Bologna,Glasgow,"2026-06-12 13:20:34","2026-06-12 19:53:34",17929.00
+"Qatar Airways",QR2167,Bath,Perth,"2026-10-23 15:04:53","2026-10-23 21:35:02",5511.00
+"Qatar Airways",QR921,Nantes,Melbourne,"2026-11-11 08:59:16","2026-11-11 20:31:26",12818.00
+"Delta Air Lines",DL4506,"New York",Toulouse,"2026-10-04 15:53:15","2026-10-05 01:09:09",5545.00
+"British Airways",BA8894,Seattle,Nara,"2026-11-11 20:44:11","2026-11-12 09:54:03",3259.00
+Lufthansa,LH8819,Oxford,Palermo,"2026-08-06 13:29:09","2026-08-06 17:49:11",2914.00
+"Qatar Airways",QR8715,"Gold Coast","Quebec City","2026-11-05 18:17:08","2026-11-06 00:35:14",17145.00
+"Delta Air Lines",DL6342,Naples,Leipzig,"2026-08-04 06:57:14","2026-08-04 19:10:48",10256.00
+KLM,KL9164,Dubai,Austin,"2026-09-28 04:04:44","2026-09-28 14:48:19",12215.00
+"Virgin Atlantic",VS8786,Toledo,Kobe,"2026-09-10 02:43:35","2026-09-10 10:05:56",10691.00
+Emirates,EK3806,Palermo,Paris,"2026-11-16 04:17:56","2026-11-16 08:48:43",14416.00
+"British Airways",BA2079,Naples,Bloemfontein,"2026-08-03 00:16:50","2026-08-03 12:54:02",11443.00
+"Air France",AF1847,Edmonton,Kimberley,"2026-06-09 15:59:37","2026-06-10 02:51:41",6657.00
+Emirates,EK9678,Lyon,Bristol,"2026-06-18 16:17:11","2026-06-18 19:55:08",3495.00
+"Qatar Airways",QR4745,Brisbane,"Las Vegas","2026-11-18 04:45:35","2026-11-18 11:17:40",13217.00
+"Singapore Airlines",SQ3687,Belfast,Toledo,"2026-05-31 20:00:34","2026-06-01 08:15:02",17018.00
+"Turkish Airlines",TK8266,Okinawa,Paris,"2026-11-10 12:37:51","2026-11-10 14:49:40",4598.00
+"British Airways",BA200,Madrid,Glasgow,"2026-11-18 18:10:58","2026-11-19 06:45:20",6381.00
+FlySafair,FA3471,Austin,Boston,"2026-11-03 08:33:43","2026-11-04 00:00:21",8177.00
+FlySafair,FA6570,London,Paris,"2026-11-17 00:16:20","2026-11-17 09:05:37",12637.00
+"Air France",AF9377,Milan,Manchester,"2026-06-04 00:56:34","2026-06-04 16:13:44",6750.00
+"Qatar Airways",QR5680,Liverpool,Montreal,"2026-08-27 02:46:17","2026-08-27 06:30:15",14414.00
+"Qatar Airways",QR5467,Sydney,Belfast,"2026-09-19 01:14:59","2026-09-19 08:26:20",13123.00
+"British Airways",BA1618,Granada,Cologne,"2026-06-23 11:49:34","2026-06-23 19:33:28",3297.00
+Lufthansa,LH4975,Chicago,Paris,"2026-07-25 09:05:58","2026-07-25 21:35:42",3464.00
+KLM,KL3133,Paris,Liverpool,"2026-09-02 21:50:42","2026-09-03 04:05:42",8005.00
+"Singapore Airlines",SQ7842,Nara,Toulouse,"2026-10-16 13:59:09","2026-10-17 02:23:42",6347.00
+FlySafair,FA5628,Palermo,Lyon,"2026-11-15 07:39:40","2026-11-15 16:21:53",11471.00
+"Delta Air Lines",DL1833,Paris,Stellenbosch,"2026-11-05 01:54:21","2026-11-05 05:24:47",12832.00
+"Turkish Airlines",TK4965,Whistler,Boston,"2026-11-06 01:32:28","2026-11-06 08:02:42",13480.00
+"British Airways",BA778,Denver,"New York","2026-06-23 03:43:05","2026-06-23 13:35:54",3972.00
+KLM,KL4934,Hamburg,Seville,"2026-08-09 13:06:05","2026-08-10 03:59:25",12278.00
+"Air France",AF1119,Palermo,Chicago,"2026-11-17 05:51:38","2026-11-17 19:50:20",15753.00
+"Delta Air Lines",DL4740,Mallorca,"Los Angeles","2026-08-17 12:56:52","2026-08-17 22:53:07",12283.00
+"Virgin Atlantic",VS4865,Madrid,Milan,"2026-10-25 10:54:29","2026-10-26 00:12:58",11386.00
+"Delta Air Lines",DL2795,Dresden,Bilbao,"2026-07-28 05:26:21","2026-07-28 11:19:52",2757.00
+FlySafair,FA4678,Valencia,Brisbane,"2026-07-26 12:26:00","2026-07-26 22:51:51",12906.00
+"Air France",AF9881,Tokyo,Frankfurt,"2026-07-06 04:14:45","2026-07-06 08:32:03",5689.00
+"Virgin Atlantic",VS3356,Calgary,Leipzig,"2026-10-31 15:52:33","2026-11-01 03:37:13",2677.00
+KLM,KL3136,Bali,Barcelona,"2026-08-10 14:37:42","2026-08-11 02:31:27",12340.00
+"Virgin Atlantic",VS5862,Dusseldorf,Stellenbosch,"2026-11-08 14:13:29","2026-11-09 01:02:50",9984.00
+"Qatar Airways",QR3361,Kobe,Sydney,"2026-10-10 14:57:09","2026-10-11 00:03:45",11429.00
+"Turkish Airlines",TK6896,Johannesburg,Tokyo,"2026-08-24 12:02:25","2026-08-25 00:21:02",8611.00
+"Virgin Atlantic",VS2332,"New York","San Francisco","2026-08-03 01:14:23","2026-08-03 16:45:48",9635.00
+KLM,KL6758,Montpellier,Sydney,"2026-09-20 19:24:25","2026-09-21 10:44:24",12662.00
+"Singapore Airlines",SQ6873,Dubai,London,"2026-06-27 19:19:25","2026-06-28 03:40:49",15787.00
+KLM,KL6935,Canberra,Bath,"2026-07-07 16:45:25","2026-07-07 21:50:56",6713.00
+"British Airways",BA2291,Okinawa,Osaka,"2026-06-23 19:05:22","2026-06-23 23:00:41",7217.00
+"South African Airways",SA4955,Nara,Knysna,"2026-06-11 00:51:08","2026-06-11 13:18:20",17328.00
+Emirates,EK4796,"Las Vegas",Bilbao,"2026-07-01 00:01:21","2026-07-01 03:12:46",6518.00
+"South African Airways",SA7113,"Cape Town",Rome,"2026-08-18 17:12:43","2026-08-19 07:34:54",7507.00
+KLM,KL9789,"Port Elizabeth",Adelaide,"2026-10-24 13:34:02","2026-10-25 00:27:14",12284.00
+"British Airways",BA5843,Bath,Chicago,"2026-10-12 13:38:41","2026-10-12 17:18:29",17917.00
+Emirates,EK2842,Milan,London,"2026-10-20 13:13:28","2026-10-20 20:22:48",11756.00
+Lufthansa,LH3380,Valencia,Munich,"2026-06-29 06:48:57","2026-06-29 17:58:24",8440.00
+"Virgin Atlantic",VS8471,Pisa,Ottawa,"2026-08-01 17:05:10","2026-08-02 08:19:47",7129.00
+"Singapore Airlines",SQ6204,Nagoya,Seattle,"2026-07-30 22:50:06","2026-07-31 14:32:28",2228.00
+Lufthansa,LH909,Pisa,Malaga,"2026-07-27 21:14:45","2026-07-27 23:56:43",11362.00
+"Delta Air Lines",DL9157,Valencia,Bilbao,"2026-11-17 20:00:42","2026-11-18 03:38:45",1529.00
+"Qatar Airways",QR539,Milan,Tokyo,"2026-09-11 17:32:37","2026-09-12 01:02:36",5178.00
+"British Airways",BA5953,Birmingham,Tokyo,"2026-10-26 17:39:19","2026-10-27 02:36:29",9951.00
+KLM,KL2567,Bilbao,Bloemfontein,"2026-07-07 18:54:23","2026-07-07 22:38:02",7820.00
+"Turkish Airlines",TK3057,Malaga,Glasgow,"2026-06-25 23:50:15","2026-06-26 12:41:04",17133.00
+"Qatar Airways",QR421,Nagoya,Munich,"2026-08-07 10:22:41","2026-08-08 02:00:31",16293.00
+KLM,KL3764,Canberra,Valencia,"2026-11-15 02:34:56","2026-11-15 18:28:25",16654.00
+FlySafair,FA5625,Manchester,Perth,"2026-06-18 03:22:01","2026-06-18 07:40:56",13367.00
+Lufthansa,LH4616,Toledo,Sapporo,"2026-10-28 13:20:01","2026-10-29 03:32:46",9028.00
+"Qatar Airways",QR8448,Liverpool,Manchester,"2026-09-05 16:25:55","2026-09-05 20:42:29",8428.00
+KLM,KL7538,Bali,"New York","2026-10-21 08:08:53","2026-10-21 15:12:37",14421.00
+"Air France",AF1316,Munich,Nantes,"2026-10-16 06:25:05","2026-10-16 13:54:53",15960.00
+"Singapore Airlines",SQ8043,Venice,Brisbane,"2026-10-12 18:52:20","2026-10-13 08:00:15",9458.00
+Emirates,EK8478,Whistler,Edinburgh,"2026-09-20 12:42:38","2026-09-20 18:25:42",10488.00
+FlySafair,FA7853,Seville,"Cape Town","2026-10-23 16:11:37","2026-10-24 02:43:55",1631.00
+"Air France",AF9976,Madrid,Milan,"2026-06-19 19:41:38","2026-06-19 22:05:57",2684.00
+"Air France",AF7746,Tokyo,Sapporo,"2026-08-02 12:41:46","2026-08-03 02:57:03",9938.00
+"Delta Air Lines",DL7282,Osaka,Stellenbosch,"2026-06-11 23:05:40","2026-06-12 02:43:47",2832.00
+"Qatar Airways",QR5634,Tokyo,Paris,"2026-10-23 14:44:10","2026-10-24 05:26:06",5008.00
+"Air France",AF9894,Seattle,Fukuoka,"2026-06-14 11:46:58","2026-06-14 22:28:07",9370.00
+"Turkish Airlines",TK3533,Dresden,Florence,"2026-07-06 17:44:13","2026-07-07 08:48:47",16896.00
+"Qatar Airways",QR5494,Rome,"Cape Town","2026-11-07 13:20:52","2026-11-07 15:27:54",3043.00
+"Virgin Atlantic",VS3588,Paris,Nantes,"2026-09-22 14:07:21","2026-09-22 18:07:51",6085.00
+FlySafair,FA3950,Perth,Dubai,"2026-08-25 00:59:27","2026-08-25 11:03:19",13682.00
+"South African Airways",SA5698,Denver,Perth,"2026-08-24 20:32:59","2026-08-25 07:53:28",3048.00
+FlySafair,FA4113,Edinburgh,Bordeaux,"2026-09-17 14:12:04","2026-09-17 19:48:55",3897.00
+"Qatar Airways",QR5230,Bristol,Palermo,"2026-07-31 10:00:20","2026-07-31 21:15:07",14092.00
+FlySafair,FA3597,Austin,Turin,"2026-07-06 13:34:25","2026-07-07 04:19:28",7116.00
+KLM,KL1768,Pisa,Munich,"2026-06-06 02:29:54","2026-06-06 09:30:44",10531.00
+"British Airways",BA1444,"Los Angeles",Nuremberg,"2026-08-25 09:04:25","2026-08-25 23:03:25",15194.00
+"Delta Air Lines",DL6638,Florence,Bilbao,"2026-10-24 03:53:55","2026-10-24 10:32:08",4670.00
+"Qatar Airways",QR8786,Perth,Liverpool,"2026-09-25 09:55:41","2026-09-26 00:23:52",9253.00
+Lufthansa,LH6316,Venice,Toronto,"2026-11-08 15:02:22","2026-11-08 23:18:56",10034.00
+"Delta Air Lines",DL961,Canberra,Dubai,"2026-06-22 01:19:19","2026-06-22 15:53:36",11655.00
+"Delta Air Lines",DL292,Tokyo,"Cape Town","2026-09-17 23:01:04","2026-09-18 14:19:51",11180.00
+Lufthansa,LH4646,Okinawa,"Quebec City","2026-11-16 12:38:05","2026-11-16 19:12:47",1981.00
+"Virgin Atlantic",VS5645,Halifax,Rome,"2026-08-01 05:50:04","2026-08-01 12:32:57",7690.00
+"Air France",AF5643,Toronto,Nagoya,"2026-10-14 14:38:21","2026-10-14 19:41:43",6436.00
+"Singapore Airlines",SQ9496,Nice,Pretoria,"2026-07-02 23:15:07","2026-07-03 15:03:57",16664.00
+"British Airways",BA7507,"Gold Coast",Cairns,"2026-06-23 15:08:47","2026-06-24 06:01:45",7331.00
+"British Airways",BA2275,Glasgow,Halifax,"2026-08-09 10:43:26","2026-08-10 02:36:17",9071.00
+"Air France",AF8792,Dubai,Hamburg,"2026-10-22 19:12:24","2026-10-23 06:18:36",15222.00
+"Virgin Atlantic",VS9142,Pisa,Victoria,"2026-07-01 08:47:26","2026-07-01 16:30:30",16337.00
+"Virgin Atlantic",VS1245,Valencia,Okinawa,"2026-06-07 05:34:33","2026-06-07 09:13:10",7829.00
+Emirates,EK148,Bordeaux,Whistler,"2026-10-17 07:04:00","2026-10-17 11:14:50",3509.00
+"Virgin Atlantic",VS7107,Montpellier,Bilbao,"2026-09-14 21:16:32","2026-09-15 01:57:11",15673.00
+"Delta Air Lines",DL5937,Sapporo,Lille,"2026-06-05 05:02:13","2026-06-05 07:56:36",13871.00
+KLM,KL9884,Paris,Leipzig,"2026-06-09 19:09:42","2026-06-09 23:52:47",6997.00
+Lufthansa,LH2193,Osaka,Ottawa,"2026-08-30 14:12:19","2026-08-30 16:52:54",3500.00
+"Virgin Atlantic",VS8993,Palermo,Kyoto,"2026-09-28 10:03:04","2026-09-29 01:24:22",2733.00
+"Qatar Airways",QR2824,Dusseldorf,"San Francisco","2026-10-09 20:45:22","2026-10-10 00:23:01",9016.00
+KLM,KL7935,Cologne,Dresden,"2026-08-26 02:27:26","2026-08-26 11:03:01",15026.00
+"Virgin Atlantic",VS232,Kimberley,Hamburg,"2026-05-26 11:35:59","2026-05-26 21:58:05",6368.00
+KLM,KL6229,"Los Angeles",Madrid,"2026-06-15 02:08:34","2026-06-15 15:30:06",15731.00
+"Qatar Airways",QR5259,Milan,Montreal,"2026-09-26 13:22:26","2026-09-26 18:01:47",13531.00
+"Delta Air Lines",DL5911,Lyon,Toronto,"2026-10-02 23:06:35","2026-10-03 13:31:37",6813.00
+KLM,KL9702,"San Francisco",Tokyo,"2026-07-07 22:42:38","2026-07-08 12:16:56",14998.00
+"British Airways",BA6088,Dresden,Durban,"2026-06-18 03:35:22","2026-06-18 16:53:09",2765.00
+FlySafair,FA6424,Cairns,"East London","2026-06-17 05:41:18","2026-06-17 17:48:18",9933.00
+Lufthansa,LH860,Bordeaux,Munich,"2026-05-27 05:03:51","2026-05-27 16:41:13",3317.00
+"Singapore Airlines",SQ5531,Valencia,Dubai,"2026-06-01 20:14:52","2026-06-02 02:10:54",12626.00
+"Delta Air Lines",DL382,"Los Angeles",Darwin,"2026-07-26 08:10:39","2026-07-26 17:33:27",17238.00
+FlySafair,FA2926,Manchester,"New York","2026-09-06 03:19:12","2026-09-06 16:39:22",2707.00
+"Turkish Airlines",TK6375,"Cape Town",Nantes,"2026-11-12 03:25:31","2026-11-12 19:12:01",6019.00
+"Singapore Airlines",SQ4700,London,Kyoto,"2026-10-22 04:58:48","2026-10-22 08:31:51",9907.00
+"Singapore Airlines",SQ7419,Austin,Birmingham,"2026-10-21 08:02:53","2026-10-21 14:29:12",7912.00
+"Qatar Airways",QR2214,Okinawa,"San Francisco","2026-06-30 20:26:51","2026-07-01 05:27:23",6112.00
+"Virgin Atlantic",VS3695,Seville,Miami,"2026-06-17 06:00:04","2026-06-17 20:03:26",10733.00
+"Singapore Airlines",SQ7771,"Cape Town",Nuremberg,"2026-05-25 10:53:33","2026-05-25 21:12:29",15892.00
+Emirates,EK1745,Marseille,Austin,"2026-08-10 07:13:03","2026-08-10 22:02:03",14798.00
+FlySafair,FA8909,Edinburgh,Berlin,"2026-08-02 21:00:36","2026-08-03 05:59:43",5533.00
+KLM,KL4738,Lyon,Fukuoka,"2026-07-05 02:05:41","2026-07-05 12:22:12",10255.00
+KLM,KL7314,Denver,Knysna,"2026-09-19 16:21:42","2026-09-20 06:23:20",13188.00
+"Delta Air Lines",DL7029,Hiroshima,Lille,"2026-07-27 00:04:18","2026-07-27 02:09:10",13066.00
+Lufthansa,LH9975,London,Bath,"2026-08-01 16:54:51","2026-08-02 08:52:02",4154.00
+"Air France",AF2087,Paris,Nuremberg,"2026-08-25 15:30:22","2026-08-25 20:11:57",13712.00
+"Virgin Atlantic",VS762,"Cape Town",Bilbao,"2026-07-17 21:37:26","2026-07-18 09:42:40",17603.00
+KLM,KL2729,Venice,Lyon,"2026-06-26 20:48:19","2026-06-27 05:00:49",14428.00
+FlySafair,FA2462,Genoa,Marseille,"2026-08-23 07:35:11","2026-08-23 15:12:49",8882.00
+"Virgin Atlantic",VS1076,Canberra,"East London","2026-09-03 01:06:13","2026-09-03 06:52:16",11735.00
+FlySafair,FA6393,"Los Angeles",Halifax,"2026-06-20 17:06:10","2026-06-20 21:26:12",16248.00
+"Virgin Atlantic",VS9947,"Cape Town",Stuttgart,"2026-07-17 04:01:38","2026-07-17 13:00:22",16102.00
+"Turkish Airlines",TK9068,Hiroshima,Berlin,"2026-10-23 13:24:43","2026-10-24 02:55:29",3871.00
+"South African Airways",SA7146,Bali,Valencia,"2026-06-05 01:17:43","2026-06-05 04:03:04",7800.00
+Lufthansa,LH9877,Chicago,Munich,"2026-09-17 23:28:34","2026-09-18 14:22:50",10141.00
+"Delta Air Lines",DL2438,Leipzig,Bloemfontein,"2026-06-06 19:32:32","2026-06-06 22:21:24",6401.00
+"Air France",AF7306,Tokyo,Paris,"2026-08-17 01:08:15","2026-08-17 11:51:49",14075.00
+"South African Airways",SA3964,Stellenbosch,Darwin,"2026-11-03 16:03:44","2026-11-04 05:06:05",6526.00
+"Singapore Airlines",SQ9046,Manchester,Nantes,"2026-08-01 20:57:07","2026-08-02 03:09:16",10503.00
+FlySafair,FA1906,"Cape Town",Cairns,"2026-10-05 16:29:18","2026-10-06 04:25:55",15219.00
+"Air France",AF9877,Fukuoka,Bordeaux,"2026-10-01 22:35:23","2026-10-02 09:18:49",6107.00
+"Singapore Airlines",SQ275,Granada,Belfast,"2026-11-03 04:06:30","2026-11-03 08:54:49",17815.00
+"Qatar Airways",QR6332,Montreal,Paris,"2026-05-27 03:16:55","2026-05-27 08:41:29",16353.00
+KLM,KL464,Osaka,Vancouver,"2026-06-15 08:12:40","2026-06-15 23:42:47",9186.00
+"Virgin Atlantic",VS1161,Turin,Ottawa,"2026-08-31 20:13:31","2026-09-01 07:09:25",9219.00
+"Singapore Airlines",SQ9161,Lille,Rome,"2026-10-25 08:53:21","2026-10-25 17:01:17",5095.00
+"South African Airways",SA8746,Tokyo,Bologna,"2026-06-01 18:42:56","2026-06-02 02:34:07",12661.00
+"British Airways",BA6578,Naples,Hamburg,"2026-10-23 06:01:03","2026-10-23 15:35:20",12471.00
+"Singapore Airlines",SQ2919,Munich,Bordeaux,"2026-07-03 12:50:37","2026-07-04 01:42:40",13795.00
+Emirates,EK6198,"Quebec City",Austin,"2026-07-20 22:35:41","2026-07-21 00:58:02",13734.00
+KLM,KL4360,Paris,Nuremberg,"2026-08-25 02:24:04","2026-08-25 10:07:03",17340.00
+FlySafair,FA9515,Oxford,Darwin,"2026-05-26 20:15:23","2026-05-27 02:41:26",16235.00
+"Air France",AF3895,Johannesburg,"East London","2026-07-12 21:18:04","2026-07-13 04:43:09",1757.00
+"Singapore Airlines",SQ254,Bologna,Kimberley,"2026-05-28 20:19:08","2026-05-29 05:48:51",15256.00
+Lufthansa,LH2259,Denver,Nice,"2026-10-01 14:18:37","2026-10-01 20:35:25",11565.00
+"Virgin Atlantic",VS620,Milan,Stellenbosch,"2026-08-31 06:37:18","2026-08-31 08:54:13",4538.00
+Emirates,EK2731,Knysna,Sydney,"2026-08-05 11:58:59","2026-08-05 15:50:40",2699.00
+"South African Airways",SA2810,Kyoto,Nagoya,"2026-07-06 19:28:22","2026-07-07 05:03:19",15315.00
+Lufthansa,LH5756,Austin,Johannesburg,"2026-07-26 09:07:39","2026-07-26 16:21:30",16629.00
+"Turkish Airlines",TK605,Strasbourg,Edinburgh,"2026-06-07 21:24:34","2026-06-08 00:22:08",3520.00
+"British Airways",BA9909,Belfast,Osaka,"2026-05-28 20:57:14","2026-05-29 12:11:43",15404.00
+"Delta Air Lines",DL478,Adelaide,"Los Angeles","2026-06-23 15:38:48","2026-06-24 02:15:53",4048.00
+"Delta Air Lines",DL369,Nantes,Belfast,"2026-09-29 14:04:45","2026-09-29 17:48:52",6027.00
+"Virgin Atlantic",VS3759,Paris,Edmonton,"2026-10-22 01:28:07","2026-10-22 14:14:00",12070.00
+"Air France",AF8045,Dusseldorf,Palermo,"2026-09-19 05:14:22","2026-09-19 17:12:36",3658.00
+"British Airways",BA6768,Oxford,Okinawa,"2026-07-29 12:48:11","2026-07-29 22:16:08",2471.00
+"Delta Air Lines",DL216,Birmingham,Genoa,"2026-11-15 12:47:35","2026-11-15 17:36:40",12618.00
+"Qatar Airways",QR1156,Leipzig,Venice,"2026-08-24 23:00:05","2026-08-25 07:31:46",1799.00
+"Turkish Airlines",TK3410,Frankfurt,Bali,"2026-10-20 19:46:03","2026-10-21 05:20:46",3232.00
+"Turkish Airlines",TK6988,Paris,Nice,"2026-08-31 06:44:16","2026-08-31 15:15:50",10465.00
+"Singapore Airlines",SQ5193,Tokyo,Nantes,"2026-10-22 22:24:22","2026-10-23 06:20:03",3501.00
+"Virgin Atlantic",VS1672,Dubai,Okinawa,"2026-07-06 01:08:28","2026-07-06 13:13:33",6335.00
+FlySafair,FA6631,Tokyo,Venice,"2026-08-30 03:57:03","2026-08-30 11:31:04",3426.00
+"Singapore Airlines",SQ188,Venice,Pretoria,"2026-08-04 20:07:32","2026-08-05 01:01:15",10045.00
+"Qatar Airways",QR6950,Belfast,Tokyo,"2026-10-15 14:41:34","2026-10-16 05:11:46",9953.00
+"Virgin Atlantic",VS8973,"San Francisco",Nantes,"2026-08-28 14:38:58","2026-08-28 20:22:36",11604.00
+"Qatar Airways",QR6698,Cairns,"Gold Coast","2026-11-18 19:22:33","2026-11-19 05:30:13",17591.00
+"Virgin Atlantic",VS2983,Montreal,Frankfurt,"2026-08-22 17:10:45","2026-08-22 22:38:48",7596.00
+"Virgin Atlantic",VS3141,Austin,Naples,"2026-11-13 11:06:24","2026-11-14 00:13:24",4904.00
+Lufthansa,LH4891,Bali,Melbourne,"2026-06-08 15:17:41","2026-06-08 22:24:25",11679.00
+"Qatar Airways",QR1435,"San Francisco",Nagoya,"2026-05-30 10:54:29","2026-05-31 00:01:34",3042.00
+"Air France",AF6136,"Las Vegas",Pisa,"2026-08-24 15:36:48","2026-08-24 22:22:05",13197.00
+FlySafair,FA9481,Pretoria,Glasgow,"2026-06-21 12:54:44","2026-06-21 15:23:03",5059.00
+"Turkish Airlines",TK1133,Tokyo,Nuremberg,"2026-05-25 12:18:20","2026-05-26 02:12:13",2868.00
+"Air France",AF9103,Canberra,Nuremberg,"2026-09-13 06:51:49","2026-09-13 20:51:48",4279.00
+Emirates,EK2804,Adelaide,Tokyo,"2026-10-31 23:06:49","2026-11-01 07:14:28",9904.00
+"Delta Air Lines",DL3262,Strasbourg,Seville,"2026-08-17 12:53:58","2026-08-18 00:23:24",14670.00
+"Delta Air Lines",DL4915,Johannesburg,Fukuoka,"2026-10-20 16:02:45","2026-10-21 06:31:10",3682.00
+"Singapore Airlines",SQ6191,Venice,Austin,"2026-05-27 23:18:20","2026-05-28 06:43:23",16635.00
+Lufthansa,LH7980,Hobart,Palermo,"2026-08-31 23:56:52","2026-09-01 06:28:02",16311.00
+FlySafair,FA4252,Darwin,Dubai,"2026-11-07 20:12:49","2026-11-08 01:18:20",5090.00
+"Singapore Airlines",SQ1182,Vancouver,Toronto,"2026-06-30 14:07:43","2026-07-01 04:00:51",14766.00
+Emirates,EK9921,Toledo,Hamburg,"2026-09-12 14:58:18","2026-09-12 21:00:07",11874.00
+"Delta Air Lines",DL8340,Seville,Paris,"2026-11-09 02:12:29","2026-11-09 05:19:21",9450.00
+KLM,KL1439,Osaka,"San Francisco","2026-10-31 23:22:56","2026-11-01 05:28:51",6893.00
+"Delta Air Lines",DL3509,Leipzig,Cologne,"2026-10-15 02:46:46","2026-10-15 06:59:08",12199.00
+"Turkish Airlines",TK6459,Victoria,"Cape Town","2026-10-02 17:15:57","2026-10-02 20:27:45",9424.00
+"Air France",AF8554,Dusseldorf,Victoria,"2026-05-26 23:28:23","2026-05-27 02:29:52",10919.00
+"Singapore Airlines",SQ3640,Dusseldorf,Austin,"2026-07-13 13:16:25","2026-07-14 04:57:30",13050.00
+"Virgin Atlantic",VS3779,Genoa,Leipzig,"2026-06-09 03:01:08","2026-06-09 13:44:33",12475.00
+"Singapore Airlines",SQ318,Toledo,Granada,"2026-10-29 04:01:13","2026-10-29 19:31:20",7531.00
+"Virgin Atlantic",VS6663,Manchester,Florence,"2026-06-18 23:32:56","2026-06-19 09:11:29",14586.00
+Emirates,EK5846,Oxford,Denver,"2026-06-30 01:16:01","2026-06-30 12:30:39",14653.00
+"Singapore Airlines",SQ9042,London,Naples,"2026-09-18 23:40:11","2026-09-19 01:55:39",7319.00
+"Virgin Atlantic",VS7247,Brisbane,Miami,"2026-06-09 02:42:08","2026-06-09 10:19:54",12980.00
+"South African Airways",SA3248,Nuremberg,Barcelona,"2026-10-20 12:24:48","2026-10-20 17:26:56",11172.00
+"Air France",AF7560,Darwin,Turin,"2026-06-13 08:40:13","2026-06-13 15:18:03",12886.00
+Emirates,EK9204,Bath,Halifax,"2026-10-21 14:31:57","2026-10-21 19:47:58",16360.00
+Emirates,EK9451,Oxford,Bath,"2026-09-05 18:52:00","2026-09-06 07:32:43",10739.00
+"British Airways",BA388,"Cape Town",Seville,"2026-06-29 02:57:07","2026-06-29 09:11:12",4490.00
+"British Airways",BA9004,Calgary,"Cape Town","2026-08-24 09:21:45","2026-08-24 19:18:52",15308.00
+FlySafair,FA1816,"East London",Bilbao,"2026-07-11 05:06:57","2026-07-11 19:15:55",16029.00
+"Delta Air Lines",DL8517,"Cape Town",Durban,"2026-08-27 05:59:25","2026-08-27 11:09:33",7344.00
+"Singapore Airlines",SQ4781,Toulouse,Chicago,"2026-10-19 19:25:35","2026-10-20 07:51:01",10592.00
+"South African Airways",SA6437,Melbourne,Stellenbosch,"2026-11-01 03:19:36","2026-11-01 09:34:04",14235.00
+"Virgin Atlantic",VS1049,Montreal,Bloemfontein,"2026-05-25 15:54:29","2026-05-26 05:40:04",15992.00
+"Delta Air Lines",DL3150,Nagoya,Toronto,"2026-06-09 08:22:04","2026-06-09 23:07:51",8942.00
+"Turkish Airlines",TK4958,Florence,London,"2026-08-31 00:45:32","2026-08-31 11:05:57",2756.00
+"Delta Air Lines",DL3315,Darwin,Paris,"2026-06-28 20:46:22","2026-06-29 07:14:45",3385.00
+"South African Airways",SA9517,Vancouver,Manchester,"2026-11-14 10:37:03","2026-11-14 23:12:19",4302.00
+KLM,KL9044,Seville,Munich,"2026-09-16 20:56:00","2026-09-17 06:10:01",9749.00
+"Air France",AF8553,Pisa,"Gold Coast","2026-06-17 18:04:05","2026-06-18 04:53:12",9154.00
+KLM,KL5217,Fukuoka,"New York","2026-06-21 21:55:50","2026-06-22 12:41:58",14104.00
+"Singapore Airlines",SQ2641,Halifax,Adelaide,"2026-05-26 04:43:04","2026-05-26 18:22:56",7995.00
+"Turkish Airlines",TK409,Bilbao,Tokyo,"2026-07-13 18:21:11","2026-07-14 07:11:48",7418.00
+"Air France",AF4185,Montreal,Dusseldorf,"2026-11-03 09:41:30","2026-11-04 00:51:15",17552.00
+"British Airways",BA9900,Bath,Ottawa,"2026-10-26 01:04:38","2026-10-26 16:56:18",15941.00
+Lufthansa,LH1794,Cairns,Osaka,"2026-05-26 08:00:21","2026-05-26 16:20:21",17768.00
+"Virgin Atlantic",VS6926,Hamburg,Bloemfontein,"2026-10-17 17:57:21","2026-10-18 08:08:14",6966.00
+"Turkish Airlines",TK6018,Ibiza,Melbourne,"2026-09-02 19:30:14","2026-09-02 21:59:10",16337.00
+"Qatar Airways",QR4809,Frankfurt,"Quebec City","2026-10-04 00:41:44","2026-10-04 15:03:53",1936.00
+"Turkish Airlines",TK9602,"East London",Oxford,"2026-05-26 06:35:09","2026-05-26 18:26:16",11534.00
+"Virgin Atlantic",VS374,Toledo,Florence,"2026-09-09 05:36:59","2026-09-09 17:17:45",17704.00
+"Qatar Airways",QR8761,Bristol,Melbourne,"2026-11-18 12:04:57","2026-11-18 15:16:05",11190.00
+Lufthansa,LH1117,Sapporo,Florence,"2026-10-28 08:53:12","2026-10-28 14:55:50",5644.00
+KLM,KL4830,Palermo,Stuttgart,"2026-07-23 05:11:18","2026-07-23 16:32:35",17600.00
+Lufthansa,LH1382,Dusseldorf,Strasbourg,"2026-09-03 14:32:06","2026-09-03 19:05:02",15897.00
+"Singapore Airlines",SQ8557,Paris,Lyon,"2026-09-12 05:15:36","2026-09-12 12:56:24",6689.00
+"South African Airways",SA5287,"New York",Madrid,"2026-07-01 15:07:26","2026-07-02 03:39:27",3662.00
+Emirates,EK4298,Stellenbosch,Austin,"2026-11-12 11:30:38","2026-11-12 17:40:56",5733.00
+"Qatar Airways",QR5777,Tokyo,"New York","2026-06-27 23:37:24","2026-06-28 14:48:36",12346.00
+Emirates,EK1515,Miami,"East London","2026-07-22 14:52:50","2026-07-22 22:01:12",10022.00
+"Virgin Atlantic",VS7848,Rome,Edinburgh,"2026-11-01 05:07:01","2026-11-01 10:40:02",8876.00
+"Air France",AF4955,Berlin,Edinburgh,"2026-09-06 15:40:18","2026-09-07 07:17:38",10728.00
+"South African Airways",SA6945,Bristol,Seattle,"2026-09-04 13:12:47","2026-09-05 03:35:41",8968.00
+"Singapore Airlines",SQ4135,Paris,Manchester,"2026-06-08 07:56:40","2026-06-08 10:12:20",3587.00
+"South African Airways",SA9411,Turin,Darwin,"2026-10-03 09:57:27","2026-10-03 20:51:27",10438.00
+KLM,KL8935,Hobart,Perth,"2026-08-15 22:08:39","2026-08-16 11:34:27",7083.00
+"Delta Air Lines",DL9149,Montreal,Whistler,"2026-11-14 08:11:01","2026-11-14 18:45:41",9110.00
+Emirates,EK2381,Halifax,Tokyo,"2026-09-30 15:33:05","2026-10-01 06:22:36",13801.00
+"Turkish Airlines",TK387,Genoa,Knysna,"2026-10-27 21:56:47","2026-10-28 09:33:03",10019.00
+"Qatar Airways",QR9942,Florence,Ottawa,"2026-10-17 03:31:43","2026-10-17 10:42:03",9119.00
+"Air France",AF7870,Hamburg,Stellenbosch,"2026-10-07 10:58:10","2026-10-07 23:41:13",8248.00
+"Air France",AF6142,Leipzig,Pisa,"2026-05-30 15:33:38","2026-05-31 04:11:18",17337.00
+FlySafair,FA9073,Liverpool,Bali,"2026-11-08 11:44:01","2026-11-08 22:13:24",15346.00
+FlySafair,FA4903,Florence,Cologne,"2026-10-19 17:17:49","2026-10-19 20:03:41",5730.00
+Lufthansa,LH5409,Okinawa,Sapporo,"2026-07-02 05:39:17","2026-07-02 11:41:00",2376.00
+Emirates,EK5726,Glasgow,Whistler,"2026-07-10 14:39:25","2026-07-10 23:24:44",7560.00
+"Singapore Airlines",SQ3311,Nantes,Dresden,"2026-09-24 23:51:08","2026-09-25 15:46:02",7420.00
+"Turkish Airlines",TK3677,Sapporo,Malaga,"2026-06-25 21:04:16","2026-06-25 23:35:50",10643.00
+"South African Airways",SA7970,Glasgow,Bloemfontein,"2026-06-30 09:31:35","2026-06-30 17:41:33",13216.00
+Emirates,EK8336,Dubai,Nuremberg,"2026-07-15 07:13:37","2026-07-15 09:45:26",3438.00
+"Turkish Airlines",TK8149,Strasbourg,"Cape Town","2026-09-10 14:38:48","2026-09-11 05:47:06",15886.00
+Emirates,EK6047,Milan,Hiroshima,"2026-09-18 04:05:45","2026-09-18 07:57:30",8770.00
+"Air France",AF4026,Bilbao,Adelaide,"2026-10-13 05:01:48","2026-10-13 10:21:53",9412.00
+"Singapore Airlines",SQ1001,Bilbao,"Las Vegas","2026-09-19 11:34:28","2026-09-19 16:05:35",16517.00
+"Delta Air Lines",DL3387,Madrid,Barcelona,"2026-10-25 18:36:27","2026-10-26 02:41:07",12601.00
+"Delta Air Lines",DL6245,Birmingham,Rome,"2026-10-05 17:38:17","2026-10-06 09:24:15",2600.00
+Emirates,EK5900,"East London",Austin,"2026-07-10 22:25:53","2026-07-11 00:50:48",9760.00
+"Qatar Airways",QR6503,Halifax,Lille,"2026-06-19 08:17:28","2026-06-19 11:40:58",9676.00
+FlySafair,FA9612,Seattle,Berlin,"2026-07-21 23:43:18","2026-07-22 12:54:14",13707.00
+"Air France",AF9292,Victoria,Hamburg,"2026-06-21 23:49:37","2026-06-22 03:56:45",17088.00
+Emirates,EK1074,Melbourne,Bali,"2026-11-09 10:31:31","2026-11-10 00:16:39",10657.00
+"Turkish Airlines",TK1771,Kobe,Nagoya,"2026-11-11 07:17:13","2026-11-11 20:14:49",11701.00
+FlySafair,FA2487,Manchester,Tokyo,"2026-10-26 03:32:03","2026-10-26 07:47:18",8791.00
+KLM,KL820,Dresden,"New York","2026-06-08 20:08:49","2026-06-09 06:32:47",5286.00
+FlySafair,FA6183,Paris,Pisa,"2026-07-16 17:51:47","2026-07-17 01:17:02",8767.00
+"Qatar Airways",QR8308,Oxford,Lille,"2026-07-31 11:13:14","2026-08-01 01:52:20",12835.00
+"Turkish Airlines",TK4835,Valencia,Hamburg,"2026-08-11 11:53:21","2026-08-11 21:52:55",13224.00
+"Delta Air Lines",DL236,"East London",Nara,"2026-09-11 14:51:15","2026-09-12 01:44:54",9762.00
+"Singapore Airlines",SQ9934,Bali,Ottawa,"2026-10-06 21:43:10","2026-10-07 13:38:13",6960.00
+FlySafair,FA4421,London,Leipzig,"2026-09-25 00:48:38","2026-09-25 05:17:23",6293.00
+"British Airways",BA2094,Dubai,Valencia,"2026-10-13 23:55:30","2026-10-14 04:20:24",17621.00
+"Singapore Airlines",SQ6336,Victoria,Leipzig,"2026-06-26 22:57:49","2026-06-27 01:15:50",2339.00
+"Singapore Airlines",SQ1008,Victoria,Nuremberg,"2026-10-11 01:38:35","2026-10-11 15:37:22",3994.00
+"Turkish Airlines",TK518,Stellenbosch,"New York","2026-10-05 06:32:11","2026-10-05 20:36:11",16469.00
+"Turkish Airlines",TK396,Kyoto,Kimberley,"2026-08-23 22:54:16","2026-08-24 14:09:20",13509.00
+KLM,KL9639,Johannesburg,Rome,"2026-09-19 17:58:39","2026-09-19 21:36:06",6228.00
+"Singapore Airlines",SQ9629,Strasbourg,Bilbao,"2026-06-16 03:23:58","2026-06-16 17:46:29",4204.00
+"South African Airways",SA5238,Cologne,Austin,"2026-10-20 22:46:39","2026-10-21 05:53:43",11763.00
+"Turkish Airlines",TK9594,Mallorca,Naples,"2026-11-06 18:05:05","2026-11-07 04:20:25",10674.00
+FlySafair,FA2625,Nuremberg,Genoa,"2026-10-05 11:52:06","2026-10-06 01:53:16",15566.00
+Lufthansa,LH7956,Bologna,Brisbane,"2026-07-15 11:55:02","2026-07-15 14:38:03",3565.00
+KLM,KL5766,Hobart,Melbourne,"2026-06-05 21:58:40","2026-06-06 04:52:48",1639.00
+"Singapore Airlines",SQ4735,Nuremberg,Stuttgart,"2026-09-19 09:15:40","2026-09-20 00:37:59",1516.00
+"South African Airways",SA3153,Bath,Tokyo,"2026-07-13 08:36:14","2026-07-13 11:29:12",11795.00
+"Virgin Atlantic",VS1665,Stellenbosch,Tokyo,"2026-06-13 07:17:23","2026-06-13 22:38:09",12650.00
+"Delta Air Lines",DL295,Birmingham,Osaka,"2026-07-19 02:18:08","2026-07-19 10:10:46",15608.00
+"Delta Air Lines",DL6547,Belfast,Cairns,"2026-10-16 14:20:04","2026-10-17 02:39:04",8099.00
+"Singapore Airlines",SQ4259,Vancouver,Ibiza,"2026-10-26 15:42:47","2026-10-27 02:46:31",2375.00
+"Qatar Airways",QR6774,Mallorca,Malaga,"2026-07-02 08:39:54","2026-07-02 20:16:28",4625.00
+"Virgin Atlantic",VS7742,Austin,Stellenbosch,"2026-10-03 20:16:56","2026-10-04 04:52:26",8022.00
+Lufthansa,LH1173,Genoa,Fukuoka,"2026-08-19 18:07:33","2026-08-20 00:34:42",2636.00
+Emirates,EK4871,Strasbourg,Frankfurt,"2026-09-17 02:28:20","2026-09-17 11:46:58",17578.00
+"Qatar Airways",QR8832,Durban,Kimberley,"2026-11-16 18:48:47","2026-11-17 08:53:49",9823.00
+Emirates,EK5525,Nara,Johannesburg,"2026-06-09 05:48:53","2026-06-09 19:06:44",12564.00
+"Qatar Airways",QR416,Edinburgh,Paris,"2026-09-05 13:21:24","2026-09-05 17:58:08",5613.00
+"Virgin Atlantic",VS3762,Hamburg,"Cape Town","2026-08-01 14:46:58","2026-08-01 18:12:23",2499.00
+"Turkish Airlines",TK7854,Liverpool,Osaka,"2026-07-19 00:35:44","2026-07-19 07:56:13",6400.00
+"British Airways",BA3463,Frankfurt,Valencia,"2026-06-26 19:38:41","2026-06-27 04:10:19",17895.00
+"Delta Air Lines",DL3363,Ibiza,"Gold Coast","2026-08-05 14:02:15","2026-08-06 05:46:12",2088.00
+"Virgin Atlantic",VS3244,Munich,Toulouse,"2026-08-13 11:08:39","2026-08-13 22:56:02",5800.00
+KLM,KL3697,Okinawa,Tokyo,"2026-10-31 07:35:32","2026-10-31 22:04:41",7380.00
+"Turkish Airlines",TK9347,Sydney,Mallorca,"2026-09-18 00:10:30","2026-09-18 12:16:53",16754.00
+"Turkish Airlines",TK2993,Lille,Tokyo,"2026-07-20 04:57:39","2026-07-20 10:45:13",5340.00
+FlySafair,FA4314,London,Marseille,"2026-11-03 15:56:05","2026-11-03 22:46:58",3758.00
+"Delta Air Lines",DL938,Rome,Venice,"2026-09-18 07:40:34","2026-09-18 09:57:04",3841.00
+"Delta Air Lines",DL6159,Knysna,Tokyo,"2026-06-29 16:31:19","2026-06-30 05:44:46",14589.00
+FlySafair,FA8185,Strasbourg,Pisa,"2026-07-24 12:24:51","2026-07-24 17:32:18",9825.00
+Emirates,EK201,Pisa,"Quebec City","2026-10-13 23:27:56","2026-10-14 10:12:17",17497.00
+"Singapore Airlines",SQ3281,Paris,Munich,"2026-05-29 00:20:44","2026-05-29 06:29:04",14968.00
+"Turkish Airlines",TK7807,Darwin,Marseille,"2026-10-14 12:18:27","2026-10-14 23:35:36",8027.00
+"Qatar Airways",QR2701,London,Calgary,"2026-06-07 16:19:35","2026-06-08 02:40:22",5804.00
+"Singapore Airlines",SQ8864,Kimberley,Vancouver,"2026-09-07 22:31:30","2026-09-08 06:55:50",9547.00
+"Delta Air Lines",DL9893,Paris,Hobart,"2026-05-28 14:52:29","2026-05-28 21:19:32",14966.00
+"Virgin Atlantic",VS2878,Seattle,Naples,"2026-08-27 11:25:30","2026-08-28 01:41:47",8081.00
+Emirates,EK5996,Bali,Pisa,"2026-05-28 19:16:21","2026-05-29 06:19:27",1537.00
+Lufthansa,LH1361,Kyoto,Perth,"2026-08-18 04:12:57","2026-08-18 08:05:01",13612.00
+KLM,KL7438,Bali,"New York","2026-10-07 13:47:01","2026-10-07 19:50:58",13044.00
+Emirates,EK6479,Vancouver,Hamburg,"2026-10-22 06:09:48","2026-10-22 16:37:08",8381.00
+"British Airways",BA6276,Lyon,Paris,"2026-06-10 03:56:52","2026-06-10 10:42:27",12437.00
+"South African Airways",SA4279,Lyon,"East London","2026-09-10 19:56:07","2026-09-11 03:23:48",7670.00
+"Singapore Airlines",SQ8454,Nice,Palermo,"2026-06-17 07:15:04","2026-06-17 20:01:19",15050.00
+"Turkish Airlines",TK5776,Canberra,"Port Elizabeth","2026-09-25 18:41:00","2026-09-25 21:24:37",15452.00
+"Delta Air Lines",DL5451,Lyon,Barcelona,"2026-06-08 20:15:08","2026-06-09 02:55:07",9995.00
+Lufthansa,LH8225,Kobe,Victoria,"2026-06-13 10:16:17","2026-06-13 13:55:24",7689.00
+"Qatar Airways",QR5567,Stellenbosch,Austin,"2026-06-14 08:58:02","2026-06-14 23:07:47",10494.00
+Emirates,EK6151,Okinawa,Rome,"2026-10-07 14:13:44","2026-10-07 17:44:05",13787.00
+FlySafair,FA6759,Lille,"Quebec City","2026-07-25 04:56:09","2026-07-25 13:53:52",10656.00
+Emirates,EK4572,Venice,Bloemfontein,"2026-08-12 00:40:49","2026-08-12 11:18:12",6585.00
+KLM,KL6999,Palermo,Belfast,"2026-10-08 19:43:39","2026-10-09 03:49:48",17631.00
+"South African Airways",SA4106,Kobe,Calgary,"2026-10-22 09:17:00","2026-10-22 18:31:39",9158.00
+KLM,KL1900,Bloemfontein,Glasgow,"2026-10-28 14:54:17","2026-10-29 01:06:44",3587.00
+"British Airways",BA9330,Leipzig,Birmingham,"2026-11-05 18:21:26","2026-11-05 23:48:36",12711.00
+"Air France",AF856,Stuttgart,Sapporo,"2026-10-28 23:22:52","2026-10-29 11:36:06",13731.00
+FlySafair,FA4836,Paris,Stuttgart,"2026-09-29 23:54:42","2026-09-30 14:49:32",13689.00
+Lufthansa,LH1838,"East London","New York","2026-11-04 00:12:49","2026-11-04 06:00:26",4561.00
+"South African Airways",SA3790,Nagoya,Genoa,"2026-08-20 22:27:01","2026-08-21 04:20:22",6786.00
+Lufthansa,LH1107,Milan,Marseille,"2026-10-16 21:44:00","2026-10-17 12:08:01",9876.00
+"British Airways",BA4084,Dubai,Brisbane,"2026-08-18 08:33:11","2026-08-18 21:19:28",4589.00
+"South African Airways",SA3789,Brisbane,Chicago,"2026-07-06 13:57:20","2026-07-07 00:19:26",17142.00
+"Virgin Atlantic",VS1314,Strasbourg,Rome,"2026-10-21 14:11:52","2026-10-22 03:45:32",12758.00
+"British Airways",BA4943,Victoria,"Cape Town","2026-06-08 15:10:04","2026-06-09 07:10:04",17135.00
+Emirates,EK9678,Hamburg,Nantes,"2026-10-23 06:14:24","2026-10-23 10:00:44",8793.00
+"Delta Air Lines",DL1233,Cologne,Kyoto,"2026-07-17 06:06:08","2026-07-17 09:28:04",4403.00
+KLM,KL3316,"Cape Town",Boston,"2026-10-22 20:52:40","2026-10-23 12:19:25",16743.00
+"Singapore Airlines",SQ526,Perth,Manchester,"2026-09-07 10:03:55","2026-09-07 13:06:29",10989.00
+"South African Airways",SA6977,Vancouver,London,"2026-09-04 21:34:56","2026-09-05 08:02:30",3904.00
+"Qatar Airways",QR5045,Ibiza,Whistler,"2026-07-18 11:30:42","2026-07-18 14:17:30",8708.00
+"Turkish Airlines",TK8973,"Cape Town",Paris,"2026-07-06 22:03:17","2026-07-07 09:56:35",7651.00
+"Singapore Airlines",SQ1982,Strasbourg,Brisbane,"2026-10-26 12:34:38","2026-10-26 17:10:17",4541.00
+Lufthansa,LH9998,Dresden,Sapporo,"2026-10-09 20:07:16","2026-10-10 07:01:12",14602.00
+"Virgin Atlantic",VS5389,Knysna,Berlin,"2026-08-16 12:08:59","2026-08-16 16:09:26",2890.00
+"Singapore Airlines",SQ6845,Sapporo,Stellenbosch,"2026-09-28 23:16:18","2026-09-29 05:18:17",9178.00
+"Singapore Airlines",SQ5489,Sydney,Madrid,"2026-08-10 04:53:04","2026-08-10 13:51:28",12587.00
+"Virgin Atlantic",VS8912,Edinburgh,Seattle,"2026-08-03 11:50:36","2026-08-04 00:17:22",10429.00
+"Air France",AF4198,Sydney,Cologne,"2026-08-25 08:35:52","2026-08-25 12:43:29",4211.00
+"British Airways",BA4616,"Cape Town",Bristol,"2026-09-26 05:14:35","2026-09-26 17:23:56",2116.00
+"Virgin Atlantic",VS7393,"Port Elizabeth",Edmonton,"2026-09-11 04:31:11","2026-09-11 08:10:26",17630.00
+"Singapore Airlines",SQ190,Fukuoka,Cairns,"2026-07-10 08:15:31","2026-07-10 20:55:43",15315.00
+Lufthansa,LH8018,Bath,Granada,"2026-07-19 12:44:36","2026-07-20 02:01:07",2380.00
+"Air France",AF110,"Gold Coast",Tokyo,"2026-07-18 09:42:50","2026-07-18 22:13:08",16388.00
+FlySafair,FA2949,Brisbane,Stellenbosch,"2026-10-11 18:57:14","2026-10-12 10:50:55",9500.00
+Lufthansa,LH3354,Pretoria,Madrid,"2026-06-08 05:25:01","2026-06-08 10:17:58",5200.00
+FlySafair,FA2884,Munich,Tokyo,"2026-10-14 06:47:43","2026-10-14 21:18:56",14229.00
+"Qatar Airways",QR3229,Frankfurt,"New York","2026-09-05 00:22:14","2026-09-05 04:21:46",7704.00
+KLM,KL2545,Lyon,Okinawa,"2026-06-10 10:04:12","2026-06-10 16:52:57",12946.00
+"Air France",AF4961,Naples,Seville,"2026-06-21 23:41:52","2026-06-22 01:54:09",10844.00
+"Singapore Airlines",SQ3633,Tokyo,Nuremberg,"2026-06-08 03:05:17","2026-06-08 07:15:51",16190.00
+KLM,KL8856,"New York",Bath,"2026-08-21 13:55:37","2026-08-21 19:59:45",4276.00
+KLM,KL7813,Paris,Montpellier,"2026-08-10 15:14:35","2026-08-10 18:54:30",6435.00
+Lufthansa,LH4901,Toulouse,"San Francisco","2026-09-27 04:00:35","2026-09-27 06:07:19",11527.00
+"Air France",AF6717,Bordeaux,Kyoto,"2026-05-28 10:56:40","2026-05-29 00:30:15",13230.00
+"Air France",AF7018,"Cape Town",Miami,"2026-09-13 11:06:15","2026-09-14 01:03:59",5288.00
+"South African Airways",SA3279,Whistler,Bath,"2026-07-27 01:07:20","2026-07-27 12:12:05",8093.00
+KLM,KL8327,Barcelona,Hiroshima,"2026-10-26 06:03:02","2026-10-26 12:15:38",2455.00
+"British Airways",BA1521,Perth,Nagoya,"2026-11-05 04:36:54","2026-11-05 08:11:35",10225.00
+"Singapore Airlines",SQ8997,Sydney,Fukuoka,"2026-06-27 15:38:07","2026-06-27 18:54:26",13962.00
+Lufthansa,LH6066,Nice,Birmingham,"2026-07-19 18:51:23","2026-07-20 06:58:24",9216.00
+Emirates,EK7368,Dubai,Tokyo,"2026-09-07 19:55:45","2026-09-08 09:19:01",17998.00
+KLM,KL8809,"Gold Coast","Las Vegas","2026-10-29 06:47:22","2026-10-29 15:59:14",3347.00
+"Delta Air Lines",DL726,Bologna,Madrid,"2026-09-21 14:32:41","2026-09-21 19:10:08",5127.00
+"Virgin Atlantic",VS5433,Tokyo,Bloemfontein,"2026-08-03 06:26:48","2026-08-03 09:40:50",8198.00
+"Air France",AF1072,Hiroshima,Chicago,"2026-11-12 15:06:38","2026-11-12 21:46:50",2207.00
+KLM,KL584,Bordeaux,Paris,"2026-05-31 02:36:49","2026-05-31 14:11:33",13681.00
+"Singapore Airlines",SQ7988,"New York","Los Angeles","2026-08-03 03:42:35","2026-08-03 16:32:13",2667.00
+Emirates,EK6567,Bologna,Denver,"2026-11-05 18:55:39","2026-11-05 22:02:43",8086.00
+KLM,KL3546,Adelaide,Whistler,"2026-11-01 13:13:34","2026-11-01 16:34:06",11475.00
+KLM,KL6361,Dresden,Adelaide,"2026-06-07 23:45:58","2026-06-08 08:18:20",3860.00
+KLM,KL3063,Turin,Munich,"2026-07-08 18:03:59","2026-07-08 22:00:35",6785.00
+"Air France",AF7317,Kimberley,Darwin,"2026-10-31 14:13:00","2026-10-31 22:15:06",12017.00
+"South African Airways",SA2097,Boston,Birmingham,"2026-07-05 13:42:35","2026-07-05 23:41:33",1597.00
+"British Airways",BA7820,Rome,"Cape Town","2026-09-29 19:08:27","2026-09-30 10:09:09",3104.00
+"Virgin Atlantic",VS3095,Bordeaux,Stuttgart,"2026-08-15 01:07:45","2026-08-15 08:09:23",14871.00
+"Turkish Airlines",TK452,Frankfurt,Granada,"2026-05-28 08:46:03","2026-05-28 14:32:53",5844.00
+"Delta Air Lines",DL344,Kyoto,"New York","2026-10-15 22:14:50","2026-10-16 11:26:14",2215.00
+Lufthansa,LH6873,Malaga,Canberra,"2026-06-23 21:21:24","2026-06-24 05:59:46",1647.00
+"Singapore Airlines",SQ3870,Nuremberg,Bilbao,"2026-08-29 20:01:30","2026-08-29 23:56:22",1632.00
+Emirates,EK1027,Denver,"San Francisco","2026-11-16 03:00:10","2026-11-16 14:27:59",1677.00
+FlySafair,FA5225,Cologne,Calgary,"2026-07-10 18:52:54","2026-07-11 05:22:34",13312.00
+"British Airways",BA2040,Vancouver,Edmonton,"2026-06-30 21:52:59","2026-07-01 00:24:57",10640.00
+"Qatar Airways",QR1623,Barcelona,Chicago,"2026-10-07 22:17:56","2026-10-08 13:48:05",13730.00
+Emirates,EK4726,Florence,Tokyo,"2026-06-16 15:18:50","2026-06-17 02:32:30",6656.00
+"Air France",AF8108,Genoa,Palermo,"2026-06-03 05:10:53","2026-06-03 19:41:35",16545.00
+Emirates,EK9471,Glasgow,Bilbao,"2026-06-18 08:56:21","2026-06-18 22:09:29",8134.00
+"Qatar Airways",QR2690,Lyon,Paris,"2026-07-03 05:38:57","2026-07-03 15:26:23",7108.00
+KLM,KL6570,Perth,Tokyo,"2026-06-17 02:09:53","2026-06-17 05:04:10",5756.00
+"South African Airways",SA4670,Paris,Victoria,"2026-07-22 09:51:45","2026-07-23 01:45:57",15533.00
+Emirates,EK7080,Adelaide,Toronto,"2026-08-21 19:15:27","2026-08-22 06:28:01",4908.00
+Lufthansa,LH5180,Leipzig,Durban,"2026-09-08 08:36:54","2026-09-08 14:03:09",5108.00
+"Air France",AF7881,Mallorca,Leipzig,"2026-11-14 05:21:07","2026-11-14 18:43:04",14704.00
+"Qatar Airways",QR3429,Canberra,Miami,"2026-10-08 20:14:34","2026-10-09 00:10:29",12723.00
+Emirates,EK4619,Seattle,Edinburgh,"2026-07-09 16:13:14","2026-07-10 00:17:25",2260.00
+Lufthansa,LH5981,Munich,Bali,"2026-09-12 05:36:26","2026-09-12 19:57:01",6118.00
+FlySafair,FA1302,Hamburg,Cairns,"2026-07-30 20:44:37","2026-07-31 11:09:18",13736.00
+FlySafair,FA2809,Hamburg,"Cape Town","2026-06-27 17:23:06","2026-06-27 22:10:45",10778.00
+"Qatar Airways",QR5127,Nagoya,Durban,"2026-10-15 05:37:29","2026-10-15 11:50:00",5033.00
+KLM,KL9435,Durban,"East London","2026-06-28 15:49:04","2026-06-29 03:22:01",4806.00
+Emirates,EK4389,Munich,"Las Vegas","2026-08-26 04:31:22","2026-08-26 17:04:33",12152.00
+"Singapore Airlines",SQ2478,Barcelona,Bologna,"2026-11-08 01:34:40","2026-11-08 16:16:56",2950.00
+KLM,KL8904,Perth,Denver,"2026-09-25 09:14:42","2026-09-26 00:14:11",16834.00
+"Air France",AF7474,Nice,Montpellier,"2026-08-14 23:45:24","2026-08-15 14:18:03",13575.00
+"Delta Air Lines",DL7536,Toledo,"Cape Town","2026-11-18 15:01:49","2026-11-19 00:30:10",15628.00
+KLM,KL2377,Oxford,Ottawa,"2026-10-19 10:41:58","2026-10-20 01:00:22",14706.00
+Lufthansa,LH9484,Durban,Bloemfontein,"2026-09-23 19:36:53","2026-09-24 01:19:59",9826.00
+"Singapore Airlines",SQ3934,Lyon,"San Francisco","2026-06-16 17:20:00","2026-06-17 01:48:14",8817.00
+"South African Airways",SA1810,Calgary,Montreal,"2026-06-30 23:54:39","2026-07-01 09:20:26",4742.00
+"Air France",AF5411,Malaga,"East London","2026-06-13 20:55:12","2026-06-14 08:04:29",12839.00
+"Qatar Airways",QR5175,Fukuoka,Nuremberg,"2026-08-09 13:15:13","2026-08-09 20:53:25",3330.00
+"Turkish Airlines",TK7275,Madrid,Barcelona,"2026-08-10 20:45:35","2026-08-11 02:56:11",15069.00
+FlySafair,FA9976,Barcelona,"Gold Coast","2026-07-19 07:03:14","2026-07-19 15:46:03",14729.00
+KLM,KL494,Toulouse,Montpellier,"2026-10-24 10:49:55","2026-10-24 13:51:49",15332.00
+"Air France",AF1262,Seville,Canberra,"2026-11-15 00:21:27","2026-11-15 06:01:44",17001.00
+"Singapore Airlines",SQ8028,Bristol,Seattle,"2026-07-06 10:35:30","2026-07-06 13:49:12",13832.00
+"Turkish Airlines",TK199,Boston,Austin,"2026-11-02 23:00:05","2026-11-03 04:48:25",6844.00
+"Turkish Airlines",TK3165,Bloemfontein,"Quebec City","2026-08-17 19:50:33","2026-08-18 06:59:37",10285.00
+"Delta Air Lines",DL8054,Strasbourg,Victoria,"2026-07-19 16:42:21","2026-07-19 19:41:29",13522.00
+"Virgin Atlantic",VS5040,Vancouver,"Port Elizabeth","2026-10-02 17:53:34","2026-10-02 20:10:18",3634.00
+"Delta Air Lines",DL4099,Pretoria,Bristol,"2026-06-02 04:14:12","2026-06-02 16:03:01",17614.00
+"British Airways",BA500,Bristol,Ottawa,"2026-07-28 08:30:58","2026-07-28 15:14:07",15382.00
+"Delta Air Lines",DL7390,Munich,Nice,"2026-08-30 08:24:40","2026-08-31 00:02:49",10654.00
+"Singapore Airlines",SQ4529,Liverpool,Nantes,"2026-07-08 22:06:47","2026-07-09 11:02:51",2946.00
+KLM,KL1837,Tokyo,Florence,"2026-06-09 17:03:18","2026-06-10 03:45:13",9105.00
+Lufthansa,LH1709,Florence,Strasbourg,"2026-07-07 19:23:18","2026-07-08 06:29:08",2010.00
+"Air France",AF292,Stuttgart,Ibiza,"2026-08-16 08:54:21","2026-08-16 11:27:11",9168.00
+"Qatar Airways",QR6964,Whistler,Hobart,"2026-10-31 14:33:53","2026-10-31 23:35:45",11726.00
+"British Airways",BA6610,Rome,Paris,"2026-11-16 13:35:14","2026-11-17 05:13:47",16449.00
+"Virgin Atlantic",VS1348,Birmingham,Bologna,"2026-09-18 17:05:31","2026-09-18 19:54:03",4831.00
+"British Airways",BA8884,Nagoya,"New York","2026-08-15 18:56:33","2026-08-16 06:05:30",2938.00
+"Delta Air Lines",DL4201,Vancouver,Chicago,"2026-07-11 09:27:06","2026-07-11 18:16:00",13141.00
+"Singapore Airlines",SQ4716,Hamburg,Bordeaux,"2026-09-29 06:15:04","2026-09-29 14:54:45",13506.00
+"Virgin Atlantic",VS9994,Tokyo,Ottawa,"2026-10-10 07:13:17","2026-10-10 14:11:24",5163.00
+Lufthansa,LH6206,Rome,Nara,"2026-07-02 00:32:50","2026-07-02 06:11:19",12878.00
+"Delta Air Lines",DL6880,Bilbao,Paris,"2026-08-04 15:07:40","2026-08-05 03:15:46",11375.00
+"Virgin Atlantic",VS5759,Hamburg,Toledo,"2026-08-19 13:18:39","2026-08-19 21:10:46",14110.00
+"Singapore Airlines",SQ1192,Cairns,Liverpool,"2026-10-14 01:40:43","2026-10-14 16:42:28",13212.00
+KLM,KL5352,Dubai,Knysna,"2026-07-11 01:32:30","2026-07-11 07:42:56",6988.00
+"Air France",AF2597,Rome,Melbourne,"2026-09-22 01:54:11","2026-09-22 10:43:17",6847.00
+"South African Airways",SA1919,Venice,Denver,"2026-06-18 14:03:56","2026-06-19 00:53:14",15449.00
+FlySafair,FA1080,Dubai,"Quebec City","2026-07-06 09:40:35","2026-07-06 21:35:46",17278.00
+Emirates,EK7805,Whistler,Okinawa,"2026-06-16 03:00:02","2026-06-16 16:12:28",4384.00
+"Turkish Airlines",TK889,Seattle,Stuttgart,"2026-11-16 14:07:01","2026-11-17 05:48:42",10291.00
+"Qatar Airways",QR9514,"New York",Belfast,"2026-06-12 19:39:15","2026-06-12 23:06:18",8152.00
+KLM,KL6983,"Las Vegas",Paris,"2026-07-11 22:19:44","2026-07-12 03:42:29",12094.00
+FlySafair,FA2650,Pisa,Toledo,"2026-10-20 17:45:53","2026-10-20 23:33:59",3116.00
+Lufthansa,LH4011,Madrid,Bloemfontein,"2026-07-28 19:24:12","2026-07-28 22:18:45",8200.00
+"Virgin Atlantic",VS4746,Melbourne,Dubai,"2026-09-12 00:54:28","2026-09-12 06:27:59",3238.00
+"Delta Air Lines",DL2113,Okinawa,Bali,"2026-06-16 15:35:06","2026-06-16 21:53:08",6511.00
+"Air France",AF2678,Naples,Florence,"2026-07-25 05:45:55","2026-07-25 13:38:38",5468.00
+"Turkish Airlines",TK5008,Rome,Kimberley,"2026-08-12 07:45:14","2026-08-12 10:22:42",15039.00
+Emirates,EK2502,Johannesburg,Kimberley,"2026-06-16 11:58:58","2026-06-16 16:24:10",5458.00
+"Turkish Airlines",TK5266,Stellenbosch,Cairns,"2026-06-25 03:53:02","2026-06-25 13:12:31",7319.00
+"Air France",AF2555,Kobe,Halifax,"2026-10-13 02:43:36","2026-10-13 10:25:18",11682.00
+"Singapore Airlines",SQ3209,"East London","Quebec City","2026-09-27 13:19:39","2026-09-27 20:26:48",2806.00
+"Virgin Atlantic",VS7821,Bristol,Bath,"2026-11-08 16:17:16","2026-11-09 01:13:59",17209.00
+"Virgin Atlantic",VS1078,Bath,Kyoto,"2026-06-23 21:30:15","2026-06-24 09:37:04",8872.00
+"Qatar Airways",QR4323,Montpellier,Cairns,"2026-07-23 19:22:56","2026-07-24 05:19:46",11774.00
+FlySafair,FA7184,"Cape Town",Montreal,"2026-07-08 07:35:10","2026-07-08 10:08:10",12433.00
+Lufthansa,LH6244,Montreal,Nara,"2026-08-01 02:34:56","2026-08-01 16:04:23",16439.00
+"Singapore Airlines",SQ8784,Pretoria,Hamburg,"2026-06-23 02:35:31","2026-06-23 17:37:56",15935.00
+"South African Airways",SA9187,Brisbane,Kobe,"2026-07-19 21:02:53","2026-07-20 09:50:46",14247.00
+"British Airways",BA5930,Darwin,Bloemfontein,"2026-10-03 01:38:17","2026-10-03 05:15:35",10175.00
+"Virgin Atlantic",VS6030,Perth,Lyon,"2026-11-15 09:18:47","2026-11-15 20:52:00",2643.00
+KLM,KL8569,Okinawa,Darwin,"2026-08-18 22:14:25","2026-08-19 11:36:31",6972.00
+"British Airways",BA9528,Brisbane,"Los Angeles","2026-09-18 20:57:02","2026-09-19 01:48:38",6648.00
+"Delta Air Lines",DL4847,Dresden,Ibiza,"2026-07-06 23:27:36","2026-07-07 07:08:03",14247.00
+"South African Airways",SA8946,Kobe,"San Francisco","2026-06-07 03:39:33","2026-06-07 14:15:42",7121.00
+"Air France",AF4216,Leipzig,Kimberley,"2026-07-30 16:34:55","2026-07-31 06:44:40",15276.00
+"Turkish Airlines",TK4348,Kobe,Osaka,"2026-07-18 04:59:33","2026-07-18 18:53:44",4821.00
+"Delta Air Lines",DL904,Boston,Tokyo,"2026-08-03 07:18:05","2026-08-03 14:13:32",12332.00
+KLM,KL7266,Bali,Toledo,"2026-06-18 12:32:39","2026-06-18 22:15:46",10290.00
+"Turkish Airlines",TK3809,Canberra,Naples,"2026-07-10 08:49:13","2026-07-10 14:54:58",6437.00
+"Singapore Airlines",SQ8811,Nagoya,Denver,"2026-08-15 11:58:33","2026-08-15 19:35:23",15176.00
+"Air France",AF2029,Naples,Tokyo,"2026-10-06 23:02:08","2026-10-07 09:46:33",14881.00
+"Turkish Airlines",TK6945,Bath,Stuttgart,"2026-10-20 04:36:06","2026-10-20 15:22:17",9941.00
+"South African Airways",SA1204,Dusseldorf,"Port Elizabeth","2026-09-15 11:43:38","2026-09-15 18:52:26",15210.00
+KLM,KL5124,Whistler,Lyon,"2026-09-28 14:32:07","2026-09-29 04:34:12",11034.00
+"Delta Air Lines",DL8406,Lille,Okinawa,"2026-07-28 13:08:56","2026-07-29 02:59:50",13576.00
+Emirates,EK5137,Brisbane,Granada,"2026-08-03 02:14:33","2026-08-03 15:32:49",8085.00
+KLM,KL4536,Seville,"San Francisco","2026-08-02 11:30:02","2026-08-02 18:55:26",5727.00
+"Turkish Airlines",TK4372,Granada,Canberra,"2026-09-02 17:15:03","2026-09-03 08:00:02",11782.00
+"Turkish Airlines",TK7096,Victoria,Edinburgh,"2026-07-05 05:32:51","2026-07-05 19:13:25",9655.00
+"South African Airways",SA3659,Nara,"Cape Town","2026-08-26 19:34:34","2026-08-27 11:11:05",7551.00
+Emirates,EK4447,Brisbane,Turin,"2026-05-31 18:21:50","2026-05-31 21:11:46",15240.00
+KLM,KL5605,Halifax,Hiroshima,"2026-08-21 10:37:56","2026-08-21 16:46:23",9803.00
+Emirates,EK4673,"San Francisco",Melbourne,"2026-11-05 20:19:03","2026-11-05 22:51:07",14576.00
+"Singapore Airlines",SQ497,Toronto,Marseille,"2026-07-26 00:59:39","2026-07-26 10:15:11",9702.00
+Emirates,EK9439,Bristol,Granada,"2026-08-17 15:35:40","2026-08-17 23:12:21",1639.00
+"Delta Air Lines",DL380,Chicago,Adelaide,"2026-07-11 12:50:11","2026-07-11 21:16:19",13475.00
+FlySafair,FA9216,Okinawa,Milan,"2026-08-31 20:13:04","2026-09-01 09:08:26",13339.00
+Emirates,EK9068,Johannesburg,Nice,"2026-10-23 16:09:21","2026-10-23 21:32:11",5365.00
+Lufthansa,LH3297,Toulouse,Boston,"2026-06-24 10:35:21","2026-06-24 20:32:15",2848.00
+FlySafair,FA1790,Paris,"Cape Town","2026-07-26 03:03:08","2026-07-26 16:19:21",11565.00
+"Virgin Atlantic",VS5713,"Gold Coast",Nuremberg,"2026-06-29 14:13:34","2026-06-30 06:05:01",16569.00
+"Singapore Airlines",SQ1726,Dubai,Tokyo,"2026-05-26 12:58:11","2026-05-27 02:27:16",6289.00
+Emirates,EK2169,Nice,Fukuoka,"2026-10-21 23:53:22","2026-10-22 10:42:43",16012.00
+"Qatar Airways",QR2095,Kyoto,Kimberley,"2026-11-03 12:55:49","2026-11-03 22:32:05",3959.00
+Emirates,EK1813,Genoa,Munich,"2026-09-30 02:12:53","2026-09-30 05:51:21",10481.00
+"Qatar Airways",QR9103,Victoria,Frankfurt,"2026-09-06 14:32:20","2026-09-07 05:16:25",13788.00
+"Singapore Airlines",SQ3529,Barcelona,Boston,"2026-06-06 12:00:14","2026-06-06 17:47:42",5446.00
+FlySafair,FA4345,Johannesburg,Hiroshima,"2026-08-23 07:24:54","2026-08-23 22:34:03",5477.00
+"British Airways",BA4365,"New York",Pretoria,"2026-06-17 10:40:31","2026-06-17 13:59:41",10088.00
+Lufthansa,LH6327,"Cape Town",Barcelona,"2026-09-05 11:18:29","2026-09-05 15:20:30",6535.00
+"Virgin Atlantic",VS8853,Ibiza,Edmonton,"2026-09-13 19:44:57","2026-09-14 08:52:17",6188.00
+Emirates,EK2579,Bloemfontein,Kobe,"2026-08-29 22:59:39","2026-08-30 10:28:13",15523.00
+KLM,KL4106,Darwin,Bilbao,"2026-07-10 18:44:26","2026-07-11 04:00:57",6863.00
+"Turkish Airlines",TK365,Lyon,Strasbourg,"2026-07-15 23:47:32","2026-07-16 06:40:40",7282.00
+"South African Airways",SA396,"New York",Malaga,"2026-06-02 20:45:19","2026-06-03 02:50:40",13168.00
+"Singapore Airlines",SQ5983,Frankfurt,"San Francisco","2026-09-18 03:04:10","2026-09-18 12:32:48",4038.00
+"Turkish Airlines",TK7530,Hobart,Perth,"2026-08-16 10:07:30","2026-08-16 19:41:29",4010.00
+"Singapore Airlines",SQ6369,Calgary,Mallorca,"2026-11-10 09:55:20","2026-11-11 01:41:30",10326.00
+FlySafair,FA3088,Brisbane,Canberra,"2026-06-17 10:40:50","2026-06-17 16:55:20",5565.00
+KLM,KL3255,"Cape Town",Dusseldorf,"2026-06-29 13:32:44","2026-06-29 19:34:37",11892.00
+Emirates,EK7220,Mallorca,Genoa,"2026-06-11 09:29:30","2026-06-12 01:04:38",3192.00
+Lufthansa,LH2446,Turin,Cairns,"2026-07-25 14:38:37","2026-07-25 17:21:46",4638.00
+"Qatar Airways",QR6113,Montpellier,Bloemfontein,"2026-06-12 08:54:39","2026-06-12 16:31:12",1531.00
+FlySafair,FA2234,Pretoria,Belfast,"2026-08-04 05:20:23","2026-08-04 11:07:11",11817.00
+"Qatar Airways",QR5464,Tokyo,Bilbao,"2026-09-28 05:04:08","2026-09-28 17:44:45",9083.00
+"Virgin Atlantic",VS6464,Johannesburg,Venice,"2026-09-08 16:17:27","2026-09-08 20:42:17",17661.00
+"Delta Air Lines",DL3962,Victoria,Osaka,"2026-06-09 22:59:30","2026-06-10 04:12:49",2176.00
+Lufthansa,LH2064,Edmonton,Durban,"2026-07-17 12:02:52","2026-07-18 01:44:20",7087.00
+"British Airways",BA5336,Darwin,Naples,"2026-05-26 15:50:34","2026-05-26 21:33:13",10806.00
+KLM,KL1115,Nagoya,Johannesburg,"2026-08-17 03:17:41","2026-08-17 18:27:28",5297.00
+"South African Airways",SA7644,"Las Vegas",Pisa,"2026-05-25 09:29:48","2026-05-25 22:36:55",1641.00
+"British Airways",BA9527,Lyon,Boston,"2026-08-13 16:34:51","2026-08-13 19:23:32",1928.00
+FlySafair,FA4116,Melbourne,Halifax,"2026-07-16 02:29:06","2026-07-16 09:06:50",16364.00
+"Air France",AF3136,Darwin,Lyon,"2026-10-21 11:08:52","2026-10-21 20:32:32",8019.00
+"Qatar Airways",QR2844,"Cape Town","Port Elizabeth","2026-10-07 09:52:37","2026-10-07 14:35:16",14925.00
+"Virgin Atlantic",VS406,Marseille,Johannesburg,"2026-10-27 16:03:29","2026-10-28 06:36:51",5054.00
+"British Airways",BA4413,Cairns,"Cape Town","2026-09-28 06:41:59","2026-09-28 16:05:44",4502.00
+Emirates,EK6974,Tokyo,Bordeaux,"2026-09-29 11:17:54","2026-09-30 03:15:14",4430.00
+FlySafair,FA4485,Osaka,Durban,"2026-08-28 03:24:54","2026-08-28 07:19:48",8325.00
+"Qatar Airways",QR2248,Nantes,"Cape Town","2026-05-29 03:44:09","2026-05-29 08:04:39",5604.00
+Lufthansa,LH3209,London,Kobe,"2026-06-14 19:47:40","2026-06-15 11:18:09",10183.00
+"Qatar Airways",QR3348,Barcelona,Pisa,"2026-11-03 19:25:18","2026-11-03 22:28:00",6998.00
+"Virgin Atlantic",VS1371,Hobart,"Port Elizabeth","2026-08-16 12:46:54","2026-08-17 01:40:44",15566.00
+Emirates,EK7831,Bath,Kimberley,"2026-07-31 15:57:51","2026-07-31 18:51:47",14992.00
+"Turkish Airlines",TK8973,Halifax,Paris,"2026-09-19 18:27:03","2026-09-20 03:10:16",12316.00
+FlySafair,FA6451,Frankfurt,Turin,"2026-06-03 11:57:08","2026-06-03 15:50:33",4708.00
+"Singapore Airlines",SQ7065,Rome,Palermo,"2026-07-07 10:35:54","2026-07-07 17:01:01",3474.00
+KLM,KL899,Paris,Kimberley,"2026-07-24 14:23:39","2026-07-24 18:04:57",9970.00
+"South African Airways",SA2949,Leipzig,"New York","2026-05-25 16:02:11","2026-05-26 04:11:13",2985.00
+FlySafair,FA7963,Lille,Ottawa,"2026-09-18 00:26:28","2026-09-18 13:45:59",10838.00
+Lufthansa,LH9797,Tokyo,Pretoria,"2026-11-19 09:28:31","2026-11-19 18:33:03",3075.00
+"Air France",AF7146,Pretoria,Berlin,"2026-11-06 16:50:08","2026-11-06 20:32:09",6236.00
+"Singapore Airlines",SQ1402,Canberra,Nantes,"2026-07-30 06:12:35","2026-07-30 08:43:11",15030.00
+"Virgin Atlantic",VS9600,Canberra,Edinburgh,"2026-09-24 20:39:36","2026-09-25 11:58:32",4900.00
+"Turkish Airlines",TK6634,Berlin,Tokyo,"2026-10-23 12:42:24","2026-10-23 21:32:51",7723.00
+"British Airways",BA4207,Marseille,Calgary,"2026-06-06 08:35:53","2026-06-06 22:27:50",17758.00
+"Delta Air Lines",DL8129,Bali,Nantes,"2026-09-16 07:29:50","2026-09-16 18:27:59",10650.00
+Lufthansa,LH7158,Halifax,Madrid,"2026-10-08 16:16:25","2026-10-09 03:09:20",9738.00
+"Qatar Airways",QR1988,Okinawa,Stuttgart,"2026-11-04 05:54:49","2026-11-04 18:53:42",7795.00
+"British Airways",BA2013,Darwin,Lille,"2026-06-30 22:18:59","2026-07-01 12:06:25",9817.00
+"Delta Air Lines",DL6821,Miami,"New York","2026-06-01 21:36:28","2026-06-02 12:14:35",8988.00
+"Delta Air Lines",DL1569,Toronto,Ottawa,"2026-11-09 14:11:13","2026-11-10 02:54:32",11053.00
+"British Airways",BA5614,Stellenbosch,Edinburgh,"2026-05-28 22:51:06","2026-05-29 12:30:05",9844.00
+"Delta Air Lines",DL6960,Birmingham,Toulouse,"2026-11-06 21:37:26","2026-11-07 02:36:07",3101.00
+"Singapore Airlines",SQ2682,Perth,Dubai,"2026-09-16 06:14:58","2026-09-16 19:18:39",7340.00
+"Qatar Airways",QR2087,Glasgow,Venice,"2026-11-04 16:00:43","2026-11-05 01:22:06",15307.00
+"Virgin Atlantic",VS4597,Valencia,Sapporo,"2026-08-09 14:54:59","2026-08-09 19:48:39",4338.00
+Emirates,EK5331,Bologna,Dusseldorf,"2026-07-23 12:57:33","2026-07-23 18:15:21",3058.00
+"Delta Air Lines",DL6808,Bali,Sydney,"2026-10-10 14:21:44","2026-10-10 16:43:39",10817.00
+"Qatar Airways",QR647,Bali,Denver,"2026-10-15 18:36:10","2026-10-16 00:26:39",17221.00
+"Delta Air Lines",DL9719,Ottawa,Nagoya,"2026-07-04 07:00:53","2026-07-04 19:11:00",6418.00
+"Qatar Airways",QR5917,Sapporo,Bilbao,"2026-06-03 02:04:07","2026-06-03 16:42:14",12955.00
+"Singapore Airlines",SQ8574,Naples,Kobe,"2026-06-02 12:53:09","2026-06-02 21:52:28",7574.00
+Lufthansa,LH4677,Tokyo,Bristol,"2026-06-15 16:04:43","2026-06-15 18:29:22",7089.00
+"Air France",AF3635,Genoa,Manchester,"2026-06-18 12:48:25","2026-06-18 16:37:58",8113.00
+Emirates,EK3505,Adelaide,Mallorca,"2026-09-30 19:08:50","2026-09-30 23:32:28",2266.00
+"British Airways",BA6654,Ottawa,Tokyo,"2026-09-24 09:05:05","2026-09-24 14:41:59",7720.00
+"Turkish Airlines",TK9820,Johannesburg,Tokyo,"2026-07-29 19:29:54","2026-07-30 10:31:45",5690.00
+"South African Airways",SA4868,Granada,Durban,"2026-08-30 20:29:41","2026-08-31 05:44:50",16896.00
+"Virgin Atlantic",VS7968,Austin,Stellenbosch,"2026-10-27 23:32:45","2026-10-28 03:56:03",14294.00
+"Turkish Airlines",TK5854,Vancouver,"New York","2026-10-18 18:01:14","2026-10-18 21:24:08",17623.00
+FlySafair,FA6349,Toulouse,Hamburg,"2026-05-25 19:00:04","2026-05-26 10:12:19",17273.00
+"Qatar Airways",QR2355,Palermo,Whistler,"2026-06-28 03:03:11","2026-06-28 07:13:24",7827.00
+"Singapore Airlines",SQ7575,Paris,Montreal,"2026-07-31 23:59:25","2026-08-01 04:51:17",11562.00
+Lufthansa,LH7350,Florence,Mallorca,"2026-11-06 05:45:35","2026-11-06 10:22:11",11819.00
+Emirates,EK8868,Toledo,Tokyo,"2026-09-28 19:08:15","2026-09-29 02:05:39",1955.00
+"Singapore Airlines",SQ5684,Edinburgh,Paris,"2026-09-05 00:13:27","2026-09-05 15:18:19",12201.00
+Emirates,EK6791,Lyon,Glasgow,"2026-10-14 15:27:22","2026-10-14 20:50:32",17016.00
+"Turkish Airlines",TK2988,Leipzig,Rome,"2026-07-16 11:35:59","2026-07-16 16:40:29",10724.00
+"Virgin Atlantic",VS8332,"Gold Coast",Belfast,"2026-05-30 13:27:01","2026-05-30 23:02:34",10484.00
+"Qatar Airways",QR4952,Strasbourg,Berlin,"2026-06-20 16:23:30","2026-06-21 03:57:24",14567.00
+KLM,KL2259,Denver,Kyoto,"2026-10-16 03:58:21","2026-10-16 10:16:08",8675.00
+"Air France",AF8148,Birmingham,Austin,"2026-08-26 16:47:13","2026-08-26 18:51:43",9729.00
+"Delta Air Lines",DL5234,Tokyo,Rome,"2026-10-05 16:14:21","2026-10-06 03:16:03",5522.00
+Emirates,EK5468,Kyoto,Bath,"2026-06-15 04:09:15","2026-06-15 15:11:03",11732.00
+"Singapore Airlines",SQ9283,Liverpool,Lille,"2026-08-05 16:55:02","2026-08-06 00:16:31",13432.00
+"South African Airways",SA8572,"San Francisco",Canberra,"2026-05-29 07:05:57","2026-05-29 11:28:33",5376.00
+Emirates,EK7050,Palermo,Paris,"2026-08-25 14:21:35","2026-08-25 22:22:13",5422.00
+"Qatar Airways",QR7647,Seattle,Paris,"2026-06-22 06:05:23","2026-06-22 10:32:41",12554.00
+"British Airways",BA5639,Palermo,"East London","2026-09-12 01:24:44","2026-09-12 03:38:06",15926.00
+"Qatar Airways",QR8553,Frankfurt,Bristol,"2026-11-19 03:42:32","2026-11-19 10:15:57",3144.00
+FlySafair,FA8958,Manchester,Valencia,"2026-06-16 22:39:18","2026-06-17 06:39:11",17966.00
+"British Airways",BA7107,"New York",Stellenbosch,"2026-07-16 22:31:08","2026-07-17 02:34:02",15754.00
+KLM,KL318,"Las Vegas",Frankfurt,"2026-10-19 10:43:53","2026-10-19 21:24:46",14798.00
+"Delta Air Lines",DL6288,"Cape Town",Stellenbosch,"2026-09-01 21:06:28","2026-09-02 05:51:20",8496.00
+"Air France",AF9289,Toulouse,Bloemfontein,"2026-10-05 21:41:08","2026-10-06 08:02:02",6970.00
+"Qatar Airways",QR3006,"Port Elizabeth",Sapporo,"2026-09-01 03:55:01","2026-09-01 14:43:07",17171.00
+"British Airways",BA3248,Bali,Bristol,"2026-10-14 15:53:07","2026-10-15 03:19:34",13832.00
+"Virgin Atlantic",VS9282,Hiroshima,Montreal,"2026-06-19 05:13:01","2026-06-19 09:05:31",10652.00
+"Qatar Airways",QR635,Munich,"Las Vegas","2026-10-16 16:11:04","2026-10-17 02:50:51",12256.00
+"Delta Air Lines",DL5096,"San Francisco",Valencia,"2026-11-08 01:37:32","2026-11-08 13:14:38",11882.00
+"Qatar Airways",QR6735,Darwin,Toronto,"2026-11-16 16:32:47","2026-11-17 01:19:37",12763.00
+Emirates,EK6799,Bilbao,Pretoria,"2026-07-12 00:38:08","2026-07-12 07:49:54",13430.00
+Lufthansa,LH8513,Boston,"Quebec City","2026-08-05 19:00:20","2026-08-06 00:37:47",16400.00
+FlySafair,FA4753,Bali,Dresden,"2026-05-24 17:57:40","2026-05-24 21:17:29",10440.00
+"Air France",AF8141,"Cape Town",Granada,"2026-06-13 22:23:04","2026-06-14 10:49:11",6276.00
+FlySafair,FA9781,Frankfurt,Palermo,"2026-10-01 06:02:17","2026-10-01 15:28:52",8455.00
+"Singapore Airlines",SQ7405,Dusseldorf,Granada,"2026-08-01 05:20:04","2026-08-01 08:50:02",7106.00
+"South African Airways",SA3928,Paris,Bordeaux,"2026-05-26 02:39:02","2026-05-26 14:10:29",9366.00
+Emirates,EK541,Venice,Paris,"2026-07-29 21:31:11","2026-07-30 12:45:56",15241.00
+"Air France",AF6392,Liverpool,Madrid,"2026-07-22 08:04:05","2026-07-22 15:11:30",17930.00
+Lufthansa,LH8907,Edmonton,Liverpool,"2026-11-14 22:34:31","2026-11-15 14:25:25",9595.00
+"South African Airways",SA8407,Dubai,"Gold Coast","2026-08-12 09:58:54","2026-08-12 21:37:44",7700.00
+FlySafair,FA3104,Genoa,Pretoria,"2026-10-17 05:01:12","2026-10-17 19:40:21",3608.00
+Emirates,EK910,Venice,"New York","2026-10-15 03:09:51","2026-10-15 14:58:39",13021.00
+"Turkish Airlines",TK4110,Kimberley,Johannesburg,"2026-09-17 03:11:53","2026-09-17 13:37:02",16214.00
+Lufthansa,LH9221,Florence,"Las Vegas","2026-05-25 08:45:42","2026-05-25 10:45:48",9108.00
+"Qatar Airways",QR8750,"Gold Coast",Sydney,"2026-10-17 05:57:50","2026-10-17 12:54:16",6523.00
+KLM,KL5792,Barcelona,Dresden,"2026-11-11 04:59:36","2026-11-11 13:11:48",17006.00
+"Virgin Atlantic",VS1160,Valencia,Paris,"2026-08-09 17:27:03","2026-08-10 04:28:25",15225.00
+"Singapore Airlines",SQ7505,"Los Angeles",Nuremberg,"2026-06-06 15:46:22","2026-06-06 18:23:35",12028.00
+"South African Airways",SA9056,"San Francisco",Granada,"2026-10-26 14:53:58","2026-10-26 21:57:59",17754.00
+"Virgin Atlantic",VS389,Denver,Sydney,"2026-07-25 08:42:21","2026-07-25 12:52:51",8020.00
+KLM,KL4876,Kobe,Marseille,"2026-11-16 13:52:16","2026-11-17 00:45:19",5851.00
+FlySafair,FA6740,Bilbao,Oxford,"2026-06-20 12:20:27","2026-06-20 17:51:23",17449.00
+"Turkish Airlines",TK3632,Kimberley,Seattle,"2026-10-05 07:57:36","2026-10-05 20:52:11",7922.00
+"Virgin Atlantic",VS5505,Glasgow,Brisbane,"2026-07-09 01:23:57","2026-07-09 09:59:29",11432.00
+FlySafair,FA7648,Bordeaux,Osaka,"2026-07-26 17:46:44","2026-07-26 21:50:04",13764.00
+"British Airways",BA5308,Birmingham,Seattle,"2026-10-23 10:54:55","2026-10-23 23:19:52",14761.00
+FlySafair,FA9868,Bristol,"Cape Town","2026-08-09 11:36:54","2026-08-09 22:43:48",13253.00
+Emirates,EK1718,Glasgow,Knysna,"2026-08-12 14:17:50","2026-08-12 16:36:44",7939.00
+"Air France",AF1041,Mallorca,Toronto,"2026-07-22 11:20:34","2026-07-22 15:04:06",6224.00
+KLM,KL5487,Chicago,Malaga,"2026-07-14 13:13:21","2026-07-14 15:20:55",9254.00
+"Virgin Atlantic",VS6437,Knysna,Montreal,"2026-07-15 10:24:10","2026-07-15 15:43:36",10487.00
+"British Airways",BA6652,Kimberley,"Los Angeles","2026-11-14 06:25:34","2026-11-14 17:52:24",7178.00
+"Qatar Airways",QR5944,Milan,Naples,"2026-09-12 03:04:13","2026-09-12 17:14:37",10606.00
+"Turkish Airlines",TK7560,"Los Angeles",Victoria,"2026-07-20 03:30:36","2026-07-20 08:12:59",7894.00
+"Turkish Airlines",TK1095,Mallorca,Bristol,"2026-06-18 14:07:44","2026-06-18 23:01:20",10119.00
+Emirates,EK8460,Tokyo,Manchester,"2026-07-01 20:19:34","2026-07-02 09:47:44",8963.00
+"Delta Air Lines",DL4873,Strasbourg,"East London","2026-08-20 03:40:40","2026-08-20 12:18:21",13187.00
+KLM,KL1087,Toledo,Turin,"2026-05-30 20:42:09","2026-05-31 09:44:52",12671.00
+"Air France",AF5657,Seattle,Toulouse,"2026-07-13 21:33:05","2026-07-14 11:17:33",4095.00
+KLM,KL4031,Edinburgh,Perth,"2026-06-01 02:52:33","2026-06-01 10:26:45",16395.00
+"Singapore Airlines",SQ2333,Turin,Berlin,"2026-06-03 11:10:42","2026-06-03 20:56:25",11942.00
+"British Airways",BA3305,Fukuoka,Frankfurt,"2026-07-03 06:31:55","2026-07-03 10:35:25",3115.00
+"South African Airways",SA891,Tokyo,Bath,"2026-10-16 01:58:41","2026-10-16 15:19:54",8820.00
+KLM,KL8207,Osaka,Nice,"2026-09-08 07:00:22","2026-09-08 11:11:50",16135.00
+Emirates,EK2613,Granada,Turin,"2026-11-17 01:55:16","2026-11-17 13:04:28",1887.00
+"British Airways",BA7804,Toledo,Austin,"2026-11-12 08:37:45","2026-11-12 15:26:36",9601.00
+"Air France",AF3264,London,Genoa,"2026-07-29 18:11:54","2026-07-30 09:16:36",9915.00
+KLM,KL6173,Okinawa,Ibiza,"2026-05-27 14:59:11","2026-05-27 17:58:12",9704.00
+"Singapore Airlines",SQ193,Mallorca,"Cape Town","2026-09-12 20:16:41","2026-09-13 04:13:51",5199.00
+"Turkish Airlines",TK5584,Montpellier,Birmingham,"2026-09-25 17:47:29","2026-09-25 21:24:53",2004.00
+"Delta Air Lines",DL652,Cairns,Durban,"2026-09-25 15:25:44","2026-09-25 17:51:15",5862.00
+"South African Airways",SA6515,"Quebec City",Nice,"2026-08-24 07:25:06","2026-08-24 15:25:08",2077.00
+"Turkish Airlines",TK5541,Lyon,Hobart,"2026-09-06 12:00:01","2026-09-07 01:46:58",4581.00
+"Delta Air Lines",DL2580,Hiroshima,Tokyo,"2026-05-27 01:31:51","2026-05-27 08:25:52",6721.00
+FlySafair,FA1907,Melbourne,Toledo,"2026-06-19 23:42:43","2026-06-20 03:41:56",17001.00
+"South African Airways",SA2710,Bali,Lille,"2026-09-24 17:22:46","2026-09-25 06:45:11",15935.00
+"Singapore Airlines",SQ8307,Nara,Malaga,"2026-08-26 15:13:35","2026-08-26 22:26:11",4423.00
+KLM,KL3880,Melbourne,Pretoria,"2026-09-20 02:37:27","2026-09-20 11:12:49",17924.00
+"Delta Air Lines",DL4078,Kyoto,Kobe,"2026-07-21 13:33:31","2026-07-21 20:37:51",13878.00
+FlySafair,FA8516,Naples,Lille,"2026-10-10 23:11:08","2026-10-11 01:16:24",3223.00
+FlySafair,FA5257,Edinburgh,Okinawa,"2026-11-14 18:42:49","2026-11-15 08:19:07",4352.00
+"Qatar Airways",QR7662,Barcelona,Tokyo,"2026-07-31 01:53:19","2026-07-31 12:34:39",2600.00
+"South African Airways",SA2203,Venice,Mallorca,"2026-06-08 07:18:27","2026-06-08 10:34:30",11038.00
+"Virgin Atlantic",VS1114,Oxford,London,"2026-11-15 11:15:47","2026-11-16 01:37:11",1538.00
+"Air France",AF4889,Dusseldorf,Valencia,"2026-09-15 14:28:27","2026-09-15 19:47:49",14967.00
+"British Airways",BA9739,Mallorca,Munich,"2026-09-04 00:07:36","2026-09-04 11:10:01",2412.00
+"Virgin Atlantic",VS6465,Tokyo,Calgary,"2026-10-23 13:41:55","2026-10-23 16:24:42",16587.00
+"Qatar Airways",QR7104,Leipzig,Dusseldorf,"2026-10-09 18:33:54","2026-10-10 07:42:23",7050.00
+Emirates,EK3285,Nantes,Naples,"2026-05-30 07:38:14","2026-05-30 11:08:01",2199.00
+"Qatar Airways",QR9221,Hobart,Nantes,"2026-09-16 01:28:41","2026-09-16 07:23:16",15598.00
+"British Airways",BA9985,Montreal,Denver,"2026-06-17 03:03:12","2026-06-17 05:22:15",11054.00
+FlySafair,FA1094,Nagoya,Boston,"2026-10-22 00:24:06","2026-10-22 09:55:12",13043.00
+"Delta Air Lines",DL8555,Palermo,Toledo,"2026-11-14 16:33:01","2026-11-15 04:39:06",6754.00
+"Virgin Atlantic",VS9506,Whistler,Madrid,"2026-08-03 00:43:28","2026-08-03 03:44:13",12361.00
+Lufthansa,LH2143,Nara,Stellenbosch,"2026-09-19 07:11:17","2026-09-19 15:14:06",2419.00
+"Qatar Airways",QR2550,Toulouse,Halifax,"2026-07-26 21:51:44","2026-07-27 07:56:43",14311.00
+"Virgin Atlantic",VS6970,Frankfurt,Sapporo,"2026-06-25 23:02:16","2026-06-26 03:42:17",3658.00
+"South African Airways",SA6905,Adelaide,Bristol,"2026-08-12 08:28:45","2026-08-12 23:07:55",9149.00
+Emirates,EK9867,Darwin,Strasbourg,"2026-10-04 20:52:46","2026-10-04 23:39:04",10186.00
+KLM,KL9814,Victoria,Vancouver,"2026-05-28 15:45:55","2026-05-28 21:29:21",9613.00
+Emirates,EK3653,Brisbane,Frankfurt,"2026-07-23 10:23:38","2026-07-23 17:05:51",5559.00
+FlySafair,FA9287,"Quebec City",Nara,"2026-06-21 17:14:48","2026-06-22 04:12:19",11309.00
+"Virgin Atlantic",VS4523,Ibiza,Nuremberg,"2026-10-16 18:47:48","2026-10-17 02:37:03",12055.00
+"Singapore Airlines",SQ2209,Lyon,Dusseldorf,"2026-07-06 19:42:47","2026-07-07 05:47:54",12033.00
+"Virgin Atlantic",VS8118,Munich,Turin,"2026-07-10 19:43:57","2026-07-11 08:33:22",5881.00
+"Delta Air Lines",DL8940,Naples,Perth,"2026-06-17 13:43:03","2026-06-17 20:02:01",14999.00
+"British Airways",BA1547,"New York",Dusseldorf,"2026-06-10 03:10:42","2026-06-10 07:07:10",17086.00
+"South African Airways",SA792,Nantes,Montpellier,"2026-06-05 22:06:54","2026-06-06 13:22:01",8869.00
+"Qatar Airways",QR7495,Bologna,Dresden,"2026-06-07 12:23:01","2026-06-07 17:22:05",3042.00
+"Qatar Airways",QR6840,Tokyo,Nuremberg,"2026-11-05 19:07:01","2026-11-06 04:40:02",17974.00
+"Qatar Airways",QR4675,Malaga,Bordeaux,"2026-10-02 22:34:30","2026-10-03 09:44:54",3512.00
+"British Airways",BA145,"New York","Las Vegas","2026-06-12 18:40:51","2026-06-13 07:13:27",4419.00
+"Air France",AF9091,Bristol,Boston,"2026-10-20 19:19:11","2026-10-21 09:05:40",17233.00
+Emirates,EK8570,Leipzig,Montreal,"2026-09-27 15:38:37","2026-09-27 22:06:24",15988.00
+FlySafair,FA6200,Vancouver,Bristol,"2026-05-27 15:00:36","2026-05-28 02:07:02",8331.00
+"Singapore Airlines",SQ5237,"San Francisco",Dusseldorf,"2026-10-20 19:42:09","2026-10-21 08:24:01",2152.00
+"Delta Air Lines",DL3822,Osaka,Naples,"2026-07-27 13:51:20","2026-07-27 16:46:03",15814.00
+KLM,KL4730,Nara,Munich,"2026-08-11 10:36:37","2026-08-11 17:11:11",11933.00
+Lufthansa,LH7508,Liverpool,Marseille,"2026-10-14 10:04:15","2026-10-14 16:29:16",3987.00
+"British Airways",BA9909,Toledo,"New York","2026-11-17 00:19:05","2026-11-17 13:41:13",11217.00
+"Virgin Atlantic",VS9518,Lyon,Genoa,"2026-09-11 13:35:04","2026-09-11 19:57:37",9291.00
+"Qatar Airways",QR6538,Lille,Bristol,"2026-08-27 22:22:57","2026-08-28 11:38:43",9140.00
+"Qatar Airways",QR9385,Bologna,Stellenbosch,"2026-05-27 23:20:01","2026-05-28 06:43:16",10929.00
+"Delta Air Lines",DL6864,Paris,Oxford,"2026-11-16 07:12:14","2026-11-16 13:24:54",14303.00
+"Turkish Airlines",TK510,Oxford,Bristol,"2026-06-14 10:04:47","2026-06-15 00:41:39",4809.00
+"South African Airways",SA9081,Marseille,Kimberley,"2026-07-01 22:26:05","2026-07-02 01:00:51",11532.00
+"Virgin Atlantic",VS7856,Malaga,Frankfurt,"2026-10-28 21:29:15","2026-10-29 10:07:32",11217.00
+"Virgin Atlantic",VS6941,Bordeaux,Pretoria,"2026-09-04 19:56:28","2026-09-05 05:04:29",8701.00
+"British Airways",BA3405,Genoa,Victoria,"2026-10-16 22:31:47","2026-10-17 07:12:02",10796.00
+"Delta Air Lines",DL9459,Tokyo,"Cape Town","2026-07-18 16:23:10","2026-07-19 06:29:09",11440.00
+"British Airways",BA9772,"Cape Town",Lyon,"2026-07-04 07:33:29","2026-07-04 12:39:28",13413.00
+Lufthansa,LH3105,Paris,Ottawa,"2026-10-16 02:20:30","2026-10-16 12:11:34",17270.00
+"Virgin Atlantic",VS5011,Nice,Tokyo,"2026-09-22 11:27:08","2026-09-23 02:18:06",3250.00
+KLM,KL416,Genoa,Tokyo,"2026-07-28 11:49:11","2026-07-28 14:06:32",2797.00
+Lufthansa,LH2653,Paris,Nice,"2026-07-19 15:46:31","2026-07-20 00:02:16",8132.00
+Lufthansa,LH2259,Mallorca,Hamburg,"2026-11-04 15:22:14","2026-11-04 18:44:16",5119.00
+"Air France",AF6494,"Cape Town",Austin,"2026-10-23 11:16:15","2026-10-24 00:29:20",7968.00
+"Delta Air Lines",DL5251,"East London",Milan,"2026-06-05 13:19:28","2026-06-05 19:25:45",8770.00
+"Singapore Airlines",SQ7112,Naples,Granada,"2026-05-31 19:50:53","2026-05-31 22:37:59",3573.00
+"British Airways",BA1345,Hamburg,Montpellier,"2026-07-23 23:26:20","2026-07-24 07:52:45",16976.00
+Emirates,EK5482,Sapporo,Edinburgh,"2026-08-22 20:38:06","2026-08-23 08:20:17",2199.00
+"Singapore Airlines",SQ8002,Seattle,Darwin,"2026-10-30 01:02:54","2026-10-30 15:32:49",1997.00
+"Singapore Airlines",SQ6775,Malaga,Melbourne,"2026-11-15 15:55:28","2026-11-15 18:09:23",3792.00
+"British Airways",BA7073,Dresden,Lille,"2026-07-19 21:42:10","2026-07-20 08:36:50",14009.00
+"South African Airways",SA5908,Montreal,Tokyo,"2026-07-02 18:26:47","2026-07-03 08:01:01",17443.00
+"Air France",AF8953,Liverpool,Madrid,"2026-08-20 19:29:59","2026-08-21 10:18:44",17427.00
+FlySafair,FA2988,"Las Vegas",Nice,"2026-09-21 06:02:53","2026-09-21 19:00:15",10764.00
+Lufthansa,LH9006,Austin,Marseille,"2026-10-13 22:19:33","2026-10-14 09:13:06",16191.00
+"Singapore Airlines",SQ9564,Darwin,Stuttgart,"2026-10-12 09:49:35","2026-10-12 14:15:26",11080.00
+FlySafair,FA2967,Genoa,Turin,"2026-06-01 01:59:14","2026-06-01 12:01:48",11826.00
+"Qatar Airways",QR723,Pisa,Lyon,"2026-08-02 05:43:35","2026-08-02 16:06:09",15075.00
+"South African Airways",SA2249,Venice,Durban,"2026-07-27 22:49:44","2026-07-28 05:04:47",15748.00
+FlySafair,FA3189,"San Francisco","Las Vegas","2026-08-20 21:49:00","2026-08-21 09:55:35",9169.00
+KLM,KL5670,"San Francisco","New York","2026-09-28 00:29:04","2026-09-28 15:56:36",7217.00
+"Qatar Airways",QR824,Cairns,Whistler,"2026-07-06 03:48:02","2026-07-06 16:47:59",12354.00
+FlySafair,FA4949,Paris,Ottawa,"2026-11-09 17:11:55","2026-11-09 23:56:24",2361.00
+"Turkish Airlines",TK6062,Melbourne,Bloemfontein,"2026-11-18 10:03:57","2026-11-18 13:51:35",13693.00
+KLM,KL8811,Bali,Seville,"2026-10-05 23:41:36","2026-10-06 06:55:29",13775.00
+Lufthansa,LH7670,Ottawa,Nara,"2026-09-29 17:09:21","2026-09-30 07:51:16",12452.00
+"Delta Air Lines",DL4245,Chicago,Pisa,"2026-10-22 22:47:32","2026-10-23 12:20:35",6283.00
+KLM,KL2207,Edmonton,Madrid,"2026-11-08 15:54:42","2026-11-08 20:38:58",11630.00
+Emirates,EK6652,Kobe,Tokyo,"2026-11-17 08:18:27","2026-11-17 11:53:37",9902.00
+Lufthansa,LH1758,"Cape Town",Johannesburg,"2026-07-03 06:52:32","2026-07-03 18:42:44",1685.00
+"Turkish Airlines",TK1137,"New York",Strasbourg,"2026-06-02 21:37:58","2026-06-03 03:50:43",16196.00
+KLM,KL1967,Munich,Valencia,"2026-10-28 04:38:15","2026-10-28 14:11:40",16070.00
+KLM,KL5856,"San Francisco",Edmonton,"2026-05-27 17:58:48","2026-05-28 06:23:13",14237.00
+"Air France",AF5387,Kimberley,"New York","2026-07-28 07:53:39","2026-07-28 10:35:32",7729.00
+"Virgin Atlantic",VS6246,Cairns,Montpellier,"2026-11-06 12:14:05","2026-11-06 19:25:39",6876.00
+FlySafair,FA7552,"New York",Edinburgh,"2026-06-19 11:03:33","2026-06-19 17:21:28",4393.00
+"South African Airways",SA7683,Bologna,Madrid,"2026-07-16 18:41:49","2026-07-17 05:45:35",5774.00
+Lufthansa,LH3664,Belfast,Florence,"2026-08-19 12:35:35","2026-08-20 03:34:06",14004.00
+"British Airways",BA5149,Bali,Toledo,"2026-07-31 17:42:34","2026-08-01 05:24:43",6710.00
+FlySafair,FA4449,Edinburgh,Halifax,"2026-07-26 00:46:24","2026-07-26 03:50:01",17207.00
+"Air France",AF9634,London,Montreal,"2026-09-09 18:00:21","2026-09-10 05:31:08",10263.00
+"Singapore Airlines",SQ4175,"Los Angeles",Paris,"2026-09-08 21:43:12","2026-09-09 03:38:43",5800.00
+FlySafair,FA8832,Kobe,Oxford,"2026-08-24 02:32:54","2026-08-24 14:40:02",14143.00
+KLM,KL4401,Paris,Dusseldorf,"2026-09-28 15:41:33","2026-09-28 20:25:01",2178.00
+"British Airways",BA7695,Leipzig,Palermo,"2026-08-22 20:20:47","2026-08-23 00:24:33",8418.00
+"Turkish Airlines",TK6232,Hamburg,Denver,"2026-06-22 07:18:26","2026-06-22 18:20:47",2853.00
+FlySafair,FA9651,Dresden,Perth,"2026-10-20 20:17:48","2026-10-20 23:22:59",6567.00
+"Turkish Airlines",TK3494,"Las Vegas",Liverpool,"2026-10-13 14:21:35","2026-10-14 02:44:15",2752.00
+"Turkish Airlines",TK2924,Lyon,Denver,"2026-11-05 16:46:39","2026-11-05 20:15:36",12542.00
+"Air France",AF311,Cologne,Nara,"2026-08-03 15:53:48","2026-08-03 18:20:40",8114.00
+"Delta Air Lines",DL7355,Seattle,Glasgow,"2026-08-29 12:28:51","2026-08-29 23:36:17",7839.00
+"Turkish Airlines",TK2085,Chicago,Sydney,"2026-09-13 14:03:41","2026-09-13 16:54:52",4102.00
+Lufthansa,LH8004,Montreal,Toledo,"2026-11-14 21:13:29","2026-11-15 01:34:51",15855.00
+"Singapore Airlines",SQ8300,Tokyo,"Cape Town","2026-06-08 14:34:13","2026-06-09 05:35:12",5949.00
+Emirates,EK7330,Kimberley,Paris,"2026-07-19 16:32:47","2026-07-19 20:47:45",13984.00
+"Delta Air Lines",DL8328,Durban,Frankfurt,"2026-08-10 01:30:49","2026-08-10 16:24:02",5116.00
+"Qatar Airways",QR7658,"Quebec City",Bologna,"2026-10-14 19:27:23","2026-10-15 03:19:06",3156.00
+FlySafair,FA2523,Osaka,Genoa,"2026-07-03 23:27:17","2026-07-04 11:51:52",3442.00
+"Singapore Airlines",SQ8213,Osaka,Bath,"2026-07-05 09:07:02","2026-07-05 14:36:36",12937.00
+Emirates,EK2490,Seattle,Pretoria,"2026-10-17 16:05:21","2026-10-18 05:44:11",15816.00
+"Delta Air Lines",DL8127,Victoria,Sapporo,"2026-08-22 04:45:14","2026-08-22 08:32:46",12087.00
+"Delta Air Lines",DL5056,Melbourne,Denver,"2026-06-19 15:06:28","2026-06-19 22:32:18",17120.00
+"British Airways",BA2575,Kobe,Montpellier,"2026-10-27 06:13:43","2026-10-27 10:55:04",3186.00
+"Singapore Airlines",SQ1003,Stellenbosch,Milan,"2026-05-30 18:33:36","2026-05-31 01:55:45",15400.00
+"Singapore Airlines",SQ7296,Adelaide,Bali,"2026-07-17 00:22:35","2026-07-17 02:27:33",14334.00
+"British Airways",BA7316,Montpellier,Dubai,"2026-08-10 02:01:22","2026-08-10 11:39:10",11230.00
+"Air France",AF6201,Nice,Ottawa,"2026-10-05 13:23:21","2026-10-05 23:43:26",12024.00
+"Qatar Airways",QR2780,Tokyo,Seville,"2026-05-30 21:47:48","2026-05-31 07:05:03",16172.00
+Emirates,EK4696,Milan,Glasgow,"2026-08-31 09:50:54","2026-08-31 12:48:31",12770.00
+"British Airways",BA7710,Montpellier,"Gold Coast","2026-09-05 01:01:03","2026-09-05 13:29:09",6275.00
+KLM,KL7240,Melbourne,"Gold Coast","2026-07-27 07:46:31","2026-07-27 19:03:21",14549.00
+"British Airways",BA1390,Montreal,Brisbane,"2026-09-24 12:14:24","2026-09-25 02:25:24",2848.00
+"Qatar Airways",QR3305,Glasgow,Dusseldorf,"2026-08-16 18:04:05","2026-08-17 04:55:11",17370.00
+"Virgin Atlantic",VS935,Glasgow,Strasbourg,"2026-09-20 02:33:39","2026-09-20 11:11:57",13183.00
+FlySafair,FA3328,Nice,Darwin,"2026-06-30 03:57:25","2026-06-30 14:16:44",4015.00
+"Air France",AF5530,"New York",Fukuoka,"2026-08-21 03:15:19","2026-08-21 07:44:28",17558.00
+"Virgin Atlantic",VS6820,Madrid,Cologne,"2026-10-03 12:10:47","2026-10-03 17:01:31",7863.00
+FlySafair,FA7934,Fukuoka,"Cape Town","2026-08-27 19:18:34","2026-08-28 01:35:30",5677.00
+Lufthansa,LH7765,Halifax,Bali,"2026-09-02 07:11:55","2026-09-02 15:53:00",13393.00
+"Air France",AF2561,Hiroshima,Adelaide,"2026-11-06 17:23:50","2026-11-07 06:31:26",15896.00
+"Virgin Atlantic",VS5379,Frankfurt,Bloemfontein,"2026-10-15 01:46:38","2026-10-15 08:11:14",12322.00
+KLM,KL6704,Miami,London,"2026-07-13 10:22:30","2026-07-13 20:39:52",13145.00
+"Virgin Atlantic",VS7973,"New York",Bali,"2026-09-04 08:37:38","2026-09-04 21:24:05",7984.00
+"Virgin Atlantic",VS5909,Cairns,Oxford,"2026-09-17 01:47:17","2026-09-17 06:26:14",6805.00
+"Singapore Airlines",SQ3501,Fukuoka,Adelaide,"2026-11-14 00:41:50","2026-11-14 06:59:38",2556.00
+"Qatar Airways",QR6280,London,Canberra,"2026-06-29 13:39:28","2026-06-29 19:31:26",5924.00
+"Singapore Airlines",SQ1736,Dubai,"Quebec City","2026-11-02 22:35:50","2026-11-03 14:22:20",13734.00
+"Singapore Airlines",SQ4574,Ottawa,Toronto,"2026-08-03 21:46:01","2026-08-04 12:41:36",15436.00
+"British Airways",BA2179,Bordeaux,Toronto,"2026-09-26 08:03:39","2026-09-26 13:04:30",17610.00
+"Virgin Atlantic",VS3377,Knysna,Edinburgh,"2026-09-24 14:44:28","2026-09-25 02:58:43",5343.00
+"Delta Air Lines",DL1592,Hobart,Boston,"2026-09-21 03:25:35","2026-09-21 05:37:35",7211.00
+"South African Airways",SA6758,"Port Elizabeth",Melbourne,"2026-09-15 15:45:10","2026-09-15 19:47:58",14282.00
+"Qatar Airways",QR5349,Bali,Oxford,"2026-10-06 03:18:08","2026-10-06 12:52:03",12628.00
+"Delta Air Lines",DL4222,Madrid,Stuttgart,"2026-10-14 05:40:57","2026-10-14 16:28:32",12607.00
+FlySafair,FA4637,Manchester,Cairns,"2026-08-04 16:43:30","2026-08-04 22:35:54",2960.00
+Emirates,EK1349,Bali,Toronto,"2026-10-28 02:01:55","2026-10-28 09:45:37",13777.00
+Lufthansa,LH6712,"New York",Naples,"2026-07-06 20:15:29","2026-07-07 00:18:58",6080.00
+"Delta Air Lines",DL9931,Nantes,Knysna,"2026-07-15 09:03:46","2026-07-15 16:46:41",13696.00
+FlySafair,FA6753,Venice,Hobart,"2026-09-23 22:28:03","2026-09-24 08:32:36",2920.00
+"Delta Air Lines",DL5193,"New York",Paris,"2026-11-19 05:19:58","2026-11-19 12:39:24",9109.00
+"British Airways",BA4009,Ibiza,Halifax,"2026-08-19 18:35:09","2026-08-20 08:16:18",8506.00
+"Turkish Airlines",TK6973,Venice,Montreal,"2026-10-01 23:57:42","2026-10-02 03:45:55",2031.00
+"Turkish Airlines",TK8268,Genoa,Kimberley,"2026-10-02 17:13:31","2026-10-02 23:18:04",16974.00
+Emirates,EK1501,Glasgow,Seville,"2026-10-01 15:44:44","2026-10-02 02:52:42",11747.00
+"Turkish Airlines",TK5843,Marseille,"New York","2026-06-19 13:59:02","2026-06-20 01:51:11",9301.00
+"Air France",AF9784,Berlin,"Gold Coast","2026-06-07 14:06:31","2026-06-07 20:52:17",13335.00
+"Virgin Atlantic",VS6738,Pisa,Tokyo,"2026-08-09 09:02:46","2026-08-09 23:06:31",16301.00
+FlySafair,FA654,Granada,Hamburg,"2026-10-15 22:10:27","2026-10-16 00:23:20",15142.00
+"Singapore Airlines",SQ5210,"Las Vegas","Quebec City","2026-09-20 02:49:39","2026-09-20 18:14:19",12721.00
+"British Airways",BA9360,London,Valencia,"2026-09-03 22:55:25","2026-09-04 08:42:11",6988.00
+"South African Airways",SA5553,Lyon,Mallorca,"2026-08-01 19:08:01","2026-08-02 03:48:18",4289.00
+Lufthansa,LH527,Johannesburg,Nagoya,"2026-07-14 01:09:51","2026-07-14 12:09:31",15696.00
+KLM,KL9513,Venice,"Los Angeles","2026-06-13 16:27:05","2026-06-14 05:40:51",7374.00
+Emirates,EK7154,Nantes,Oxford,"2026-06-26 22:34:06","2026-06-27 12:41:33",6873.00
+"Delta Air Lines",DL9850,Okinawa,Montpellier,"2026-08-13 03:37:06","2026-08-13 08:33:42",16680.00
+"British Airways",BA7007,Edinburgh,"East London","2026-10-03 05:44:20","2026-10-03 16:40:47",6579.00
+"Singapore Airlines",SQ2494,Rome,"Quebec City","2026-08-28 14:55:01","2026-08-28 23:43:54",15397.00
+KLM,KL694,Madrid,Ottawa,"2026-10-13 10:23:43","2026-10-13 17:32:01",12231.00
+"Singapore Airlines",SQ8596,Florence,Toulouse,"2026-09-22 21:28:50","2026-09-23 06:30:05",4677.00
+"South African Airways",SA6143,Venice,Strasbourg,"2026-10-10 01:28:59","2026-10-10 12:27:12",6527.00
+FlySafair,FA9329,Austin,Kobe,"2026-06-25 21:42:27","2026-06-26 01:07:17",3424.00
+"Turkish Airlines",TK2977,Kimberley,Dusseldorf,"2026-10-24 13:28:12","2026-10-24 15:35:47",16095.00
+"Air France",AF1608,Valencia,Fukuoka,"2026-09-28 08:43:38","2026-09-28 18:09:24",16176.00
+Emirates,EK4996,Bordeaux,Sydney,"2026-08-10 14:33:49","2026-08-10 23:36:51",5600.00
+KLM,KL177,Kimberley,Darwin,"2026-06-22 21:52:11","2026-06-23 02:07:34",12774.00
+"British Airways",BA6891,Leipzig,Paris,"2026-08-25 16:07:47","2026-08-26 06:13:41",13128.00
+"Air France",AF1021,"New York",Liverpool,"2026-11-05 17:04:16","2026-11-06 05:35:59",3388.00
+FlySafair,FA3743,Kobe,Liverpool,"2026-07-20 21:59:59","2026-07-21 00:23:59",12739.00
+"Singapore Airlines",SQ312,"Cape Town",Milan,"2026-09-29 06:31:32","2026-09-29 20:34:17",3095.00
+Lufthansa,LH7586,Cairns,Hamburg,"2026-07-31 16:04:02","2026-08-01 06:07:29",11060.00
+KLM,KL7236,Tokyo,"Cape Town","2026-08-31 15:44:07","2026-08-31 21:39:18",10606.00
+"Turkish Airlines",TK3945,Stellenbosch,Naples,"2026-06-03 06:13:40","2026-06-03 11:44:59",2466.00
+"South African Airways",SA4688,Darwin,Valencia,"2026-10-04 13:08:20","2026-10-05 04:19:41",13303.00
+Emirates,EK2353,Stuttgart,Seville,"2026-07-15 22:31:41","2026-07-16 05:36:16",10672.00
+FlySafair,FA3816,Bali,Toledo,"2026-06-05 06:20:13","2026-06-05 17:22:01",8733.00
+"Turkish Airlines",TK7513,"Quebec City",Toronto,"2026-05-30 18:34:09","2026-05-30 23:37:39",6040.00
+"Qatar Airways",QR4642,Genoa,Bilbao,"2026-06-09 04:24:59","2026-06-09 11:16:21",4408.00
+"Air France",AF2763,Paris,Adelaide,"2026-10-07 11:04:28","2026-10-08 02:56:06",17937.00
+"Air France",AF9225,Boston,London,"2026-11-17 22:18:51","2026-11-18 10:53:20",2691.00
+Emirates,EK9545,Toulouse,Belfast,"2026-05-30 10:41:38","2026-05-30 14:48:21",10150.00
+"Turkish Airlines",TK7854,Berlin,Boston,"2026-08-05 06:52:36","2026-08-05 18:45:11",2133.00
+"Delta Air Lines",DL7955,Venice,Paris,"2026-07-19 03:29:33","2026-07-19 12:31:03",7485.00
+FlySafair,FA8165,Johannesburg,Bali,"2026-09-20 07:44:30","2026-09-20 17:01:05",5805.00
+Lufthansa,LH5629,Bilbao,Stuttgart,"2026-10-31 13:04:25","2026-11-01 00:33:54",15349.00
+"Turkish Airlines",TK6092,Montpellier,Lyon,"2026-06-27 14:36:51","2026-06-28 04:15:29",13319.00
+Emirates,EK2530,Vancouver,Perth,"2026-10-05 18:10:51","2026-10-06 06:58:06",2859.00
+"British Airways",BA642,Edmonton,Mallorca,"2026-06-25 09:10:10","2026-06-25 18:05:24",10345.00
+"Virgin Atlantic",VS1900,Oxford,"Cape Town","2026-08-29 21:39:23","2026-08-30 12:12:51",10049.00
+"Air France",AF5988,Adelaide,Tokyo,"2026-09-11 20:48:34","2026-09-11 22:51:58",14005.00
+"Qatar Airways",QR1674,Bath,Okinawa,"2026-07-26 18:34:17","2026-07-27 05:26:53",11634.00
+Emirates,EK2557,"Cape Town","New York","2026-06-18 15:18:08","2026-06-18 23:59:15",14527.00
+"Virgin Atlantic",VS4009,Seattle,Hiroshima,"2026-10-06 23:37:45","2026-10-07 05:14:57",17106.00
+"Qatar Airways",QR6011,Granada,Ottawa,"2026-07-22 08:27:46","2026-07-22 15:55:29",17275.00
+"Turkish Airlines",TK1924,Malaga,Nagoya,"2026-09-20 17:01:57","2026-09-21 02:54:27",2624.00
+FlySafair,FA5347,Canberra,Kimberley,"2026-11-07 07:37:41","2026-11-07 16:00:13",12996.00
+"British Airways",BA7616,Tokyo,Dusseldorf,"2026-10-07 11:17:22","2026-10-07 19:32:48",5737.00
+"Air France",AF7126,Munich,Hiroshima,"2026-09-12 07:32:52","2026-09-12 11:10:59",5174.00
+"British Airways",BA5049,Bordeaux,Malaga,"2026-07-24 03:11:13","2026-07-24 11:59:50",12596.00
+Emirates,EK8742,Bloemfontein,Denver,"2026-11-15 22:47:37","2026-11-16 05:46:16",10165.00
+FlySafair,FA8822,Bristol,Vancouver,"2026-08-24 07:52:05","2026-08-24 21:15:23",16719.00
+FlySafair,FA7602,Marseille,Whistler,"2026-08-11 12:06:38","2026-08-11 17:29:10",7628.00
+"British Airways",BA8318,Nuremberg,Dubai,"2026-06-14 16:59:43","2026-06-14 22:38:24",11039.00
+"Singapore Airlines",SQ1366,Munich,Dubai,"2026-07-19 03:28:28","2026-07-19 16:42:13",12030.00
+"South African Airways",SA5088,Bali,Berlin,"2026-07-05 14:43:15","2026-07-05 22:25:20",14817.00
+"British Airways",BA6513,Toronto,Dubai,"2026-07-18 18:19:32","2026-07-19 07:23:01",5671.00
+"South African Airways",SA9345,Turin,Kobe,"2026-10-16 13:04:26","2026-10-16 23:46:43",15399.00
+"Delta Air Lines",DL4786,Okinawa,Bologna,"2026-07-16 05:08:00","2026-07-16 18:11:51",3796.00
+"British Airways",BA7740,Sydney,Kyoto,"2026-08-05 22:10:22","2026-08-06 01:02:32",6081.00
+"Turkish Airlines",TK9486,"Los Angeles",Fukuoka,"2026-08-31 10:46:03","2026-08-31 20:25:44",8934.00
+"Delta Air Lines",DL6841,Toledo,Barcelona,"2026-06-24 09:52:57","2026-06-24 14:27:19",5880.00
+"Delta Air Lines",DL8523,Seattle,Montreal,"2026-07-11 02:54:07","2026-07-11 15:10:49",13658.00
+"Delta Air Lines",DL3017,Nara,Bilbao,"2026-08-23 23:46:38","2026-08-24 12:54:34",5666.00
+FlySafair,FA7768,Ottawa,Osaka,"2026-06-23 13:43:57","2026-06-24 04:16:01",11286.00
+KLM,KL6522,Sapporo,Johannesburg,"2026-08-06 17:56:34","2026-08-06 23:16:48",7835.00
+"British Airways",BA4477,Leipzig,"Gold Coast","2026-10-31 20:14:50","2026-11-01 11:50:47",2211.00
+"South African Airways",SA2548,Glasgow,"Gold Coast","2026-06-12 19:01:33","2026-06-13 02:43:33",1939.00
+Emirates,EK6685,Leipzig,Pretoria,"2026-08-05 08:59:03","2026-08-05 14:05:42",6855.00
+Lufthansa,LH9313,Montreal,Barcelona,"2026-08-08 01:44:22","2026-08-08 04:32:06",7666.00
+FlySafair,FA1737,Munich,Dresden,"2026-07-16 05:30:25","2026-07-16 16:01:56",12701.00
+"Air France",AF1007,London,Sapporo,"2026-07-17 20:27:27","2026-07-17 23:04:45",17834.00
+"Virgin Atlantic",VS7153,Seville,Canberra,"2026-08-06 09:30:53","2026-08-06 21:15:00",3234.00
+"Virgin Atlantic",VS3171,Granada,Bath,"2026-11-12 22:02:56","2026-11-13 01:24:55",5333.00
+"Singapore Airlines",SQ5492,"East London",Dubai,"2026-08-12 10:26:27","2026-08-12 23:08:56",5023.00
+FlySafair,FA1678,Bath,Liverpool,"2026-11-13 15:08:38","2026-11-14 01:57:19",17678.00
+Lufthansa,LH5665,Cairns,Dubai,"2026-11-04 21:24:27","2026-11-05 11:25:11",9228.00
+"Qatar Airways",QR5250,Miami,Kobe,"2026-09-01 23:42:27","2026-09-02 07:12:56",2177.00
+"Singapore Airlines",SQ7053,Malaga,Vancouver,"2026-06-01 23:02:16","2026-06-02 08:24:43",4914.00
+"Virgin Atlantic",VS7342,Kobe,Pisa,"2026-09-27 00:45:44","2026-09-27 04:11:02",17256.00
+Lufthansa,LH5346,Bordeaux,Malaga,"2026-07-22 15:24:58","2026-07-23 03:26:45",11300.00
+"Delta Air Lines",DL5620,"San Francisco",Palermo,"2026-09-26 16:35:14","2026-09-27 02:54:22",15639.00
+"Virgin Atlantic",VS1148,Lyon,"Gold Coast","2026-06-02 05:19:22","2026-06-02 15:51:50",13256.00
+Lufthansa,LH1663,Tokyo,Dusseldorf,"2026-07-31 21:25:53","2026-08-01 12:04:01",17863.00
+"Virgin Atlantic",VS2397,Belfast,Tokyo,"2026-11-04 00:49:57","2026-11-04 14:11:33",16297.00
+"Air France",AF636,Darwin,Ottawa,"2026-09-29 06:10:49","2026-09-29 17:30:22",4518.00
+"Qatar Airways",QR3682,Johannesburg,"Port Elizabeth","2026-09-02 22:31:59","2026-09-03 05:45:22",1962.00
+KLM,KL2231,Halifax,Tokyo,"2026-07-05 17:45:17","2026-07-06 02:58:53",2501.00
+"British Airways",BA5593,Tokyo,Oxford,"2026-07-26 04:55:08","2026-07-26 13:06:35",14639.00
+"Qatar Airways",QR1805,Pisa,Granada,"2026-08-12 11:50:38","2026-08-12 23:38:43",6172.00
+"Qatar Airways",QR1756,Paris,"East London","2026-08-19 09:00:32","2026-08-19 14:20:00",2420.00
+"Virgin Atlantic",VS352,Bali,Venice,"2026-06-06 19:10:06","2026-06-07 06:15:45",14532.00
+"Delta Air Lines",DL8233,Boston,Seattle,"2026-07-15 00:23:27","2026-07-15 09:13:22",10665.00
+Emirates,EK5361,Nuremberg,Cologne,"2026-10-10 17:48:07","2026-10-11 01:19:30",8395.00
+KLM,KL8616,Tokyo,Cologne,"2026-10-07 21:20:39","2026-10-08 00:12:59",15900.00
+"Qatar Airways",QR4546,Melbourne,Brisbane,"2026-08-25 07:28:37","2026-08-25 19:20:38",10269.00
+"Qatar Airways",QR9101,Bloemfontein,Munich,"2026-08-28 01:33:28","2026-08-28 15:43:43",2346.00
+KLM,KL2059,Malaga,Bloemfontein,"2026-11-08 17:16:53","2026-11-09 04:38:05",9373.00
+"Turkish Airlines",TK1473,Malaga,Manchester,"2026-06-25 22:20:51","2026-06-26 05:48:45",15883.00
+"Singapore Airlines",SQ1267,Leipzig,Berlin,"2026-06-25 08:27:13","2026-06-25 15:50:06",17072.00
+KLM,KL6460,"New York",Melbourne,"2026-07-23 12:28:21","2026-07-23 14:45:10",4793.00
+"Air France",AF1716,Bordeaux,Nagoya,"2026-05-27 12:58:12","2026-05-27 21:01:54",15149.00
+"Virgin Atlantic",VS1439,Montreal,Palermo,"2026-07-31 20:50:03","2026-08-01 02:15:05",17343.00
+"British Airways",BA5912,Osaka,Manchester,"2026-09-18 17:58:21","2026-09-19 01:40:27",3888.00
+"British Airways",BA2854,Hamburg,Fukuoka,"2026-11-12 22:42:59","2026-11-13 02:39:30",12227.00
+"Qatar Airways",QR286,Frankfurt,Stellenbosch,"2026-09-12 19:41:26","2026-09-13 11:30:08",9687.00
+FlySafair,FA6476,Cairns,Nara,"2026-06-02 20:51:08","2026-06-03 00:51:28",12385.00
+"Air France",AF3370,Victoria,Okinawa,"2026-09-14 18:12:27","2026-09-15 05:28:34",8783.00
+"Virgin Atlantic",VS6600,Ibiza,Liverpool,"2026-09-10 08:06:05","2026-09-10 19:22:12",15749.00
+KLM,KL1682,Bordeaux,Whistler,"2026-10-03 12:35:19","2026-10-04 04:03:41",10199.00
+FlySafair,FA1723,Ottawa,Pisa,"2026-06-28 20:57:52","2026-06-29 04:22:38",9462.00
+Lufthansa,LH9726,Nagoya,Cairns,"2026-07-31 07:35:57","2026-07-31 11:00:40",6604.00
+"British Airways",BA9345,"Gold Coast",Paris,"2026-07-28 09:01:03","2026-07-28 21:06:29",2463.00
+Emirates,EK4606,Tokyo,Sydney,"2026-10-03 17:31:25","2026-10-03 20:15:56",16977.00
+"Qatar Airways",QR2888,Nagoya,"East London","2026-06-25 07:15:37","2026-06-25 15:53:54",8301.00
+KLM,KL3586,Montpellier,Nara,"2026-08-19 01:00:24","2026-08-19 04:22:41",13113.00
+Emirates,EK3924,Osaka,Okinawa,"2026-10-22 03:50:00","2026-10-22 07:23:32",8293.00
+"South African Airways",SA6868,Glasgow,"East London","2026-08-02 13:46:03","2026-08-02 20:14:12",2239.00
+"Delta Air Lines",DL8970,Malaga,Lyon,"2026-09-29 14:41:55","2026-09-29 22:02:47",13518.00
+"South African Airways",SA9078,Stellenbosch,Venice,"2026-09-25 21:27:45","2026-09-26 03:55:36",4729.00
+FlySafair,FA1974,Leipzig,Chicago,"2026-10-11 11:57:51","2026-10-11 23:25:50",15850.00
+"South African Airways",SA9766,Montreal,Mallorca,"2026-11-03 09:23:43","2026-11-03 20:29:16",13007.00
+"Virgin Atlantic",VS9229,Rome,Genoa,"2026-08-23 23:51:54","2026-08-24 09:55:37",17377.00
+"Air France",AF4530,Dusseldorf,Lyon,"2026-10-16 08:39:57","2026-10-17 00:25:03",12395.00
+"Turkish Airlines",TK8997,Bali,Malaga,"2026-08-02 04:20:15","2026-08-02 18:10:25",7106.00
+KLM,KL6474,Cairns,Nuremberg,"2026-10-18 20:03:49","2026-10-19 03:30:45",4742.00
+KLM,KL6617,Naples,Johannesburg,"2026-09-03 23:21:46","2026-09-04 10:10:20",12805.00
+"British Airways",BA3588,Bologna,Milan,"2026-10-31 14:24:02","2026-10-31 18:04:12",11682.00
+KLM,KL9970,Tokyo,Nagoya,"2026-10-20 00:08:45","2026-10-20 12:55:48",9440.00
+"Virgin Atlantic",VS9193,"New York","Port Elizabeth","2026-06-02 09:55:34","2026-06-02 12:08:53",14053.00
+KLM,KL1902,"San Francisco",Darwin,"2026-08-02 18:59:56","2026-08-02 21:19:47",12989.00
+"Virgin Atlantic",VS242,Liverpool,Kobe,"2026-10-28 15:11:17","2026-10-29 05:15:01",9062.00
+"Singapore Airlines",SQ4087,Genoa,Tokyo,"2026-10-15 20:41:50","2026-10-16 06:14:29",4672.00
+Lufthansa,LH2697,Bordeaux,Palermo,"2026-08-15 13:52:07","2026-08-15 18:04:48",10338.00
+Lufthansa,LH5960,Bordeaux,Lyon,"2026-10-01 15:07:19","2026-10-01 17:25:14",6380.00
+"British Airways",BA9342,"Port Elizabeth",Perth,"2026-06-18 07:25:24","2026-06-18 15:43:49",17730.00
+"Delta Air Lines",DL5090,Hiroshima,Florence,"2026-06-25 13:26:47","2026-06-25 17:12:19",17763.00
+FlySafair,FA9836,Pretoria,Kyoto,"2026-06-20 18:48:54","2026-06-21 05:01:17",17861.00
+"Qatar Airways",QR5092,Bilbao,Rome,"2026-08-06 19:04:13","2026-08-07 04:01:20",13993.00
+"Turkish Airlines",TK8063,Melbourne,Montreal,"2026-10-17 08:35:34","2026-10-17 20:57:19",4510.00
+KLM,KL6065,Toulouse,Frankfurt,"2026-08-20 16:20:06","2026-08-21 00:38:39",15168.00
+Emirates,EK5623,Nara,"Quebec City","2026-09-04 11:02:53","2026-09-05 00:36:28",14435.00
+FlySafair,FA1700,Johannesburg,Austin,"2026-11-11 03:16:35","2026-11-11 16:38:21",17833.00
+Emirates,EK2985,Munich,Kobe,"2026-08-23 14:15:58","2026-08-24 04:02:35",7019.00
+"Singapore Airlines",SQ5584,Glasgow,Naples,"2026-10-30 15:03:32","2026-10-31 04:34:15",13450.00
+"Air France",AF1688,Bristol,Glasgow,"2026-11-13 22:18:05","2026-11-14 12:43:49",11986.00
+"Delta Air Lines",DL4516,Fukuoka,Osaka,"2026-05-27 02:29:16","2026-05-27 17:43:30",9370.00
+"Turkish Airlines",TK8002,Barcelona,Hiroshima,"2026-05-29 09:01:21","2026-05-29 23:10:03",11616.00
+"Virgin Atlantic",VS4875,Birmingham,Marseille,"2026-08-09 02:44:43","2026-08-09 05:33:52",14509.00
+Emirates,EK536,Adelaide,Kyoto,"2026-08-02 03:33:37","2026-08-02 19:08:12",16541.00
+"Delta Air Lines",DL1610,Bath,Miami,"2026-07-13 02:12:54","2026-07-13 11:39:25",10942.00
+Lufthansa,LH7678,Strasbourg,Paris,"2026-06-07 02:13:11","2026-06-07 17:18:27",8779.00
+"Qatar Airways",QR4397,Denver,Cologne,"2026-08-08 17:23:03","2026-08-08 20:44:59",16010.00
+"Air France",AF6447,Glasgow,Bilbao,"2026-08-06 00:39:58","2026-08-06 05:19:55",2825.00
+Emirates,EK1689,Melbourne,Nagoya,"2026-07-22 07:03:50","2026-07-22 09:09:19",15422.00
+"British Airways",BA9198,Malaga,Nagoya,"2026-11-04 04:26:47","2026-11-04 09:09:28",13860.00
+"Virgin Atlantic",VS1999,Perth,Lille,"2026-10-30 13:45:39","2026-10-30 20:38:59",7298.00
+"British Airways",BA5920,"East London","Cape Town","2026-08-19 03:36:45","2026-08-19 16:46:29",10740.00
+Lufthansa,LH4052,Manchester,Pretoria,"2026-11-14 20:29:12","2026-11-15 00:12:23",2655.00
+"South African Airways",SA2996,Nice,Pretoria,"2026-06-25 05:11:02","2026-06-25 11:57:16",6336.00
+"South African Airways",SA8382,Toulouse,Munich,"2026-06-24 14:14:30","2026-06-24 20:51:26",4165.00
+"Qatar Airways",QR668,Toronto,Brisbane,"2026-09-30 14:54:19","2026-10-01 01:20:16",16908.00
+"Turkish Airlines",TK9450,Venice,Edinburgh,"2026-05-27 09:51:56","2026-05-27 19:15:48",15538.00
+FlySafair,FA9392,Seville,Vancouver,"2026-11-11 03:27:03","2026-11-11 08:36:12",17789.00
+Emirates,EK3387,Seville,Rome,"2026-06-01 03:13:04","2026-06-01 08:51:30",9446.00
+"Singapore Airlines",SQ5365,Strasbourg,Birmingham,"2026-09-16 14:20:32","2026-09-17 03:35:19",16791.00
+"Singapore Airlines",SQ7576,Nantes,Okinawa,"2026-07-25 08:23:51","2026-07-25 14:53:44",11757.00
+FlySafair,FA4916,Belfast,Granada,"2026-10-26 10:37:43","2026-10-26 22:30:55",10850.00
+"Singapore Airlines",SQ9568,"New York",Canberra,"2026-11-14 21:17:45","2026-11-15 07:08:20",5158.00
+"Virgin Atlantic",VS8587,"Cape Town",Hiroshima,"2026-06-27 08:46:36","2026-06-27 18:48:54",6777.00
+KLM,KL717,"Los Angeles",Nara,"2026-08-29 06:14:35","2026-08-29 15:39:46",13712.00
+"Qatar Airways",QR3090,Venice,"New York","2026-08-09 12:07:42","2026-08-09 16:15:03",15741.00
+"Turkish Airlines",TK6511,Kobe,Dresden,"2026-09-23 02:48:22","2026-09-23 15:50:03",4880.00
+"Virgin Atlantic",VS6594,Bath,Bologna,"2026-06-24 20:03:35","2026-06-25 10:02:35",9408.00
+"Delta Air Lines",DL4702,Bologna,Whistler,"2026-06-19 20:09:51","2026-06-20 01:28:56",14925.00
+Lufthansa,LH6705,Florence,Seville,"2026-07-07 22:07:02","2026-07-08 05:54:34",7295.00
+FlySafair,FA8355,Whistler,Seattle,"2026-09-17 23:22:41","2026-09-18 13:53:40",1640.00
+KLM,KL8517,Liverpool,Valencia,"2026-10-05 08:10:54","2026-10-05 15:22:28",13705.00
+Lufthansa,LH1521,Milan,Edinburgh,"2026-07-04 22:30:30","2026-07-05 08:23:20",7986.00
+FlySafair,FA1633,Victoria,Melbourne,"2026-11-07 22:35:36","2026-11-08 04:24:39",13497.00
+KLM,KL4822,Madrid,Dubai,"2026-11-16 05:44:30","2026-11-16 21:27:22",9333.00
+"Virgin Atlantic",VS7552,Tokyo,"Cape Town","2026-06-25 19:16:09","2026-06-26 01:43:32",7810.00
+"South African Airways",SA7277,Edinburgh,Munich,"2026-07-24 00:11:45","2026-07-24 11:44:10",6607.00
+"British Airways",BA9394,"Quebec City",Hamburg,"2026-08-18 10:37:17","2026-08-18 22:11:11",17832.00
+"Delta Air Lines",DL392,Calgary,Palermo,"2026-10-20 07:03:45","2026-10-20 14:27:04",13316.00
+"Singapore Airlines",SQ1371,Cairns,Strasbourg,"2026-06-22 03:29:20","2026-06-22 12:47:12",12819.00
+"Delta Air Lines",DL1048,Cologne,Paris,"2026-08-28 02:17:04","2026-08-28 13:23:25",5215.00
+"South African Airways",SA3409,Madrid,Bristol,"2026-06-20 07:22:25","2026-06-20 14:31:07",15809.00
+FlySafair,FA8852,Liverpool,Kyoto,"2026-10-06 09:15:31","2026-10-06 18:37:50",13466.00
+Lufthansa,LH9744,Cologne,Nara,"2026-10-28 22:32:35","2026-10-29 13:17:43",15313.00
+FlySafair,FA1864,Naples,Okinawa,"2026-10-15 22:50:41","2026-10-16 09:05:08",3587.00
+"Air France",AF6084,Venice,Bilbao,"2026-09-06 06:10:19","2026-09-06 21:55:20",6811.00
+"British Airways",BA9573,Edmonton,Toulouse,"2026-08-01 02:54:49","2026-08-01 09:54:50",14463.00
+"Singapore Airlines",SQ2428,Dubai,London,"2026-11-19 14:37:12","2026-11-19 17:50:05",10736.00
+Lufthansa,LH4915,Darwin,Bordeaux,"2026-10-04 11:49:15","2026-10-04 23:17:12",15856.00
+"South African Airways",SA3176,Madrid,Melbourne,"2026-10-16 14:50:16","2026-10-16 22:53:33",4547.00
+"British Airways",BA5397,Kobe,Lille,"2026-08-18 14:11:26","2026-08-19 01:05:20",17383.00
+"British Airways",BA1342,Edmonton,Hobart,"2026-09-17 19:14:53","2026-09-18 06:20:52",7340.00
+Emirates,EK6787,London,Birmingham,"2026-10-04 18:53:34","2026-10-05 08:20:07",4261.00
+"Singapore Airlines",SQ1524,Osaka,"Cape Town","2026-07-15 18:27:50","2026-07-15 20:49:23",8912.00
+"Air France",AF1946,Perth,Ibiza,"2026-06-15 11:03:57","2026-06-15 21:55:37",16147.00
+"Virgin Atlantic",VS7520,Paris,Denver,"2026-07-28 09:54:07","2026-07-29 00:46:08",7199.00
+KLM,KL5931,Dubai,"Los Angeles","2026-06-22 09:45:49","2026-06-22 22:17:34",2190.00
+"Air France",AF2304,Strasbourg,Granada,"2026-05-28 17:27:39","2026-05-29 06:23:59",3414.00
+"Delta Air Lines",DL7058,Nara,Paris,"2026-05-29 00:30:50","2026-05-29 05:46:30",6218.00
+"Turkish Airlines",TK8262,Tokyo,Ottawa,"2026-09-25 01:25:41","2026-09-25 07:15:36",11031.00
+Lufthansa,LH8579,Edinburgh,Barcelona,"2026-05-27 03:07:33","2026-05-27 17:09:38",9216.00
+"South African Airways",SA4635,Naples,Stuttgart,"2026-10-17 22:51:23","2026-10-18 10:46:30",4933.00
+Emirates,EK3194,Toulouse,Toronto,"2026-06-07 13:56:01","2026-06-07 21:32:35",13523.00
+"Delta Air Lines",DL1711,Montpellier,Mallorca,"2026-06-24 23:50:18","2026-06-25 15:43:57",15462.00
+Emirates,EK9975,Bordeaux,Dubai,"2026-07-08 22:35:09","2026-07-09 02:52:32",10944.00
+KLM,KL1952,Strasbourg,Dusseldorf,"2026-08-05 12:58:34","2026-08-05 21:37:28",15719.00
+"Virgin Atlantic",VS6071,Brisbane,Florence,"2026-09-27 16:40:19","2026-09-27 20:21:24",5335.00
+FlySafair,FA5361,Florence,Kobe,"2026-11-10 16:32:12","2026-11-11 06:56:40",8228.00
+Emirates,EK5370,Munich,Nice,"2026-10-31 08:05:26","2026-10-31 19:24:18",7547.00
+"Singapore Airlines",SQ1989,Melbourne,Paris,"2026-06-16 03:30:14","2026-06-16 13:11:30",11802.00
+"Singapore Airlines",SQ6054,"Las Vegas","New York","2026-05-30 23:33:17","2026-05-31 15:22:24",13270.00
+"Delta Air Lines",DL267,Bloemfontein,Miami,"2026-07-15 14:22:43","2026-07-16 05:32:25",8199.00
+KLM,KL6274,"Port Elizabeth",Granada,"2026-11-12 11:33:04","2026-11-12 22:32:41",10893.00
+FlySafair,FA7853,Cologne,Venice,"2026-11-08 06:00:40","2026-11-08 21:38:00",11460.00
+"Delta Air Lines",DL6405,Canberra,Belfast,"2026-08-11 18:14:03","2026-08-12 05:24:23",14079.00
+"Air France",AF2931,Sydney,"San Francisco","2026-05-27 02:37:12","2026-05-27 15:06:02",12034.00
+Emirates,EK3074,Manchester,"Los Angeles","2026-07-28 21:48:00","2026-07-29 13:36:50",17271.00
+"South African Airways",SA9848,Bologna,Pretoria,"2026-09-22 21:13:16","2026-09-23 01:35:41",11189.00
+Lufthansa,LH3410,Seville,Valencia,"2026-09-05 22:22:57","2026-09-06 10:56:32",10425.00
+Emirates,EK2972,"New York",Brisbane,"2026-08-03 18:59:11","2026-08-04 01:19:53",8525.00
+Emirates,EK3283,Canberra,Durban,"2026-07-18 04:58:04","2026-07-18 20:12:47",2970.00
+"South African Airways",SA6579,Toledo,Paris,"2026-07-10 22:16:59","2026-07-11 10:12:45",6771.00
+"Singapore Airlines",SQ9019,Tokyo,Adelaide,"2026-09-16 19:29:45","2026-09-17 11:22:02",6787.00
+"Virgin Atlantic",VS4272,Bristol,Johannesburg,"2026-10-24 06:47:20","2026-10-24 14:39:30",13344.00
+Lufthansa,LH7863,Marseille,"New York","2026-08-22 04:20:15","2026-08-22 09:44:43",6372.00
+"Qatar Airways",QR8088,Lille,Sapporo,"2026-10-01 08:29:34","2026-10-01 16:56:02",7222.00
+"British Airways",BA4651,Bordeaux,Dubai,"2026-10-23 02:23:22","2026-10-23 17:09:33",15064.00
+"British Airways",BA6327,Turin,"Cape Town","2026-10-11 09:51:59","2026-10-11 17:56:19",6024.00
+"Qatar Airways",QR697,"New York",Kimberley,"2026-06-22 07:09:19","2026-06-22 22:13:38",17606.00
+"British Airways",BA6433,Kyoto,Oxford,"2026-05-25 16:35:34","2026-05-26 03:38:06",14062.00
+"British Airways",BA7746,Stellenbosch,Tokyo,"2026-09-03 05:16:05","2026-09-03 17:56:50",12107.00
+"Air France",AF5341,Edinburgh,Bath,"2026-11-13 04:36:59","2026-11-13 16:09:45",11174.00
+"Singapore Airlines",SQ8494,"San Francisco",Halifax,"2026-06-28 21:45:01","2026-06-29 00:21:56",11704.00
+"Qatar Airways",QR4899,Berlin,Genoa,"2026-07-12 14:27:52","2026-07-12 22:02:31",11436.00
+Emirates,EK8176,Whistler,Dresden,"2026-11-10 05:28:25","2026-11-10 13:52:28",16118.00
+"Virgin Atlantic",VS1661,"Los Angeles",Bloemfontein,"2026-09-27 13:34:52","2026-09-28 04:12:10",2036.00
+"Virgin Atlantic",VS2177,"Gold Coast",Tokyo,"2026-11-01 02:54:38","2026-11-01 15:25:45",14030.00
+Emirates,EK9403,Granada,Toulouse,"2026-07-18 23:02:38","2026-07-19 11:03:44",5120.00
+"British Airways",BA4735,Oxford,Tokyo,"2026-09-18 22:55:56","2026-09-19 05:24:44",14770.00
+"Delta Air Lines",DL5949,Dusseldorf,Lille,"2026-11-05 23:21:09","2026-11-06 07:31:39",6595.00
+"Air France",AF4057,Lille,Darwin,"2026-10-01 06:15:20","2026-10-01 08:16:44",9538.00
+Emirates,EK7668,Genoa,Dresden,"2026-07-23 16:24:57","2026-07-23 21:34:43",3751.00
+FlySafair,FA7859,Tokyo,"Cape Town","2026-08-26 00:34:19","2026-08-26 11:20:35",4211.00
+"British Airways",BA7124,Valencia,Tokyo,"2026-09-29 20:21:46","2026-09-30 08:41:53",2392.00
+Lufthansa,LH1431,Knysna,"Cape Town","2026-07-27 00:33:40","2026-07-27 14:06:45",15977.00
+"Qatar Airways",QR2581,Dubai,London,"2026-05-30 12:00:09","2026-05-31 03:46:05",1932.00
+"Qatar Airways",QR1890,Manchester,Tokyo,"2026-09-20 10:52:48","2026-09-20 16:49:58",8213.00
+"Qatar Airways",QR9302,Paris,Toronto,"2026-08-18 23:22:10","2026-08-19 14:46:41",17646.00
+"Turkish Airlines",TK1390,Strasbourg,Hobart,"2026-06-09 17:20:52","2026-06-09 23:57:57",5700.00
+KLM,KL8689,Leipzig,"New York","2026-05-28 08:17:09","2026-05-28 21:32:00",8680.00
+KLM,KL1183,Strasbourg,Bali,"2026-05-26 22:28:04","2026-05-27 08:51:20",14585.00
+FlySafair,FA6985,Granada,Boston,"2026-07-03 03:01:53","2026-07-03 16:54:28",16971.00
+Emirates,EK7898,Adelaide,"Cape Town","2026-06-21 12:38:48","2026-06-21 14:40:43",17354.00
+"Virgin Atlantic",VS3852,Pisa,Sydney,"2026-07-09 23:39:44","2026-07-10 07:05:08",13054.00
+"South African Airways",SA5458,"Quebec City",Nice,"2026-09-17 23:07:39","2026-09-18 07:58:30",13321.00
+KLM,KL4215,Dubai,Melbourne,"2026-07-17 13:36:11","2026-07-18 00:26:18",14601.00
+"Air France",AF7304,Edmonton,Kobe,"2026-11-11 21:24:11","2026-11-12 05:38:42",1633.00
+"British Airways",BA8843,Hamburg,Barcelona,"2026-10-15 17:47:28","2026-10-15 23:20:25",6395.00
+"Virgin Atlantic",VS9344,Belfast,Kyoto,"2026-11-10 17:40:56","2026-11-10 21:03:57",3410.00
+"Qatar Airways",QR382,Montreal,Bordeaux,"2026-07-15 12:50:10","2026-07-15 16:29:23",7262.00
+"Virgin Atlantic",VS5460,Bali,Brisbane,"2026-09-30 09:54:33","2026-09-30 12:30:56",7874.00
+"Qatar Airways",QR2335,Kyoto,Toledo,"2026-09-07 10:16:09","2026-09-07 12:28:34",4360.00
+"Delta Air Lines",DL1966,Hamburg,Durban,"2026-10-03 01:32:17","2026-10-03 15:38:31",2608.00
+Lufthansa,LH7294,Pisa,Glasgow,"2026-10-22 17:03:32","2026-10-22 22:46:54",10771.00
+"Delta Air Lines",DL1397,Palermo,Seville,"2026-06-02 00:09:51","2026-06-02 03:25:45",14893.00
+"Air France",AF7314,Paris,Bloemfontein,"2026-06-11 23:54:52","2026-06-12 03:14:11",1911.00
+"Delta Air Lines",DL5148,Bilbao,Sapporo,"2026-05-28 04:14:05","2026-05-28 14:48:25",1864.00
+"Singapore Airlines",SQ9241,Adelaide,Vancouver,"2026-09-25 13:48:08","2026-09-26 01:30:56",10802.00
+KLM,KL7199,"Quebec City",Manchester,"2026-10-02 05:20:43","2026-10-02 14:17:07",13856.00
+"Delta Air Lines",DL4450,"New York",Boston,"2026-07-20 10:11:29","2026-07-20 17:23:13",5179.00
+Emirates,EK7309,Leipzig,Valencia,"2026-08-29 07:57:34","2026-08-29 11:54:48",6618.00
+"Singapore Airlines",SQ4201,Belfast,Naples,"2026-06-04 05:41:37","2026-06-04 13:38:50",9840.00
+"Delta Air Lines",DL8516,Milan,Malaga,"2026-09-16 12:21:10","2026-09-16 15:28:39",12862.00
+"Delta Air Lines",DL5120,Melbourne,Brisbane,"2026-07-23 13:39:58","2026-07-23 16:02:17",9995.00
+Emirates,EK7524,Bordeaux,Osaka,"2026-05-30 17:37:02","2026-05-30 21:03:43",15175.00
+"Delta Air Lines",DL6204,Manchester,Dubai,"2026-06-06 15:23:42","2026-06-07 07:17:26",12672.00
+"Virgin Atlantic",VS9194,Malaga,Bologna,"2026-10-23 02:38:01","2026-10-23 08:40:22",5380.00
+"Air France",AF351,Granada,Kobe,"2026-06-01 15:23:54","2026-06-02 03:35:46",2180.00
+"Qatar Airways",QR7654,Granada,Whistler,"2026-11-10 14:44:17","2026-11-10 20:06:11",3671.00
+"Virgin Atlantic",VS9523,Belfast,Osaka,"2026-11-19 01:13:44","2026-11-19 08:37:47",17004.00
+"British Airways",BA3959,"New York",Bilbao,"2026-06-25 06:11:45","2026-06-25 21:54:18",7471.00
+"Singapore Airlines",SQ9848,Bristol,Kobe,"2026-06-26 15:54:04","2026-06-27 05:51:33",6862.00
+"Air France",AF1632,Berlin,Barcelona,"2026-08-12 16:00:08","2026-08-12 19:38:45",2772.00
+FlySafair,FA8413,Birmingham,Seattle,"2026-07-24 12:52:14","2026-07-24 21:16:25",13843.00
+Lufthansa,LH5383,Durban,Nuremberg,"2026-05-27 07:30:16","2026-05-27 22:08:03",13075.00
+"Turkish Airlines",TK8338,Hobart,Bordeaux,"2026-08-26 01:47:28","2026-08-26 17:25:18",17594.00
+Emirates,EK8523,Kyoto,Seattle,"2026-11-08 20:38:54","2026-11-09 06:48:41",7854.00
+"Delta Air Lines",DL563,Toulouse,"Las Vegas","2026-10-27 09:21:53","2026-10-27 21:51:23",7830.00
+Lufthansa,LH8931,Tokyo,Victoria,"2026-06-14 11:43:58","2026-06-15 02:18:15",15394.00
+KLM,KL7645,Bologna,Denver,"2026-06-09 05:17:52","2026-06-09 16:24:37",13947.00
+"Qatar Airways",QR6043,"Gold Coast",Ottawa,"2026-09-03 15:30:18","2026-09-03 19:54:37",3398.00
+"Air France",AF7431,Madrid,Lille,"2026-08-19 01:12:20","2026-08-19 15:50:42",9491.00
+Emirates,EK6180,Hamburg,Stellenbosch,"2026-08-01 00:28:30","2026-08-01 13:42:30",13017.00
+"Singapore Airlines",SQ239,"Quebec City","San Francisco","2026-08-18 14:07:26","2026-08-18 17:17:22",13705.00
+"Delta Air Lines",DL4704,Kyoto,Strasbourg,"2026-07-06 00:52:10","2026-07-06 12:48:11",11781.00
+KLM,KL4796,Durban,Kobe,"2026-10-10 09:49:47","2026-10-10 15:25:50",10396.00
+"British Airways",BA3315,Lyon,Stellenbosch,"2026-06-12 07:39:17","2026-06-12 17:35:30",3570.00
+KLM,KL2608,Belfast,Granada,"2026-07-06 04:03:07","2026-07-06 17:34:38",16417.00
+"Air France",AF4777,Madrid,Bali,"2026-11-18 15:13:21","2026-11-18 20:12:17",6801.00
+"Turkish Airlines",TK2793,Toulouse,Bordeaux,"2026-10-21 18:49:08","2026-10-22 05:08:53",5618.00
+Emirates,EK9746,"Port Elizabeth",Bath,"2026-10-01 22:09:09","2026-10-02 07:24:50",17912.00
+"Qatar Airways",QR3525,Nagoya,Bali,"2026-10-26 21:14:44","2026-10-27 04:50:57",2026.00
+FlySafair,FA9745,"Cape Town",Toledo,"2026-11-17 04:00:58","2026-11-17 15:49:17",13529.00
+"South African Airways",SA7133,Kyoto,Perth,"2026-06-29 00:15:09","2026-06-29 05:01:41",14615.00
+Emirates,EK334,Hamburg,Bristol,"2026-07-04 12:01:26","2026-07-04 21:08:11",12871.00
+"South African Airways",SA9537,"New York",Whistler,"2026-06-30 19:55:06","2026-07-01 02:53:23",12628.00
+"Air France",AF5529,Dubai,Halifax,"2026-08-22 23:38:28","2026-08-23 02:34:35",11198.00
+"Delta Air Lines",DL5257,Granada,Victoria,"2026-09-10 09:07:56","2026-09-10 13:15:36",14737.00
+"Air France",AF3685,Liverpool,Vancouver,"2026-10-12 04:04:35","2026-10-12 13:51:54",9036.00
+"Virgin Atlantic",VS9976,Ottawa,Toronto,"2026-09-26 02:01:17","2026-09-26 07:08:34",14954.00
+"Virgin Atlantic",VS1930,Knysna,Toulouse,"2026-10-14 22:58:58","2026-10-15 13:24:45",10102.00
+"British Airways",BA5778,Montpellier,London,"2026-09-28 18:18:07","2026-09-29 04:10:09",8075.00
+Emirates,EK9317,"New York",Palermo,"2026-08-10 04:10:40","2026-08-10 17:37:41",13991.00
+"Virgin Atlantic",VS9264,Chicago,Hamburg,"2026-06-04 19:33:55","2026-06-05 10:01:50",5444.00
+FlySafair,FA1752,Dubai,"Los Angeles","2026-09-04 16:25:34","2026-09-05 04:59:37",10395.00
+Emirates,EK1482,Hobart,Brisbane,"2026-10-21 06:38:26","2026-10-21 15:56:50",10998.00
+"Air France",AF6828,Bristol,Pisa,"2026-10-01 10:40:49","2026-10-01 21:18:17",6751.00
+"Virgin Atlantic",VS6360,Nuremberg,Boston,"2026-10-22 16:22:08","2026-10-22 22:29:30",7299.00
+"South African Airways",SA4219,Hiroshima,Montreal,"2026-10-21 18:52:34","2026-10-22 08:28:39",9673.00
+"Singapore Airlines",SQ4000,Venice,Palermo,"2026-10-14 09:27:26","2026-10-14 15:43:57",4492.00
+"Virgin Atlantic",VS8355,Kyoto,Montreal,"2026-08-06 09:42:16","2026-08-06 19:41:53",6461.00
+KLM,KL4928,Marseille,Dubai,"2026-06-05 00:44:55","2026-06-05 10:31:56",12255.00
+Emirates,EK1214,Nantes,"Port Elizabeth","2026-05-29 07:15:41","2026-05-29 10:59:50",16594.00
+"Air France",AF2926,Glasgow,Calgary,"2026-10-14 21:47:26","2026-10-15 01:43:57",5372.00
+"Virgin Atlantic",VS4241,Brisbane,"Las Vegas","2026-10-28 06:05:39","2026-10-28 19:41:13",14530.00
+KLM,KL9230,London,Kimberley,"2026-10-27 22:47:01","2026-10-28 06:49:03",4425.00
+KLM,KL9115,Dubai,Osaka,"2026-09-29 19:02:24","2026-09-30 01:23:14",13143.00
+"Singapore Airlines",SQ6189,Bristol,Milan,"2026-06-22 18:50:01","2026-06-23 02:28:36",3705.00
+"Turkish Airlines",TK6938,Pretoria,Stellenbosch,"2026-07-15 14:30:00","2026-07-15 23:10:59",6716.00
+"British Airways",BA5338,Tokyo,Toledo,"2026-08-21 18:11:26","2026-08-22 04:26:00",12101.00
+"South African Airways",SA7537,Bologna,Sydney,"2026-07-13 22:23:56","2026-07-14 02:02:10",16249.00
+Emirates,EK7992,Vancouver,Barcelona,"2026-08-26 20:15:19","2026-08-27 08:08:29",2103.00
+"Qatar Airways",QR1879,Nuremberg,Glasgow,"2026-06-30 08:56:20","2026-06-30 17:18:07",13636.00
+"Singapore Airlines",SQ831,Bordeaux,Munich,"2026-06-17 05:31:51","2026-06-17 16:49:50",6563.00
+Lufthansa,LH4902,Strasbourg,Denver,"2026-10-02 02:15:58","2026-10-02 14:47:05",4456.00
+"Delta Air Lines",DL2749,Okinawa,Austin,"2026-08-08 10:11:44","2026-08-08 19:10:38",7716.00
+"Turkish Airlines",TK4117,Dubai,Hiroshima,"2026-09-22 22:51:21","2026-09-23 04:22:30",15877.00
+"Singapore Airlines",SQ8478,"East London",Glasgow,"2026-09-29 16:00:39","2026-09-30 01:43:32",15859.00
+"Virgin Atlantic",VS6073,Bristol,Leipzig,"2026-07-24 21:14:39","2026-07-25 10:07:10",14644.00
+FlySafair,FA1452,Barcelona,Darwin,"2026-08-21 18:25:28","2026-08-22 01:49:19",10902.00
+"South African Airways",SA4365,Knysna,Osaka,"2026-11-12 01:31:02","2026-11-12 06:56:13",8800.00
+Lufthansa,LH4925,Stuttgart,Pisa,"2026-11-08 01:24:23","2026-11-08 11:47:19",12479.00
+"Turkish Airlines",TK3962,Hobart,Palermo,"2026-10-03 00:32:50","2026-10-03 02:57:30",10982.00
+FlySafair,FA745,Edmonton,Fukuoka,"2026-07-10 03:44:10","2026-07-10 07:48:43",16026.00
+"Delta Air Lines",DL1230,Perth,Chicago,"2026-11-10 04:09:03","2026-11-10 07:17:47",15647.00
+"Air France",AF5686,Austin,Nice,"2026-06-29 06:02:10","2026-06-29 16:34:34",13940.00
+"British Airways",BA8208,Knysna,Glasgow,"2026-10-08 04:56:18","2026-10-08 09:35:11",1782.00
+Lufthansa,LH9455,Montpellier,Kobe,"2026-09-05 21:23:08","2026-09-05 23:54:11",1834.00
+Emirates,EK6774,Lille,Hiroshima,"2026-07-15 19:46:44","2026-07-16 10:57:08",8103.00
+Lufthansa,LH8696,Osaka,Kyoto,"2026-06-13 00:42:26","2026-06-13 15:48:38",9349.00
+Emirates,EK6202,Hobart,Seville,"2026-08-13 11:58:44","2026-08-13 23:40:00",4553.00
+Emirates,EK9626,Toledo,Boston,"2026-07-04 14:42:45","2026-07-04 21:19:22",2643.00
+Lufthansa,LH3340,Dubai,Ottawa,"2026-10-24 09:28:05","2026-10-24 13:00:44",7320.00
+FlySafair,FA3416,Johannesburg,Sydney,"2026-06-22 07:50:49","2026-06-22 13:06:09",5034.00
+"British Airways",BA5528,Nuremberg,Madrid,"2026-11-12 03:50:01","2026-11-12 10:27:27",10593.00
+"British Airways",BA5969,Pretoria,Osaka,"2026-07-14 21:28:40","2026-07-15 10:24:52",14137.00
+"South African Airways",SA1201,Glasgow,Whistler,"2026-06-01 04:27:36","2026-06-01 18:28:51",15766.00
+"South African Airways",SA5716,Canberra,Cairns,"2026-10-13 15:16:31","2026-10-14 06:08:59",5741.00
+"Air France",AF1687,Munich,Berlin,"2026-09-23 08:12:19","2026-09-23 17:47:39",4968.00
+"South African Airways",SA2003,Nuremberg,Durban,"2026-06-17 04:53:02","2026-06-17 17:59:57",15579.00
+"Singapore Airlines",SQ6201,Hobart,Kimberley,"2026-11-08 05:26:52","2026-11-08 16:05:48",5235.00
+"South African Airways",SA5336,Dresden,Berlin,"2026-05-31 16:44:18","2026-06-01 01:11:34",8985.00
+"Air France",AF684,"Cape Town",Denver,"2026-10-27 09:37:44","2026-10-27 17:39:08",4466.00
+"South African Airways",SA1777,Malaga,Paris,"2026-11-05 21:56:53","2026-11-06 04:14:58",4593.00
+"Singapore Airlines",SQ3709,Stellenbosch,Hobart,"2026-09-13 11:34:44","2026-09-14 03:05:59",10521.00
+"Qatar Airways",QR1113,"Cape Town",Stuttgart,"2026-11-18 20:00:03","2026-11-19 07:18:21",10168.00
+"British Airways",BA7044,Sydney,Austin,"2026-08-24 06:25:34","2026-08-24 13:51:02",5817.00
+"South African Airways",SA4307,Bordeaux,Palermo,"2026-06-22 14:24:50","2026-06-22 22:02:41",5309.00
+Lufthansa,LH4039,Brisbane,Turin,"2026-09-22 04:28:56","2026-09-22 08:00:51",1985.00
+Lufthansa,LH4907,Florence,Knysna,"2026-08-24 23:48:52","2026-08-25 09:43:38",14526.00
+"Singapore Airlines",SQ5891,Manchester,Johannesburg,"2026-08-05 01:06:15","2026-08-05 13:09:38",9954.00
+"Qatar Airways",QR9879,Dubai,Granada,"2026-09-23 16:13:59","2026-09-24 05:21:10",10624.00
+"Delta Air Lines",DL9143,Valencia,Austin,"2026-09-12 08:17:53","2026-09-12 20:40:00",3572.00
+FlySafair,FA7419,Dubai,Vancouver,"2026-09-25 12:29:44","2026-09-25 16:10:03",6430.00
+"Air France",AF1333,Sapporo,Cologne,"2026-06-09 07:54:29","2026-06-09 14:15:16",5249.00
+"Air France",AF9041,Frankfurt,"Los Angeles","2026-11-19 01:50:30","2026-11-19 07:28:20",10268.00
+Lufthansa,LH9191,Genoa,Cairns,"2026-11-08 19:02:54","2026-11-09 09:21:24",8397.00
+"Turkish Airlines",TK178,Nara,Frankfurt,"2026-11-09 04:05:57","2026-11-09 14:24:44",10597.00
+"Qatar Airways",QR8269,Whistler,Denver,"2026-08-25 10:46:22","2026-08-26 01:03:01",10799.00
+"Qatar Airways",QR6295,Durban,Fukuoka,"2026-06-08 11:10:07","2026-06-08 22:24:37",10062.00
+"South African Airways",SA3744,Hobart,Okinawa,"2026-08-01 04:08:16","2026-08-01 14:25:55",17761.00
+"South African Airways",SA6139,Madrid,Stellenbosch,"2026-10-31 03:21:56","2026-10-31 07:01:17",9810.00
+"South African Airways",SA8836,London,Naples,"2026-07-05 14:11:19","2026-07-05 20:40:44",7026.00
+"Air France",AF4119,Florence,Bordeaux,"2026-09-28 23:06:01","2026-09-29 02:44:09",16524.00
+"Virgin Atlantic",VS3194,Oxford,Glasgow,"2026-10-22 09:28:05","2026-10-22 21:16:18",8725.00
+FlySafair,FA3253,Toledo,Pisa,"2026-11-07 05:29:21","2026-11-07 09:00:42",9847.00
+FlySafair,FA2292,Dubai,Kyoto,"2026-08-01 21:54:44","2026-08-02 06:22:41",8748.00
+"Virgin Atlantic",VS8333,Miami,Tokyo,"2026-11-12 00:50:05","2026-11-12 16:03:55",14981.00
+"Air France",AF9086,Paris,Ibiza,"2026-09-30 04:54:35","2026-09-30 17:26:56",4503.00
+"South African Airways",SA3439,Lille,Vancouver,"2026-11-08 00:05:07","2026-11-08 03:51:01",6121.00
+"Turkish Airlines",TK8265,Dresden,Nagoya,"2026-06-18 19:23:16","2026-06-18 23:19:08",2958.00
+Lufthansa,LH2685,London,"New York","2026-08-10 10:04:45","2026-08-11 02:01:30",17425.00
+"South African Airways",SA3016,Genoa,Dusseldorf,"2026-09-08 08:29:17","2026-09-08 21:45:10",12831.00
+"South African Airways",SA241,Mallorca,Bristol,"2026-07-23 18:25:58","2026-07-24 08:56:50",2961.00
+"British Airways",BA8991,Chicago,Durban,"2026-06-03 18:23:21","2026-06-04 08:02:01",1586.00
+"Singapore Airlines",SQ8947,Okinawa,Osaka,"2026-09-10 16:29:50","2026-09-10 22:05:26",17098.00
+KLM,KL4683,Liverpool,Johannesburg,"2026-11-19 00:55:54","2026-11-19 13:12:21",14194.00
+Emirates,EK8211,Birmingham,Turin,"2026-11-03 13:24:56","2026-11-04 04:29:09",13422.00
+"Virgin Atlantic",VS2294,Edinburgh,Pisa,"2026-09-11 09:42:13","2026-09-11 17:30:39",14902.00
+"British Airways",BA3621,Sydney,Toulouse,"2026-07-31 17:46:23","2026-07-31 22:36:10",13873.00
+"Singapore Airlines",SQ5193,"New York",Fukuoka,"2026-08-13 18:33:48","2026-08-14 07:48:44",6934.00
+"South African Airways",SA7337,Sapporo,Munich,"2026-06-07 12:23:35","2026-06-07 20:48:24",11492.00
+"British Airways",BA5918,Kobe,Toulouse,"2026-07-15 00:12:04","2026-07-15 08:41:11",8666.00
+"Singapore Airlines",SQ8660,Bordeaux,Pisa,"2026-07-25 14:45:38","2026-07-25 23:26:21",12763.00
+KLM,KL4777,Bloemfontein,Boston,"2026-06-17 18:08:43","2026-06-17 23:12:19",3219.00
+FlySafair,FA8535,Montpellier,Tokyo,"2026-09-06 17:46:39","2026-09-06 23:21:09",10497.00
+"Singapore Airlines",SQ5587,Austin,Dubai,"2026-06-17 19:03:42","2026-06-18 03:38:59",6424.00
+"Virgin Atlantic",VS1585,Denver,Milan,"2026-10-14 22:19:43","2026-10-15 03:30:49",4367.00
+"British Airways",BA7922,Birmingham,Paris,"2026-08-20 16:36:56","2026-08-20 21:15:24",7587.00
+Lufthansa,LH4425,Frankfurt,Mallorca,"2026-11-09 16:53:09","2026-11-09 20:18:47",8478.00
+Emirates,EK9468,Durban,"Port Elizabeth","2026-06-15 19:18:37","2026-06-16 06:25:35",8706.00
+"Qatar Airways",QR7905,Melbourne,"Las Vegas","2026-07-09 15:22:20","2026-07-09 18:10:13",2144.00
+"South African Airways",SA4884,Bristol,London,"2026-10-10 20:20:00","2026-10-11 05:09:40",11160.00
+FlySafair,FA3005,Dubai,Montreal,"2026-11-02 00:30:32","2026-11-02 11:49:54",16674.00
+"Qatar Airways",QR5733,Johannesburg,Florence,"2026-06-08 22:08:07","2026-06-09 07:41:20",15386.00
+FlySafair,FA7737,Naples,"Las Vegas","2026-08-28 19:39:13","2026-08-28 23:16:36",4467.00
+"Delta Air Lines",DL3512,Kyoto,Sapporo,"2026-06-23 21:38:05","2026-06-24 05:02:10",7736.00
+"Qatar Airways",QR3084,Austin,Paris,"2026-08-11 13:30:42","2026-08-12 02:31:36",5911.00
+"Turkish Airlines",TK5756,Canberra,"Gold Coast","2026-06-08 19:57:59","2026-06-09 11:47:29",3211.00
+FlySafair,FA2538,Boston,Barcelona,"2026-07-17 07:27:37","2026-07-17 14:09:37",17511.00
+FlySafair,FA772,Tokyo,Halifax,"2026-07-14 12:18:00","2026-07-14 21:07:25",14095.00
+"Air France",AF7049,Paris,Palermo,"2026-10-10 05:28:20","2026-10-10 10:20:21",14429.00
+Emirates,EK3941,"Cape Town",Strasbourg,"2026-07-28 15:10:53","2026-07-29 01:42:57",4273.00
+"South African Airways",SA6726,Cairns,"Quebec City","2026-11-15 18:23:35","2026-11-15 22:50:02",4972.00
+"South African Airways",SA8876,Oxford,Malaga,"2026-10-23 03:33:47","2026-10-23 06:37:25",9017.00
+Lufthansa,LH3353,"Los Angeles",Bath,"2026-06-09 23:44:40","2026-06-10 05:51:20",9979.00
+Lufthansa,LH9960,Bordeaux,Florence,"2026-10-07 06:35:28","2026-10-07 14:23:12",7440.00
+"Turkish Airlines",TK9485,Venice,Hamburg,"2026-09-24 03:30:20","2026-09-24 07:43:12",14522.00
+FlySafair,FA7296,Nuremberg,"Cape Town","2026-08-31 13:06:12","2026-09-01 04:09:36",7987.00
+"Singapore Airlines",SQ2520,Hamburg,Barcelona,"2026-06-18 02:44:47","2026-06-18 09:52:54",14978.00
+Emirates,EK602,Stellenbosch,Paris,"2026-09-15 21:28:13","2026-09-16 04:08:03",6249.00
+Emirates,EK5814,Denver,Malaga,"2026-06-07 22:28:51","2026-06-08 08:08:54",3985.00
+"Turkish Airlines",TK809,Stuttgart,Edmonton,"2026-06-26 05:15:23","2026-06-26 18:11:00",15986.00
+"Singapore Airlines",SQ9957,Bristol,Stuttgart,"2026-07-02 11:25:29","2026-07-02 14:51:45",6320.00
+"Qatar Airways",QR6365,Montpellier,Toulouse,"2026-08-30 06:25:21","2026-08-30 17:59:31",13958.00
+Emirates,EK392,Chicago,London,"2026-06-30 18:26:42","2026-06-30 23:40:30",9362.00
+"Delta Air Lines",DL4444,Lille,"Las Vegas","2026-08-07 02:43:57","2026-08-07 15:42:44",16235.00
+KLM,KL4106,"New York",Toledo,"2026-10-29 15:57:11","2026-10-29 22:08:30",5019.00
+"Delta Air Lines",DL9368,Tokyo,Paris,"2026-09-18 08:56:07","2026-09-18 22:57:39",8437.00
+KLM,KL6570,Venice,Bordeaux,"2026-06-21 05:03:46","2026-06-21 10:56:33",7908.00
+Lufthansa,LH5800,Milan,Nantes,"2026-11-05 05:21:23","2026-11-05 18:20:25",4386.00
+Lufthansa,LH8813,Malaga,Kimberley,"2026-06-19 02:41:51","2026-06-19 11:48:47",13459.00
+"British Airways",BA4249,Kimberley,Venice,"2026-08-21 07:27:03","2026-08-21 20:27:52",9417.00
+"British Airways",BA9144,Berlin,Canberra,"2026-07-19 12:39:54","2026-07-19 17:53:14",4365.00
+Emirates,EK543,Cologne,"Cape Town","2026-08-27 00:09:52","2026-08-27 03:15:15",16761.00
+"Qatar Airways",QR4733,"Gold Coast",Madrid,"2026-06-15 23:46:34","2026-06-16 05:02:59",12342.00
+"Singapore Airlines",SQ3491,Fukuoka,"Cape Town","2026-09-16 20:03:01","2026-09-17 08:59:16",2918.00
+"Turkish Airlines",TK7895,Oxford,Paris,"2026-10-11 03:20:34","2026-10-11 10:03:50",17428.00
+"Qatar Airways",QR155,Bath,Montpellier,"2026-08-24 03:02:09","2026-08-24 10:35:30",2257.00
+"Delta Air Lines",DL9027,"Los Angeles",Paris,"2026-10-18 22:53:47","2026-10-19 05:38:24",8410.00
+"British Airways",BA5598,"Quebec City",Manchester,"2026-06-13 00:50:14","2026-06-13 07:33:27",12909.00
+"Delta Air Lines",DL4407,Dubai,Tokyo,"2026-10-08 21:55:19","2026-10-09 12:47:36",15365.00
+Emirates,EK2278,Halifax,Hobart,"2026-06-06 17:31:48","2026-06-06 22:23:22",4193.00
+"Singapore Airlines",SQ9952,Mallorca,Granada,"2026-10-20 11:32:09","2026-10-21 02:52:41",3634.00
+"British Airways",BA5969,Frankfurt,Milan,"2026-10-21 00:48:08","2026-10-21 09:26:15",6275.00
+KLM,KL9286,Bristol,Dubai,"2026-05-25 06:37:58","2026-05-25 17:11:23",6566.00
+"Delta Air Lines",DL4806,Darwin,Hiroshima,"2026-09-11 22:12:26","2026-09-12 12:05:30",3540.00
+"Singapore Airlines",SQ6811,Dubai,Chicago,"2026-11-18 02:55:32","2026-11-18 07:36:25",15706.00
+"Qatar Airways",QR4841,Chicago,Vancouver,"2026-09-25 00:59:53","2026-09-25 09:34:25",13584.00
+"British Airways",BA6109,"New York",Chicago,"2026-05-27 02:45:12","2026-05-27 04:57:09",4824.00
+KLM,KL360,Tokyo,Perth,"2026-08-07 03:41:09","2026-08-07 10:34:04",13105.00
+"British Airways",BA305,Dubai,Bath,"2026-07-14 17:31:21","2026-07-14 19:54:24",12492.00
+"South African Airways",SA2578,Kyoto,Edinburgh,"2026-11-09 12:59:43","2026-11-09 20:14:50",13309.00
+"Virgin Atlantic",VS9164,Seville,"Las Vegas","2026-11-09 19:54:00","2026-11-10 05:40:18",14357.00
+FlySafair,FA8367,Valencia,Genoa,"2026-09-09 10:49:15","2026-09-09 12:53:01",13702.00
+Emirates,EK825,"Gold Coast",Bordeaux,"2026-08-19 18:31:37","2026-08-20 07:37:53",14270.00
+"South African Airways",SA4944,Canberra,Cairns,"2026-08-11 03:32:13","2026-08-11 05:57:16",17264.00
+"Delta Air Lines",DL9704,Toledo,Pisa,"2026-10-21 21:39:23","2026-10-22 01:23:29",13794.00
+"Virgin Atlantic",VS4165,Oxford,"Cape Town","2026-06-26 14:11:31","2026-06-26 21:12:40",11151.00
+"Virgin Atlantic",VS2581,Bilbao,"Port Elizabeth","2026-08-17 07:09:30","2026-08-17 09:50:49",15941.00
+"Air France",AF6721,Valencia,Genoa,"2026-07-17 04:25:20","2026-07-17 15:47:40",4659.00
+Lufthansa,LH8482,Stellenbosch,Birmingham,"2026-08-20 19:20:08","2026-08-21 01:05:30",15171.00
+"Virgin Atlantic",VS1172,Lyon,Bordeaux,"2026-10-15 12:48:32","2026-10-15 20:06:10",5634.00
+"South African Airways",SA6680,Valencia,Whistler,"2026-11-06 17:40:38","2026-11-07 01:15:28",11889.00
+"Virgin Atlantic",VS9954,Bath,Rome,"2026-06-15 15:39:41","2026-06-15 23:17:17",11249.00
+"Qatar Airways",QR6628,Liverpool,Fukuoka,"2026-08-06 21:08:23","2026-08-06 23:38:17",16501.00
+"British Airways",BA3201,Osaka,"Port Elizabeth","2026-09-05 10:47:35","2026-09-05 16:19:45",10891.00
+Lufthansa,LH3931,Bath,Pretoria,"2026-09-24 21:50:21","2026-09-25 09:24:33",2963.00
+"Qatar Airways",QR6687,Glasgow,Marseille,"2026-10-30 02:13:14","2026-10-30 04:35:45",9444.00
+"Singapore Airlines",SQ6044,Bali,Melbourne,"2026-08-17 20:24:55","2026-08-18 02:14:35",8223.00
+Emirates,EK8855,Boston,Malaga,"2026-08-01 08:15:08","2026-08-01 23:03:45",11350.00
+"Turkish Airlines",TK4150,"Gold Coast",Melbourne,"2026-10-01 03:20:11","2026-10-01 07:49:44",9338.00
+"British Airways",BA8374,Kyoto,Canberra,"2026-08-09 19:11:49","2026-08-10 00:28:22",9715.00
+"Qatar Airways",QR1919,Chicago,Nara,"2026-09-05 00:45:44","2026-09-05 10:21:03",5913.00
+"Delta Air Lines",DL6763,Venice,Fukuoka,"2026-06-24 02:10:39","2026-06-24 11:17:31",6687.00
+"Qatar Airways",QR6003,"East London",Edinburgh,"2026-08-13 18:50:04","2026-08-14 08:44:42",13247.00
+"Qatar Airways",QR9630,Granada,Bali,"2026-07-28 00:30:02","2026-07-28 13:15:45",14558.00
+"Turkish Airlines",TK9107,Belfast,Milan,"2026-07-15 23:14:51","2026-07-16 01:31:39",14580.00
+FlySafair,FA9850,"Quebec City",Bloemfontein,"2026-06-17 19:29:33","2026-06-18 11:11:36",17361.00
+"Turkish Airlines",TK3180,Whistler,Rome,"2026-08-26 04:03:17","2026-08-26 08:48:27",11350.00
+Emirates,EK6501,"Quebec City",Nantes,"2026-11-07 13:42:00","2026-11-07 16:59:44",14111.00
+FlySafair,FA2636,Seattle,Kimberley,"2026-10-28 10:31:19","2026-10-29 02:03:45",17616.00
+Emirates,EK9559,Dusseldorf,Nara,"2026-11-04 04:43:05","2026-11-04 08:59:15",11691.00
+KLM,KL356,Toronto,Rome,"2026-08-22 23:03:21","2026-08-23 04:47:54",2225.00
+"British Airways",BA2313,Tokyo,"Quebec City","2026-10-05 12:23:05","2026-10-06 03:09:35",6986.00
+KLM,KL9955,Marseille,"Port Elizabeth","2026-07-29 15:06:58","2026-07-30 00:22:07",11360.00
+"British Airways",BA8294,"New York",Toledo,"2026-08-09 03:06:23","2026-08-09 11:39:33",5996.00
+"Air France",AF6272,Kobe,"Cape Town","2026-11-16 19:36:06","2026-11-17 07:37:52",13784.00
+FlySafair,FA5387,Cologne,Knysna,"2026-10-02 18:57:29","2026-10-03 02:24:09",12844.00
+"Virgin Atlantic",VS5091,Kobe,"Los Angeles","2026-08-12 18:39:13","2026-08-13 05:27:07",1882.00
+"British Airways",BA1371,Canberra,Stellenbosch,"2026-07-12 14:32:05","2026-07-13 03:55:22",6325.00
+"Turkish Airlines",TK5690,Dresden,Hamburg,"2026-10-26 02:58:02","2026-10-26 11:49:56",6726.00
+FlySafair,FA8809,Montreal,Vancouver,"2026-10-29 21:36:45","2026-10-30 09:13:36",10905.00
+"Turkish Airlines",TK5941,Ibiza,Hobart,"2026-08-12 21:27:08","2026-08-13 07:33:27",10608.00
+"Air France",AF3432,Kyoto,Edmonton,"2026-07-22 18:53:25","2026-07-23 04:19:24",11853.00
+KLM,KL5746,Nagoya,Toronto,"2026-07-06 17:50:48","2026-07-07 05:20:14",5966.00
+"Air France",AF9065,Okinawa,Berlin,"2026-11-17 21:52:04","2026-11-18 02:36:23",9096.00
+"Air France",AF1235,Bath,"Port Elizabeth","2026-08-02 22:31:31","2026-08-03 04:47:24",11509.00
+"South African Airways",SA6620,Tokyo,Toulouse,"2026-10-26 00:18:18","2026-10-26 02:28:03",15751.00
+"Singapore Airlines",SQ9858,"Cape Town",Florence,"2026-07-12 04:34:42","2026-07-12 17:58:20",11186.00
+"Turkish Airlines",TK2938,Bristol,Bali,"2026-07-05 04:54:31","2026-07-05 10:26:59",5691.00
+Lufthansa,LH3637,Barcelona,Hobart,"2026-06-13 07:56:51","2026-06-13 10:31:25",13668.00
+KLM,KL5218,Bilbao,Pisa,"2026-08-06 01:59:11","2026-08-06 10:33:53",5327.00
+"Virgin Atlantic",VS3437,Denver,Nuremberg,"2026-07-10 13:30:28","2026-07-10 19:40:23",4951.00
+"British Airways",BA3043,Chicago,Knysna,"2026-09-11 02:53:56","2026-09-11 10:40:38",6376.00
+"Singapore Airlines",SQ4988,Stellenbosch,"New York","2026-11-18 21:35:27","2026-11-19 02:19:36",14665.00
+"Turkish Airlines",TK3556,Whistler,Strasbourg,"2026-06-23 07:31:52","2026-06-23 20:40:47",13078.00
+KLM,KL5087,Toronto,Chicago,"2026-07-21 03:04:10","2026-07-21 15:02:21",16133.00
+"British Airways",BA5207,Pretoria,Nice,"2026-05-25 15:17:09","2026-05-25 22:02:11",16919.00
+FlySafair,FA8070,Bali,Lille,"2026-11-06 17:35:34","2026-11-07 08:49:28",8549.00
+"Air France",AF3713,Dusseldorf,Bologna,"2026-09-19 20:51:57","2026-09-20 09:43:45",13635.00
+"Qatar Airways",QR2240,Milan,Mallorca,"2026-06-06 19:49:46","2026-06-07 07:22:11",15415.00
+Lufthansa,LH5670,Nice,Toledo,"2026-11-19 07:51:02","2026-11-19 13:52:28",17510.00
+"Air France",AF9251,Manchester,"Gold Coast","2026-07-08 01:57:02","2026-07-08 09:25:53",4127.00
+Emirates,EK7064,Hiroshima,"Cape Town","2026-09-24 00:59:24","2026-09-24 09:08:01",14009.00
+"South African Airways",SA4538,Brisbane,Dubai,"2026-07-24 17:28:22","2026-07-25 00:43:38",4196.00
+"Delta Air Lines",DL4167,Munich,Bristol,"2026-08-21 17:45:16","2026-08-22 03:22:08",6701.00
+"Air France",AF4204,Kimberley,Bali,"2026-08-10 14:32:17","2026-08-10 19:30:51",9903.00
+Emirates,EK5568,Turin,Cairns,"2026-08-26 12:58:00","2026-08-26 22:40:51",8154.00
+"Qatar Airways",QR5564,"New York",Whistler,"2026-09-01 12:59:00","2026-09-01 22:37:42",10962.00
+"Singapore Airlines",SQ2051,Bristol,Darwin,"2026-08-05 23:24:42","2026-08-06 14:15:31",2050.00
+Emirates,EK5155,Kimberley,Toulouse,"2026-10-25 22:44:01","2026-10-26 05:57:17",15741.00
+Emirates,EK6130,Bilbao,Oxford,"2026-10-05 02:01:40","2026-10-05 15:13:25",11479.00
+"South African Airways",SA7355,Melbourne,Bilbao,"2026-09-02 20:46:29","2026-09-03 00:47:37",7544.00
+"Qatar Airways",QR6505,"Cape Town",Toronto,"2026-10-17 07:31:09","2026-10-17 20:33:21",9742.00
+Lufthansa,LH9565,Boston,Seattle,"2026-09-09 19:51:02","2026-09-10 10:17:23",6263.00
+"British Airways",BA7728,Dubai,Paris,"2026-09-04 07:50:20","2026-09-04 18:02:41",2888.00
+"South African Airways",SA1737,Tokyo,Nara,"2026-07-01 22:03:43","2026-07-02 09:12:51",16062.00
+Lufthansa,LH1246,Strasbourg,Turin,"2026-08-16 17:09:55","2026-08-17 07:47:16",1570.00
+"Qatar Airways",QR4806,Brisbane,Ibiza,"2026-06-03 08:27:20","2026-06-03 19:46:34",7988.00
+FlySafair,FA7023,"New York",Tokyo,"2026-09-03 21:46:21","2026-09-04 10:54:32",13611.00
+Emirates,EK5308,Victoria,Paris,"2026-07-16 15:51:06","2026-07-17 02:15:13",4620.00
+KLM,KL2172,Tokyo,Durban,"2026-08-22 11:59:26","2026-08-22 15:17:49",5802.00
+"Qatar Airways",QR2209,Okinawa,"Los Angeles","2026-08-28 23:20:42","2026-08-29 12:27:52",10850.00
+"British Airways",BA6157,Calgary,Tokyo,"2026-08-31 10:55:22","2026-09-01 00:51:58",11573.00
+"Singapore Airlines",SQ7386,Nuremberg,Stellenbosch,"2026-10-25 07:13:39","2026-10-25 09:56:57",14707.00
+Emirates,EK6353,Nara,Paris,"2026-08-22 14:30:56","2026-08-23 02:19:56",9721.00
+"Delta Air Lines",DL9122,Melbourne,Madrid,"2026-05-31 07:30:49","2026-05-31 13:22:48",2297.00
+"British Airways",BA6729,Kobe,Bath,"2026-11-10 20:23:08","2026-11-11 11:54:55",16551.00
+"Virgin Atlantic",VS9923,Valencia,Strasbourg,"2026-08-24 17:36:09","2026-08-24 21:00:48",9038.00
+"South African Airways",SA8107,Knysna,Paris,"2026-10-02 12:20:02","2026-10-03 03:37:21",8345.00
+"Qatar Airways",QR3889,Palermo,Calgary,"2026-08-03 08:22:11","2026-08-03 11:20:45",11863.00
+FlySafair,FA1847,Marseille,Valencia,"2026-09-29 21:24:09","2026-09-30 09:23:11",17630.00
+"British Airways",BA8401,Lille,Liverpool,"2026-10-04 20:46:23","2026-10-05 00:42:42",6867.00
+"Singapore Airlines",SQ4792,Stuttgart,Seville,"2026-05-31 19:34:18","2026-06-01 05:37:32",5073.00
+"South African Airways",SA7295,Mallorca,Berlin,"2026-11-17 04:45:21","2026-11-17 09:15:07",8318.00
+Emirates,EK1242,Hiroshima,Knysna,"2026-06-10 07:56:54","2026-06-10 21:47:02",13433.00
+"South African Airways",SA1231,"Port Elizabeth",Mallorca,"2026-10-13 15:51:11","2026-10-14 04:24:05",15291.00
+"Delta Air Lines",DL5132,Kimberley,Barcelona,"2026-06-18 20:32:04","2026-06-19 08:10:07",1620.00
+FlySafair,FA4490,Dusseldorf,Bilbao,"2026-11-01 21:26:50","2026-11-02 03:27:51",17668.00
+"South African Airways",SA313,Strasbourg,Paris,"2026-08-11 16:24:13","2026-08-12 01:07:04",9537.00
+"Virgin Atlantic",VS844,Edmonton,Darwin,"2026-07-13 13:06:23","2026-07-14 02:22:06",2563.00
+"Singapore Airlines",SQ3508,Venice,Naples,"2026-06-25 09:53:11","2026-06-25 18:20:45",13823.00
+Emirates,EK4906,"Cape Town",Chicago,"2026-06-28 23:34:59","2026-06-29 06:35:24",17408.00
+"Turkish Airlines",TK3710,Montpellier,Paris,"2026-10-11 20:16:55","2026-10-12 11:55:47",3167.00
+"Virgin Atlantic",VS3746,"New York",Pretoria,"2026-08-08 06:50:56","2026-08-08 09:38:55",5230.00
+"South African Airways",SA6845,Perth,Edmonton,"2026-06-30 19:05:01","2026-06-30 22:05:51",12301.00
+"Qatar Airways",QR7231,Sydney,Kimberley,"2026-08-24 10:31:46","2026-08-24 22:30:58",3067.00
+Emirates,EK6394,Montpellier,Lyon,"2026-06-03 05:24:55","2026-06-03 13:38:36",10854.00
+Emirates,EK975,Bordeaux,"Cape Town","2026-11-02 05:38:20","2026-11-02 20:29:25",3023.00
+"Virgin Atlantic",VS3210,Edinburgh,Munich,"2026-05-26 03:39:45","2026-05-26 06:44:19",8383.00
+"British Airways",BA4268,Calgary,Lyon,"2026-07-16 22:47:28","2026-07-17 11:46:31",4269.00
+"Singapore Airlines",SQ2299,Milan,"Port Elizabeth","2026-06-29 18:55:20","2026-06-30 08:18:52",3096.00
+KLM,KL8385,Edinburgh,Milan,"2026-05-28 15:57:55","2026-05-28 23:14:33",7086.00
+"Turkish Airlines",TK5350,Adelaide,Frankfurt,"2026-06-12 02:01:19","2026-06-12 08:25:39",13880.00
+"Delta Air Lines",DL5972,Darwin,"Las Vegas","2026-07-15 15:32:07","2026-07-15 18:02:13",16365.00
+"Air France",AF1276,Paris,Belfast,"2026-08-09 01:17:52","2026-08-09 16:46:37",3827.00
+"Turkish Airlines",TK5407,"Las Vegas",Dresden,"2026-07-02 18:13:37","2026-07-02 22:05:30",9160.00
+"Qatar Airways",QR1965,Toledo,Malaga,"2026-11-17 01:18:55","2026-11-17 09:26:20",1764.00
+"South African Airways",SA2046,Johannesburg,"Gold Coast","2026-10-18 02:00:28","2026-10-18 10:27:33",12503.00
+"South African Airways",SA9525,Bloemfontein,Nice,"2026-07-31 17:08:05","2026-08-01 07:21:35",1842.00
+"British Airways",BA3770,Dubai,Bali,"2026-09-27 03:09:58","2026-09-27 12:33:37",5782.00
+"Air France",AF341,Berlin,Kimberley,"2026-10-12 05:32:01","2026-10-12 20:41:45",9144.00
+"Singapore Airlines",SQ6781,Lille,Lyon,"2026-08-16 14:43:42","2026-08-16 18:02:06",4527.00
+Lufthansa,LH6667,Bologna,Bath,"2026-09-04 21:16:06","2026-09-05 04:17:34",7711.00
+"Qatar Airways",QR2470,Bali,Hamburg,"2026-06-23 18:56:30","2026-06-23 21:13:41",11062.00
+"British Airways",BA6248,Montpellier,"Quebec City","2026-07-17 03:04:55","2026-07-17 14:09:37",13878.00
+"Delta Air Lines",DL5593,Whistler,Brisbane,"2026-09-24 11:05:17","2026-09-24 22:51:52",11646.00
+Emirates,EK2535,Nantes,Paris,"2026-10-23 21:56:47","2026-10-24 04:53:26",13909.00
+"Qatar Airways",QR2522,Leipzig,"Las Vegas","2026-08-04 07:38:46","2026-08-04 18:15:24",10441.00
+"Turkish Airlines",TK288,Madrid,Kobe,"2026-06-15 07:40:05","2026-06-15 14:44:11",6107.00
+Lufthansa,LH8785,Rome,Knysna,"2026-09-06 08:12:46","2026-09-06 14:31:42",8241.00
+"Singapore Airlines",SQ1489,Nuremberg,"New York","2026-06-10 07:15:13","2026-06-10 09:54:06",16475.00
+Emirates,EK9162,Nara,Nantes,"2026-06-14 14:28:42","2026-06-14 18:03:58",4215.00
+"Singapore Airlines",SQ3478,"Cape Town","New York","2026-09-19 05:18:02","2026-09-19 17:36:31",4265.00
+"Singapore Airlines",SQ4153,Kyoto,Kobe,"2026-11-02 11:36:27","2026-11-02 22:35:56",8890.00
+"Air France",AF4748,Turin,Calgary,"2026-06-12 18:09:24","2026-06-13 05:41:02",15799.00
+Lufthansa,LH9669,Denver,Johannesburg,"2026-07-07 13:59:11","2026-07-07 17:16:29",10705.00
+"Virgin Atlantic",VS8579,Cologne,Nantes,"2026-08-07 02:11:48","2026-08-07 10:24:30",2318.00
+"Qatar Airways",QR8482,Manchester,Dubai,"2026-09-15 23:38:37","2026-09-16 05:58:02",15142.00
+"Virgin Atlantic",VS5741,Barcelona,Malaga,"2026-10-05 02:25:53","2026-10-05 15:26:11",15913.00
+"Qatar Airways",QR7672,Victoria,Manchester,"2026-10-13 14:02:31","2026-10-14 01:08:59",5069.00
+FlySafair,FA4166,London,Darwin,"2026-07-28 01:42:58","2026-07-28 17:34:39",13834.00
+Emirates,EK6357,Brisbane,Mallorca,"2026-06-13 18:13:46","2026-06-14 10:04:09",15541.00
+FlySafair,FA8436,Strasbourg,Kyoto,"2026-06-06 12:40:55","2026-06-06 19:40:57",5829.00
+"Singapore Airlines",SQ4643,Belfast,"Cape Town","2026-09-13 19:22:13","2026-09-14 07:09:19",6506.00
+"Turkish Airlines",TK1293,"New York",Knysna,"2026-08-30 15:07:36","2026-08-31 02:02:10",7586.00
+"British Airways",BA1726,Bilbao,Turin,"2026-11-09 00:37:35","2026-11-09 15:59:52",10604.00
+KLM,KL2219,Granada,Dusseldorf,"2026-10-25 20:44:27","2026-10-26 10:15:05",17995.00
+"South African Airways",SA2880,Bali,Ottawa,"2026-09-22 11:00:14","2026-09-22 17:50:37",11982.00
+Lufthansa,LH1442,Kyoto,Cairns,"2026-06-25 10:01:20","2026-06-25 19:09:28",2675.00
+Lufthansa,LH5637,Johannesburg,Calgary,"2026-10-19 23:11:58","2026-10-20 03:55:19",14893.00
+FlySafair,FA5813,Bath,Nice,"2026-08-24 21:56:55","2026-08-25 01:41:05",11829.00
+"South African Airways",SA2711,Vancouver,Toronto,"2026-07-31 23:31:08","2026-08-01 07:05:04",16858.00
+"Singapore Airlines",SQ6918,Hiroshima,Lyon,"2026-08-24 10:22:46","2026-08-24 15:37:06",14282.00
+"British Airways",BA9305,Rome,Canberra,"2026-08-13 00:21:16","2026-08-13 13:45:54",2157.00
+"Delta Air Lines",DL1257,"Cape Town",Seville,"2026-10-30 13:03:25","2026-10-30 23:25:52",15720.00
+"Air France",AF2161,Kobe,Darwin,"2026-05-28 19:33:25","2026-05-29 06:09:52",11780.00
+"British Airways",BA7441,Montpellier,Montreal,"2026-08-15 12:11:40","2026-08-15 18:24:21",15263.00
+"Turkish Airlines",TK5500,Lyon,Berlin,"2026-11-02 16:17:27","2026-11-02 18:26:16",16021.00
+"Air France",AF9120,Seville,Toledo,"2026-07-18 09:24:31","2026-07-18 13:25:45",6799.00
+"British Airways",BA3148,Granada,"Cape Town","2026-09-18 14:38:50","2026-09-18 18:21:00",11469.00
+"Virgin Atlantic",VS7253,Knysna,Johannesburg,"2026-09-20 18:41:57","2026-09-20 23:46:51",7145.00
+"Singapore Airlines",SQ7297,Leipzig,Nuremberg,"2026-11-17 07:36:24","2026-11-17 22:40:38",12957.00
+"Singapore Airlines",SQ5994,Austin,Dusseldorf,"2026-05-26 05:21:35","2026-05-26 16:23:25",15827.00
+FlySafair,FA2339,Tokyo,Kyoto,"2026-07-23 04:52:19","2026-07-23 10:17:53",14657.00
+"Turkish Airlines",TK6829,Halifax,Oxford,"2026-08-25 15:19:35","2026-08-25 21:50:39",7147.00
+KLM,KL9181,"Las Vegas",Victoria,"2026-05-29 16:27:07","2026-05-30 04:54:31",15555.00
+"Singapore Airlines",SQ3466,Stuttgart,Lille,"2026-08-02 13:05:08","2026-08-02 21:50:35",7411.00
+"Singapore Airlines",SQ6967,Nice,Rome,"2026-05-27 08:15:59","2026-05-27 20:49:16",16651.00
+"Delta Air Lines",DL1144,Malaga,Palermo,"2026-08-23 05:33:47","2026-08-23 07:36:58",15713.00
+"Air France",AF8581,Granada,Leipzig,"2026-07-18 16:43:40","2026-07-18 21:10:45",4194.00
+"Qatar Airways",QR4059,"Las Vegas",Toledo,"2026-09-17 18:56:57","2026-09-17 21:39:01",6118.00
+"Air France",AF5591,Johannesburg,Valencia,"2026-07-01 18:03:18","2026-07-02 00:30:02",3630.00
+"Qatar Airways",QR3342,Cologne,Fukuoka,"2026-11-17 08:05:56","2026-11-17 20:08:35",8508.00
+"South African Airways",SA2679,Durban,Montreal,"2026-08-06 00:53:40","2026-08-06 12:07:10",1547.00
+"South African Airways",SA7371,Oxford,Fukuoka,"2026-08-27 13:39:57","2026-08-27 20:07:55",15035.00
+Emirates,EK5778,Palermo,"New York","2026-09-15 05:02:35","2026-09-15 09:28:03",17582.00
+Emirates,EK364,Bath,Bilbao,"2026-05-25 22:33:04","2026-05-26 09:25:41",6808.00
+"Turkish Airlines",TK7965,Naples,"Port Elizabeth","2026-11-06 15:57:45","2026-11-07 04:06:16",14064.00
+"British Airways",BA9080,Bordeaux,Dusseldorf,"2026-08-01 01:34:59","2026-08-01 04:58:23",7605.00
+"Turkish Airlines",TK7097,Seville,Durban,"2026-09-24 05:47:14","2026-09-24 11:15:46",13735.00
+"British Airways",BA931,Liverpool,Malaga,"2026-06-05 21:25:34","2026-06-06 04:53:21",5932.00
+FlySafair,FA8255,Nantes,Valencia,"2026-09-22 14:23:44","2026-09-22 21:36:07",8034.00
+"Singapore Airlines",SQ7211,Perth,"New York","2026-05-29 12:55:41","2026-05-30 01:08:49",13368.00
+"Singapore Airlines",SQ8392,Bordeaux,Palermo,"2026-06-17 10:08:07","2026-06-18 01:55:39",5358.00
+"Qatar Airways",QR4723,Stellenbosch,Ottawa,"2026-06-19 13:08:52","2026-06-20 01:32:01",2465.00
+"Virgin Atlantic",VS6443,Osaka,Lille,"2026-06-02 16:04:36","2026-06-03 01:00:25",15459.00
+FlySafair,FA4185,Miami,Ibiza,"2026-06-20 14:09:21","2026-06-20 18:52:49",3496.00
+Lufthansa,LH2374,Lyon,Johannesburg,"2026-07-01 07:51:51","2026-07-01 15:03:02",14657.00
+FlySafair,FA5321,Tokyo,Bologna,"2026-07-30 00:15:44","2026-07-30 15:01:50",15690.00
+FlySafair,FA1544,Sapporo,Toledo,"2026-06-29 10:27:32","2026-06-29 18:52:12",10820.00
+KLM,KL3898,Lyon,Halifax,"2026-06-03 01:27:26","2026-06-03 06:14:29",11840.00
+KLM,KL8213,Vancouver,Kimberley,"2026-07-18 21:42:51","2026-07-19 00:04:33",12753.00
+"British Airways",BA914,Tokyo,Kyoto,"2026-06-13 19:30:50","2026-06-14 01:22:26",15301.00
+"Singapore Airlines",SQ6189,Paris,Hobart,"2026-10-22 16:24:50","2026-10-22 21:38:45",7777.00
+FlySafair,FA2382,"Gold Coast",Nuremberg,"2026-07-14 06:08:32","2026-07-14 16:48:30",17869.00
+Emirates,EK6562,Austin,Frankfurt,"2026-06-06 07:57:21","2026-06-06 23:13:03",11215.00
+"Air France",AF4451,Edmonton,Pisa,"2026-08-26 09:18:31","2026-08-27 00:16:35",10633.00
+Emirates,EK3942,Cairns,Dubai,"2026-08-20 00:58:15","2026-08-20 10:49:41",5768.00
+"South African Airways",SA695,Cologne,Bali,"2026-08-18 13:37:54","2026-08-19 05:18:33",11130.00
+Lufthansa,LH4721,Osaka,Edinburgh,"2026-06-11 20:52:58","2026-06-12 11:10:30",3295.00
+"Singapore Airlines",SQ9147,Pisa,"New York","2026-06-25 17:42:54","2026-06-25 20:13:58",3746.00
+"Qatar Airways",QR9130,Munich,Osaka,"2026-09-09 11:51:00","2026-09-09 20:35:46",15245.00
+"British Airways",BA2305,Tokyo,Vancouver,"2026-07-24 05:31:03","2026-07-24 13:57:33",9092.00
+Emirates,EK8584,Sydney,Nagoya,"2026-06-25 18:19:52","2026-06-26 09:04:44",12483.00
+"South African Airways",SA1998,Bali,London,"2026-11-18 10:32:22","2026-11-18 16:32:15",17795.00
+Emirates,EK4684,"New York",Tokyo,"2026-05-31 11:34:56","2026-05-31 18:32:15",16591.00
+"Singapore Airlines",SQ9876,Seville,Nice,"2026-07-20 17:11:48","2026-07-20 21:45:52",11262.00
+"South African Airways",SA3726,Adelaide,"Gold Coast","2026-10-19 18:39:31","2026-10-19 22:33:02",10956.00
+"Singapore Airlines",SQ9514,Denver,"Port Elizabeth","2026-08-30 06:26:04","2026-08-30 19:06:37",13489.00
+KLM,KL6414,Belfast,Bilbao,"2026-06-13 06:52:02","2026-06-13 17:35:33",8731.00
+"Virgin Atlantic",VS8917,"Los Angeles",Austin,"2026-09-07 11:15:11","2026-09-07 14:58:03",15468.00
+"Singapore Airlines",SQ1476,"Gold Coast",Tokyo,"2026-07-23 05:39:58","2026-07-23 17:02:55",7332.00
+"Delta Air Lines",DL3417,Bilbao,Hobart,"2026-10-13 15:35:29","2026-10-13 23:17:02",1641.00
+"Air France",AF1617,Palermo,Bilbao,"2026-10-09 13:08:19","2026-10-09 15:34:46",12694.00
+Emirates,EK2525,Sapporo,Dubai,"2026-07-03 05:40:57","2026-07-03 16:10:05",15372.00
+Emirates,EK8094,Genoa,Montreal,"2026-07-09 13:52:21","2026-07-10 02:00:22",15159.00
+"Singapore Airlines",SQ7875,Nagoya,Florence,"2026-07-09 03:51:57","2026-07-09 08:39:37",2454.00
+Emirates,EK168,Granada,Seville,"2026-09-27 20:23:47","2026-09-28 01:21:40",10355.00
