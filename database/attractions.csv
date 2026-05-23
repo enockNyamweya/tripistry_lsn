@@ -19,3 +19,1004 @@ name,type,fee,desc,hours,city
 "Sydney Opera House","Landmark",30.00,"Multi-venue performing arts centre at Sydney Harbour.","09:00 - 17:00","Sydney"
 "Bondi Beach","Nature",0.00,"Popular beach and the name of the surrounding suburb in Sydney.","24/7","Sydney"
 "Taronga Zoo","Nature",45.00,"City zoo of Sydney, located on the shores of Sydney Harbour.","09:30 - 17:00","Sydney"
+"Valencia Museum 1",Museum,50.00,"A simulated museum attraction located in Valencia. Generated for load testing purposes.","09:00 - 17:00",Valencia
+"Brisbane Royal Palace",Historic,28.00,"Step back in time and walk the ancient grounds where Brisbane's most defining historical moments took place.","9:00 - 18:00",Brisbane
+"The Great Vancouver Aviation Museum",Museum,16.00,"Immerse yourself in Vancouver's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 16:00",Vancouver
+"The Great Kyoto Ancient Fort",Historic,0.00,"Step back in time and walk the ancient grounds where Kyoto's most defining historical moments took place.","10:00 - 20:00",Kyoto
+"The Great Milan Square",Landmark,0.00,"A masterpiece of engineering and art. No visit to Milan is complete without seeing this majestic structure.","8:00 - 20:00",Milan
+"Bali Cultural Centre",Museum,0.00,"Immerse yourself in Bali's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 18:00",Bali
+"The Great Bilbao Tower",Landmark,7.00,"A masterpiece of engineering and art. No visit to Bilbao is complete without seeing this majestic structure.","10:00 - 17:00",Bilbao
+"Durban Science Exhibit",Museum,0.00,"Discover the fascinating origins of Durban through beautifully curated galleries and expert-led tours.","9:00 - 19:00",Durban
+"Milan Wildlife Sanctuary",Nature,23.00,"Lush green spaces and spectacular panoramic views make this one of Milan's most cherished outdoor destinations.","10:00 - 16:00",Milan
+"Leipzig Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Leipzig at this serene location, offering scenic trails and native wildlife.","10:00 - 20:00",Leipzig
+"Okinawa Central Plaza",Landmark,42.00,"A masterpiece of engineering and art. No visit to Okinawa is complete without seeing this majestic structure.","10:00 - 17:00",Okinawa
+"Nara Museum of Art",Museum,24.00,"Immerse yourself in Nara's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 18:00",Nara
+"The Great Malaga Science Exhibit",Museum,0.00,"Immerse yourself in Malaga's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Malaga
+"Dresden National Park",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Dresden's most cherished outdoor destinations.","9:00 - 19:00",Dresden
+"Cape Town Castle Ruins",Historic,7.00,"Step back in time and walk the ancient grounds where Cape Town's most defining historical moments took place.","10:00 - 20:00","Cape Town"
+"The Great Genoa Old Town Hall",Historic,25.00,"Centuries of history are embedded in the walls of this famous historical site located right in Genoa.","9:00 - 19:00",Genoa
+"The Great Adelaide Wildlife Sanctuary",Nature,38.00,"A perfectly preserved natural reserve in the heart of Adelaide. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Adelaide
+"Cape Town Central Plaza",Landmark,33.00,"A masterpiece of engineering and art. No visit to Cape Town is complete without seeing this majestic structure.","9:00 - 17:00","Cape Town"
+"Kobe Museum of Art",Museum,5.00,"Immerse yourself in Kobe's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 20:00",Kobe
+"The Great Nuremberg Nature Reserve",Nature,27.00,"Lush green spaces and spectacular panoramic views make this one of Nuremberg's most cherished outdoor destinations.","8:00 - 19:00",Nuremberg
+"Munich Tower",Landmark,21.00,"An iconic symbol of Munich's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 19:00",Munich
+"Genoa Square",Landmark,24.00,"One of the most photographed monuments in Genoa, featuring stunning design and cultural significance.","10:00 - 18:00",Genoa
+"Boston Cathedral",Historic,24.00,"Step back in time and walk the ancient grounds where Boston's most defining historical moments took place.","8:00 - 18:00",Boston
+"Florence River Walk",Nature,23.00,"A perfectly preserved natural reserve in the heart of Florence. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 17:00",Florence
+"Oxford River Walk",Nature,26.00,"A perfectly preserved natural reserve in the heart of Oxford. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Oxford
+"Bilbao Ancient Fort",Historic,44.00,"Centuries of history are embedded in the walls of this famous historical site located right in Bilbao.","10:00 - 18:00",Bilbao
+"The Great Hobart Heritage House",Historic,28.00,"Centuries of history are embedded in the walls of this famous historical site located right in Hobart.","10:00 - 19:00",Hobart
+"The Great Sydney Heritage House",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Sydney.","9:00 - 18:00",Sydney
+"The Great Bilbao Cultural Centre",Museum,0.00,"Discover the fascinating origins of Bilbao through beautifully curated galleries and expert-led tours.","10:00 - 20:00",Bilbao
+"Nagoya Museum of Art",Museum,25.00,"Discover the fascinating origins of Nagoya through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Nagoya
+"The Great New York Wildlife Sanctuary",Nature,19.00,"Lush green spaces and spectacular panoramic views make this one of New York's most cherished outdoor destinations.","10:00 - 16:00","New York"
+"Las Vegas Castle Ruins",Historic,44.00,"Centuries of history are embedded in the walls of this famous historical site located right in Las Vegas.","8:00 - 20:00","Las Vegas"
+"Oxford River Walk",Nature,34.00,"A perfectly preserved natural reserve in the heart of Oxford. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Oxford
+"The Great Bali National Park",Nature,29.00,"Lush green spaces and spectacular panoramic views make this one of Bali's most cherished outdoor destinations.","10:00 - 18:00",Bali
+"The Great Rome Gallery",Museum,34.00,"Immerse yourself in Rome's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 18:00",Rome
+"New York Gallery",Museum,42.00,"Discover the fascinating origins of New York through beautifully curated galleries and expert-led tours.","8:00 - 20:00","New York"
+"Toulouse National Park",Nature,6.00,"Experience the breathtaking natural beauty of Toulouse at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Toulouse
+"Calgary Square",Landmark,17.00,"A masterpiece of engineering and art. No visit to Calgary is complete without seeing this majestic structure.","9:00 - 20:00",Calgary
+"The Great Hamburg Hillside Park",Nature,23.00,"Experience the breathtaking natural beauty of Hamburg at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00",Hamburg
+"Nara Gallery",Museum,17.00,"Immerse yourself in Nara's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 19:00",Nara
+"New York River Walk",Nature,29.00,"Experience the breathtaking natural beauty of New York at this serene location, offering scenic trails and native wildlife.","10:00 - 19:00","New York"
+"The Great Kyoto National Park",Nature,0.00,"Experience the breathtaking natural beauty of Kyoto at this serene location, offering scenic trails and native wildlife.","8:00 - 19:00",Kyoto
+"Perth National Park",Nature,20.00,"Lush green spaces and spectacular panoramic views make this one of Perth's most cherished outdoor destinations.","9:00 - 17:00",Perth
+"The Great Paris National Park",Nature,36.00,"Experience the breathtaking natural beauty of Paris at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Paris
+"Venice Natural History Museum",Museum,44.00,"Discover the fascinating origins of Venice through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Venice
+"Paris Museum of Art",Museum,0.00,"Discover the fascinating origins of Paris through beautifully curated galleries and expert-led tours.","8:00 - 17:00",Paris
+"The Great Florence Ancient Fort",Historic,27.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Florence.","9:00 - 18:00",Florence
+"The Great Hamburg River Walk",Nature,16.00,"A perfectly preserved natural reserve in the heart of Hamburg. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Hamburg
+"Fukuoka Royal Palace",Historic,18.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Fukuoka.","9:00 - 20:00",Fukuoka
+"The Great Las Vegas Cathedral",Historic,17.00,"Centuries of history are embedded in the walls of this famous historical site located right in Las Vegas.","9:00 - 19:00","Las Vegas"
+"Bath Nature Reserve",Nature,40.00,"A perfectly preserved natural reserve in the heart of Bath. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Bath
+"The Great Port Elizabeth Monument",Landmark,6.00,"An iconic symbol of Port Elizabeth's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00","Port Elizabeth"
+"The Great Sydney Natural History Museum",Museum,0.00,"Immerse yourself in Sydney's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 20:00",Sydney
+"The Great Dresden Monument",Landmark,45.00,"An iconic symbol of Dresden's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 20:00",Dresden
+"The Great East London Aviation Museum",Museum,28.00,"A world-class cultural institution in East London housing thousands of priceless historical and artistic treasures.","9:00 - 18:00","East London"
+"Vancouver Square",Landmark,33.00,"A masterpiece of engineering and art. No visit to Vancouver is complete without seeing this majestic structure.","10:00 - 17:00",Vancouver
+"The Great Pretoria Science Exhibit",Museum,13.00,"Discover the fascinating origins of Pretoria through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Pretoria
+"The Great Ibiza Cultural Centre",Museum,0.00,"A world-class cultural institution in Ibiza housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Ibiza
+"The Great New York Gallery",Museum,5.00,"Immerse yourself in New York's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 20:00","New York"
+"The Great Kyoto Royal Palace",Historic,15.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Kyoto.","10:00 - 20:00",Kyoto
+"The Great Okinawa Tower",Landmark,35.00,"An iconic symbol of Okinawa's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Okinawa
+"The Great Bilbao Square",Landmark,15.00,"One of the most photographed monuments in Bilbao, featuring stunning design and cultural significance.","9:00 - 19:00",Bilbao
+"The Great Pisa Science Exhibit",Museum,0.00,"A world-class cultural institution in Pisa housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Pisa
+"The Great Dubai Science Exhibit",Museum,0.00,"Discover the fascinating origins of Dubai through beautifully curated galleries and expert-led tours.","9:00 - 18:00",Dubai
+"Cologne Aviation Museum",Museum,13.00,"Immerse yourself in Cologne's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 19:00",Cologne
+"The Great Vancouver Gallery",Museum,16.00,"Discover the fascinating origins of Vancouver through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Vancouver
+"Venice Monument",Landmark,0.00,"A masterpiece of engineering and art. No visit to Venice is complete without seeing this majestic structure.","9:00 - 17:00",Venice
+"Dresden Castle Ruins",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Dresden.","10:00 - 17:00",Dresden
+"Toulouse River Walk",Nature,37.00,"A perfectly preserved natural reserve in the heart of Toulouse. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Toulouse
+"The Great East London Botanical Gardens",Nature,30.00,"Experience the breathtaking natural beauty of East London at this serene location, offering scenic trails and native wildlife.","8:00 - 19:00","East London"
+"The Great Kimberley Royal Palace",Historic,9.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Kimberley.","8:00 - 20:00",Kimberley
+"The Great Darwin Cathedral",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Darwin.","8:00 - 20:00",Darwin
+"Adelaide Old Town Hall",Historic,41.00,"Centuries of history are embedded in the walls of this famous historical site located right in Adelaide.","8:00 - 20:00",Adelaide
+"Miami Botanical Gardens",Nature,22.00,"Experience the breathtaking natural beauty of Miami at this serene location, offering scenic trails and native wildlife.","8:00 - 19:00",Miami
+"Cape Town Square",Landmark,44.00,"A masterpiece of engineering and art. No visit to Cape Town is complete without seeing this majestic structure.","9:00 - 17:00","Cape Town"
+"The Great Seville Natural History Museum",Museum,33.00,"Immerse yourself in Seville's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Seville
+"Fukuoka Botanical Gardens",Nature,0.00,"A perfectly preserved natural reserve in the heart of Fukuoka. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Fukuoka
+"The Great Sapporo Central Plaza",Landmark,0.00,"A masterpiece of engineering and art. No visit to Sapporo is complete without seeing this majestic structure.","8:00 - 19:00",Sapporo
+"The Great Hiroshima Nature Reserve",Nature,19.00,"A perfectly preserved natural reserve in the heart of Hiroshima. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 20:00",Hiroshima
+"The Great New York Monument",Landmark,0.00,"A masterpiece of engineering and art. No visit to New York is complete without seeing this majestic structure.","9:00 - 20:00","New York"
+"Stellenbosch Castle Ruins",Historic,32.00,"Step back in time and walk the ancient grounds where Stellenbosch's most defining historical moments took place.","9:00 - 17:00",Stellenbosch
+"The Great Madrid Royal Palace",Historic,15.00,"Step back in time and walk the ancient grounds where Madrid's most defining historical moments took place.","9:00 - 16:00",Madrid
+"The Great Bath Cathedral",Historic,41.00,"Centuries of history are embedded in the walls of this famous historical site located right in Bath.","10:00 - 18:00",Bath
+"Paris Observatory",Landmark,0.00,"An iconic symbol of Paris's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 17:00",Paris
+"The Great Valencia Hillside Park",Nature,0.00,"A perfectly preserved natural reserve in the heart of Valencia. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Valencia
+"Oxford Wildlife Sanctuary",Nature,0.00,"Experience the breathtaking natural beauty of Oxford at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Oxford
+"East London Wildlife Sanctuary",Nature,14.00,"A perfectly preserved natural reserve in the heart of East London. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00","East London"
+"Montreal Cultural Centre",Museum,34.00,"Discover the fascinating origins of Montreal through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Montreal
+"East London Heritage House",Historic,43.00,"Step back in time and walk the ancient grounds where East London's most defining historical moments took place.","10:00 - 16:00","East London"
+"Halifax Bridge",Landmark,5.00,"One of the most photographed monuments in Halifax, featuring stunning design and cultural significance.","9:00 - 17:00",Halifax
+"The Great Seville Wildlife Sanctuary",Nature,6.00,"Lush green spaces and spectacular panoramic views make this one of Seville's most cherished outdoor destinations.","9:00 - 20:00",Seville
+"Rome Square",Landmark,0.00,"An iconic symbol of Rome's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 16:00",Rome
+"The Great Pretoria National Park",Nature,0.00,"Experience the breathtaking natural beauty of Pretoria at this serene location, offering scenic trails and native wildlife.","8:00 - 20:00",Pretoria
+"Cape Town Old Town Hall",Historic,0.00,"Step back in time and walk the ancient grounds where Cape Town's most defining historical moments took place.","10:00 - 20:00","Cape Town"
+"Canberra Wildlife Sanctuary",Nature,11.00,"Experience the breathtaking natural beauty of Canberra at this serene location, offering scenic trails and native wildlife.","9:00 - 17:00",Canberra
+"The Great Chicago River Walk",Nature,7.00,"A perfectly preserved natural reserve in the heart of Chicago. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Chicago
+"Nuremberg Old Town Hall",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Nuremberg.","9:00 - 16:00",Nuremberg
+"The Great Perth Cultural Centre",Museum,16.00,"Discover the fascinating origins of Perth through beautifully curated galleries and expert-led tours.","10:00 - 19:00",Perth
+"Dresden Natural History Museum",Museum,17.00,"Discover the fascinating origins of Dresden through beautifully curated galleries and expert-led tours.","10:00 - 16:00",Dresden
+"Frankfurt Aviation Museum",Museum,26.00,"Immerse yourself in Frankfurt's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 16:00",Frankfurt
+"The Great Perth Museum of Art",Museum,41.00,"A world-class cultural institution in Perth housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Perth
+"The Great Glasgow Nature Reserve",Nature,17.00,"A perfectly preserved natural reserve in the heart of Glasgow. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 20:00",Glasgow
+"The Great Denver Monument",Landmark,45.00,"A masterpiece of engineering and art. No visit to Denver is complete without seeing this majestic structure.","9:00 - 17:00",Denver
+"The Great Adelaide Central Plaza",Landmark,44.00,"An iconic symbol of Adelaide's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 20:00",Adelaide
+"The Great Bali Gallery",Museum,0.00,"Immerse yourself in Bali's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 20:00",Bali
+"Genoa Heritage House",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Genoa.","8:00 - 17:00",Genoa
+"Whistler Observatory",Landmark,0.00,"One of the most photographed monuments in Whistler, featuring stunning design and cultural significance.","8:00 - 17:00",Whistler
+"Stellenbosch Royal Palace",Historic,28.00,"Centuries of history are embedded in the walls of this famous historical site located right in Stellenbosch.","10:00 - 17:00",Stellenbosch
+"The Great Venice Cultural Centre",Museum,39.00,"Discover the fascinating origins of Venice through beautifully curated galleries and expert-led tours.","10:00 - 19:00",Venice
+"The Great Bali Central Plaza",Landmark,12.00,"One of the most photographed monuments in Bali, featuring stunning design and cultural significance.","10:00 - 17:00",Bali
+"Berlin Tower",Landmark,8.00,"An iconic symbol of Berlin's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Berlin
+"Edmonton Cathedral",Historic,6.00,"Centuries of history are embedded in the walls of this famous historical site located right in Edmonton.","10:00 - 20:00",Edmonton
+"The Great New York National Park",Nature,40.00,"Experience the breathtaking natural beauty of New York at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00","New York"
+"The Great Paris Castle Ruins",Historic,21.00,"Step back in time and walk the ancient grounds where Paris's most defining historical moments took place.","8:00 - 20:00",Paris
+"Manchester Museum of Art",Museum,0.00,"Immerse yourself in Manchester's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 16:00",Manchester
+"The Great Knysna Bridge",Landmark,40.00,"A masterpiece of engineering and art. No visit to Knysna is complete without seeing this majestic structure.","10:00 - 16:00",Knysna
+"Stellenbosch Castle Ruins",Historic,0.00,"Step back in time and walk the ancient grounds where Stellenbosch's most defining historical moments took place.","8:00 - 18:00",Stellenbosch
+"The Great Mallorca Science Exhibit",Museum,0.00,"Discover the fascinating origins of Mallorca through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Mallorca
+"Sapporo Aviation Museum",Museum,34.00,"Immerse yourself in Sapporo's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 18:00",Sapporo
+"The Great Ibiza River Walk",Nature,10.00,"Experience the breathtaking natural beauty of Ibiza at this serene location, offering scenic trails and native wildlife.","9:00 - 16:00",Ibiza
+"Adelaide Tower",Landmark,25.00,"One of the most photographed monuments in Adelaide, featuring stunning design and cultural significance.","10:00 - 18:00",Adelaide
+"Lille Botanical Gardens",Nature,42.00,"Lush green spaces and spectacular panoramic views make this one of Lille's most cherished outdoor destinations.","9:00 - 19:00",Lille
+"Stellenbosch Royal Palace",Historic,0.00,"Step back in time and walk the ancient grounds where Stellenbosch's most defining historical moments took place.","10:00 - 17:00",Stellenbosch
+"The Great Birmingham Cultural Centre",Museum,32.00,"Immerse yourself in Birmingham's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 18:00",Birmingham
+"The Great Nuremberg Science Exhibit",Museum,32.00,"Discover the fascinating origins of Nuremberg through beautifully curated galleries and expert-led tours.","10:00 - 16:00",Nuremberg
+"Halifax Cultural Centre",Museum,45.00,"Discover the fascinating origins of Halifax through beautifully curated galleries and expert-led tours.","10:00 - 16:00",Halifax
+"Tokyo Observatory",Landmark,22.00,"A masterpiece of engineering and art. No visit to Tokyo is complete without seeing this majestic structure.","8:00 - 20:00",Tokyo
+"London Cathedral",Historic,35.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of London.","8:00 - 20:00",London
+"Granada Cultural Centre",Museum,42.00,"Immerse yourself in Granada's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Granada
+"Canberra River Walk",Nature,27.00,"A perfectly preserved natural reserve in the heart of Canberra. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Canberra
+"The Great Tokyo Royal Palace",Historic,33.00,"Step back in time and walk the ancient grounds where Tokyo's most defining historical moments took place.","9:00 - 16:00",Tokyo
+"The Great Durban Hillside Park",Nature,28.00,"Lush green spaces and spectacular panoramic views make this one of Durban's most cherished outdoor destinations.","8:00 - 20:00",Durban
+"The Great Glasgow Aviation Museum",Museum,0.00,"Discover the fascinating origins of Glasgow through beautifully curated galleries and expert-led tours.","9:00 - 17:00",Glasgow
+"Okinawa Tower",Landmark,17.00,"One of the most photographed monuments in Okinawa, featuring stunning design and cultural significance.","10:00 - 18:00",Okinawa
+"Chicago Gallery",Museum,23.00,"Discover the fascinating origins of Chicago through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Chicago
+"Turin Natural History Museum",Museum,30.00,"Immerse yourself in Turin's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Turin
+"Melbourne Central Plaza",Landmark,0.00,"One of the most photographed monuments in Melbourne, featuring stunning design and cultural significance.","9:00 - 17:00",Melbourne
+"The Great Okinawa Wildlife Sanctuary",Nature,44.00,"Lush green spaces and spectacular panoramic views make this one of Okinawa's most cherished outdoor destinations.","10:00 - 20:00",Okinawa
+"The Great Paris National Park",Nature,0.00,"Experience the breathtaking natural beauty of Paris at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00",Paris
+"The Great Sapporo Museum of Art",Museum,0.00,"Immerse yourself in Sapporo's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 18:00",Sapporo
+"The Great Dusseldorf Old Town Hall",Historic,25.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Dusseldorf.","8:00 - 16:00",Dusseldorf
+"Florence Square",Landmark,5.00,"An iconic symbol of Florence's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Florence
+"The Great Victoria Museum of Art",Museum,38.00,"Immerse yourself in Victoria's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Victoria
+"Bilbao Nature Reserve",Nature,23.00,"Experience the breathtaking natural beauty of Bilbao at this serene location, offering scenic trails and native wildlife.","9:00 - 17:00",Bilbao
+"Lille Observatory",Landmark,14.00,"An iconic symbol of Lille's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 17:00",Lille
+"The Great Cologne Bridge",Landmark,8.00,"A masterpiece of engineering and art. No visit to Cologne is complete without seeing this majestic structure.","9:00 - 17:00",Cologne
+"The Great Genoa Bridge",Landmark,31.00,"One of the most photographed monuments in Genoa, featuring stunning design and cultural significance.","8:00 - 17:00",Genoa
+"The Great Kyoto Old Town Hall",Historic,14.00,"Centuries of history are embedded in the walls of this famous historical site located right in Kyoto.","9:00 - 20:00",Kyoto
+"The Great Stellenbosch Natural History Museum",Museum,0.00,"A world-class cultural institution in Stellenbosch housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Stellenbosch
+"Oxford Castle Ruins",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Oxford.","9:00 - 20:00",Oxford
+"Chicago Square",Landmark,25.00,"A masterpiece of engineering and art. No visit to Chicago is complete without seeing this majestic structure.","8:00 - 16:00",Chicago
+"The Great Brisbane Nature Reserve",Nature,31.00,"Experience the breathtaking natural beauty of Brisbane at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Brisbane
+"Berlin Square",Landmark,16.00,"A masterpiece of engineering and art. No visit to Berlin is complete without seeing this majestic structure.","8:00 - 16:00",Berlin
+"The Great Birmingham Tower",Landmark,18.00,"An iconic symbol of Birmingham's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Birmingham
+"Nantes Square",Landmark,32.00,"An iconic symbol of Nantes's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Nantes
+"Montpellier Heritage House",Historic,28.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Montpellier.","8:00 - 19:00",Montpellier
+"Manchester Wildlife Sanctuary",Nature,39.00,"Experience the breathtaking natural beauty of Manchester at this serene location, offering scenic trails and native wildlife.","9:00 - 19:00",Manchester
+"The Great Cape Town Tower",Landmark,38.00,"One of the most photographed monuments in Cape Town, featuring stunning design and cultural significance.","10:00 - 18:00","Cape Town"
+"Vancouver National Park",Nature,35.00,"A perfectly preserved natural reserve in the heart of Vancouver. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Vancouver
+"New York Bridge",Landmark,0.00,"One of the most photographed monuments in New York, featuring stunning design and cultural significance.","9:00 - 19:00","New York"
+"The Great Calgary Square",Landmark,31.00,"A masterpiece of engineering and art. No visit to Calgary is complete without seeing this majestic structure.","9:00 - 20:00",Calgary
+"Paris Museum of Art",Museum,0.00,"Immerse yourself in Paris's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 20:00",Paris
+"Darwin Old Town Hall",Historic,25.00,"Step back in time and walk the ancient grounds where Darwin's most defining historical moments took place.","10:00 - 19:00",Darwin
+"The Great Johannesburg Cathedral",Historic,19.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Johannesburg.","9:00 - 18:00",Johannesburg
+"Victoria Royal Palace",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Victoria.","10:00 - 18:00",Victoria
+"The Great Dresden National Park",Nature,6.00,"Lush green spaces and spectacular panoramic views make this one of Dresden's most cherished outdoor destinations.","8:00 - 18:00",Dresden
+"The Great Port Elizabeth Heritage House",Historic,44.00,"Centuries of history are embedded in the walls of this famous historical site located right in Port Elizabeth.","9:00 - 18:00","Port Elizabeth"
+"The Great Lyon Natural History Museum",Museum,16.00,"Discover the fascinating origins of Lyon through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Lyon
+"The Great Edinburgh Tower",Landmark,38.00,"One of the most photographed monuments in Edinburgh, featuring stunning design and cultural significance.","8:00 - 16:00",Edinburgh
+"Okinawa Wildlife Sanctuary",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Okinawa's most cherished outdoor destinations.","9:00 - 20:00",Okinawa
+"Madrid Observatory",Landmark,11.00,"A masterpiece of engineering and art. No visit to Madrid is complete without seeing this majestic structure.","10:00 - 18:00",Madrid
+"Frankfurt Central Plaza",Landmark,0.00,"One of the most photographed monuments in Frankfurt, featuring stunning design and cultural significance.","9:00 - 20:00",Frankfurt
+"Kobe Botanical Gardens",Nature,38.00,"Experience the breathtaking natural beauty of Kobe at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00",Kobe
+"Kobe Nature Reserve",Nature,41.00,"Lush green spaces and spectacular panoramic views make this one of Kobe's most cherished outdoor destinations.","8:00 - 17:00",Kobe
+"The Great New York Gallery",Museum,18.00,"Discover the fascinating origins of New York through beautifully curated galleries and expert-led tours.","9:00 - 18:00","New York"
+"Sapporo Ancient Fort",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Sapporo.","10:00 - 20:00",Sapporo
+"The Great Edinburgh Aviation Museum",Museum,0.00,"A world-class cultural institution in Edinburgh housing thousands of priceless historical and artistic treasures.","10:00 - 16:00",Edinburgh
+"Vancouver Cultural Centre",Museum,43.00,"A world-class cultural institution in Vancouver housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Vancouver
+"Bilbao Aviation Museum",Museum,13.00,"Immerse yourself in Bilbao's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 20:00",Bilbao
+"Nice Tower",Landmark,27.00,"An iconic symbol of Nice's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 16:00",Nice
+"Dresden Bridge",Landmark,33.00,"A masterpiece of engineering and art. No visit to Dresden is complete without seeing this majestic structure.","8:00 - 19:00",Dresden
+"The Great Knysna Nature Reserve",Nature,24.00,"A perfectly preserved natural reserve in the heart of Knysna. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Knysna
+"Venice Bridge",Landmark,32.00,"A masterpiece of engineering and art. No visit to Venice is complete without seeing this majestic structure.","8:00 - 16:00",Venice
+"The Great Oxford National Park",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Oxford's most cherished outdoor destinations.","8:00 - 20:00",Oxford
+"Tokyo Square",Landmark,0.00,"An iconic symbol of Tokyo's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Tokyo
+"The Great Los Angeles Heritage House",Historic,43.00,"Step back in time and walk the ancient grounds where Los Angeles's most defining historical moments took place.","8:00 - 16:00","Los Angeles"
+"The Great Bristol Bridge",Landmark,40.00,"An iconic symbol of Bristol's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Bristol
+"Ibiza Ancient Fort",Historic,28.00,"Step back in time and walk the ancient grounds where Ibiza's most defining historical moments took place.","9:00 - 17:00",Ibiza
+"Kobe Royal Palace",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Kobe.","10:00 - 18:00",Kobe
+"Brisbane Science Exhibit",Museum,32.00,"Discover the fascinating origins of Brisbane through beautifully curated galleries and expert-led tours.","9:00 - 17:00",Brisbane
+"The Great Seattle Monument",Landmark,33.00,"A masterpiece of engineering and art. No visit to Seattle is complete without seeing this majestic structure.","8:00 - 18:00",Seattle
+"The Great Nagoya Central Plaza",Landmark,5.00,"An iconic symbol of Nagoya's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Nagoya
+"Barcelona Natural History Museum",Museum,0.00,"A world-class cultural institution in Barcelona housing thousands of priceless historical and artistic treasures.","9:00 - 20:00",Barcelona
+"The Great Montreal National Park",Nature,29.00,"A perfectly preserved natural reserve in the heart of Montreal. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Montreal
+"Sydney Bridge",Landmark,32.00,"One of the most photographed monuments in Sydney, featuring stunning design and cultural significance.","10:00 - 18:00",Sydney
+"Tokyo Old Town Hall",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Tokyo.","9:00 - 16:00",Tokyo
+"The Great Berlin Tower",Landmark,23.00,"An iconic symbol of Berlin's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Berlin
+"The Great Cape Town Wildlife Sanctuary",Nature,0.00,"Experience the breathtaking natural beauty of Cape Town at this serene location, offering scenic trails and native wildlife.","8:00 - 17:00","Cape Town"
+"Denver Hillside Park",Nature,40.00,"A perfectly preserved natural reserve in the heart of Denver. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Denver
+"The Great Cairns Heritage House",Historic,36.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Cairns.","8:00 - 16:00",Cairns
+"The Great Leipzig Cathedral",Historic,19.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Leipzig.","9:00 - 20:00",Leipzig
+"The Great Bali Castle Ruins",Historic,29.00,"Step back in time and walk the ancient grounds where Bali's most defining historical moments took place.","8:00 - 19:00",Bali
+"The Great Bilbao Observatory",Landmark,0.00,"A masterpiece of engineering and art. No visit to Bilbao is complete without seeing this majestic structure.","10:00 - 18:00",Bilbao
+"The Great Rome Old Town Hall",Historic,43.00,"Step back in time and walk the ancient grounds where Rome's most defining historical moments took place.","8:00 - 17:00",Rome
+"The Great Florence Nature Reserve",Nature,11.00,"Experience the breathtaking natural beauty of Florence at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00",Florence
+"Canberra Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Canberra at this serene location, offering scenic trails and native wildlife.","10:00 - 20:00",Canberra
+"Denver Gallery",Museum,28.00,"Immerse yourself in Denver's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 17:00",Denver
+"Tokyo Heritage House",Historic,16.00,"Centuries of history are embedded in the walls of this famous historical site located right in Tokyo.","8:00 - 16:00",Tokyo
+"The Great Cairns Aviation Museum",Museum,33.00,"A world-class cultural institution in Cairns housing thousands of priceless historical and artistic treasures.","10:00 - 16:00",Cairns
+"Stellenbosch Botanical Gardens",Nature,40.00,"Experience the breathtaking natural beauty of Stellenbosch at this serene location, offering scenic trails and native wildlife.","10:00 - 19:00",Stellenbosch
+"Genoa Tower",Landmark,10.00,"One of the most photographed monuments in Genoa, featuring stunning design and cultural significance.","8:00 - 16:00",Genoa
+"The Great Montpellier Wildlife Sanctuary",Nature,5.00,"Lush green spaces and spectacular panoramic views make this one of Montpellier's most cherished outdoor destinations.","9:00 - 17:00",Montpellier
+"The Great San Francisco Museum of Art",Museum,14.00,"Immerse yourself in San Francisco's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00","San Francisco"
+"The Great Fukuoka Science Exhibit",Museum,0.00,"Discover the fascinating origins of Fukuoka through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Fukuoka
+"Bloemfontein Nature Reserve",Nature,36.00,"Experience the breathtaking natural beauty of Bloemfontein at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00",Bloemfontein
+"Turin Monument",Landmark,31.00,"A masterpiece of engineering and art. No visit to Turin is complete without seeing this majestic structure.","10:00 - 18:00",Turin
+"The Great San Francisco Science Exhibit",Museum,0.00,"A world-class cultural institution in San Francisco housing thousands of priceless historical and artistic treasures.","10:00 - 17:00","San Francisco"
+"Florence Ancient Fort",Historic,40.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Florence.","9:00 - 19:00",Florence
+"Kobe Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Kobe at this serene location, offering scenic trails and native wildlife.","9:00 - 17:00",Kobe
+"The Great Belfast Heritage House",Historic,22.00,"Centuries of history are embedded in the walls of this famous historical site located right in Belfast.","8:00 - 17:00",Belfast
+"The Great Turin Castle Ruins",Historic,41.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Turin.","10:00 - 16:00",Turin
+"Johannesburg Central Plaza",Landmark,45.00,"An iconic symbol of Johannesburg's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 20:00",Johannesburg
+"Dusseldorf Science Exhibit",Museum,15.00,"A world-class cultural institution in Dusseldorf housing thousands of priceless historical and artistic treasures.","8:00 - 18:00",Dusseldorf
+"The Great Toledo Castle Ruins",Historic,23.00,"Step back in time and walk the ancient grounds where Toledo's most defining historical moments took place.","9:00 - 19:00",Toledo
+"The Great Dubai Tower",Landmark,15.00,"One of the most photographed monuments in Dubai, featuring stunning design and cultural significance.","8:00 - 18:00",Dubai
+"The Great Darwin Observatory",Landmark,38.00,"An iconic symbol of Darwin's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Darwin
+"Kimberley Nature Reserve",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Kimberley's most cherished outdoor destinations.","9:00 - 20:00",Kimberley
+"Florence National Park",Nature,6.00,"A perfectly preserved natural reserve in the heart of Florence. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 20:00",Florence
+"Bilbao Science Exhibit",Museum,30.00,"Immerse yourself in Bilbao's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 19:00",Bilbao
+"The Great Perth Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Perth at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00",Perth
+"Barcelona Hillside Park",Nature,19.00,"A perfectly preserved natural reserve in the heart of Barcelona. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Barcelona
+"The Great Malaga National Park",Nature,39.00,"A perfectly preserved natural reserve in the heart of Malaga. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Malaga
+"Los Angeles Heritage House",Historic,23.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Los Angeles.","8:00 - 18:00","Los Angeles"
+"The Great Kobe Natural History Museum",Museum,0.00,"Immerse yourself in Kobe's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 18:00",Kobe
+"Dubai Central Plaza",Landmark,8.00,"An iconic symbol of Dubai's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 18:00",Dubai
+"Sapporo Old Town Hall",Historic,20.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Sapporo.","8:00 - 17:00",Sapporo
+"Port Elizabeth National Park",Nature,9.00,"Experience the breathtaking natural beauty of Port Elizabeth at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00","Port Elizabeth"
+"Kimberley Wildlife Sanctuary",Nature,0.00,"A perfectly preserved natural reserve in the heart of Kimberley. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Kimberley
+"The Great Port Elizabeth Observatory",Landmark,0.00,"One of the most photographed monuments in Port Elizabeth, featuring stunning design and cultural significance.","9:00 - 18:00","Port Elizabeth"
+"The Great Stuttgart Square",Landmark,0.00,"An iconic symbol of Stuttgart's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Stuttgart
+"The Great Okinawa Natural History Museum",Museum,17.00,"A world-class cultural institution in Okinawa housing thousands of priceless historical and artistic treasures.","8:00 - 19:00",Okinawa
+"Seattle Observatory",Landmark,38.00,"A masterpiece of engineering and art. No visit to Seattle is complete without seeing this majestic structure.","10:00 - 19:00",Seattle
+"Quebec City Cathedral",Historic,28.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Quebec City.","8:00 - 16:00","Quebec City"
+"The Great Paris Cultural Centre",Museum,42.00,"Discover the fascinating origins of Paris through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Paris
+"The Great Berlin Aviation Museum",Museum,45.00,"A world-class cultural institution in Berlin housing thousands of priceless historical and artistic treasures.","10:00 - 16:00",Berlin
+"Calgary Castle Ruins",Historic,41.00,"Step back in time and walk the ancient grounds where Calgary's most defining historical moments took place.","10:00 - 20:00",Calgary
+"The Great Cologne Square",Landmark,30.00,"An iconic symbol of Cologne's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Cologne
+"The Great Dubai Royal Palace",Historic,32.00,"Centuries of history are embedded in the walls of this famous historical site located right in Dubai.","10:00 - 16:00",Dubai
+"The Great Montpellier Nature Reserve",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Montpellier's most cherished outdoor destinations.","10:00 - 20:00",Montpellier
+"New York Hillside Park",Nature,37.00,"Experience the breathtaking natural beauty of New York at this serene location, offering scenic trails and native wildlife.","9:00 - 17:00","New York"
+"Granada Central Plaza",Landmark,31.00,"An iconic symbol of Granada's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Granada
+"The Great Okinawa Central Plaza",Landmark,12.00,"A masterpiece of engineering and art. No visit to Okinawa is complete without seeing this majestic structure.","10:00 - 17:00",Okinawa
+"Bilbao Observatory",Landmark,19.00,"An iconic symbol of Bilbao's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Bilbao
+"The Great Pretoria Museum of Art",Museum,37.00,"A world-class cultural institution in Pretoria housing thousands of priceless historical and artistic treasures.","10:00 - 20:00",Pretoria
+"Boston Old Town Hall",Historic,44.00,"Step back in time and walk the ancient grounds where Boston's most defining historical moments took place.","10:00 - 18:00",Boston
+"Nuremberg Old Town Hall",Historic,26.00,"Centuries of history are embedded in the walls of this famous historical site located right in Nuremberg.","8:00 - 17:00",Nuremberg
+"The Great Durban Square",Landmark,10.00,"One of the most photographed monuments in Durban, featuring stunning design and cultural significance.","8:00 - 18:00",Durban
+"The Great Madrid Cathedral",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Madrid.","8:00 - 18:00",Madrid
+"The Great Halifax Cathedral",Historic,21.00,"Centuries of history are embedded in the walls of this famous historical site located right in Halifax.","10:00 - 20:00",Halifax
+"Los Angeles Heritage House",Historic,0.00,"Step back in time and walk the ancient grounds where Los Angeles's most defining historical moments took place.","10:00 - 18:00","Los Angeles"
+"Lyon Gallery",Museum,37.00,"Immerse yourself in Lyon's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 17:00",Lyon
+"The Great Naples Tower",Landmark,45.00,"One of the most photographed monuments in Naples, featuring stunning design and cultural significance.","10:00 - 17:00",Naples
+"Bloemfontein Gallery",Museum,33.00,"A world-class cultural institution in Bloemfontein housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Bloemfontein
+"Ottawa Gallery",Museum,5.00,"Immerse yourself in Ottawa's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00",Ottawa
+"Ottawa River Walk",Nature,21.00,"A perfectly preserved natural reserve in the heart of Ottawa. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Ottawa
+"The Great Bordeaux Central Plaza",Landmark,29.00,"One of the most photographed monuments in Bordeaux, featuring stunning design and cultural significance.","10:00 - 16:00",Bordeaux
+"The Great Hobart Tower",Landmark,0.00,"One of the most photographed monuments in Hobart, featuring stunning design and cultural significance.","9:00 - 19:00",Hobart
+"Montpellier Wildlife Sanctuary",Nature,9.00,"A perfectly preserved natural reserve in the heart of Montpellier. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00",Montpellier
+"The Great Mallorca Hillside Park",Nature,43.00,"Lush green spaces and spectacular panoramic views make this one of Mallorca's most cherished outdoor destinations.","9:00 - 16:00",Mallorca
+"Port Elizabeth Nature Reserve",Nature,15.00,"Lush green spaces and spectacular panoramic views make this one of Port Elizabeth's most cherished outdoor destinations.","10:00 - 16:00","Port Elizabeth"
+"The Great Ibiza Old Town Hall",Historic,25.00,"Centuries of history are embedded in the walls of this famous historical site located right in Ibiza.","9:00 - 17:00",Ibiza
+"Palermo Hillside Park",Nature,40.00,"Lush green spaces and spectacular panoramic views make this one of Palermo's most cherished outdoor destinations.","8:00 - 20:00",Palermo
+"Hamburg Heritage House",Historic,36.00,"Centuries of history are embedded in the walls of this famous historical site located right in Hamburg.","10:00 - 18:00",Hamburg
+"The Great Okinawa Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Okinawa at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Okinawa
+"Barcelona Botanical Gardens",Nature,43.00,"Experience the breathtaking natural beauty of Barcelona at this serene location, offering scenic trails and native wildlife.","10:00 - 20:00",Barcelona
+"Dubai River Walk",Nature,0.00,"Experience the breathtaking natural beauty of Dubai at this serene location, offering scenic trails and native wildlife.","8:00 - 17:00",Dubai
+"The Great Brisbane Central Plaza",Landmark,29.00,"An iconic symbol of Brisbane's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 19:00",Brisbane
+"Durban Botanical Gardens",Nature,24.00,"A perfectly preserved natural reserve in the heart of Durban. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Durban
+"The Great Valencia Science Exhibit",Museum,0.00,"A world-class cultural institution in Valencia housing thousands of priceless historical and artistic treasures.","10:00 - 18:00",Valencia
+"The Great Kimberley Hillside Park",Nature,28.00,"Lush green spaces and spectacular panoramic views make this one of Kimberley's most cherished outdoor destinations.","10:00 - 20:00",Kimberley
+"Hamburg Old Town Hall",Historic,37.00,"Centuries of history are embedded in the walls of this famous historical site located right in Hamburg.","10:00 - 17:00",Hamburg
+"New York Heritage House",Historic,39.00,"Step back in time and walk the ancient grounds where New York's most defining historical moments took place.","9:00 - 16:00","New York"
+"Whistler Wildlife Sanctuary",Nature,23.00,"Lush green spaces and spectacular panoramic views make this one of Whistler's most cherished outdoor destinations.","10:00 - 18:00",Whistler
+"Hamburg Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Hamburg at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Hamburg
+"Genoa Ancient Fort",Historic,45.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Genoa.","9:00 - 20:00",Genoa
+"The Great Palermo Science Exhibit",Museum,0.00,"Immerse yourself in Palermo's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 18:00",Palermo
+"Valencia River Walk",Nature,8.00,"A perfectly preserved natural reserve in the heart of Valencia. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Valencia
+"The Great Melbourne Hillside Park",Nature,25.00,"Experience the breathtaking natural beauty of Melbourne at this serene location, offering scenic trails and native wildlife.","9:00 - 16:00",Melbourne
+"Seattle Monument",Landmark,24.00,"One of the most photographed monuments in Seattle, featuring stunning design and cultural significance.","8:00 - 20:00",Seattle
+"Bordeaux Cultural Centre",Museum,22.00,"Discover the fascinating origins of Bordeaux through beautifully curated galleries and expert-led tours.","8:00 - 19:00",Bordeaux
+"The Great Okinawa Heritage House",Historic,32.00,"Step back in time and walk the ancient grounds where Okinawa's most defining historical moments took place.","9:00 - 20:00",Okinawa
+"The Great Kobe Monument",Landmark,0.00,"An iconic symbol of Kobe's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Kobe
+"Lille Science Exhibit",Museum,24.00,"A world-class cultural institution in Lille housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Lille
+"The Great New York Heritage House",Historic,39.00,"Step back in time and walk the ancient grounds where New York's most defining historical moments took place.","9:00 - 16:00","New York"
+"Perth Square",Landmark,34.00,"A masterpiece of engineering and art. No visit to Perth is complete without seeing this majestic structure.","8:00 - 17:00",Perth
+"Lyon Castle Ruins",Historic,20.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Lyon.","10:00 - 16:00",Lyon
+"The Great Montreal Observatory",Landmark,13.00,"An iconic symbol of Montreal's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 17:00",Montreal
+"Quebec City Science Exhibit",Museum,0.00,"Immerse yourself in Quebec City's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 17:00","Quebec City"
+"The Great Toronto Observatory",Landmark,0.00,"An iconic symbol of Toronto's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Toronto
+"The Great Paris Cultural Centre",Museum,24.00,"A world-class cultural institution in Paris housing thousands of priceless historical and artistic treasures.","8:00 - 18:00",Paris
+"The Great Frankfurt Square",Landmark,0.00,"A masterpiece of engineering and art. No visit to Frankfurt is complete without seeing this majestic structure.","8:00 - 17:00",Frankfurt
+"Rome Museum of Art",Museum,33.00,"A world-class cultural institution in Rome housing thousands of priceless historical and artistic treasures.","10:00 - 20:00",Rome
+"The Great Liverpool Museum of Art",Museum,37.00,"A world-class cultural institution in Liverpool housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Liverpool
+"Tokyo Cultural Centre",Museum,0.00,"Immerse yourself in Tokyo's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 19:00",Tokyo
+"The Great East London Wildlife Sanctuary",Nature,5.00,"Experience the breathtaking natural beauty of East London at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00","East London"
+"London Bridge",Landmark,28.00,"One of the most photographed monuments in London, featuring stunning design and cultural significance.","8:00 - 18:00",London
+"Seville Central Plaza",Landmark,45.00,"One of the most photographed monuments in Seville, featuring stunning design and cultural significance.","8:00 - 16:00",Seville
+"The Great Calgary Science Exhibit",Museum,39.00,"Discover the fascinating origins of Calgary through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Calgary
+"The Great Nara Bridge",Landmark,0.00,"One of the most photographed monuments in Nara, featuring stunning design and cultural significance.","10:00 - 19:00",Nara
+"The Great Birmingham Wildlife Sanctuary",Nature,22.00,"Lush green spaces and spectacular panoramic views make this one of Birmingham's most cherished outdoor destinations.","8:00 - 16:00",Birmingham
+"Lyon Science Exhibit",Museum,0.00,"Immerse yourself in Lyon's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 20:00",Lyon
+"The Great Strasbourg Monument",Landmark,13.00,"One of the most photographed monuments in Strasbourg, featuring stunning design and cultural significance.","8:00 - 17:00",Strasbourg
+"Toulouse Monument",Landmark,16.00,"A masterpiece of engineering and art. No visit to Toulouse is complete without seeing this majestic structure.","10:00 - 17:00",Toulouse
+"Ibiza Tower",Landmark,0.00,"An iconic symbol of Ibiza's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 18:00",Ibiza
+"Paris Botanical Gardens",Nature,42.00,"A perfectly preserved natural reserve in the heart of Paris. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 17:00",Paris
+"The Great Glasgow Botanical Gardens",Nature,21.00,"Lush green spaces and spectacular panoramic views make this one of Glasgow's most cherished outdoor destinations.","8:00 - 19:00",Glasgow
+"The Great Belfast National Park",Nature,0.00,"A perfectly preserved natural reserve in the heart of Belfast. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00",Belfast
+"Gold Coast Observatory",Landmark,37.00,"One of the most photographed monuments in Gold Coast, featuring stunning design and cultural significance.","10:00 - 17:00","Gold Coast"
+"Ottawa Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of Ottawa at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00",Ottawa
+"Cape Town Royal Palace",Historic,27.00,"Centuries of history are embedded in the walls of this famous historical site located right in Cape Town.","9:00 - 19:00","Cape Town"
+"Vancouver Cathedral",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Vancouver.","10:00 - 16:00",Vancouver
+"The Great Los Angeles Hillside Park",Nature,45.00,"Lush green spaces and spectacular panoramic views make this one of Los Angeles's most cherished outdoor destinations.","8:00 - 20:00","Los Angeles"
+"The Great New York Natural History Museum",Museum,5.00,"A world-class cultural institution in New York housing thousands of priceless historical and artistic treasures.","9:00 - 19:00","New York"
+"The Great Hobart Wildlife Sanctuary",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Hobart's most cherished outdoor destinations.","8:00 - 16:00",Hobart
+"Manchester Bridge",Landmark,36.00,"An iconic symbol of Manchester's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Manchester
+"Vancouver Botanical Gardens",Nature,38.00,"Experience the breathtaking natural beauty of Vancouver at this serene location, offering scenic trails and native wildlife.","8:00 - 20:00",Vancouver
+"The Great Munich Nature Reserve",Nature,17.00,"Experience the breathtaking natural beauty of Munich at this serene location, offering scenic trails and native wildlife.","9:00 - 17:00",Munich
+"The Great Nice Gallery",Museum,13.00,"Discover the fascinating origins of Nice through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Nice
+"The Great Austin Heritage House",Historic,0.00,"Step back in time and walk the ancient grounds where Austin's most defining historical moments took place.","9:00 - 20:00",Austin
+"Sapporo Heritage House",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Sapporo.","8:00 - 17:00",Sapporo
+"The Great Quebec City Heritage House",Historic,36.00,"Centuries of history are embedded in the walls of this famous historical site located right in Quebec City.","9:00 - 19:00","Quebec City"
+"The Great Turin Central Plaza",Landmark,30.00,"One of the most photographed monuments in Turin, featuring stunning design and cultural significance.","8:00 - 20:00",Turin
+"The Great Nara Hillside Park",Nature,6.00,"Experience the breathtaking natural beauty of Nara at this serene location, offering scenic trails and native wildlife.","9:00 - 18:00",Nara
+"Toronto Observatory",Landmark,25.00,"An iconic symbol of Toronto's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Toronto
+"Nagoya Natural History Museum",Museum,8.00,"Immerse yourself in Nagoya's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 17:00",Nagoya
+"The Great Tokyo Aviation Museum",Museum,0.00,"Immerse yourself in Tokyo's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 20:00",Tokyo
+"The Great Ibiza Natural History Museum",Museum,22.00,"A world-class cultural institution in Ibiza housing thousands of priceless historical and artistic treasures.","9:00 - 17:00",Ibiza
+"The Great Turin Old Town Hall",Historic,16.00,"Step back in time and walk the ancient grounds where Turin's most defining historical moments took place.","9:00 - 19:00",Turin
+"The Great Rome Ancient Fort",Historic,20.00,"Centuries of history are embedded in the walls of this famous historical site located right in Rome.","10:00 - 17:00",Rome
+"Nice Gallery",Museum,38.00,"Discover the fascinating origins of Nice through beautifully curated galleries and expert-led tours.","8:00 - 19:00",Nice
+"The Great Toronto Observatory",Landmark,24.00,"An iconic symbol of Toronto's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Toronto
+"Durban Old Town Hall",Historic,0.00,"Step back in time and walk the ancient grounds where Durban's most defining historical moments took place.","8:00 - 16:00",Durban
+"The Great Nice Square",Landmark,36.00,"One of the most photographed monuments in Nice, featuring stunning design and cultural significance.","10:00 - 18:00",Nice
+"The Great Gold Coast Royal Palace",Historic,32.00,"Step back in time and walk the ancient grounds where Gold Coast's most defining historical moments took place.","8:00 - 16:00","Gold Coast"
+"Calgary Hillside Park",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Calgary's most cherished outdoor destinations.","8:00 - 16:00",Calgary
+"The Great Canberra Science Exhibit",Museum,45.00,"Immerse yourself in Canberra's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Canberra
+"Bloemfontein River Walk",Nature,45.00,"Experience the breathtaking natural beauty of Bloemfontein at this serene location, offering scenic trails and native wildlife.","9:00 - 16:00",Bloemfontein
+"Venice Hillside Park",Nature,21.00,"Lush green spaces and spectacular panoramic views make this one of Venice's most cherished outdoor destinations.","10:00 - 18:00",Venice
+"Chicago Bridge",Landmark,31.00,"One of the most photographed monuments in Chicago, featuring stunning design and cultural significance.","8:00 - 17:00",Chicago
+"The Great Berlin Royal Palace",Historic,43.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Berlin.","10:00 - 19:00",Berlin
+"Nara Observatory",Landmark,26.00,"An iconic symbol of Nara's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Nara
+"Sapporo Monument",Landmark,11.00,"A masterpiece of engineering and art. No visit to Sapporo is complete without seeing this majestic structure.","8:00 - 20:00",Sapporo
+"London Heritage House",Historic,13.00,"Step back in time and walk the ancient grounds where London's most defining historical moments took place.","9:00 - 17:00",London
+"The Great Johannesburg Heritage House",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Johannesburg.","8:00 - 16:00",Johannesburg
+"Venice Ancient Fort",Historic,21.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Venice.","9:00 - 16:00",Venice
+"Sydney Cultural Centre",Museum,16.00,"A world-class cultural institution in Sydney housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Sydney
+"Dubai Gallery",Museum,41.00,"A world-class cultural institution in Dubai housing thousands of priceless historical and artistic treasures.","9:00 - 17:00",Dubai
+"The Great Brisbane River Walk",Nature,41.00,"Lush green spaces and spectacular panoramic views make this one of Brisbane's most cherished outdoor destinations.","10:00 - 20:00",Brisbane
+"The Great Dubai Hillside Park",Nature,8.00,"Experience the breathtaking natural beauty of Dubai at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00",Dubai
+"Austin Botanical Gardens",Nature,42.00,"A perfectly preserved natural reserve in the heart of Austin. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Austin
+"Knysna River Walk",Nature,0.00,"A perfectly preserved natural reserve in the heart of Knysna. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Knysna
+"The Great Hobart Natural History Museum",Museum,38.00,"Immerse yourself in Hobart's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 20:00",Hobart
+"The Great Los Angeles National Park",Nature,35.00,"A perfectly preserved natural reserve in the heart of Los Angeles. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 19:00","Los Angeles"
+"The Great Mallorca Tower",Landmark,38.00,"An iconic symbol of Mallorca's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Mallorca
+"Birmingham Aviation Museum",Museum,33.00,"Discover the fascinating origins of Birmingham through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Birmingham
+"Barcelona Cultural Centre",Museum,25.00,"Immerse yourself in Barcelona's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 18:00",Barcelona
+"Osaka Observatory",Landmark,40.00,"A masterpiece of engineering and art. No visit to Osaka is complete without seeing this majestic structure.","8:00 - 16:00",Osaka
+"The Great Cairns Royal Palace",Historic,19.00,"Step back in time and walk the ancient grounds where Cairns's most defining historical moments took place.","8:00 - 17:00",Cairns
+"The Great Stellenbosch Royal Palace",Historic,41.00,"Centuries of history are embedded in the walls of this famous historical site located right in Stellenbosch.","8:00 - 18:00",Stellenbosch
+"The Great Austin Royal Palace",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Austin.","10:00 - 18:00",Austin
+"The Great Belfast Monument",Landmark,37.00,"A masterpiece of engineering and art. No visit to Belfast is complete without seeing this majestic structure.","9:00 - 19:00",Belfast
+"The Great Madrid Observatory",Landmark,28.00,"A masterpiece of engineering and art. No visit to Madrid is complete without seeing this majestic structure.","8:00 - 20:00",Madrid
+"The Great San Francisco Gallery",Museum,41.00,"A world-class cultural institution in San Francisco housing thousands of priceless historical and artistic treasures.","9:00 - 19:00","San Francisco"
+"The Great Paris Cathedral",Historic,9.00,"Centuries of history are embedded in the walls of this famous historical site located right in Paris.","9:00 - 20:00",Paris
+"Granada Gallery",Museum,16.00,"Discover the fascinating origins of Granada through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Granada
+"The Great Pisa Wildlife Sanctuary",Nature,27.00,"A perfectly preserved natural reserve in the heart of Pisa. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 20:00",Pisa
+"Los Angeles Tower",Landmark,25.00,"An iconic symbol of Los Angeles's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 19:00","Los Angeles"
+"Melbourne Royal Palace",Historic,18.00,"Centuries of history are embedded in the walls of this famous historical site located right in Melbourne.","10:00 - 18:00",Melbourne
+"The Great Sydney Tower",Landmark,27.00,"One of the most photographed monuments in Sydney, featuring stunning design and cultural significance.","10:00 - 18:00",Sydney
+"Cairns Observatory",Landmark,0.00,"A masterpiece of engineering and art. No visit to Cairns is complete without seeing this majestic structure.","9:00 - 16:00",Cairns
+"Rome Central Plaza",Landmark,32.00,"One of the most photographed monuments in Rome, featuring stunning design and cultural significance.","10:00 - 20:00",Rome
+"The Great Toulouse Monument",Landmark,27.00,"One of the most photographed monuments in Toulouse, featuring stunning design and cultural significance.","9:00 - 17:00",Toulouse
+"Edmonton Heritage House",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Edmonton.","9:00 - 19:00",Edmonton
+"New York Castle Ruins",Historic,5.00,"Step back in time and walk the ancient grounds where New York's most defining historical moments took place.","9:00 - 19:00","New York"
+"Dusseldorf River Walk",Nature,21.00,"A perfectly preserved natural reserve in the heart of Dusseldorf. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Dusseldorf
+"The Great Melbourne Heritage House",Historic,16.00,"Step back in time and walk the ancient grounds where Melbourne's most defining historical moments took place.","8:00 - 16:00",Melbourne
+"Ottawa Aviation Museum",Museum,29.00,"Discover the fascinating origins of Ottawa through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Ottawa
+"Edinburgh Aviation Museum",Museum,29.00,"Discover the fascinating origins of Edinburgh through beautifully curated galleries and expert-led tours.","10:00 - 19:00",Edinburgh
+"The Great Dubai Cathedral",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Dubai.","9:00 - 17:00",Dubai
+"Genoa Cathedral",Historic,5.00,"Step back in time and walk the ancient grounds where Genoa's most defining historical moments took place.","9:00 - 19:00",Genoa
+"Ottawa Central Plaza",Landmark,9.00,"An iconic symbol of Ottawa's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Ottawa
+"The Great Venice Castle Ruins",Historic,43.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Venice.","9:00 - 18:00",Venice
+"The Great Valencia Bridge",Landmark,39.00,"An iconic symbol of Valencia's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Valencia
+"The Great Miami Central Plaza",Landmark,0.00,"One of the most photographed monuments in Miami, featuring stunning design and cultural significance.","10:00 - 17:00",Miami
+"Dubai Square",Landmark,14.00,"An iconic symbol of Dubai's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Dubai
+"The Great Malaga Castle Ruins",Historic,39.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Malaga.","10:00 - 19:00",Malaga
+"Seattle Hillside Park",Nature,12.00,"Lush green spaces and spectacular panoramic views make this one of Seattle's most cherished outdoor destinations.","9:00 - 18:00",Seattle
+"Tokyo River Walk",Nature,38.00,"Lush green spaces and spectacular panoramic views make this one of Tokyo's most cherished outdoor destinations.","9:00 - 16:00",Tokyo
+"Dubai Square",Landmark,41.00,"An iconic symbol of Dubai's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Dubai
+"The Great Bali Square",Landmark,7.00,"An iconic symbol of Bali's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Bali
+"The Great Barcelona Tower",Landmark,29.00,"One of the most photographed monuments in Barcelona, featuring stunning design and cultural significance.","8:00 - 16:00",Barcelona
+"The Great Palermo Wildlife Sanctuary",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Palermo's most cherished outdoor destinations.","8:00 - 20:00",Palermo
+"Bordeaux River Walk",Nature,43.00,"Experience the breathtaking natural beauty of Bordeaux at this serene location, offering scenic trails and native wildlife.","8:00 - 17:00",Bordeaux
+"Gold Coast Science Exhibit",Museum,44.00,"A world-class cultural institution in Gold Coast housing thousands of priceless historical and artistic treasures.","9:00 - 20:00","Gold Coast"
+"The Great Darwin Square",Landmark,40.00,"One of the most photographed monuments in Darwin, featuring stunning design and cultural significance.","8:00 - 18:00",Darwin
+"The Great Nantes Museum of Art",Museum,24.00,"A world-class cultural institution in Nantes housing thousands of priceless historical and artistic treasures.","10:00 - 18:00",Nantes
+"Munich Aviation Museum",Museum,30.00,"Discover the fascinating origins of Munich through beautifully curated galleries and expert-led tours.","8:00 - 16:00",Munich
+"The Great Kimberley Ancient Fort",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Kimberley.","8:00 - 19:00",Kimberley
+"Osaka Square",Landmark,38.00,"A masterpiece of engineering and art. No visit to Osaka is complete without seeing this majestic structure.","10:00 - 17:00",Osaka
+"Whistler Botanical Gardens",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Whistler's most cherished outdoor destinations.","8:00 - 17:00",Whistler
+"The Great Florence Central Plaza",Landmark,35.00,"A masterpiece of engineering and art. No visit to Florence is complete without seeing this majestic structure.","8:00 - 20:00",Florence
+"London Wildlife Sanctuary",Nature,15.00,"Experience the breathtaking natural beauty of London at this serene location, offering scenic trails and native wildlife.","8:00 - 19:00",London
+"Austin Old Town Hall",Historic,33.00,"Centuries of history are embedded in the walls of this famous historical site located right in Austin.","10:00 - 18:00",Austin
+"Rome Observatory",Landmark,0.00,"One of the most photographed monuments in Rome, featuring stunning design and cultural significance.","9:00 - 19:00",Rome
+"Canberra Nature Reserve",Nature,37.00,"Lush green spaces and spectacular panoramic views make this one of Canberra's most cherished outdoor destinations.","9:00 - 20:00",Canberra
+"The Great Belfast Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Belfast at this serene location, offering scenic trails and native wildlife.","9:00 - 19:00",Belfast
+"Bologna Aviation Museum",Museum,28.00,"Immerse yourself in Bologna's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 18:00",Bologna
+"The Great Cape Town Wildlife Sanctuary",Nature,44.00,"A perfectly preserved natural reserve in the heart of Cape Town. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00","Cape Town"
+"Kimberley Wildlife Sanctuary",Nature,41.00,"Experience the breathtaking natural beauty of Kimberley at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Kimberley
+"Birmingham Tower",Landmark,22.00,"One of the most photographed monuments in Birmingham, featuring stunning design and cultural significance.","10:00 - 16:00",Birmingham
+"Valencia Botanical Gardens",Nature,42.00,"Lush green spaces and spectacular panoramic views make this one of Valencia's most cherished outdoor destinations.","10:00 - 18:00",Valencia
+"New York Castle Ruins",Historic,45.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of New York.","8:00 - 18:00","New York"
+"The Great New York Royal Palace",Historic,30.00,"Step back in time and walk the ancient grounds where New York's most defining historical moments took place.","10:00 - 17:00","New York"
+"The Great Birmingham Monument",Landmark,0.00,"One of the most photographed monuments in Birmingham, featuring stunning design and cultural significance.","9:00 - 16:00",Birmingham
+"The Great Canberra Cultural Centre",Museum,0.00,"Immerse yourself in Canberra's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 20:00",Canberra
+"The Great Dresden Castle Ruins",Historic,0.00,"Step back in time and walk the ancient grounds where Dresden's most defining historical moments took place.","9:00 - 18:00",Dresden
+"The Great Kyoto Museum of Art",Museum,18.00,"Immerse yourself in Kyoto's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 17:00",Kyoto
+"Paris Heritage House",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Paris.","9:00 - 20:00",Paris
+"Kimberley Aviation Museum",Museum,33.00,"Immerse yourself in Kimberley's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00",Kimberley
+"Seville National Park",Nature,17.00,"Lush green spaces and spectacular panoramic views make this one of Seville's most cherished outdoor destinations.","8:00 - 16:00",Seville
+"The Great East London Natural History Museum",Museum,32.00,"Immerse yourself in East London's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 19:00","East London"
+"The Great Whistler Heritage House",Historic,22.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Whistler.","9:00 - 18:00",Whistler
+"The Great Nara Royal Palace",Historic,30.00,"Step back in time and walk the ancient grounds where Nara's most defining historical moments took place.","9:00 - 20:00",Nara
+"The Great Ottawa Natural History Museum",Museum,42.00,"A world-class cultural institution in Ottawa housing thousands of priceless historical and artistic treasures.","9:00 - 20:00",Ottawa
+"Osaka Tower",Landmark,0.00,"An iconic symbol of Osaka's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Osaka
+"The Great Tokyo River Walk",Nature,19.00,"A perfectly preserved natural reserve in the heart of Tokyo. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Tokyo
+"Victoria Cathedral",Historic,8.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Victoria.","9:00 - 16:00",Victoria
+"Darwin Museum of Art",Museum,20.00,"A world-class cultural institution in Darwin housing thousands of priceless historical and artistic treasures.","9:00 - 19:00",Darwin
+"Melbourne Botanical Gardens",Nature,19.00,"A perfectly preserved natural reserve in the heart of Melbourne. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Melbourne
+"The Great New York Monument",Landmark,0.00,"A masterpiece of engineering and art. No visit to New York is complete without seeing this majestic structure.","10:00 - 19:00","New York"
+"Cairns Botanical Gardens",Nature,30.00,"A perfectly preserved natural reserve in the heart of Cairns. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Cairns
+"Hamburg Castle Ruins",Historic,26.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Hamburg.","10:00 - 18:00",Hamburg
+"The Great Osaka Cathedral",Historic,39.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Osaka.","10:00 - 20:00",Osaka
+"The Great Lyon Castle Ruins",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Lyon.","8:00 - 18:00",Lyon
+"The Great Montpellier Aviation Museum",Museum,0.00,"Immerse yourself in Montpellier's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 17:00",Montpellier
+"Paris Wildlife Sanctuary",Nature,0.00,"Experience the breathtaking natural beauty of Paris at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00",Paris
+"The Great Gold Coast Tower",Landmark,0.00,"One of the most photographed monuments in Gold Coast, featuring stunning design and cultural significance.","10:00 - 17:00","Gold Coast"
+"The Great Palermo Botanical Gardens",Nature,0.00,"A perfectly preserved natural reserve in the heart of Palermo. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Palermo
+"The Great Nice Old Town Hall",Historic,36.00,"Centuries of history are embedded in the walls of this famous historical site located right in Nice.","9:00 - 17:00",Nice
+"Toronto Bridge",Landmark,0.00,"A masterpiece of engineering and art. No visit to Toronto is complete without seeing this majestic structure.","8:00 - 18:00",Toronto
+"The Great Montreal Ancient Fort",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Montreal.","10:00 - 18:00",Montreal
+"Seville Natural History Museum",Museum,0.00,"A world-class cultural institution in Seville housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Seville
+"Canberra Cultural Centre",Museum,12.00,"A world-class cultural institution in Canberra housing thousands of priceless historical and artistic treasures.","10:00 - 16:00",Canberra
+"Granada Royal Palace",Historic,21.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Granada.","9:00 - 19:00",Granada
+"Okinawa National Park",Nature,28.00,"Lush green spaces and spectacular panoramic views make this one of Okinawa's most cherished outdoor destinations.","9:00 - 17:00",Okinawa
+"The Great Paris Science Exhibit",Museum,41.00,"A world-class cultural institution in Paris housing thousands of priceless historical and artistic treasures.","9:00 - 20:00",Paris
+"Denver National Park",Nature,39.00,"A perfectly preserved natural reserve in the heart of Denver. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Denver
+"The Great New York Cultural Centre",Museum,29.00,"A world-class cultural institution in New York housing thousands of priceless historical and artistic treasures.","8:00 - 18:00","New York"
+"San Francisco Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of San Francisco at this serene location, offering scenic trails and native wildlife.","8:00 - 16:00","San Francisco"
+"The Great Genoa Central Plaza",Landmark,0.00,"One of the most photographed monuments in Genoa, featuring stunning design and cultural significance.","9:00 - 19:00",Genoa
+"The Great Liverpool Science Exhibit",Museum,11.00,"Discover the fascinating origins of Liverpool through beautifully curated galleries and expert-led tours.","9:00 - 19:00",Liverpool
+"The Great Malaga Natural History Museum",Museum,14.00,"Immerse yourself in Malaga's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Malaga
+"Strasbourg Ancient Fort",Historic,18.00,"Step back in time and walk the ancient grounds where Strasbourg's most defining historical moments took place.","9:00 - 16:00",Strasbourg
+"Cairns Botanical Gardens",Nature,28.00,"Lush green spaces and spectacular panoramic views make this one of Cairns's most cherished outdoor destinations.","8:00 - 18:00",Cairns
+"The Great Osaka Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of Osaka at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Osaka
+"The Great London Central Plaza",Landmark,14.00,"A masterpiece of engineering and art. No visit to London is complete without seeing this majestic structure.","8:00 - 16:00",London
+"Sydney River Walk",Nature,15.00,"Lush green spaces and spectacular panoramic views make this one of Sydney's most cherished outdoor destinations.","8:00 - 16:00",Sydney
+"Paris Museum of Art",Museum,42.00,"Immerse yourself in Paris's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 18:00",Paris
+"Belfast Central Plaza",Landmark,8.00,"An iconic symbol of Belfast's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Belfast
+"The Great Bloemfontein Heritage House",Historic,12.00,"Centuries of history are embedded in the walls of this famous historical site located right in Bloemfontein.","9:00 - 17:00",Bloemfontein
+"The Great Port Elizabeth Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of Port Elizabeth at this serene location, offering scenic trails and native wildlife.","8:00 - 17:00","Port Elizabeth"
+"The Great Bali Royal Palace",Historic,18.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Bali.","10:00 - 18:00",Bali
+"The Great Dubai Gallery",Museum,20.00,"Discover the fascinating origins of Dubai through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Dubai
+"The Great Victoria Wildlife Sanctuary",Nature,0.00,"A perfectly preserved natural reserve in the heart of Victoria. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Victoria
+"The Great Palermo Bridge",Landmark,17.00,"One of the most photographed monuments in Palermo, featuring stunning design and cultural significance.","10:00 - 18:00",Palermo
+"Ibiza Ancient Fort",Historic,45.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Ibiza.","8:00 - 18:00",Ibiza
+"The Great Knysna Monument",Landmark,8.00,"One of the most photographed monuments in Knysna, featuring stunning design and cultural significance.","9:00 - 20:00",Knysna
+"The Great Marseille Tower",Landmark,0.00,"An iconic symbol of Marseille's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 18:00",Marseille
+"The Great Liverpool Ancient Fort",Historic,20.00,"Step back in time and walk the ancient grounds where Liverpool's most defining historical moments took place.","10:00 - 18:00",Liverpool
+"The Great Vancouver River Walk",Nature,20.00,"Lush green spaces and spectacular panoramic views make this one of Vancouver's most cherished outdoor destinations.","8:00 - 18:00",Vancouver
+"The Great New York Cultural Centre",Museum,26.00,"Immerse yourself in New York's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 19:00","New York"
+"The Great Ottawa Cultural Centre",Museum,30.00,"A world-class cultural institution in Ottawa housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Ottawa
+"Durban Gallery",Museum,39.00,"Discover the fascinating origins of Durban through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Durban
+"The Great Marseille National Park",Nature,30.00,"Experience the breathtaking natural beauty of Marseille at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00",Marseille
+"The Great Bali Monument",Landmark,39.00,"An iconic symbol of Bali's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Bali
+"The Great Chicago Gallery",Museum,25.00,"A world-class cultural institution in Chicago housing thousands of priceless historical and artistic treasures.","8:00 - 16:00",Chicago
+"The Great Oxford Science Exhibit",Museum,27.00,"Discover the fascinating origins of Oxford through beautifully curated galleries and expert-led tours.","9:00 - 19:00",Oxford
+"Nara Royal Palace",Historic,7.00,"Step back in time and walk the ancient grounds where Nara's most defining historical moments took place.","8:00 - 18:00",Nara
+"The Great Brisbane Bridge",Landmark,35.00,"A masterpiece of engineering and art. No visit to Brisbane is complete without seeing this majestic structure.","9:00 - 19:00",Brisbane
+"The Great Bilbao Ancient Fort",Historic,24.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Bilbao.","10:00 - 16:00",Bilbao
+"The Great Ottawa Science Exhibit",Museum,32.00,"A world-class cultural institution in Ottawa housing thousands of priceless historical and artistic treasures.","8:00 - 16:00",Ottawa
+"The Great Osaka Tower",Landmark,0.00,"One of the most photographed monuments in Osaka, featuring stunning design and cultural significance.","8:00 - 16:00",Osaka
+"San Francisco Gallery",Museum,5.00,"Discover the fascinating origins of San Francisco through beautifully curated galleries and expert-led tours.","10:00 - 17:00","San Francisco"
+"The Great Madrid River Walk",Nature,33.00,"Experience the breathtaking natural beauty of Madrid at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00",Madrid
+"Valencia Tower",Landmark,33.00,"One of the most photographed monuments in Valencia, featuring stunning design and cultural significance.","9:00 - 18:00",Valencia
+"The Great Tokyo Tower",Landmark,36.00,"A masterpiece of engineering and art. No visit to Tokyo is complete without seeing this majestic structure.","8:00 - 18:00",Tokyo
+"The Great Ottawa Castle Ruins",Historic,22.00,"Centuries of history are embedded in the walls of this famous historical site located right in Ottawa.","8:00 - 17:00",Ottawa
+"The Great Nuremberg Natural History Museum",Museum,8.00,"Discover the fascinating origins of Nuremberg through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Nuremberg
+"Pisa Central Plaza",Landmark,30.00,"An iconic symbol of Pisa's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Pisa
+"The Great Montreal Science Exhibit",Museum,35.00,"Immerse yourself in Montreal's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 17:00",Montreal
+"Adelaide Heritage House",Historic,28.00,"Step back in time and walk the ancient grounds where Adelaide's most defining historical moments took place.","8:00 - 19:00",Adelaide
+"Paris National Park",Nature,29.00,"Lush green spaces and spectacular panoramic views make this one of Paris's most cherished outdoor destinations.","9:00 - 16:00",Paris
+"The Great Nice Gallery",Museum,41.00,"Immerse yourself in Nice's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 20:00",Nice
+"The Great Kyoto River Walk",Nature,40.00,"Experience the breathtaking natural beauty of Kyoto at this serene location, offering scenic trails and native wildlife.","10:00 - 20:00",Kyoto
+"Durban Wildlife Sanctuary",Nature,0.00,"A perfectly preserved natural reserve in the heart of Durban. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00",Durban
+"The Great Seville Hillside Park",Nature,0.00,"A perfectly preserved natural reserve in the heart of Seville. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Seville
+"The Great Victoria Castle Ruins",Historic,17.00,"Step back in time and walk the ancient grounds where Victoria's most defining historical moments took place.","9:00 - 19:00",Victoria
+"The Great Belfast Square",Landmark,0.00,"A masterpiece of engineering and art. No visit to Belfast is complete without seeing this majestic structure.","8:00 - 17:00",Belfast
+"Mallorca Royal Palace",Historic,29.00,"Centuries of history are embedded in the walls of this famous historical site located right in Mallorca.","10:00 - 20:00",Mallorca
+"Boston Cultural Centre",Museum,27.00,"Discover the fascinating origins of Boston through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Boston
+"Los Angeles Old Town Hall",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Los Angeles.","10:00 - 18:00","Los Angeles"
+"The Great Port Elizabeth Old Town Hall",Historic,36.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Port Elizabeth.","8:00 - 16:00","Port Elizabeth"
+"Gold Coast Aviation Museum",Museum,35.00,"A world-class cultural institution in Gold Coast housing thousands of priceless historical and artistic treasures.","8:00 - 19:00","Gold Coast"
+"The Great Bali Hillside Park",Nature,18.00,"Experience the breathtaking natural beauty of Bali at this serene location, offering scenic trails and native wildlife.","8:00 - 16:00",Bali
+"New York Wildlife Sanctuary",Nature,34.00,"Experience the breathtaking natural beauty of New York at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00","New York"
+"Nantes Heritage House",Historic,24.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Nantes.","9:00 - 17:00",Nantes
+"Stuttgart Ancient Fort",Historic,0.00,"Step back in time and walk the ancient grounds where Stuttgart's most defining historical moments took place.","9:00 - 18:00",Stuttgart
+"The Great Dusseldorf Science Exhibit",Museum,0.00,"A world-class cultural institution in Dusseldorf housing thousands of priceless historical and artistic treasures.","10:00 - 17:00",Dusseldorf
+"Hamburg Monument",Landmark,41.00,"An iconic symbol of Hamburg's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 16:00",Hamburg
+"Fukuoka Museum of Art",Museum,22.00,"Immerse yourself in Fukuoka's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 19:00",Fukuoka
+"The Great Cologne Cultural Centre",Museum,0.00,"A world-class cultural institution in Cologne housing thousands of priceless historical and artistic treasures.","10:00 - 18:00",Cologne
+"Lyon Ancient Fort",Historic,11.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Lyon.","8:00 - 18:00",Lyon
+"The Great Edmonton Hillside Park",Nature,29.00,"Experience the breathtaking natural beauty of Edmonton at this serene location, offering scenic trails and native wildlife.","9:00 - 16:00",Edmonton
+"New York Observatory",Landmark,39.00,"An iconic symbol of New York's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 17:00","New York"
+"The Great Boston Wildlife Sanctuary",Nature,17.00,"A perfectly preserved natural reserve in the heart of Boston. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Boston
+"Berlin Castle Ruins",Historic,7.00,"Step back in time and walk the ancient grounds where Berlin's most defining historical moments took place.","10:00 - 17:00",Berlin
+"The Great Seville Botanical Gardens",Nature,19.00,"Experience the breathtaking natural beauty of Seville at this serene location, offering scenic trails and native wildlife.","9:00 - 19:00",Seville
+"Birmingham Castle Ruins",Historic,7.00,"Centuries of history are embedded in the walls of this famous historical site located right in Birmingham.","10:00 - 19:00",Birmingham
+"Canberra Central Plaza",Landmark,31.00,"A masterpiece of engineering and art. No visit to Canberra is complete without seeing this majestic structure.","10:00 - 16:00",Canberra
+"The Great Durban Museum of Art",Museum,26.00,"A world-class cultural institution in Durban housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Durban
+"The Great Tokyo Aviation Museum",Museum,0.00,"Discover the fascinating origins of Tokyo through beautifully curated galleries and expert-led tours.","10:00 - 20:00",Tokyo
+"The Great Bilbao Science Exhibit",Museum,45.00,"Discover the fascinating origins of Bilbao through beautifully curated galleries and expert-led tours.","10:00 - 18:00",Bilbao
+"Nara National Park",Nature,27.00,"Lush green spaces and spectacular panoramic views make this one of Nara's most cherished outdoor destinations.","8:00 - 19:00",Nara
+"The Great Tokyo River Walk",Nature,19.00,"A perfectly preserved natural reserve in the heart of Tokyo. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Tokyo
+"Brisbane Museum of Art",Museum,25.00,"Immerse yourself in Brisbane's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Brisbane
+"Berlin Square",Landmark,0.00,"An iconic symbol of Berlin's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Berlin
+"Lyon Cathedral",Historic,9.00,"Centuries of history are embedded in the walls of this famous historical site located right in Lyon.","10:00 - 20:00",Lyon
+"The Great Paris Science Exhibit",Museum,32.00,"Immerse yourself in Paris's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 17:00",Paris
+"Paris Botanical Gardens",Nature,16.00,"Lush green spaces and spectacular panoramic views make this one of Paris's most cherished outdoor destinations.","9:00 - 20:00",Paris
+"The Great Hamburg National Park",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Hamburg's most cherished outdoor destinations.","9:00 - 17:00",Hamburg
+"The Great Cape Town Square",Landmark,22.00,"A masterpiece of engineering and art. No visit to Cape Town is complete without seeing this majestic structure.","9:00 - 16:00","Cape Town"
+"The Great New York National Park",Nature,12.00,"A perfectly preserved natural reserve in the heart of New York. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 20:00","New York"
+"Denver Natural History Museum",Museum,0.00,"Immerse yourself in Denver's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Denver
+"Cape Town Hillside Park",Nature,14.00,"Experience the breathtaking natural beauty of Cape Town at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00","Cape Town"
+"Cape Town Aviation Museum",Museum,0.00,"A world-class cultural institution in Cape Town housing thousands of priceless historical and artistic treasures.","9:00 - 16:00","Cape Town"
+"Hobart Observatory",Landmark,14.00,"An iconic symbol of Hobart's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Hobart
+"Valencia Science Exhibit",Museum,31.00,"Immerse yourself in Valencia's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Valencia
+"The Great Kyoto Science Exhibit",Museum,15.00,"Discover the fascinating origins of Kyoto through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Kyoto
+"The Great Denver Aviation Museum",Museum,44.00,"Immerse yourself in Denver's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 18:00",Denver
+"The Great Austin Monument",Landmark,0.00,"A masterpiece of engineering and art. No visit to Austin is complete without seeing this majestic structure.","10:00 - 17:00",Austin
+"Hamburg Heritage House",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Hamburg.","9:00 - 17:00",Hamburg
+"New York Wildlife Sanctuary",Nature,43.00,"A perfectly preserved natural reserve in the heart of New York. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 19:00","New York"
+"Mallorca Museum of Art",Museum,19.00,"A world-class cultural institution in Mallorca housing thousands of priceless historical and artistic treasures.","8:00 - 18:00",Mallorca
+"Granada Natural History Museum",Museum,0.00,"Immerse yourself in Granada's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 17:00",Granada
+"The Great Adelaide Botanical Gardens",Nature,0.00,"A perfectly preserved natural reserve in the heart of Adelaide. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 19:00",Adelaide
+"The Great Toulouse Bridge",Landmark,6.00,"An iconic symbol of Toulouse's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 19:00",Toulouse
+"The Great Tokyo Bridge",Landmark,27.00,"An iconic symbol of Tokyo's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Tokyo
+"Sapporo Museum of Art",Museum,33.00,"Discover the fascinating origins of Sapporo through beautifully curated galleries and expert-led tours.","10:00 - 20:00",Sapporo
+"Whistler Wildlife Sanctuary",Nature,19.00,"Experience the breathtaking natural beauty of Whistler at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00",Whistler
+"Edmonton Nature Reserve",Nature,26.00,"A perfectly preserved natural reserve in the heart of Edmonton. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Edmonton
+"The Great Kimberley Cultural Centre",Museum,29.00,"Discover the fascinating origins of Kimberley through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Kimberley
+"The Great Adelaide Heritage House",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Adelaide.","9:00 - 19:00",Adelaide
+"The Great Toledo Observatory",Landmark,26.00,"A masterpiece of engineering and art. No visit to Toledo is complete without seeing this majestic structure.","10:00 - 17:00",Toledo
+"The Great Vancouver Heritage House",Historic,6.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Vancouver.","8:00 - 20:00",Vancouver
+"The Great Darwin Monument",Landmark,39.00,"An iconic symbol of Darwin's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 20:00",Darwin
+"The Great Valencia Science Exhibit",Museum,5.00,"Immerse yourself in Valencia's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 18:00",Valencia
+"Seville Nature Reserve",Nature,18.00,"Lush green spaces and spectacular panoramic views make this one of Seville's most cherished outdoor destinations.","10:00 - 18:00",Seville
+"The Great Kyoto Botanical Gardens",Nature,15.00,"A perfectly preserved natural reserve in the heart of Kyoto. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Kyoto
+"The Great New York Old Town Hall",Historic,24.00,"Centuries of history are embedded in the walls of this famous historical site located right in New York.","8:00 - 16:00","New York"
+"The Great Edmonton Ancient Fort",Historic,0.00,"Step back in time and walk the ancient grounds where Edmonton's most defining historical moments took place.","8:00 - 19:00",Edmonton
+"Lyon Aviation Museum",Museum,39.00,"A world-class cultural institution in Lyon housing thousands of priceless historical and artistic treasures.","10:00 - 19:00",Lyon
+"Brisbane Museum of Art",Museum,33.00,"Discover the fascinating origins of Brisbane through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Brisbane
+"The Great Birmingham Gallery",Museum,39.00,"Discover the fascinating origins of Birmingham through beautifully curated galleries and expert-led tours.","9:00 - 17:00",Birmingham
+"Pisa Botanical Gardens",Nature,0.00,"Experience the breathtaking natural beauty of Pisa at this serene location, offering scenic trails and native wildlife.","10:00 - 19:00",Pisa
+"The Great Las Vegas Monument",Landmark,6.00,"A masterpiece of engineering and art. No visit to Las Vegas is complete without seeing this majestic structure.","8:00 - 16:00","Las Vegas"
+"London Science Exhibit",Museum,21.00,"A world-class cultural institution in London housing thousands of priceless historical and artistic treasures.","9:00 - 20:00",London
+"Dubai Natural History Museum",Museum,20.00,"A world-class cultural institution in Dubai housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Dubai
+"Dresden Cultural Centre",Museum,12.00,"Discover the fascinating origins of Dresden through beautifully curated galleries and expert-led tours.","8:00 - 17:00",Dresden
+"The Great Cape Town Cathedral",Historic,33.00,"Step back in time and walk the ancient grounds where Cape Town's most defining historical moments took place.","9:00 - 16:00","Cape Town"
+"The Great Dubai Central Plaza",Landmark,18.00,"An iconic symbol of Dubai's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Dubai
+"Naples Square",Landmark,20.00,"An iconic symbol of Naples's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 18:00",Naples
+"The Great London Central Plaza",Landmark,34.00,"A masterpiece of engineering and art. No visit to London is complete without seeing this majestic structure.","9:00 - 16:00",London
+"Marseille Museum of Art",Museum,0.00,"Discover the fascinating origins of Marseille through beautifully curated galleries and expert-led tours.","8:00 - 16:00",Marseille
+"The Great Oxford Cultural Centre",Museum,34.00,"A world-class cultural institution in Oxford housing thousands of priceless historical and artistic treasures.","9:00 - 19:00",Oxford
+"Granada Observatory",Landmark,24.00,"An iconic symbol of Granada's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 16:00",Granada
+"The Great Quebec City Science Exhibit",Museum,39.00,"A world-class cultural institution in Quebec City housing thousands of priceless historical and artistic treasures.","9:00 - 18:00","Quebec City"
+"East London Tower",Landmark,29.00,"One of the most photographed monuments in East London, featuring stunning design and cultural significance.","9:00 - 20:00","East London"
+"The Great Osaka Royal Palace",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Osaka.","9:00 - 19:00",Osaka
+"The Great Ottawa River Walk",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Ottawa's most cherished outdoor destinations.","8:00 - 17:00",Ottawa
+"Nuremberg Tower",Landmark,5.00,"An iconic symbol of Nuremberg's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 20:00",Nuremberg
+"Victoria Royal Palace",Historic,15.00,"Step back in time and walk the ancient grounds where Victoria's most defining historical moments took place.","9:00 - 17:00",Victoria
+"Liverpool Heritage House",Historic,24.00,"Step back in time and walk the ancient grounds where Liverpool's most defining historical moments took place.","9:00 - 17:00",Liverpool
+"Glasgow Botanical Gardens",Nature,16.00,"Experience the breathtaking natural beauty of Glasgow at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Glasgow
+"Perth Old Town Hall",Historic,9.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Perth.","10:00 - 17:00",Perth
+"The Great San Francisco Gallery",Museum,45.00,"A world-class cultural institution in San Francisco housing thousands of priceless historical and artistic treasures.","10:00 - 18:00","San Francisco"
+"The Great Okinawa Tower",Landmark,33.00,"A masterpiece of engineering and art. No visit to Okinawa is complete without seeing this majestic structure.","8:00 - 18:00",Okinawa
+"The Great Dubai Tower",Landmark,31.00,"A masterpiece of engineering and art. No visit to Dubai is complete without seeing this majestic structure.","9:00 - 16:00",Dubai
+"Hobart Castle Ruins",Historic,30.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Hobart.","8:00 - 16:00",Hobart
+"Bali Nature Reserve",Nature,18.00,"A perfectly preserved natural reserve in the heart of Bali. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Bali
+"Darwin Science Exhibit",Museum,0.00,"A world-class cultural institution in Darwin housing thousands of priceless historical and artistic treasures.","10:00 - 19:00",Darwin
+"Bath Square",Landmark,31.00,"An iconic symbol of Bath's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Bath
+"Barcelona Castle Ruins",Historic,27.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Barcelona.","10:00 - 20:00",Barcelona
+"The Great Bloemfontein River Walk",Nature,26.00,"A perfectly preserved natural reserve in the heart of Bloemfontein. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 19:00",Bloemfontein
+"The Great Okinawa Central Plaza",Landmark,0.00,"An iconic symbol of Okinawa's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Okinawa
+"The Great Malaga Nature Reserve",Nature,0.00,"A perfectly preserved natural reserve in the heart of Malaga. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Malaga
+"Nice Natural History Museum",Museum,30.00,"Immerse yourself in Nice's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 18:00",Nice
+"The Great Port Elizabeth Nature Reserve",Nature,31.00,"Lush green spaces and spectacular panoramic views make this one of Port Elizabeth's most cherished outdoor destinations.","9:00 - 18:00","Port Elizabeth"
+"Pisa Bridge",Landmark,0.00,"One of the most photographed monuments in Pisa, featuring stunning design and cultural significance.","9:00 - 19:00",Pisa
+"The Great Birmingham Science Exhibit",Museum,18.00,"A world-class cultural institution in Birmingham housing thousands of priceless historical and artistic treasures.","8:00 - 18:00",Birmingham
+"Tokyo National Park",Nature,31.00,"Experience the breathtaking natural beauty of Tokyo at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Tokyo
+"The Great Los Angeles Ancient Fort",Historic,25.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Los Angeles.","8:00 - 17:00","Los Angeles"
+"Edinburgh Gallery",Museum,6.00,"Immerse yourself in Edinburgh's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Edinburgh
+"The Great Bali Tower",Landmark,11.00,"An iconic symbol of Bali's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 17:00",Bali
+"Sapporo Museum of Art",Museum,21.00,"Immerse yourself in Sapporo's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Sapporo
+"The Great Glasgow River Walk",Nature,30.00,"A perfectly preserved natural reserve in the heart of Glasgow. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Glasgow
+"The Great Tokyo Botanical Gardens",Nature,39.00,"A perfectly preserved natural reserve in the heart of Tokyo. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 17:00",Tokyo
+"Venice Royal Palace",Historic,40.00,"Centuries of history are embedded in the walls of this famous historical site located right in Venice.","10:00 - 20:00",Venice
+"The Great Montpellier Heritage House",Historic,15.00,"Centuries of history are embedded in the walls of this famous historical site located right in Montpellier.","8:00 - 18:00",Montpellier
+"The Great Cape Town Observatory",Landmark,20.00,"One of the most photographed monuments in Cape Town, featuring stunning design and cultural significance.","8:00 - 16:00","Cape Town"
+"Sapporo Heritage House",Historic,30.00,"Centuries of history are embedded in the walls of this famous historical site located right in Sapporo.","10:00 - 16:00",Sapporo
+"Victoria Science Exhibit",Museum,8.00,"Discover the fascinating origins of Victoria through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Victoria
+"Hiroshima River Walk",Nature,0.00,"Experience the breathtaking natural beauty of Hiroshima at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00",Hiroshima
+"Nuremberg Bridge",Landmark,0.00,"A masterpiece of engineering and art. No visit to Nuremberg is complete without seeing this majestic structure.","9:00 - 18:00",Nuremberg
+"Cape Town Ancient Fort",Historic,38.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Cape Town.","8:00 - 17:00","Cape Town"
+"The Great Bloemfontein Aviation Museum",Museum,26.00,"Immerse yourself in Bloemfontein's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 17:00",Bloemfontein
+"The Great Glasgow Tower",Landmark,0.00,"A masterpiece of engineering and art. No visit to Glasgow is complete without seeing this majestic structure.","10:00 - 20:00",Glasgow
+"The Great Glasgow Wildlife Sanctuary",Nature,21.00,"Lush green spaces and spectacular panoramic views make this one of Glasgow's most cherished outdoor destinations.","10:00 - 18:00",Glasgow
+"Perth Central Plaza",Landmark,0.00,"One of the most photographed monuments in Perth, featuring stunning design and cultural significance.","8:00 - 16:00",Perth
+"The Great Toulouse Tower",Landmark,26.00,"An iconic symbol of Toulouse's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 20:00",Toulouse
+"Valencia Old Town Hall",Historic,31.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Valencia.","8:00 - 16:00",Valencia
+"The Great Nagoya Royal Palace",Historic,14.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Nagoya.","9:00 - 18:00",Nagoya
+"The Great Belfast Cathedral",Historic,16.00,"Centuries of history are embedded in the walls of this famous historical site located right in Belfast.","10:00 - 20:00",Belfast
+"The Great Kimberley Science Exhibit",Museum,11.00,"Immerse yourself in Kimberley's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 16:00",Kimberley
+"Florence Wildlife Sanctuary",Nature,40.00,"Lush green spaces and spectacular panoramic views make this one of Florence's most cherished outdoor destinations.","8:00 - 17:00",Florence
+"The Great Quebec City Wildlife Sanctuary",Nature,0.00,"A perfectly preserved natural reserve in the heart of Quebec City. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00","Quebec City"
+"Dubai Tower",Landmark,0.00,"One of the most photographed monuments in Dubai, featuring stunning design and cultural significance.","8:00 - 18:00",Dubai
+"Melbourne Observatory",Landmark,0.00,"One of the most photographed monuments in Melbourne, featuring stunning design and cultural significance.","8:00 - 16:00",Melbourne
+"The Great Frankfurt Botanical Gardens",Nature,0.00,"A perfectly preserved natural reserve in the heart of Frankfurt. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 20:00",Frankfurt
+"The Great Johannesburg Royal Palace",Historic,15.00,"Step back in time and walk the ancient grounds where Johannesburg's most defining historical moments took place.","10:00 - 20:00",Johannesburg
+"Naples Ancient Fort",Historic,14.00,"Step back in time and walk the ancient grounds where Naples's most defining historical moments took place.","8:00 - 20:00",Naples
+"The Great Lille Castle Ruins",Historic,10.00,"Step back in time and walk the ancient grounds where Lille's most defining historical moments took place.","9:00 - 16:00",Lille
+"Osaka Monument",Landmark,40.00,"An iconic symbol of Osaka's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Osaka
+"The Great Dresden Cultural Centre",Museum,19.00,"Immerse yourself in Dresden's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 17:00",Dresden
+"The Great Denver Heritage House",Historic,20.00,"Step back in time and walk the ancient grounds where Denver's most defining historical moments took place.","8:00 - 17:00",Denver
+"Port Elizabeth River Walk",Nature,13.00,"A perfectly preserved natural reserve in the heart of Port Elizabeth. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 19:00","Port Elizabeth"
+"The Great Marseille Castle Ruins",Historic,0.00,"Step back in time and walk the ancient grounds where Marseille's most defining historical moments took place.","10:00 - 20:00",Marseille
+"The Great Pisa Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of Pisa at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Pisa
+"Venice Cathedral",Historic,17.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Venice.","10:00 - 17:00",Venice
+"Sapporo Cathedral",Historic,25.00,"Step back in time and walk the ancient grounds where Sapporo's most defining historical moments took place.","8:00 - 17:00",Sapporo
+"East London Tower",Landmark,35.00,"A masterpiece of engineering and art. No visit to East London is complete without seeing this majestic structure.","10:00 - 20:00","East London"
+"Cape Town Heritage House",Historic,43.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Cape Town.","9:00 - 20:00","Cape Town"
+"The Great Okinawa Royal Palace",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Okinawa.","9:00 - 16:00",Okinawa
+"Barcelona Central Plaza",Landmark,38.00,"An iconic symbol of Barcelona's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Barcelona
+"Florence Heritage House",Historic,45.00,"Centuries of history are embedded in the walls of this famous historical site located right in Florence.","10:00 - 16:00",Florence
+"Seville Castle Ruins",Historic,43.00,"Centuries of history are embedded in the walls of this famous historical site located right in Seville.","9:00 - 20:00",Seville
+"Montpellier Heritage House",Historic,25.00,"Centuries of history are embedded in the walls of this famous historical site located right in Montpellier.","8:00 - 20:00",Montpellier
+"Boston Central Plaza",Landmark,41.00,"A masterpiece of engineering and art. No visit to Boston is complete without seeing this majestic structure.","8:00 - 18:00",Boston
+"The Great Montreal River Walk",Nature,0.00,"A perfectly preserved natural reserve in the heart of Montreal. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Montreal
+"The Great Vancouver Hillside Park",Nature,13.00,"Experience the breathtaking natural beauty of Vancouver at this serene location, offering scenic trails and native wildlife.","8:00 - 16:00",Vancouver
+"The Great Bali Tower",Landmark,44.00,"An iconic symbol of Bali's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 19:00",Bali
+"The Great Nara Bridge",Landmark,44.00,"An iconic symbol of Nara's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Nara
+"The Great Seattle Square",Landmark,44.00,"One of the most photographed monuments in Seattle, featuring stunning design and cultural significance.","8:00 - 16:00",Seattle
+"Nantes Central Plaza",Landmark,13.00,"An iconic symbol of Nantes's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Nantes
+"Berlin Central Plaza",Landmark,23.00,"One of the most photographed monuments in Berlin, featuring stunning design and cultural significance.","8:00 - 18:00",Berlin
+"The Great Birmingham Tower",Landmark,39.00,"One of the most photographed monuments in Birmingham, featuring stunning design and cultural significance.","8:00 - 17:00",Birmingham
+"The Great Stellenbosch Natural History Museum",Museum,32.00,"Discover the fascinating origins of Stellenbosch through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Stellenbosch
+"The Great New York Botanical Gardens",Nature,36.00,"A perfectly preserved natural reserve in the heart of New York. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00","New York"
+"Paris Wildlife Sanctuary",Nature,11.00,"A perfectly preserved natural reserve in the heart of Paris. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Paris
+"Sapporo Bridge",Landmark,39.00,"One of the most photographed monuments in Sapporo, featuring stunning design and cultural significance.","8:00 - 17:00",Sapporo
+"The Great Cairns Cultural Centre",Museum,0.00,"Immerse yourself in Cairns's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Cairns
+"The Great Kobe Gallery",Museum,19.00,"A world-class cultural institution in Kobe housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Kobe
+"The Great Bali Bridge",Landmark,35.00,"A masterpiece of engineering and art. No visit to Bali is complete without seeing this majestic structure.","10:00 - 16:00",Bali
+"Nantes Central Plaza",Landmark,32.00,"An iconic symbol of Nantes's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 18:00",Nantes
+"Vancouver Museum of Art",Museum,0.00,"Immerse yourself in Vancouver's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 19:00",Vancouver
+"Hamburg Museum of Art",Museum,37.00,"Immerse yourself in Hamburg's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Hamburg
+"The Great Manchester Botanical Gardens",Nature,40.00,"Lush green spaces and spectacular panoramic views make this one of Manchester's most cherished outdoor destinations.","10:00 - 18:00",Manchester
+"Chicago Central Plaza",Landmark,43.00,"A masterpiece of engineering and art. No visit to Chicago is complete without seeing this majestic structure.","9:00 - 17:00",Chicago
+"Calgary Museum of Art",Museum,18.00,"A world-class cultural institution in Calgary housing thousands of priceless historical and artistic treasures.","9:00 - 19:00",Calgary
+"Vancouver Bridge",Landmark,32.00,"A masterpiece of engineering and art. No visit to Vancouver is complete without seeing this majestic structure.","10:00 - 18:00",Vancouver
+"Bordeaux River Walk",Nature,16.00,"Lush green spaces and spectacular panoramic views make this one of Bordeaux's most cherished outdoor destinations.","8:00 - 18:00",Bordeaux
+"Tokyo Science Exhibit",Museum,0.00,"Discover the fascinating origins of Tokyo through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Tokyo
+"Gold Coast Natural History Museum",Museum,0.00,"Immerse yourself in Gold Coast's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00","Gold Coast"
+"Frankfurt Aviation Museum",Museum,28.00,"Immerse yourself in Frankfurt's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 18:00",Frankfurt
+"Las Vegas Monument",Landmark,35.00,"One of the most photographed monuments in Las Vegas, featuring stunning design and cultural significance.","8:00 - 16:00","Las Vegas"
+"The Great Paris Wildlife Sanctuary",Nature,26.00,"Lush green spaces and spectacular panoramic views make this one of Paris's most cherished outdoor destinations.","10:00 - 18:00",Paris
+"The Great Madrid Aviation Museum",Museum,0.00,"Discover the fascinating origins of Madrid through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Madrid
+"Paris Royal Palace",Historic,33.00,"Centuries of history are embedded in the walls of this famous historical site located right in Paris.","10:00 - 17:00",Paris
+"Paris Tower",Landmark,17.00,"An iconic symbol of Paris's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 20:00",Paris
+"Bloemfontein Bridge",Landmark,11.00,"One of the most photographed monuments in Bloemfontein, featuring stunning design and cultural significance.","9:00 - 16:00",Bloemfontein
+"The Great Glasgow Natural History Museum",Museum,39.00,"Discover the fascinating origins of Glasgow through beautifully curated galleries and expert-led tours.","10:00 - 19:00",Glasgow
+"Birmingham Botanical Gardens",Nature,35.00,"Experience the breathtaking natural beauty of Birmingham at this serene location, offering scenic trails and native wildlife.","10:00 - 19:00",Birmingham
+"Miami Square",Landmark,25.00,"A masterpiece of engineering and art. No visit to Miami is complete without seeing this majestic structure.","8:00 - 19:00",Miami
+"The Great Manchester National Park",Nature,0.00,"A perfectly preserved natural reserve in the heart of Manchester. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00",Manchester
+"The Great Toulouse Bridge",Landmark,12.00,"An iconic symbol of Toulouse's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 18:00",Toulouse
+"The Great Mallorca Nature Reserve",Nature,18.00,"Experience the breathtaking natural beauty of Mallorca at this serene location, offering scenic trails and native wildlife.","8:00 - 20:00",Mallorca
+"Kyoto Nature Reserve",Nature,45.00,"A perfectly preserved natural reserve in the heart of Kyoto. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 19:00",Kyoto
+"The Great Hobart Natural History Museum",Museum,30.00,"Discover the fascinating origins of Hobart through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Hobart
+"The Great Ottawa Central Plaza",Landmark,41.00,"An iconic symbol of Ottawa's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Ottawa
+"The Great Toronto Square",Landmark,0.00,"One of the most photographed monuments in Toronto, featuring stunning design and cultural significance.","9:00 - 19:00",Toronto
+"The Great New York Hillside Park",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of New York's most cherished outdoor destinations.","8:00 - 16:00","New York"
+"The Great Dusseldorf Castle Ruins",Historic,0.00,"Step back in time and walk the ancient grounds where Dusseldorf's most defining historical moments took place.","8:00 - 17:00",Dusseldorf
+"The Great Dubai Aviation Museum",Museum,34.00,"Immerse yourself in Dubai's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Dubai
+"Whistler Ancient Fort",Historic,29.00,"Step back in time and walk the ancient grounds where Whistler's most defining historical moments took place.","9:00 - 19:00",Whistler
+"The Great Bordeaux Tower",Landmark,7.00,"A masterpiece of engineering and art. No visit to Bordeaux is complete without seeing this majestic structure.","10:00 - 18:00",Bordeaux
+"Toronto Aviation Museum",Museum,12.00,"A world-class cultural institution in Toronto housing thousands of priceless historical and artistic treasures.","9:00 - 20:00",Toronto
+"Belfast Cultural Centre",Museum,22.00,"Discover the fascinating origins of Belfast through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Belfast
+"The Great Cape Town Royal Palace",Historic,38.00,"Centuries of history are embedded in the walls of this famous historical site located right in Cape Town.","10:00 - 16:00","Cape Town"
+"The Great Whistler Observatory",Landmark,45.00,"An iconic symbol of Whistler's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 18:00",Whistler
+"Canberra Monument",Landmark,30.00,"One of the most photographed monuments in Canberra, featuring stunning design and cultural significance.","9:00 - 17:00",Canberra
+"The Great Ibiza Cathedral",Historic,5.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Ibiza.","8:00 - 20:00",Ibiza
+"The Great Leipzig Nature Reserve",Nature,45.00,"A perfectly preserved natural reserve in the heart of Leipzig. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Leipzig
+"Edmonton Ancient Fort",Historic,32.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Edmonton.","9:00 - 20:00",Edmonton
+"Kobe Bridge",Landmark,33.00,"An iconic symbol of Kobe's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Kobe
+"Nara Nature Reserve",Nature,28.00,"Experience the breathtaking natural beauty of Nara at this serene location, offering scenic trails and native wildlife.","8:00 - 16:00",Nara
+"The Great Oxford Heritage House",Historic,15.00,"Step back in time and walk the ancient grounds where Oxford's most defining historical moments took place.","9:00 - 20:00",Oxford
+"Pisa Science Exhibit",Museum,26.00,"A world-class cultural institution in Pisa housing thousands of priceless historical and artistic treasures.","10:00 - 18:00",Pisa
+"The Great Bologna Heritage House",Historic,15.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Bologna.","8:00 - 17:00",Bologna
+"Austin Aviation Museum",Museum,0.00,"A world-class cultural institution in Austin housing thousands of priceless historical and artistic treasures.","9:00 - 20:00",Austin
+"Miami Aviation Museum",Museum,0.00,"A world-class cultural institution in Miami housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Miami
+"The Great New York Botanical Gardens",Nature,0.00,"Experience the breathtaking natural beauty of New York at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00","New York"
+"Pretoria Square",Landmark,0.00,"A masterpiece of engineering and art. No visit to Pretoria is complete without seeing this majestic structure.","10:00 - 16:00",Pretoria
+"The Great Cape Town Monument",Landmark,41.00,"A masterpiece of engineering and art. No visit to Cape Town is complete without seeing this majestic structure.","10:00 - 16:00","Cape Town"
+"Perth Aviation Museum",Museum,38.00,"A world-class cultural institution in Perth housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Perth
+"Hamburg Gallery",Museum,23.00,"A world-class cultural institution in Hamburg housing thousands of priceless historical and artistic treasures.","10:00 - 17:00",Hamburg
+"Munich Natural History Museum",Museum,0.00,"A world-class cultural institution in Munich housing thousands of priceless historical and artistic treasures.","10:00 - 20:00",Munich
+"The Great Brisbane Monument",Landmark,26.00,"An iconic symbol of Brisbane's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Brisbane
+"The Great Okinawa Nature Reserve",Nature,0.00,"Experience the breathtaking natural beauty of Okinawa at this serene location, offering scenic trails and native wildlife.","9:00 - 17:00",Okinawa
+"Lyon Wildlife Sanctuary",Nature,35.00,"A perfectly preserved natural reserve in the heart of Lyon. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Lyon
+"The Great Bordeaux Cultural Centre",Museum,33.00,"Immerse yourself in Bordeaux's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00",Bordeaux
+"Sydney Aviation Museum",Museum,13.00,"A world-class cultural institution in Sydney housing thousands of priceless historical and artistic treasures.","10:00 - 17:00",Sydney
+"Paris Monument",Landmark,7.00,"A masterpiece of engineering and art. No visit to Paris is complete without seeing this majestic structure.","10:00 - 16:00",Paris
+"Quebec City Cultural Centre",Museum,7.00,"A world-class cultural institution in Quebec City housing thousands of priceless historical and artistic treasures.","8:00 - 20:00","Quebec City"
+"The Great Bali River Walk",Nature,43.00,"Experience the breathtaking natural beauty of Bali at this serene location, offering scenic trails and native wildlife.","10:00 - 20:00",Bali
+"Miami Science Exhibit",Museum,0.00,"Immerse yourself in Miami's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 20:00",Miami
+"Valencia Tower",Landmark,10.00,"An iconic symbol of Valencia's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Valencia
+"Rome Castle Ruins",Historic,18.00,"Step back in time and walk the ancient grounds where Rome's most defining historical moments took place.","9:00 - 17:00",Rome
+"The Great Johannesburg Botanical Gardens",Nature,29.00,"Lush green spaces and spectacular panoramic views make this one of Johannesburg's most cherished outdoor destinations.","9:00 - 16:00",Johannesburg
+"The Great Knysna Nature Reserve",Nature,5.00,"A perfectly preserved natural reserve in the heart of Knysna. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Knysna
+"The Great Paris Castle Ruins",Historic,16.00,"Step back in time and walk the ancient grounds where Paris's most defining historical moments took place.","9:00 - 20:00",Paris
+"The Great Durban Natural History Museum",Museum,33.00,"A world-class cultural institution in Durban housing thousands of priceless historical and artistic treasures.","10:00 - 20:00",Durban
+"The Great Tokyo Heritage House",Historic,10.00,"Centuries of history are embedded in the walls of this famous historical site located right in Tokyo.","8:00 - 17:00",Tokyo
+"The Great Munich Bridge",Landmark,0.00,"An iconic symbol of Munich's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 16:00",Munich
+"The Great Valencia Tower",Landmark,20.00,"An iconic symbol of Valencia's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 19:00",Valencia
+"Johannesburg Gallery",Museum,45.00,"Discover the fascinating origins of Johannesburg through beautifully curated galleries and expert-led tours.","10:00 - 18:00",Johannesburg
+"The Great Stuttgart Science Exhibit",Museum,33.00,"A world-class cultural institution in Stuttgart housing thousands of priceless historical and artistic treasures.","10:00 - 20:00",Stuttgart
+"Halifax Bridge",Landmark,27.00,"A masterpiece of engineering and art. No visit to Halifax is complete without seeing this majestic structure.","8:00 - 18:00",Halifax
+"The Great Dubai Cultural Centre",Museum,12.00,"A world-class cultural institution in Dubai housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Dubai
+"The Great Cairns Aviation Museum",Museum,45.00,"Immerse yourself in Cairns's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00",Cairns
+"The Great Hamburg Nature Reserve",Nature,0.00,"A perfectly preserved natural reserve in the heart of Hamburg. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 20:00",Hamburg
+"Hiroshima Monument",Landmark,0.00,"An iconic symbol of Hiroshima's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Hiroshima
+"Manchester Botanical Gardens",Nature,28.00,"A perfectly preserved natural reserve in the heart of Manchester. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Manchester
+"The Great Tokyo Heritage House",Historic,20.00,"Centuries of history are embedded in the walls of this famous historical site located right in Tokyo.","8:00 - 19:00",Tokyo
+"The Great Los Angeles Nature Reserve",Nature,29.00,"A perfectly preserved natural reserve in the heart of Los Angeles. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00","Los Angeles"
+"Manchester Observatory",Landmark,0.00,"An iconic symbol of Manchester's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 20:00",Manchester
+"The Great Nice Square",Landmark,45.00,"One of the most photographed monuments in Nice, featuring stunning design and cultural significance.","10:00 - 17:00",Nice
+"Paris Central Plaza",Landmark,39.00,"An iconic symbol of Paris's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Paris
+"Cairns Hillside Park",Nature,15.00,"Lush green spaces and spectacular panoramic views make this one of Cairns's most cherished outdoor destinations.","9:00 - 20:00",Cairns
+"East London Cultural Centre",Museum,7.00,"Discover the fascinating origins of East London through beautifully curated galleries and expert-led tours.","8:00 - 17:00","East London"
+"Marseille Museum of Art",Museum,33.00,"Immerse yourself in Marseille's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Marseille
+"Frankfurt Royal Palace",Historic,36.00,"Centuries of history are embedded in the walls of this famous historical site located right in Frankfurt.","10:00 - 17:00",Frankfurt
+"Edinburgh Castle Ruins",Historic,39.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Edinburgh.","8:00 - 16:00",Edinburgh
+"The Great Munich Botanical Gardens",Nature,0.00,"Experience the breathtaking natural beauty of Munich at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00",Munich
+"The Great Austin Central Plaza",Landmark,0.00,"One of the most photographed monuments in Austin, featuring stunning design and cultural significance.","9:00 - 17:00",Austin
+"The Great Brisbane Ancient Fort",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Brisbane.","8:00 - 17:00",Brisbane
+"The Great Cape Town Hillside Park",Nature,36.00,"Experience the breathtaking natural beauty of Cape Town at this serene location, offering scenic trails and native wildlife.","10:00 - 19:00","Cape Town"
+"Halifax Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of Halifax at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Halifax
+"The Great Toulouse Tower",Landmark,19.00,"A masterpiece of engineering and art. No visit to Toulouse is complete without seeing this majestic structure.","8:00 - 17:00",Toulouse
+"The Great Glasgow Bridge",Landmark,30.00,"A masterpiece of engineering and art. No visit to Glasgow is complete without seeing this majestic structure.","9:00 - 17:00",Glasgow
+"Mallorca Observatory",Landmark,26.00,"A masterpiece of engineering and art. No visit to Mallorca is complete without seeing this majestic structure.","8:00 - 20:00",Mallorca
+"Paris Aviation Museum",Museum,0.00,"A world-class cultural institution in Paris housing thousands of priceless historical and artistic treasures.","10:00 - 16:00",Paris
+"The Great Barcelona Castle Ruins",Historic,27.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Barcelona.","10:00 - 20:00",Barcelona
+"Birmingham Hillside Park",Nature,18.00,"A perfectly preserved natural reserve in the heart of Birmingham. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 19:00",Birmingham
+"The Great Lille Cultural Centre",Museum,36.00,"A world-class cultural institution in Lille housing thousands of priceless historical and artistic treasures.","9:00 - 19:00",Lille
+"New York Nature Reserve",Nature,42.00,"Lush green spaces and spectacular panoramic views make this one of New York's most cherished outdoor destinations.","9:00 - 16:00","New York"
+"The Great Miami River Walk",Nature,17.00,"A perfectly preserved natural reserve in the heart of Miami. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Miami
+"Mallorca Heritage House",Historic,20.00,"Step back in time and walk the ancient grounds where Mallorca's most defining historical moments took place.","10:00 - 18:00",Mallorca
+"Chicago National Park",Nature,25.00,"Experience the breathtaking natural beauty of Chicago at this serene location, offering scenic trails and native wildlife.","10:00 - 17:00",Chicago
+"Birmingham Science Exhibit",Museum,41.00,"Immerse yourself in Birmingham's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00",Birmingham
+"The Great Tokyo Natural History Museum",Museum,0.00,"Discover the fascinating origins of Tokyo through beautifully curated galleries and expert-led tours.","10:00 - 18:00",Tokyo
+"The Great Victoria Cathedral",Historic,21.00,"Step back in time and walk the ancient grounds where Victoria's most defining historical moments took place.","10:00 - 19:00",Victoria
+"The Great Venice Hillside Park",Nature,45.00,"A perfectly preserved natural reserve in the heart of Venice. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Venice
+"Whistler Gallery",Museum,26.00,"Discover the fascinating origins of Whistler through beautifully curated galleries and expert-led tours.","10:00 - 16:00",Whistler
+"Johannesburg Royal Palace",Historic,15.00,"Centuries of history are embedded in the walls of this famous historical site located right in Johannesburg.","10:00 - 16:00",Johannesburg
+"Glasgow Square",Landmark,0.00,"An iconic symbol of Glasgow's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Glasgow
+"The Great Kobe Hillside Park",Nature,38.00,"A perfectly preserved natural reserve in the heart of Kobe. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 17:00",Kobe
+"Stuttgart Observatory",Landmark,16.00,"An iconic symbol of Stuttgart's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 16:00",Stuttgart
+"Barcelona Square",Landmark,0.00,"One of the most photographed monuments in Barcelona, featuring stunning design and cultural significance.","8:00 - 18:00",Barcelona
+"Leipzig Cultural Centre",Museum,12.00,"Immerse yourself in Leipzig's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00",Leipzig
+"The Great Bath Tower",Landmark,0.00,"A masterpiece of engineering and art. No visit to Bath is complete without seeing this majestic structure.","8:00 - 16:00",Bath
+"The Great Tokyo Bridge",Landmark,18.00,"An iconic symbol of Tokyo's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 16:00",Tokyo
+"The Great Gold Coast National Park",Nature,16.00,"Experience the breathtaking natural beauty of Gold Coast at this serene location, offering scenic trails and native wildlife.","8:00 - 16:00","Gold Coast"
+"The Great Paris Science Exhibit",Museum,30.00,"Discover the fascinating origins of Paris through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Paris
+"The Great Nantes Science Exhibit",Museum,0.00,"Immerse yourself in Nantes's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 17:00",Nantes
+"Marseille Aviation Museum",Museum,45.00,"Immerse yourself in Marseille's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 19:00",Marseille
+"The Great Mallorca Heritage House",Historic,25.00,"Step back in time and walk the ancient grounds where Mallorca's most defining historical moments took place.","8:00 - 19:00",Mallorca
+"Rome Castle Ruins",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Rome.","8:00 - 18:00",Rome
+"Bilbao Ancient Fort",Historic,13.00,"Centuries of history are embedded in the walls of this famous historical site located right in Bilbao.","9:00 - 19:00",Bilbao
+"New York Tower",Landmark,19.00,"One of the most photographed monuments in New York, featuring stunning design and cultural significance.","9:00 - 16:00","New York"
+"The Great Stellenbosch Botanical Gardens",Nature,9.00,"Lush green spaces and spectacular panoramic views make this one of Stellenbosch's most cherished outdoor destinations.","9:00 - 16:00",Stellenbosch
+"Turin Royal Palace",Historic,38.00,"Centuries of history are embedded in the walls of this famous historical site located right in Turin.","10:00 - 18:00",Turin
+"The Great Melbourne Aviation Museum",Museum,11.00,"Immerse yourself in Melbourne's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 19:00",Melbourne
+"The Great Kobe National Park",Nature,40.00,"Experience the breathtaking natural beauty of Kobe at this serene location, offering scenic trails and native wildlife.","8:00 - 20:00",Kobe
+"Munich Aviation Museum",Museum,39.00,"Discover the fascinating origins of Munich through beautifully curated galleries and expert-led tours.","9:00 - 20:00",Munich
+"Boston Science Exhibit",Museum,17.00,"Discover the fascinating origins of Boston through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Boston
+"Birmingham Museum of Art",Museum,0.00,"A world-class cultural institution in Birmingham housing thousands of priceless historical and artistic treasures.","8:00 - 20:00",Birmingham
+"Dresden Gallery",Museum,27.00,"A world-class cultural institution in Dresden housing thousands of priceless historical and artistic treasures.","8:00 - 19:00",Dresden
+"Osaka Wildlife Sanctuary",Nature,0.00,"Experience the breathtaking natural beauty of Osaka at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Osaka
+"Edmonton Wildlife Sanctuary",Nature,39.00,"A perfectly preserved natural reserve in the heart of Edmonton. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Edmonton
+"Mallorca Ancient Fort",Historic,36.00,"Centuries of history are embedded in the walls of this famous historical site located right in Mallorca.","9:00 - 17:00",Mallorca
+"The Great Florence National Park",Nature,35.00,"Lush green spaces and spectacular panoramic views make this one of Florence's most cherished outdoor destinations.","9:00 - 18:00",Florence
+"The Great Sydney Old Town Hall",Historic,19.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Sydney.","8:00 - 20:00",Sydney
+"East London Royal Palace",Historic,42.00,"Step back in time and walk the ancient grounds where East London's most defining historical moments took place.","9:00 - 18:00","East London"
+"Lyon Nature Reserve",Nature,15.00,"A perfectly preserved natural reserve in the heart of Lyon. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Lyon
+"The Great Venice Central Plaza",Landmark,0.00,"A masterpiece of engineering and art. No visit to Venice is complete without seeing this majestic structure.","9:00 - 17:00",Venice
+"Montpellier Monument",Landmark,34.00,"An iconic symbol of Montpellier's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 19:00",Montpellier
+"Malaga Museum of Art",Museum,38.00,"Discover the fascinating origins of Malaga through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Malaga
+"The Great Berlin Heritage House",Historic,37.00,"Centuries of history are embedded in the walls of this famous historical site located right in Berlin.","9:00 - 17:00",Berlin
+"Stuttgart Gallery",Museum,0.00,"Discover the fascinating origins of Stuttgart through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Stuttgart
+"Toledo Castle Ruins",Historic,41.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Toledo.","10:00 - 17:00",Toledo
+"Vancouver Aviation Museum",Museum,0.00,"Discover the fascinating origins of Vancouver through beautifully curated galleries and expert-led tours.","8:00 - 19:00",Vancouver
+"The Great Paris Tower",Landmark,22.00,"A masterpiece of engineering and art. No visit to Paris is complete without seeing this majestic structure.","9:00 - 19:00",Paris
+"Paris Hillside Park",Nature,10.00,"A perfectly preserved natural reserve in the heart of Paris. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 20:00",Paris
+"Dubai Cathedral",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Dubai.","8:00 - 16:00",Dubai
+"Sapporo Central Plaza",Landmark,38.00,"One of the most photographed monuments in Sapporo, featuring stunning design and cultural significance.","10:00 - 18:00",Sapporo
+"The Great Bath Tower",Landmark,11.00,"A masterpiece of engineering and art. No visit to Bath is complete without seeing this majestic structure.","10:00 - 19:00",Bath
+"Pisa Royal Palace",Historic,41.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Pisa.","10:00 - 17:00",Pisa
+"Nice Hillside Park",Nature,0.00,"Experience the breathtaking natural beauty of Nice at this serene location, offering scenic trails and native wildlife.","9:00 - 16:00",Nice
+"The Great Denver Gallery",Museum,13.00,"Discover the fascinating origins of Denver through beautifully curated galleries and expert-led tours.","8:00 - 19:00",Denver
+"The Great Victoria Wildlife Sanctuary",Nature,19.00,"A perfectly preserved natural reserve in the heart of Victoria. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 20:00",Victoria
+"The Great Darwin Hillside Park",Nature,40.00,"Experience the breathtaking natural beauty of Darwin at this serene location, offering scenic trails and native wildlife.","9:00 - 18:00",Darwin
+"The Great Stuttgart Aviation Museum",Museum,5.00,"Discover the fascinating origins of Stuttgart through beautifully curated galleries and expert-led tours.","8:00 - 17:00",Stuttgart
+"The Great New York Bridge",Landmark,44.00,"A masterpiece of engineering and art. No visit to New York is complete without seeing this majestic structure.","10:00 - 20:00","New York"
+"Seville Wildlife Sanctuary",Nature,6.00,"A perfectly preserved natural reserve in the heart of Seville. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 19:00",Seville
+"Edinburgh Bridge",Landmark,18.00,"One of the most photographed monuments in Edinburgh, featuring stunning design and cultural significance.","8:00 - 18:00",Edinburgh
+"Liverpool National Park",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Liverpool's most cherished outdoor destinations.","8:00 - 16:00",Liverpool
+"The Great Cologne Heritage House",Historic,18.00,"Step back in time and walk the ancient grounds where Cologne's most defining historical moments took place.","8:00 - 16:00",Cologne
+"Milan Royal Palace",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Milan.","9:00 - 16:00",Milan
+"Darwin Heritage House",Historic,44.00,"Centuries of history are embedded in the walls of this famous historical site located right in Darwin.","10:00 - 17:00",Darwin
+"Boston National Park",Nature,45.00,"Lush green spaces and spectacular panoramic views make this one of Boston's most cherished outdoor destinations.","9:00 - 19:00",Boston
+"Dubai Hillside Park",Nature,45.00,"Experience the breathtaking natural beauty of Dubai at this serene location, offering scenic trails and native wildlife.","10:00 - 19:00",Dubai
+"Leipzig Wildlife Sanctuary",Nature,0.00,"A perfectly preserved natural reserve in the heart of Leipzig. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Leipzig
+"San Francisco Ancient Fort",Historic,40.00,"Centuries of history are embedded in the walls of this famous historical site located right in San Francisco.","10:00 - 17:00","San Francisco"
+"The Great Denver Cathedral",Historic,25.00,"Centuries of history are embedded in the walls of this famous historical site located right in Denver.","10:00 - 17:00",Denver
+"The Great Ottawa Ancient Fort",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Ottawa.","8:00 - 16:00",Ottawa
+"Seattle River Walk",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Seattle's most cherished outdoor destinations.","9:00 - 16:00",Seattle
+"Frankfurt Heritage House",Historic,40.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Frankfurt.","10:00 - 19:00",Frankfurt
+"The Great Marseille Ancient Fort",Historic,5.00,"Step back in time and walk the ancient grounds where Marseille's most defining historical moments took place.","10:00 - 19:00",Marseille
+"The Great Genoa Square",Landmark,26.00,"An iconic symbol of Genoa's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 16:00",Genoa
+"Bilbao Bridge",Landmark,30.00,"A masterpiece of engineering and art. No visit to Bilbao is complete without seeing this majestic structure.","9:00 - 19:00",Bilbao
+"Nagoya Wildlife Sanctuary",Nature,40.00,"A perfectly preserved natural reserve in the heart of Nagoya. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00",Nagoya
+"The Great Austin Castle Ruins",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Austin.","10:00 - 16:00",Austin
+"Paris Cathedral",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Paris.","9:00 - 16:00",Paris
+"The Great Ibiza Botanical Gardens",Nature,21.00,"A perfectly preserved natural reserve in the heart of Ibiza. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00",Ibiza
+"Madrid Observatory",Landmark,29.00,"An iconic symbol of Madrid's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 19:00",Madrid
+"The Great Stuttgart Bridge",Landmark,32.00,"One of the most photographed monuments in Stuttgart, featuring stunning design and cultural significance.","8:00 - 17:00",Stuttgart
+"Malaga Cultural Centre",Museum,0.00,"Discover the fascinating origins of Malaga through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Malaga
+"The Great San Francisco Science Exhibit",Museum,34.00,"Immerse yourself in San Francisco's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 16:00","San Francisco"
+"The Great Montpellier Cultural Centre",Museum,29.00,"A world-class cultural institution in Montpellier housing thousands of priceless historical and artistic treasures.","10:00 - 18:00",Montpellier
+"Durban Gallery",Museum,0.00,"Immerse yourself in Durban's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 16:00",Durban
+"The Great Malaga Cultural Centre",Museum,0.00,"Discover the fascinating origins of Malaga through beautifully curated galleries and expert-led tours.","10:00 - 20:00",Malaga
+"The Great Perth Hillside Park",Nature,35.00,"Experience the breathtaking natural beauty of Perth at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00",Perth
+"The Great Granada Wildlife Sanctuary",Nature,35.00,"A perfectly preserved natural reserve in the heart of Granada. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 18:00",Granada
+"Glasgow Tower",Landmark,29.00,"An iconic symbol of Glasgow's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 20:00",Glasgow
+"Montreal Nature Reserve",Nature,42.00,"Lush green spaces and spectacular panoramic views make this one of Montreal's most cherished outdoor destinations.","8:00 - 17:00",Montreal
+"The Great Los Angeles Ancient Fort",Historic,31.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Los Angeles.","10:00 - 17:00","Los Angeles"
+"Nuremberg Wildlife Sanctuary",Nature,0.00,"Experience the breathtaking natural beauty of Nuremberg at this serene location, offering scenic trails and native wildlife.","8:00 - 18:00",Nuremberg
+"Port Elizabeth Botanical Gardens",Nature,21.00,"Lush green spaces and spectacular panoramic views make this one of Port Elizabeth's most cherished outdoor destinations.","10:00 - 19:00","Port Elizabeth"
+"The Great Stellenbosch Heritage House",Historic,16.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Stellenbosch.","10:00 - 17:00",Stellenbosch
+"The Great Canberra Nature Reserve",Nature,24.00,"A perfectly preserved natural reserve in the heart of Canberra. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 16:00",Canberra
+"Cape Town Observatory",Landmark,32.00,"One of the most photographed monuments in Cape Town, featuring stunning design and cultural significance.","9:00 - 16:00","Cape Town"
+"The Great Cape Town Aviation Museum",Museum,17.00,"A world-class cultural institution in Cape Town housing thousands of priceless historical and artistic treasures.","10:00 - 18:00","Cape Town"
+"Dubai Royal Palace",Historic,8.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Dubai.","9:00 - 18:00",Dubai
+"Pisa Aviation Museum",Museum,29.00,"Discover the fascinating origins of Pisa through beautifully curated galleries and expert-led tours.","10:00 - 20:00",Pisa
+"Edmonton Botanical Gardens",Nature,45.00,"A perfectly preserved natural reserve in the heart of Edmonton. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Edmonton
+"Stuttgart Natural History Museum",Museum,0.00,"A world-class cultural institution in Stuttgart housing thousands of priceless historical and artistic treasures.","10:00 - 19:00",Stuttgart
+"The Great Fukuoka Bridge",Landmark,42.00,"A masterpiece of engineering and art. No visit to Fukuoka is complete without seeing this majestic structure.","8:00 - 17:00",Fukuoka
+"The Great Toulouse Square",Landmark,41.00,"A masterpiece of engineering and art. No visit to Toulouse is complete without seeing this majestic structure.","9:00 - 19:00",Toulouse
+"Munich Hillside Park",Nature,9.00,"Lush green spaces and spectacular panoramic views make this one of Munich's most cherished outdoor destinations.","9:00 - 19:00",Munich
+"Marseille Heritage House",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Marseille.","9:00 - 19:00",Marseille
+"Kobe Tower",Landmark,31.00,"One of the most photographed monuments in Kobe, featuring stunning design and cultural significance.","8:00 - 16:00",Kobe
+"The Great Melbourne Observatory",Landmark,17.00,"A masterpiece of engineering and art. No visit to Melbourne is complete without seeing this majestic structure.","8:00 - 17:00",Melbourne
+"The Great Seattle Bridge",Landmark,15.00,"A masterpiece of engineering and art. No visit to Seattle is complete without seeing this majestic structure.","9:00 - 18:00",Seattle
+"The Great Rome Cultural Centre",Museum,0.00,"A world-class cultural institution in Rome housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Rome
+"The Great Stellenbosch Tower",Landmark,5.00,"One of the most photographed monuments in Stellenbosch, featuring stunning design and cultural significance.","10:00 - 18:00",Stellenbosch
+"Cape Town Cathedral",Historic,10.00,"Centuries of history are embedded in the walls of this famous historical site located right in Cape Town.","9:00 - 18:00","Cape Town"
+"The Great Quebec City Central Plaza",Landmark,8.00,"One of the most photographed monuments in Quebec City, featuring stunning design and cultural significance.","8:00 - 19:00","Quebec City"
+"The Great Edinburgh Observatory",Landmark,5.00,"One of the most photographed monuments in Edinburgh, featuring stunning design and cultural significance.","10:00 - 16:00",Edinburgh
+"The Great Mallorca Aviation Museum",Museum,0.00,"Discover the fascinating origins of Mallorca through beautifully curated galleries and expert-led tours.","8:00 - 19:00",Mallorca
+"The Great Calgary Botanical Gardens",Nature,0.00,"A perfectly preserved natural reserve in the heart of Calgary. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Calgary
+"The Great Dusseldorf Gallery",Museum,15.00,"Discover the fascinating origins of Dusseldorf through beautifully curated galleries and expert-led tours.","9:00 - 16:00",Dusseldorf
+"Victoria Cultural Centre",Museum,43.00,"A world-class cultural institution in Victoria housing thousands of priceless historical and artistic treasures.","9:00 - 19:00",Victoria
+"The Great Port Elizabeth Old Town Hall",Historic,20.00,"Centuries of history are embedded in the walls of this famous historical site located right in Port Elizabeth.","10:00 - 20:00","Port Elizabeth"
+"The Great Barcelona Tower",Landmark,0.00,"One of the most photographed monuments in Barcelona, featuring stunning design and cultural significance.","10:00 - 17:00",Barcelona
+"The Great Bristol National Park",Nature,32.00,"Experience the breathtaking natural beauty of Bristol at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Bristol
+"Liverpool Nature Reserve",Nature,40.00,"A perfectly preserved natural reserve in the heart of Liverpool. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 17:00",Liverpool
+"Cape Town Cathedral",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Cape Town.","9:00 - 19:00","Cape Town"
+"Leipzig Hillside Park",Nature,0.00,"A perfectly preserved natural reserve in the heart of Leipzig. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 17:00",Leipzig
+"The Great Sydney Tower",Landmark,42.00,"One of the most photographed monuments in Sydney, featuring stunning design and cultural significance.","10:00 - 20:00",Sydney
+"The Great Cologne Central Plaza",Landmark,5.00,"An iconic symbol of Cologne's architectural heritage, standing tall as a testament to the region's rich history.","8:00 - 20:00",Cologne
+"The Great Calgary Aviation Museum",Museum,33.00,"Discover the fascinating origins of Calgary through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Calgary
+"The Great Knysna Heritage House",Historic,8.00,"Step back in time and walk the ancient grounds where Knysna's most defining historical moments took place.","8:00 - 16:00",Knysna
+"Fukuoka Square",Landmark,0.00,"One of the most photographed monuments in Fukuoka, featuring stunning design and cultural significance.","10:00 - 16:00",Fukuoka
+"Austin Cathedral",Historic,7.00,"Step back in time and walk the ancient grounds where Austin's most defining historical moments took place.","10:00 - 16:00",Austin
+"The Great Sydney Observatory",Landmark,13.00,"A masterpiece of engineering and art. No visit to Sydney is complete without seeing this majestic structure.","9:00 - 19:00",Sydney
+"The Great Montreal Cathedral",Historic,8.00,"Centuries of history are embedded in the walls of this famous historical site located right in Montreal.","8:00 - 20:00",Montreal
+"The Great New York Science Exhibit",Museum,8.00,"Immerse yourself in New York's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 18:00","New York"
+"Pretoria Heritage House",Historic,34.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Pretoria.","8:00 - 19:00",Pretoria
+"The Great Vancouver Hillside Park",Nature,43.00,"A perfectly preserved natural reserve in the heart of Vancouver. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 18:00",Vancouver
+"The Great Ottawa National Park",Nature,7.00,"A perfectly preserved natural reserve in the heart of Ottawa. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 19:00",Ottawa
+"The Great Palermo Observatory",Landmark,43.00,"An iconic symbol of Palermo's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Palermo
+"The Great Pretoria Science Exhibit",Museum,38.00,"Discover the fascinating origins of Pretoria through beautifully curated galleries and expert-led tours.","10:00 - 18:00",Pretoria
+"Hamburg Hillside Park",Nature,12.00,"Lush green spaces and spectacular panoramic views make this one of Hamburg's most cherished outdoor destinations.","10:00 - 17:00",Hamburg
+"Osaka Square",Landmark,0.00,"A masterpiece of engineering and art. No visit to Osaka is complete without seeing this majestic structure.","9:00 - 18:00",Osaka
+"Marseille Science Exhibit",Museum,7.00,"A world-class cultural institution in Marseille housing thousands of priceless historical and artistic treasures.","8:00 - 20:00",Marseille
+"London Central Plaza",Landmark,29.00,"A masterpiece of engineering and art. No visit to London is complete without seeing this majestic structure.","10:00 - 19:00",London
+"Port Elizabeth Monument",Landmark,0.00,"A masterpiece of engineering and art. No visit to Port Elizabeth is complete without seeing this majestic structure.","10:00 - 19:00","Port Elizabeth"
+"Edinburgh Ancient Fort",Historic,45.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Edinburgh.","8:00 - 20:00",Edinburgh
+"Cairns Monument",Landmark,26.00,"One of the most photographed monuments in Cairns, featuring stunning design and cultural significance.","10:00 - 19:00",Cairns
+"The Great Paris Ancient Fort",Historic,33.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Paris.","10:00 - 18:00",Paris
+"The Great Paris Square",Landmark,0.00,"A masterpiece of engineering and art. No visit to Paris is complete without seeing this majestic structure.","9:00 - 19:00",Paris
+"Malaga Ancient Fort",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Malaga.","9:00 - 20:00",Malaga
+"The Great Strasbourg Cultural Centre",Museum,0.00,"Immerse yourself in Strasbourg's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 19:00",Strasbourg
+"Nara Bridge",Landmark,35.00,"An iconic symbol of Nara's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Nara
+"Malaga Monument",Landmark,31.00,"One of the most photographed monuments in Malaga, featuring stunning design and cultural significance.","10:00 - 20:00",Malaga
+"The Great Lille Monument",Landmark,42.00,"An iconic symbol of Lille's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 18:00",Lille
+"The Great Nice Heritage House",Historic,0.00,"Centuries of history are embedded in the walls of this famous historical site located right in Nice.","9:00 - 16:00",Nice
+"The Great Paris Cathedral",Historic,12.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Paris.","8:00 - 20:00",Paris
+"Cape Town Aviation Museum",Museum,41.00,"Immerse yourself in Cape Town's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 20:00","Cape Town"
+"Dresden Gallery",Museum,37.00,"A world-class cultural institution in Dresden housing thousands of priceless historical and artistic treasures.","10:00 - 18:00",Dresden
+"The Great Vancouver Heritage House",Historic,6.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Vancouver.","10:00 - 20:00",Vancouver
+"The Great Chicago Natural History Museum",Museum,15.00,"Discover the fascinating origins of Chicago through beautifully curated galleries and expert-led tours.","10:00 - 18:00",Chicago
+"The Great Hobart Museum of Art",Museum,37.00,"Discover the fascinating origins of Hobart through beautifully curated galleries and expert-led tours.","8:00 - 17:00",Hobart
+"Belfast Tower",Landmark,0.00,"A masterpiece of engineering and art. No visit to Belfast is complete without seeing this majestic structure.","8:00 - 18:00",Belfast
+"The Great Nice Gallery",Museum,0.00,"Immerse yourself in Nice's history with interactive exhibits, rare artifacts, and captivating storytelling.","10:00 - 20:00",Nice
+"The Great Fukuoka River Walk",Nature,45.00,"Experience the breathtaking natural beauty of Fukuoka at this serene location, offering scenic trails and native wildlife.","9:00 - 19:00",Fukuoka
+"Hamburg Natural History Museum",Museum,0.00,"A world-class cultural institution in Hamburg housing thousands of priceless historical and artistic treasures.","8:00 - 20:00",Hamburg
+"Quebec City Monument",Landmark,22.00,"One of the most photographed monuments in Quebec City, featuring stunning design and cultural significance.","10:00 - 18:00","Quebec City"
+"Nuremberg Observatory",Landmark,0.00,"A masterpiece of engineering and art. No visit to Nuremberg is complete without seeing this majestic structure.","9:00 - 16:00",Nuremberg
+"The Great Denver Nature Reserve",Nature,24.00,"Lush green spaces and spectacular panoramic views make this one of Denver's most cherished outdoor destinations.","9:00 - 17:00",Denver
+"The Great Tokyo Museum of Art",Museum,16.00,"Discover the fascinating origins of Tokyo through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Tokyo
+"Cologne Gallery",Museum,44.00,"A world-class cultural institution in Cologne housing thousands of priceless historical and artistic treasures.","10:00 - 20:00",Cologne
+"Austin Tower",Landmark,18.00,"One of the most photographed monuments in Austin, featuring stunning design and cultural significance.","8:00 - 19:00",Austin
+"Cape Town Ancient Fort",Historic,28.00,"Step back in time and walk the ancient grounds where Cape Town's most defining historical moments took place.","9:00 - 18:00","Cape Town"
+"The Great New York Central Plaza",Landmark,23.00,"A masterpiece of engineering and art. No visit to New York is complete without seeing this majestic structure.","8:00 - 16:00","New York"
+"Austin Botanical Gardens",Nature,12.00,"A perfectly preserved natural reserve in the heart of Austin. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Austin
+"The Great Durban Wildlife Sanctuary",Nature,6.00,"Lush green spaces and spectacular panoramic views make this one of Durban's most cherished outdoor destinations.","8:00 - 16:00",Durban
+"The Great Hobart National Park",Nature,45.00,"A perfectly preserved natural reserve in the heart of Hobart. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 17:00",Hobart
+"The Great Madrid Cathedral",Historic,31.00,"Centuries of history are embedded in the walls of this famous historical site located right in Madrid.","8:00 - 17:00",Madrid
+"The Great Oxford Hillside Park",Nature,31.00,"A perfectly preserved natural reserve in the heart of Oxford. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 18:00",Oxford
+"Gold Coast Hillside Park",Nature,23.00,"Experience the breathtaking natural beauty of Gold Coast at this serene location, offering scenic trails and native wildlife.","10:00 - 16:00","Gold Coast"
+"The Great Ibiza Museum of Art",Museum,0.00,"Immerse yourself in Ibiza's history with interactive exhibits, rare artifacts, and captivating storytelling.","8:00 - 16:00",Ibiza
+"Hiroshima Heritage House",Historic,30.00,"Centuries of history are embedded in the walls of this famous historical site located right in Hiroshima.","8:00 - 16:00",Hiroshima
+"The Great Cape Town Castle Ruins",Historic,5.00,"Centuries of history are embedded in the walls of this famous historical site located right in Cape Town.","10:00 - 19:00","Cape Town"
+"The Great Turin Natural History Museum",Museum,0.00,"Discover the fascinating origins of Turin through beautifully curated galleries and expert-led tours.","10:00 - 20:00",Turin
+"Hiroshima Museum of Art",Museum,36.00,"A world-class cultural institution in Hiroshima housing thousands of priceless historical and artistic treasures.","9:00 - 17:00",Hiroshima
+"Granada Cathedral",Historic,36.00,"Step back in time and walk the ancient grounds where Granada's most defining historical moments took place.","10:00 - 20:00",Granada
+"Bali Aviation Museum",Museum,40.00,"Discover the fascinating origins of Bali through beautifully curated galleries and expert-led tours.","10:00 - 17:00",Bali
+"Port Elizabeth Bridge",Landmark,18.00,"A masterpiece of engineering and art. No visit to Port Elizabeth is complete without seeing this majestic structure.","8:00 - 19:00","Port Elizabeth"
+"The Great Tokyo Wildlife Sanctuary",Nature,33.00,"Experience the breathtaking natural beauty of Tokyo at this serene location, offering scenic trails and native wildlife.","8:00 - 17:00",Tokyo
+"Rome Botanical Gardens",Nature,8.00,"A perfectly preserved natural reserve in the heart of Rome. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 19:00",Rome
+"New York Aviation Museum",Museum,28.00,"Discover the fascinating origins of New York through beautifully curated galleries and expert-led tours.","8:00 - 18:00","New York"
+"Cologne Hillside Park",Nature,8.00,"Lush green spaces and spectacular panoramic views make this one of Cologne's most cherished outdoor destinations.","10:00 - 18:00",Cologne
+"Darwin Natural History Museum",Museum,44.00,"Discover the fascinating origins of Darwin through beautifully curated galleries and expert-led tours.","8:00 - 20:00",Darwin
+"The Great Nagoya Science Exhibit",Museum,18.00,"A world-class cultural institution in Nagoya housing thousands of priceless historical and artistic treasures.","9:00 - 18:00",Nagoya
+"Kimberley Nature Reserve",Nature,8.00,"Lush green spaces and spectacular panoramic views make this one of Kimberley's most cherished outdoor destinations.","10:00 - 18:00",Kimberley
+"Bloemfontein Bridge",Landmark,14.00,"A masterpiece of engineering and art. No visit to Bloemfontein is complete without seeing this majestic structure.","9:00 - 17:00",Bloemfontein
+"The Great Darwin Observatory",Landmark,0.00,"A masterpiece of engineering and art. No visit to Darwin is complete without seeing this majestic structure.","8:00 - 19:00",Darwin
+"Kobe Science Exhibit",Museum,10.00,"Discover the fascinating origins of Kobe through beautifully curated galleries and expert-led tours.","8:00 - 18:00",Kobe
+"The Great Gold Coast Square",Landmark,0.00,"One of the most photographed monuments in Gold Coast, featuring stunning design and cultural significance.","8:00 - 20:00","Gold Coast"
+"Knysna Castle Ruins",Historic,20.00,"Centuries of history are embedded in the walls of this famous historical site located right in Knysna.","9:00 - 18:00",Knysna
+"The Great Glasgow Royal Palace",Historic,0.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Glasgow.","9:00 - 20:00",Glasgow
+"Port Elizabeth Central Plaza",Landmark,42.00,"A masterpiece of engineering and art. No visit to Port Elizabeth is complete without seeing this majestic structure.","9:00 - 16:00","Port Elizabeth"
+"Paris National Park",Nature,16.00,"Experience the breathtaking natural beauty of Paris at this serene location, offering scenic trails and native wildlife.","10:00 - 18:00",Paris
+"The Great Bilbao Cathedral",Historic,11.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Bilbao.","8:00 - 18:00",Bilbao
+"The Great Nice Heritage House",Historic,24.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Nice.","9:00 - 19:00",Nice
+"Hobart Monument",Landmark,28.00,"A masterpiece of engineering and art. No visit to Hobart is complete without seeing this majestic structure.","10:00 - 19:00",Hobart
+"Marseille Museum of Art",Museum,27.00,"A world-class cultural institution in Marseille housing thousands of priceless historical and artistic treasures.","8:00 - 19:00",Marseille
+"The Great Melbourne Square",Landmark,20.00,"An iconic symbol of Melbourne's architectural heritage, standing tall as a testament to the region's rich history.","10:00 - 17:00",Melbourne
+"Bali Science Exhibit",Museum,0.00,"A world-class cultural institution in Bali housing thousands of priceless historical and artistic treasures.","9:00 - 16:00",Bali
+"The Great Barcelona Castle Ruins",Historic,24.00,"A beautifully preserved historical site that offers a hauntingly realistic glimpse into the past of Barcelona.","10:00 - 20:00",Barcelona
+"Tokyo Cultural Centre",Museum,30.00,"A world-class cultural institution in Tokyo housing thousands of priceless historical and artistic treasures.","8:00 - 17:00",Tokyo
+"The Great Ibiza Wildlife Sanctuary",Nature,0.00,"Lush green spaces and spectacular panoramic views make this one of Ibiza's most cherished outdoor destinations.","9:00 - 20:00",Ibiza
+"The Great New York River Walk",Nature,22.00,"Experience the breathtaking natural beauty of New York at this serene location, offering scenic trails and native wildlife.","9:00 - 20:00","New York"
+"The Great Toronto Tower",Landmark,33.00,"A masterpiece of engineering and art. No visit to Toronto is complete without seeing this majestic structure.","10:00 - 19:00",Toronto
+"Belfast Tower",Landmark,41.00,"A masterpiece of engineering and art. No visit to Belfast is complete without seeing this majestic structure.","10:00 - 19:00",Belfast
+"Cologne Royal Palace",Historic,0.00,"Step back in time and walk the ancient grounds where Cologne's most defining historical moments took place.","10:00 - 20:00",Cologne
+"The Great Boston River Walk",Nature,33.00,"Experience the breathtaking natural beauty of Boston at this serene location, offering scenic trails and native wildlife.","9:00 - 16:00",Boston
+"The Great Berlin River Walk",Nature,14.00,"Lush green spaces and spectacular panoramic views make this one of Berlin's most cherished outdoor destinations.","8:00 - 20:00",Berlin
+"New York Gallery",Museum,20.00,"A world-class cultural institution in New York housing thousands of priceless historical and artistic treasures.","10:00 - 20:00","New York"
+"The Great Quebec City River Walk",Nature,21.00,"A perfectly preserved natural reserve in the heart of Quebec City. Ideal for hiking, photography, and escaping the urban bustle.","9:00 - 16:00","Quebec City"
+"The Great Perth Observatory",Landmark,30.00,"One of the most photographed monuments in Perth, featuring stunning design and cultural significance.","10:00 - 16:00",Perth
+"The Great Durban Observatory",Landmark,5.00,"One of the most photographed monuments in Durban, featuring stunning design and cultural significance.","10:00 - 17:00",Durban
+"The Great Bali Botanical Gardens",Nature,20.00,"Lush green spaces and spectacular panoramic views make this one of Bali's most cherished outdoor destinations.","8:00 - 17:00",Bali
+"The Great Vancouver Square",Landmark,15.00,"An iconic symbol of Vancouver's architectural heritage, standing tall as a testament to the region's rich history.","9:00 - 20:00",Vancouver
+"The Great Nuremberg Botanical Gardens",Nature,26.00,"A perfectly preserved natural reserve in the heart of Nuremberg. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 16:00",Nuremberg
+"The Great Melbourne Gallery",Museum,0.00,"Immerse yourself in Melbourne's history with interactive exhibits, rare artifacts, and captivating storytelling.","9:00 - 17:00",Melbourne
+"The Great Nantes Wildlife Sanctuary",Nature,0.00,"A perfectly preserved natural reserve in the heart of Nantes. Ideal for hiking, photography, and escaping the urban bustle.","8:00 - 17:00",Nantes
+"Brisbane Bridge",Landmark,40.00,"One of the most photographed monuments in Brisbane, featuring stunning design and cultural significance.","10:00 - 19:00",Brisbane
+"Dubai Castle Ruins",Historic,10.00,"Centuries of history are embedded in the walls of this famous historical site located right in Dubai.","9:00 - 17:00",Dubai
+"Hamburg Bridge",Landmark,6.00,"One of the most photographed monuments in Hamburg, featuring stunning design and cultural significance.","10:00 - 19:00",Hamburg
+"The Great Knysna Wildlife Sanctuary",Nature,8.00,"A perfectly preserved natural reserve in the heart of Knysna. Ideal for hiking, photography, and escaping the urban bustle.","10:00 - 20:00",Knysna

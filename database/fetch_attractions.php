@@ -14,7 +14,7 @@ function fetch(string $lat, string $lon): array {
         'lon'     => $lon,
         'lat'     => $lat,
         'kinds'   => 'interesting_places',
-        'format'  => 'json',
+        'format'  => 'geojson',
         'limit'   => 10,
         'apikey'  => $key,
     ]);
@@ -98,6 +98,12 @@ if ($apiKey && $apiKey !== 'opentripmap_key' && stripos($apiKey, 'your_') === fa
     if (empty($cities)) {
         exit("ERROR: DESTINATION table is empty. Run fetch_destinations.php first.\n");
     }
+
+    // Demo mode: limit to 3 cities for fast execution during presentations
+    if (in_array('--demo', $argv)) {
+        echo "Running in DEMO mode (limited to 3 cities)...\n";
+        $cities = array_slice($cities, 0, 3);
+    }
     
     $count = 0;
     foreach ($cities as $c) {
@@ -118,13 +124,14 @@ if ($apiKey && $apiKey !== 'opentripmap_key' && stripos($apiKey, 'your_') === fa
                     (strpos($kinds, 'nature') !== false ? 'Nature' : 'Landmark');
             
             $desc = $d['wikipedia_extracts']['text'] ?? "A notable attraction in {$c['City']}.";
+            $desc = preg_replace('/[^\x20-\x7E\t\r\n]/', '', strip_tags($desc));
             $fee  = ($added === 0) ? 0.00 : rand(5, 50); // Just some variation
             
             save($pdo, [
                 'name'  => trim($name),
                 'type'  => $type,
                 'fee'   => $fee,
-                'desc'  => substr(strip_tags($desc), 0, 500),
+                'desc'  => substr($desc, 0, 500),
                 'hours' => '09:00 - 17:00',
             ], $c['DestinationID']);
             $added++;
