@@ -2,16 +2,20 @@
 // database/fetch_flights.php
 // Purpose: Seed flight data using CSV, RapidAPI, or programmatic fallback.
 
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 
 try {
     echo "=== Flight Seeder Started ===\n";
-    $csvPath = __DIR__ . '/csv/flights.csv';
+    // Check if the script should run in API mode or offline CSV mode
+    $apiKey = env('RAPIDAPI_KEY');
+    
+    // Define the path to the CSV file
+    $csvPath = __DIR__ . '/flights.csv';
     $insertedCount = 0;
     
     // Check if CSV file exists and is readable
     if (file_exists($csvPath) && ($handle = fopen($csvPath, 'r')) !== false) {
-        echo "Found local CSV file at database/csv/flights.csv. Commencing CSV ingestion...\n";
+        echo "Found local CSV file at database/flights.csv. Commencing CSV ingestion...\n";
         
         // Read header line
         $headers = fgetcsv($handle);

@@ -1,7 +1,7 @@
 <?php
 // Importing Attraction Data from OpenTripMap API or Kaggle CSV
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../config/env.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/env.php';
 
 define('OTM_BASE', 'https://api.opentripmap.com/0.1');
 define('CSV_PATH', __DIR__ . '/attractions.csv');
