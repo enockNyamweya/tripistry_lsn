@@ -1,0 +1,11 @@
+Airline,FlightNumber,DepartureCity,ArrivalCity,DepartureTime,ArrivalTime,Price
+Emirates,EK761,Johannesburg,Dubai,2026-06-15 13:40:00,2026-06-15 23:59:00,7500.00
+British Airways,BA056,Johannesburg,London,2026-06-16 19:20:00,2026-06-17 05:30:00,9800.00
+South African Airways,SA222,Johannesburg,Cape Town,2026-06-15 08:00:00,2026-06-15 10:10:00,1850.00
+Qatar Airways,QR1364,Johannesburg,Doha,2026-06-18 14:15:00,2026-06-18 23:05:00,6900.00
+Lufthansa,LH573,Johannesburg,Frankfurt,2026-06-19 19:00:00,2026-06-20 05:45:00,11200.00
+Singapore Airlines,SQ479,Cape Town,Singapore,2026-06-20 10:40:00,2026-06-21 06:10:00,12500.00
+Delta Air Lines,DL201,Johannesburg,Atlanta,2026-06-21 11:55:00,2026-06-21 21:15:00,15400.00
+Air France,AF995,Johannesburg,Paris,2026-06-22 18:50:00,2026-06-23 05:40:00,10500.00
+KLM,KL592,Johannesburg,Amsterdam,2026-06-23 23:15:00,2026-06-24 10:20:00,10900.00
+Turkish Airlines,TK041,Cape Town,Istanbul,2026-06-24 18:00:00,2026-06-25 05:30:00,8700.00
