@@ -2,7 +2,7 @@
 
 $partnerId = isset($_GET['user']) ? (int)$_GET['user'] : 0;
 if (!$partnerId) {
-    header('Location: /agency/messages.php');
+    header('Location: ' . BASE_URL . '/agency/messages.php');
     exit;
 }
 

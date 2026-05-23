@@ -6,7 +6,7 @@ if (isset($_POST['action']) && isset($_POST['booking_id'])) {
     $newStatus = $_POST['action'] === 'confirm' ? 'Confirmed' : 'Cancelled';
     $stmt = $pdo->prepare('UPDATE BOOKS SET Status = ? WHERE BookingID = ? AND PackageID IN (SELECT PackageID FROM CURATES WHERE UserID = ?)');
     $stmt->execute([$newStatus, $bid, $_SESSION['user_id']]);
-    header('Location: /agency/bookings.php?updated=1');
+    header('Location: ' . BASE_URL . '/agency/bookings.php?updated=1');
     exit;
 }
 

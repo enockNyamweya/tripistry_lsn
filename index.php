@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
 <?php if (isLoggedIn()): ?>
-    <?php header('Location: /dashboard.php'); exit; ?>
+    <?php header('Location: ' . BASE_URL . '/dashboard.php'); exit; ?>
 <?php else: ?>
 <div class="hero">
     <h1>Welcome to Tripistry</h1>
