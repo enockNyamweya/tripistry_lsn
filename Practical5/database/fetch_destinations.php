@@ -94,34 +94,34 @@ function save(PDO $pdo, array $d): void {
 
 // MAIN
 $apiKey = env('OPENTRIPMAP_KEY');
+$hasKey = $apiKey && $apiKey !== 'opentripmap_key';
 
-if ($apiKey && $apiKey !== 'opentripmap_key') {
-    echo "Fetching destinations from OpenTripMap...\n";
-    $cityList = [
-        'Cape Town', 'Johannesburg', 'Durban', 'Paris', 'Nice', 'Lyon',
-        'Tokyo', 'Kyoto', 'Osaka', 'London', 'Edinburgh', 'Manchester',
-        'New York', 'Los Angeles', 'Miami', 'Rome', 'Florence', 'Venice',
-        'Madrid', 'Barcelona', 'Sydney', 'Melbourne', 'Berlin', 'Munich',
-        'Toronto', 'Vancouver', 'Dubai', 'Bangkok', 'Singapore', 'Amsterdam',
-    ];
-    $count = 0;
-    foreach ($cityList as $city) {
-        $data = fetchCity($city);
-        if ($data) {
-            save($pdo, $data);
-            echo "  $city added\n";
-            $count++;
+echo "Reading city list from CSV...\n";
+$destinations = readCsv();
+echo count($destinations) . " cities found in CSV.\n";
+
+if ($hasKey) {
+    echo "Enriching with OpenTripMap...\n";
+    $enriched = 0;
+    foreach ($destinations as $i => $d) {
+        $otm = fetchCity($d['name']);
+        if ($otm) {
+            $destinations[$i] = $otm;
+            echo "  {$d['name']} enriched\n";
+            $enriched++;
         } else {
-            echo "  $city skipped\n";
+            echo "  {$d['name']} kept from CSV\n";
         }
         usleep(200000);
     }
-    echo "\n$count destinations inserted.\n";
+    echo "$enriched cities enriched via API.\n";
 } else {
-    echo "No OPENTRIPMAP_KEY, falling back to Kaggle CSV...\n";
-    $destinations = readCsv();
-    foreach ($destinations as $d) {
-        save($pdo, $d);
-    }
-    echo count($destinations) . " destinations inserted.\n";
+    echo "No OPENTRIPMAP_KEY, using CSV data only.\n";
 }
+
+$count = 0;
+foreach ($destinations as $d) {
+    save($pdo, $d);
+    $count++;
+}
+echo "$count destinations inserted.\n";
