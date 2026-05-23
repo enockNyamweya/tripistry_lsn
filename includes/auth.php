@@ -15,7 +15,7 @@ function isAgency() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /login.php');
+        header('Location: ' . BASE_URL . '/login.php');
         exit;
     }
 }
@@ -23,7 +23,7 @@ function requireLogin() {
 function requireTraveller() {
     requireLogin();
     if (!isTraveller()) {
-        header('Location: /dashboard.php');
+        header('Location: ' . BASE_URL . '/dashboard.php');
         exit;
     }
 }
@@ -31,7 +31,7 @@ function requireTraveller() {
 function requireAgency() {
     requireLogin();
     if (!isAgency()) {
-        header('Location: /dashboard.php');
+        header('Location: ' . BASE_URL . '/dashboard.php');
         exit;
     }
 }
@@ -78,7 +78,7 @@ function registerUser($email, $password, $userType, $extra) {
 
 function logoutUser() {
     session_destroy();
-    header('Location: /login.php');
+    header('Location: ' . BASE_URL . '/login.php');
     exit;
 }
 

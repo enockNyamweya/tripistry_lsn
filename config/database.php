@@ -1,7 +1,11 @@
 <?php
 require_once __DIR__ . '/env.php';
 
-define('BASE_URL', '/tripistry_lsn');
+$basePath = '';
+if (stripos($_SERVER['REQUEST_URI'] ?? '', '/tripistry_lsn') === 0) {
+    $basePath = '/tripistry_lsn';
+}
+define('BASE_URL', $basePath);
 $host = env('DB_HOST', 'localhost');
 $dbname = env('DB_NAME', 'tripistry_lsn');
 $username = env('DB_USER', 'root');

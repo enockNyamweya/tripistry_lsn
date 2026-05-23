@@ -10,7 +10,7 @@ $conversations = getConversations($_SESSION['user_id']);
 <?php else: ?>
     <div class="chat-list">
         <?php foreach ($conversations as $conv): ?>
-            <a href="/agency/chat.php?user=<?php echo $conv['PartnerID']; ?>" class="chat-list-item <?php echo $conv['Unread'] > 0 ? 'unread' : ''; ?>">
+            <a href="<?php echo BASE_URL; ?>/agency/chat.php?user=<?php echo $conv['PartnerID']; ?>" class="chat-list-item <?php echo $conv['Unread'] > 0 ? 'unread' : ''; ?>">
                 <div class="chat-list-avatar">
                     <?php echo strtoupper(substr($conv['FirstName'] ?? 'T', 0, 1)); ?>
                 </div>

@@ -4,8 +4,8 @@ session_start();
 requireLogin();
 
 if (isTraveller()) {
-    header('Location: /traveller/browse.php');
+    header('Location: ' . BASE_URL . '/traveller/browse.php');
 } else {
-    header('Location: /agency/dashboard.php');
+    header('Location: ' . BASE_URL . '/agency/dashboard.php');
 }
 exit;

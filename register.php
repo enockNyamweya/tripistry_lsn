@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/includes/auth.php';
 
 if (isLoggedIn()) {
-    header('Location: /dashboard.php');
+    header('Location: ' . BASE_URL . '/dashboard.php');
     exit;
 }
 
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$error) {
             $result = registerUser($email, $password, $userType, $extra);
             if ($result) {
-                $success = 'Registration successful! You can now <a href="/login.php">login</a>.';
+                $success = 'Registration successful! You can now <a href="' . BASE_URL . '/login.php">login</a>.';
             } else {
                 $error = 'Email already registered or an error occurred.';
             }
@@ -57,14 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register — Tripistry</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
 </head>
 <body>
 <nav class="navbar">
-    <div class="nav-brand"><a href="/index.php">Tripistry</a></div>
+    <div class="nav-brand"><a href="<?php echo BASE_URL; ?>/index.php">Tripistry</a></div>
     <div class="nav-links">
-        <a href="/login.php">Login</a>
-        <a href="/register.php">Register</a>
+        <a href="<?php echo BASE_URL; ?>/login.php">Login</a>
+        <a href="<?php echo BASE_URL; ?>/register.php">Register</a>
     </div>
 </nav>
 <main class="container">
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
-        <p class="auth-link">Already have an account? <a href="/login.php">Login here</a></p>
+        <p class="auth-link">Already have an account? <a href="<?php echo BASE_URL; ?>/login.php">Login here</a></p>
     </div>
 </main>
 <footer class="footer"><p>&copy; <?php echo date('Y'); ?> Tripistry</p></footer>

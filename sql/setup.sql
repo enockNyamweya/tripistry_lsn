@@ -1,5 +1,6 @@
-CREATE DATABASE IF NOT EXISTS tripistry;
-USE tripistry;
+DROP DATABASE IF EXISTS tripistry_lsn;
+CREATE DATABASE tripistry_lsn;
+USE tripistry_lsn;
 
 CREATE TABLE USER (
     UserID INT AUTO_INCREMENT PRIMARY KEY,

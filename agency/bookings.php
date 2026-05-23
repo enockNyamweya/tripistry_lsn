@@ -6,7 +6,7 @@ if (isset($_POST['action']) && isset($_POST['booking_id'])) {
     $newStatus = $_POST['action'] === 'confirm' ? 'Confirmed' : 'Cancelled';
     $stmt = $pdo->prepare('UPDATE BOOKS SET Status = ? WHERE BookingID = ? AND PackageID IN (SELECT PackageID FROM CURATES WHERE UserID = ?)');
     $stmt->execute([$newStatus, $bid, $_SESSION['user_id']]);
-    header('Location: /agency/bookings.php?updated=1');
+    header('Location: ' . BASE_URL . '/agency/bookings.php?updated=1');
     exit;
 }
 
@@ -107,7 +107,7 @@ $summary = $stmt->fetch();
                                 <button type="submit" name="action" value="cancel" class="btn btn-danger btn-sm">Cancel</button>
                             </form>
                         <?php endif; ?>
-                        <a href="/agency/chat.php?user=<?php echo $b['UserID']; ?>" class="btn btn-secondary btn-sm">Message</a>
+                        <a href="<?php echo BASE_URL; ?>/agency/chat.php?user=<?php echo $b['UserID']; ?>" class="btn btn-secondary btn-sm">Message</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

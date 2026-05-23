@@ -2,7 +2,7 @@
 
 $partnerId = isset($_GET['user']) ? (int)$_GET['user'] : 0;
 if (!$partnerId) {
-    header('Location: /traveller/messages.php');
+    header('Location: ' . BASE_URL . '/traveller/messages.php');
     exit;
 }
 
@@ -39,7 +39,7 @@ $messages = getMessages($_SESSION['user_id'], $partnerId);
 
 <div class="chat-container">
     <div class="chat-header">
-        <a href="/traveller/messages.php" class="btn btn-secondary btn-sm">← Back</a>
+        <a href="<?php echo BASE_URL; ?>/traveller/messages.php" class="btn btn-secondary btn-sm">← Back</a>
         <h2>Chat with <?php echo htmlspecialchars($agency['AgencyName']); ?></h2>
         <span class="badge"><?php echo htmlspecialchars($agency['VerificationStatus']); ?></span>
     </div>

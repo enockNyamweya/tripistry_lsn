@@ -1,14 +1,14 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
 <?php if (isLoggedIn()): ?>
-    <?php header('Location: /dashboard.php'); exit; ?>
+    <?php header('Location: ' . BASE_URL . '/dashboard.php'); exit; ?>
 <?php else: ?>
 <div class="hero">
     <h1>Welcome to Tripistry</h1>
     <p>Compare travel packages across agencies. Book your dream trip with confidence.</p>
     <div class="hero-cta">
-        <a href="/login.php" class="btn btn-primary">Login</a>
-        <a href="/register.php" class="btn btn-secondary">Register</a>
+        <a href="<?php echo BASE_URL; ?>/login.php" class="btn btn-primary">Login</a>
+        <a href="<?php echo BASE_URL; ?>/register.php" class="btn btn-secondary">Register</a>
     </div>
 </div>
 
