@@ -162,6 +162,9 @@ try {
     }
     echo "  $count attractions imported.\n\n";
 
+    // --- Seed Flights ---
+    require_once __DIR__ . '/../fetch-flights/fetch_flights.php';
+
     // 7. GENERATE PACKAGES, BOOKINGS, REVIEWS
     echo "[7/7] Generating Packages, Bookings & Reviews...\n";
 
@@ -169,12 +172,19 @@ try {
     $accomList   = $pdo->query("SELECT AccommodationID, DestinationID FROM ACCOMMODATION")->fetchAll();
     $restList    = $pdo->query("SELECT RestaurantID, DestinationID FROM RESTAURANT")->fetchAll();
     $attrList    = $pdo->query("SELECT AttractionID, DestinationID FROM ATTRACTION")->fetchAll();
+    $flightList  = $pdo->query("SELECT FlightID, ArrivalCity FROM FLIGHT")->fetchAll();
 
     // Index by DestinationID for fast lookups
     $accomByDest = $restByDest = $attrByDest = [];
     foreach ($accomList as $a) $accomByDest[$a['DestinationID']][] = $a['AccommodationID'];
     foreach ($restList as $r)  $restByDest[$r['DestinationID']][]  = $r['RestaurantID'];
     foreach ($attrList as $a)  $attrByDest[$a['DestinationID']][]  = $a['AttractionID'];
+
+    $flightsByDest = [];
+    foreach ($flightList as $f) {
+        $flightsByDest[$f['ArrivalCity']][] = (int)$f['FlightID'];
+    }
+    $allFlightIds = array_column($flightList, 'FlightID');
 
     $adjectives = ['Luxury', 'Ultimate', 'Budget', 'Express', 'Romantic', 'Adventurous', 'Exclusive', 'Classic', 'Grand', 'Serene'];
     $types      = ['Escape', 'Getaway', 'Tour', 'Experience', 'Journey', 'Adventure', 'Retreat', 'Expedition'];
@@ -221,6 +231,18 @@ try {
 
             // Link destination
             $pdo->prepare('INSERT IGNORE INTO HAS_DESTINATION (PackageID, DestinationID) VALUES (?, ?)')->execute([$pkgId, $dId]);
+
+            // Link flights
+            $fIds = $flightsByDest[$dest['City']] ?? [];
+            if (empty($fIds) && !empty($allFlightIds)) {
+                $fIds = $allFlightIds;
+            }
+            if (!empty($fIds)) {
+                shuffle($fIds);
+                foreach (array_slice($fIds, 0, min(rand(1, 2), count($fIds))) as $id) {
+                    $pdo->prepare('INSERT IGNORE INTO INCLUDES_FLIGHT (PackageID, FlightID) VALUES (?, ?)')->execute([$pkgId, $id]);
+                }
+            }
 
             // Link accommodations
             if (!empty($accomByDest[$dId])) {

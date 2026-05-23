@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../config/database.php';
 
 try {
-    echo "=== Flight Seeder Started ===\n";
+    echo "Flight Seeder Started...\n";
     // Check if the script should run in API mode or offline CSV mode
     $apiKey = env('RAPIDAPI_KEY');
     
@@ -142,7 +142,7 @@ try {
         }
     }
     
-    echo "=== Flight Seeder Finished! Successfully inserted/synced $insertedCount flights ===\n";
+    echo "Flight Seeder Finished! Successfully inserted/synced $insertedCount flights.\n";
     
 } catch (Exception $e) {
     echo "Error during flight seeding: " . $e->getMessage() . "\n";
