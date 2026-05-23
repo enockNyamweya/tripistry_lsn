@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/includes/auth.php';
 
 if (isLoggedIn()) {
-    header('Location: ' . BASE_URL . '/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($userType === 'Traveller') {
             $extra['first_name'] = trim($_POST['first_name'] ?? '');
             $extra['last_name'] = trim($_POST['last_name'] ?? '');
+            $extra['passport'] = trim($_POST['passport'] ?? '');
             if (empty($extra['first_name']) || empty($extra['last_name'])) {
                 $error = 'First name and last name are required.';
             }
@@ -42,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$error) {
             $result = registerUser($email, $password, $userType, $extra);
             if ($result) {
-                $success = 'Registration successful! You can now <a href="' . BASE_URL . '/login.php">login</a>.';
+                $success = 'Registration successful! You can now <a href="/login.php">login</a>.';
             } else {
                 $error = 'Email already registered or an error occurred.';
             }
@@ -50,9 +51,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<?php include __DIR__ . '/includes/header.php'; ?>
-
-    <div class="auth-form" style="max-width: 500px; margin: 40px auto; background: var(--glass-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--glass-border); box-shadow: var(--shadow-md);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — Tripistry</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand"><a href="/index.php">Tripistry</a></div>
+    <div class="nav-links">
+        <a href="/login.php">Login</a>
+        <a href="/register.php">Register</a>
+    </div>
+</nav>
+<main class="container">
+    <div class="auth-form">
         <h1>Register</h1>
         <?php if ($error): ?>
             <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
@@ -90,6 +106,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="last_name">Last Name</label>
                     <input type="text" id="last_name" name="last_name">
                 </div>
+                <div class="form-group">
+                    <label for="passport">Passport Number (optional)</label>
+                    <input type="text" id="passport" name="passport">
+                </div>
             </div>
             <div id="agencyFields" style="display:none;">
                 <div class="form-group">
@@ -99,9 +119,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
-        <p class="auth-link">Already have an account? <a href="<?php echo BASE_URL; ?>/login.php">Login here</a></p>
+        <p class="auth-link">Already have an account? <a href="/login.php">Login here</a></p>
     </div>
-
+</main>
+<footer class="footer"><p>&copy; <?php echo date('Y'); ?> Tripistry</p></footer>
 <script>
 function toggleFields() {
     var type = document.getElementById('user_type').value;
@@ -109,5 +130,5 @@ function toggleFields() {
     document.getElementById('agencyFields').style.display = type === 'Agency' ? 'block' : 'none';
 }
 </script>
-
-<?php include __DIR__ . '/includes/footer.php'; ?>
+</body>
+</html>

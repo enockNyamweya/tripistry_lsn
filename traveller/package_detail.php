@@ -11,9 +11,10 @@ $stmt = $pdo->prepare('
     SELECT p.*, ta.AgencyName, ta.VerificationStatus, u.Email as AgencyEmail, u.UserID as AgencyUserID,
         (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
         (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount
-    FROM TRAVEL_PACKAGE p
-    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
-    JOIN USER u ON ta.UserID = u.UserID
+    FROM PACKAGE p
+    JOIN CURATES c ON p.PackageID = c.PackageID
+    JOIN USER u ON c.UserID = u.UserID
+    JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
     WHERE p.PackageID = ?
 ');
 $stmt->execute([$packageId]);
@@ -26,7 +27,7 @@ if (!$package) {
 }
 
 // Destinations
-$stmt = $pdo->prepare('SELECT d.* FROM DESTINATION d JOIN HAS_DESTINATION v ON d.DestinationID = v.DestinationID WHERE v.PackageID = ?');
+$stmt = $pdo->prepare('SELECT d.* FROM DESTINATION d JOIN VISITS v ON d.DestinationID = v.DestinationID WHERE v.PackageID = ?');
 $stmt->execute([$packageId]);
 $destinations = $stmt->fetchAll();
 
@@ -36,17 +37,17 @@ $stmt->execute([$packageId]);
 $flights = $stmt->fetchAll();
 
 // Accommodations
-$stmt = $pdo->prepare('SELECT a.* FROM ACCOMMODATION a JOIN INCLUDES_ACCOM i ON a.AccommodationID = i.AccommodationID WHERE i.PackageID = ?');
+$stmt = $pdo->prepare('SELECT a.* FROM ACCOMODATION a JOIN INCLUDES_STAY i ON a.AccomodationID = i.AccomodationID WHERE i.PackageID = ?');
 $stmt->execute([$packageId]);
 $accommodations = $stmt->fetchAll();
 
 // Restaurants
-$stmt = $pdo->prepare('SELECT r.* FROM RESTAURANT r JOIN INCLUDES_RESTAURANT pr ON r.RestaurantID = pr.RestaurantID WHERE pr.PackageID = ?');
+$stmt = $pdo->prepare('SELECT r.* FROM RESTAURANT r JOIN PACKAGE_RESTAURANT pr ON r.RestaurantID = pr.RestaurantID WHERE pr.PackageID = ?');
 $stmt->execute([$packageId]);
 $restaurants = $stmt->fetchAll();
 
 // Attractions
-$stmt = $pdo->prepare('SELECT a.* FROM ATTRACTION a JOIN INCLUDES_ATTRACTION pa ON a.AttractionID = pa.AttractionID WHERE pa.PackageID = ?');
+$stmt = $pdo->prepare('SELECT a.* FROM ATTRACTION a JOIN PACKAGE_ATTRACTION pa ON a.AttractionID = pa.AttractionID WHERE pa.PackageID = ?');
 $stmt->execute([$packageId]);
 $attractions = $stmt->fetchAll();
 
@@ -65,7 +66,7 @@ if (isTraveller()) {
 
 // Check if user already booked this package
 $hasBooked = false;
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM BOOKING WHERE UserID = ? AND PackageID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM BOOKS WHERE UserID = ? AND PackageID = ?');
 $stmt->execute([$_SESSION['user_id'], $packageId]);
 $hasBooked = $stmt->fetchColumn() > 0;
 
@@ -90,11 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
 // Handle booking
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'book') {
-    $numTravellers = max(1, (int)$_POST['num_travellers'] ?? 1);
+    $numTravellers = max(1, (int)($_POST['num_travellers'] ?? 1));
     $totalCost = $package['Price'] * $numTravellers;
 
-    $stmt = $pdo->prepare('INSERT INTO BOOKING (UserID, PackageID, TotalCost, Status) VALUES (?, ?, ?, ?)');
-    $stmt->execute([$_SESSION['user_id'], $packageId, $totalCost, 'Confirmed']);
+    $stmt = $pdo->prepare('INSERT INTO BOOKS (UserID, PackageID, TotalCost, NumTravellers, Status) VALUES (?, ?, ?, ?, ?)');
+    $stmt->execute([$_SESSION['user_id'], $packageId, $totalCost, $numTravellers, 'Confirmed']);
     header("Location: package_detail.php?id=$packageId&booked=1");
     exit;
 }
@@ -110,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
     <div class="detail-header">
         <?php if ($package['ImageURL']): ?>
-            <img src="<?php echo BASE_URL; ?>/<?php echo htmlspecialchars($package['ImageURL']); ?>" alt="<?php echo htmlspecialchars($package['Title']); ?>" class="detail-hero-img">
+            <img src="<?php echo htmlspecialchars($package['ImageURL']); ?>" alt="<?php echo htmlspecialchars($package['Title']); ?>" class="detail-hero-img">
         <?php endif; ?>
         <h1><?php echo htmlspecialchars($package['Title']); ?></h1>
         <div class="detail-meta">
@@ -118,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <?php if ($package['VerificationStatus'] === 'Verified'): ?>
                 <span class="verified-badge">Verified Agency</span>
             <?php endif; ?>
+            <a href="/traveller/chat.php?user=<?php echo $package['AgencyUserID']; ?>" class="btn btn-secondary btn-sm">Message Agency</a>
             <?php if ($package['AvgRating']): ?>
                 <span class="rating-badge"><?php echo str_repeat('★', round($package['AvgRating'])); ?> <?php echo number_format($package['AvgRating'], 1); ?></span>
             <?php endif; ?>
@@ -131,6 +133,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <h2>Itinerary</h2>
             <table class="data-table">
                 <tr><th>Duration</th><td><?php echo $package['DurationDays']; ?> days</td></tr>
+                <tr><th>Start Date</th><td><?php echo date('F j, Y', strtotime($package['StartDate'])); ?></td></tr>
+                <tr><th>End Date</th><td><?php echo date('F j, Y', strtotime($package['EndDate'])); ?></td></tr>
+                <tr><th>Max Travellers</th><td><?php echo $package['MaxTravellers']; ?></td></tr>
                 <tr><th>Group Trip</th><td><?php echo $package['IsGroupTrip'] ? 'Yes' : 'No'; ?></td></tr>
             </table>
         </div>
@@ -198,11 +203,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <h2>Book This Package</h2>
         <form method="POST" action="" class="booking-form">
             <input type="hidden" name="action" value="book">
-            <div class="form-group">
+            <div class="form-group" style="flex:1;min-width:140px;">
                 <label for="num_travellers">Number of Travellers</label>
-                <input type="number" id="num_travellers" name="num_travellers" value="1" min="1" max="50" required>
+                <input type="number" id="num_travellers" name="num_travellers" value="1" min="1" max="<?php echo $package['MaxTravellers']; ?>" required>
             </div>
-            <p><strong>Total Cost:</strong> R<?php echo number_format($package['Price'], 2); ?> x <span id="travellerCount">1</span> = <strong>R<span id="totalCost"><?php echo number_format($package['Price'], 2); ?></span></strong></p>
+            <div class="form-group" style="flex:1;min-width:160px;">
+                <label for="trip_start">Trip Start Date</label>
+                <input type="date" id="trip_start" value="<?php echo $package['StartDate']; ?>" onchange="calcEndDate()">
+            </div>
+            <div class="form-group" style="flex:0.6;min-width:90px;">
+                <label for="trip_days">Days</label>
+                <input type="number" id="trip_days" value="<?php echo $package['DurationDays']; ?>" min="1" onchange="calcEndDate()" style="text-align:center;">
+            </div>
+            <div class="form-group" style="flex:1;min-width:160px;">
+                <label>Calculated End Date</label>
+                <span id="calcEndDate" class="calc-end-date"><?php 
+                    $end = new DateTime($package['StartDate']);
+                    $end->modify('+'.($package['DurationDays']-1).' days');
+                    echo $end->format('F j, Y');
+                ?></span>
+            </div>
+            <div style="width:100%;">
+                <p><strong>Total Cost:</strong> R<?php echo number_format($package['Price'], 2); ?> x <span id="travellerCount">1</span> = <strong>R<span id="totalCost"><?php echo number_format($package['Price'], 2); ?></span></strong></p>
+            </div>
             <button type="submit" class="btn btn-primary btn-lg">Book Now</button>
         </form>
     </div>
@@ -270,6 +293,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             totalSpan.textContent = (price * count).toLocaleString('en-ZA', { minimumFractionDigits: 2 });
         });
     }
+
+    window.calcEndDate = function() {
+        var startInput = document.getElementById('trip_start');
+        var daysInput = document.getElementById('trip_days');
+        var display = document.getElementById('calcEndDate');
+        if (startInput && daysInput && display) {
+            var start = new Date(startInput.value + 'T00:00:00');
+            var days = parseInt(daysInput.value) || 1;
+            if (!isNaN(start.getTime())) {
+                start.setDate(start.getDate() + days - 1);
+                var options = { year: 'numeric', month: 'long', day: 'numeric' };
+                display.textContent = start.toLocaleDateString('en-US', options);
+            } else {
+                display.textContent = '—';
+            }
+        }
+    };
 })();
 </script>
 

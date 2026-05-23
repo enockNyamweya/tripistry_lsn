@@ -10,11 +10,12 @@ $minRating = $_GET['min_rating'] ?? '';
 $query = 'SELECT p.*, ta.AgencyName, u.Email,
     (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
     (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount,
-    (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
-    (SELECT d.Country FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
-    FROM TRAVEL_PACKAGE p
-    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
-    JOIN USER u ON ta.UserID = u.UserID
+    (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
+    (SELECT d.Country FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
+    FROM PACKAGE p
+    JOIN CURATES c ON p.PackageID = c.PackageID
+    JOIN USER u ON c.UserID = u.UserID
+    JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
     WHERE p.Status = \'Active\'';
 
 $params = [];
@@ -24,7 +25,7 @@ if ($search) {
     $params = array_merge($params, ["%$search%", "%$search%", "%$search%"]);
 }
 if ($destFilter) {
-    $query .= ' AND p.PackageID IN (SELECT PackageID FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE d.City = ? OR d.Country = ?)';
+    $query .= ' AND p.PackageID IN (SELECT PackageID FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE d.City = ? OR d.Country = ?)';
     $params[] = $destFilter;
     $params[] = $destFilter;
 }
@@ -48,7 +49,8 @@ $sortMap = [
     'duration_desc' => 'p.DurationDays DESC',
     'rating_desc' => 'AvgRating DESC',
     'rating_asc' => 'AvgRating ASC',
-    'title_asc' => 'p.Title ASC'
+    'title_asc' => 'p.Title ASC',
+    'date_asc' => 'p.StartDate ASC',
 ];
 $order = $sortMap[$sort] ?? 'p.Price ASC';
 $query .= ' ORDER BY ' . $order;
@@ -70,11 +72,12 @@ if ($compareIds) {
         SELECT p.*, ta.AgencyName, u.Email,
             (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
             (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount,
-            (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
-            (SELECT d.Country FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
-        FROM TRAVEL_PACKAGE p
-        JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
-        JOIN USER u ON ta.UserID = u.UserID
+            (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
+            (SELECT d.Country FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
+        FROM PACKAGE p
+        JOIN CURATES c ON p.PackageID = c.PackageID
+        JOIN USER u ON c.UserID = u.UserID
+        JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
         WHERE p.PackageID IN ($placeholders)
     ");
     $stmt->execute($compareIds);
@@ -104,6 +107,7 @@ if ($compareIds) {
             <option value="rating_asc" <?php echo $sort === 'rating_asc' ? 'selected' : ''; ?>>Rating: Low-High</option>
             <option value="duration_asc" <?php echo $sort === 'duration_asc' ? 'selected' : ''; ?>>Duration: Short-Long</option>
             <option value="duration_desc" <?php echo $sort === 'duration_desc' ? 'selected' : ''; ?>>Duration: Long-Short</option>
+            <option value="date_asc" <?php echo $sort === 'date_asc' ? 'selected' : ''; ?>>Date: Earliest</option>
             <option value="title_asc" <?php echo $sort === 'title_asc' ? 'selected' : ''; ?>>Title: A-Z</option>
         </select>
         <button type="submit" class="btn btn-primary">Filter</button>
@@ -155,6 +159,12 @@ if ($compareIds) {
                 <?php endforeach; ?>
             </tr>
             <tr>
+                <td><strong>Max Travellers</strong></td>
+                <?php foreach ($comparePackages as $cp): ?>
+                    <td><?php echo $cp['MaxTravellers']; ?></td>
+                <?php endforeach; ?>
+            </tr>
+            <tr>
                 <td><strong>Group Trip</strong></td>
                 <?php foreach ($comparePackages as $cp): ?>
                     <td><?php echo $cp['IsGroupTrip'] ? 'Yes' : 'No'; ?></td>
@@ -184,11 +194,13 @@ if ($compareIds) {
             </div>
             <div class="package-card-body">
                 <?php if ($pkg['ImageURL']): ?>
-                    <img src="<?php echo BASE_URL; ?>/<?php echo htmlspecialchars($pkg['ImageURL']); ?>" alt="<?php echo htmlspecialchars($pkg['Title']); ?>" class="package-img">
+                    <img src="<?php echo htmlspecialchars($pkg['ImageURL']); ?>" alt="<?php echo htmlspecialchars($pkg['Title']); ?>" class="package-img">
                 <?php endif; ?>
                 <div class="package-info">
                     <p><strong>Destination:</strong> <?php echo htmlspecialchars(($pkg['DestinationCity'] ?? 'N/A') . ', ' . ($pkg['DestinationCountry'] ?? '')); ?></p>
                     <p><strong>Duration:</strong> <?php echo $pkg['DurationDays']; ?> days</p>
+                    <p><strong>Dates:</strong> <?php echo date('M d Y', strtotime($pkg['StartDate'])); ?> — <?php echo date('M d Y', strtotime($pkg['EndDate'])); ?></p>
+                    <p><strong>Max Travellers:</strong> <?php echo $pkg['MaxTravellers']; ?></p>
                     <p class="package-rating">
                         <?php if ($pkg['AvgRating']): ?>
                             <?php echo str_repeat('★', round($pkg['AvgRating'])); ?>
