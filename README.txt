@@ -5,11 +5,7 @@
 
 Authors:   Angela Ramaboea, Patrick Simuyemba, Nicole Bare, Enock Nyamweya, Angelo Anthony
 Module:    COS 221
-Tutor:     Johan Nel (Johan.nel@tuks.co.za)
-
-================================================================================
 1.  PROJECT OVERVIEW
-================================================================================
 
 Tripistry is a full-stack web application built from scratch using vanilla
 PHP, HTML5, CSS3, and JavaScript — no frameworks or external libraries.
@@ -61,9 +57,7 @@ tripistry/
 │
 └── uploads/                   # Image upload directory (reserved for future use)
 
-================================================================================
 3.  DATABASE DESIGN (Derived from EER-to-Relational Mapping)
-================================================================================
 
 3.1  Relation Summary (19 tables)
 ---------------------------------------------------------------
@@ -108,9 +102,7 @@ Additional tables from Step 6 (Multivalued Attributes):
 - Price stored as DECIMAL(12,2) for financial precision (no floating-point issues).
 - DurationDays is stored rather than derived for query performance.
 
-================================================================================
 4.  REQUIREMENT-BY-REQUIREMENT IMPLEMENTATION
-================================================================================
 
 4.1  "Log in and manage two distinct user types: Travellers and Travel Agencies"
 ---------------------------------------------------------------
@@ -344,9 +336,7 @@ FILES: config/database.php, all .php files (every query uses prepare/execute)
 VERIFICATION: grep -r "->query(" --include="*.php" returns only read-only
               queries on admin-seeded data with zero user input.
 
-================================================================================
 5.  SECURITY MEASURES (SUMMARY)
-================================================================================
 
 1. SQL Injection:      PDO prepared statements for ALL queries — zero exceptions.
 2. Password Storage:   bcrypt via password_hash() — no plaintext ever stored.
@@ -362,9 +352,7 @@ VERIFICATION: grep -r "->query(" --include="*.php" returns only read-only
 8. Error Handling:     PDO exceptions caught with custom die() messages
                        (no stack traces exposed to users in production).
 
-================================================================================
 6.  SEED DATA
-================================================================================
 
 The database is pre-populated with realistic sample data for demonstration:
 
@@ -385,9 +373,105 @@ The database is pre-populated with realistic sample data for demonstration:
     traveller@test.com      → Traveller (John Doe)
     agency2@test.com        → Agency (Wanderlust Travel Co, Verified)
 
-================================================================================
 7.  HOW TO RUN
-================================================================================
+│   ├── css/
+│   │   ├── reset.css          # Baseline CSS resets
+│   │   ├── variables.css      # Design tokens (Aesthetics: Restored MVP Light Theme colors)
+│   │   ├── layout.css         # Page shell structure, header/footer spacing
+│   │   ├── components.css     # Buttons, inputs, tables, and badge layouts
+│   │   └── pages.css          # Views for browse, bookings, reviews, and comparison
+│   └── js/
+│       ├── ui.js              # Client-side tab toggling, live calculations, & modals
+│       └── alerts.js          # Graceful UI notifications auto-dimmer
+├── database/
+│   ├── schema.sql             # Unified 22-Table schema DDL
+│   ├── import_schema.php      # Developer CLI tool to recreate database & build schema
+│   ├── seed_db.php            # Developer CLI tool to truncate & seed all 22 tables
+│   ├── test_db.php            # Database health verification script
+├── api/
+│   ├── index.php              # Central API router (Path-Info routing fallback enabled)
+│   └── routes/
+│       ├── destinations.php   # REST endpoints for Destination resource
+│       ├── packages.php       # REST endpoints for Travel Packages + Compare query filter
+│       ├── flights.php        # REST endpoints for Flight resources + Departure/Arrival filters
+│       ├── accommodations.php # REST endpoints for Accommodation + StarRating filters
+│       ├── restaurants.php    # REST endpoints for Restaurant resources + CuisineType filter
+│       └── attractions.php    # REST endpoints for Attraction resources
+├── index.php                  # Public landing / home page
+├── login.php                  # Bcrypt login form with demo logins
+├── register.php               # Joint registration form with dynamic subclasses toggle
+├── logout.php                 # Safe session destruction
+├── dashboard.php              # Unified landing gate after registration or login
+├── traveller/                 # TRAVELLER INTERFACES
+│   ├── browse.php             # Directory of destinations, flights, stays, food, attractions
+│   ├── packages.php           # Packages search & comparison page
+│   ├── package_detail.php     # Package details page, Booking Form, Reviews Form & Feed
+│   └── bookings.php           # Traveller booking history
+├── agency/                    # AGENCY INTERFACES
+│   ├── dashboard.php          # Visual statistics and metrics dashboard
+│   ├── packages.php           # Agency packages inventory lists & deletion handlers
+│   ├── create_package.php     # Dynamic multi-select form to curate new packages
+│   ├── edit_package.php       # Pre-filled package details & associations update form
+│   ├── manage_items.php       # Granular package item attachment/detachment panel
+│   └── group_trips.php        # Group trip bookings tracker and manager
+├── uploads/                   # Destination & package image upload storage
+
+
+3. DATABASE DESIGN & SCHEMA (22 TABLES)
+
+The system operates on exactly 22 tables. Names are kept case-insensitive for compatibility. Referential integrity is strictly maintained via foreign keys.
+
+3.1 Relational Database Schema Table Index
+1.  USER                       - Superclass: Credentials and registration base details.
+2.  TRAVELLER                  - Subclass: Details linked to Traveller user type.
+3.  TRAVEL_AGENCY              - Subclass: Agency name, verification status, and commission rates.
+4.  TRAVELLER_PREFERENCE       - Travel preference parameters (budget, pace).
+5.  TRAVELLER_PREFERENCE_TAGS  - Multivalued attributes: preference tags.
+6.  TRAVEL_PACKAGE             - Detailed travel package record.
+7.  GROUP_TRIP                 - Group trip records linking to curated packages.
+8.  BOOKING                    - Bookings placed by Travellers.
+9.  PAYMENT                    - Record of payment schedules/sequences per booking.
+10. REVIEW                     - Review entries containing comments and rating scores.
+11. DESTINATION                - Geographic destinations.
+12. FLIGHT                     - Detailed airline transport details.
+13. ACCOMMODATION              - Hospitality stays (hotels, hostels, resorts).
+14. ACCOMMODATION_AMENITIES    - Multivalued attributes: accommodation amenities list.
+15. RESTAURANT                 - Dining venues linked to destinations.
+16. ATTRACTION                 - Landmarks and excursions.
+17. INCLUDES_FLIGHT            - M:N relation: packages mapping to flights.
+18. INCLUDES_ACCOM             - M:N relation: packages mapping to accommodations.
+19. INCLUDES_RESTAURANT        - M:N relation: packages mapping to restaurants.
+20. INCLUDES_ATTRACTION        - M:N relation: packages mapping to attractions.
+21. HAS_DESTINATION            - M:N relation: packages mapping to destinations.
+22. ENROLS                     - M:N relation: Travellers enrolled into group trips.
+
+3.2 Schema Enhancements & DB Resolutions
+* Column Syncing: Ensured columns used in the PHP queries (such as StarRating, PricePerNight, CuisineType, PriceRange, Rating, EntryFee, Description, ImageURL) exist directly on their respective tables.
+* Junction Table naming: Unified database tables to map directly with SQL requests (e.g., using INCLUDES_ACCOM and ENROLS consistently).
+
+4. REST API LAYOUT (TASK B)
+
+A robust REST API layer resides inside /api/index.php. It responds exclusively in JSON format and provides headless database query access:
+
+* GET /api/destinations - Retrieve all geographic destinations.
+* GET /api/packages - Retrieve active travel packages. Supports comparison parameters (e.g., ?compare=1,2,3) for side-by-side structure reviews.
+* GET /api/flights - Retrieve flight listings. Supports query filters ?departure=JNB and ?arrival=CPT.
+* GET /api/accommodations - Retrieve stays. Supports filtering by minimum star rating ?min_stars=4 and sorting by price ?sort=price_desc.
+* GET /api/restaurants - Retrieve dining venues. Supports filtering by cuisine ?cuisine=French.
+* GET /api/attractions - Retrieve local attractions.
+
+Note: Since standard Apache installations do not have URL rewrite modules enabled by default, the router handles Path-Info queries. You can query endpoints by appending them directly after the file name, for example: /api/index.php/destinations.
+
+
+5. SECURITY IMPLEMENTATION
+
+1. SQL Injection Immunity: 100% of queries across both the frontend web app and the REST API endpoints are parameterized using PDO prepared statements (execute()).
+2. Cryptographic Authentication: Password inputs are encrypted using bcrypt hashing (password_hash with PASSWORD_DEFAULT) and verified with password_verify().
+3. Role Guards: Session access constraints enforce strict user roles. Non-authorized attempts redirect users back to their respective landing dashboards.
+4. XSS Defenses: All browser outputs are encoded with htmlspecialchars().
+
+
+6. HOW TO SETUP AND RUN
 
 Prerequisites:
   - PHP 7.4+ with PDO MySQL extension
