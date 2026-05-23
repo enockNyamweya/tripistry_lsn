@@ -34,40 +34,55 @@ if (isset($uriParts[$nextIndex]) && $uriParts[$nextIndex] === 'index.php') {
 $endpoint = isset($uriParts[$nextIndex]) ? $uriParts[$nextIndex] : '';
 $id = isset($uriParts[$nextIndex + 1]) ? $uriParts[$nextIndex + 1] : null;
 
-// Route the request
-switch ($endpoint) {
-    case 'destinations':
-        require_once __DIR__ . '/routes/destinations.php';
-        handleDestinationsRequest($_SERVER['REQUEST_METHOD'], $id);
-        break;
-        
-    case 'packages':
-        require_once __DIR__ . '/routes/packages.php';
-        handlePackagesRequest($_SERVER['REQUEST_METHOD'], $id);
-        break;
-        
-    case 'flights':
-        require_once __DIR__ . '/routes/flights.php';
-        handleFlightsRequest($_SERVER['REQUEST_METHOD'], $id);
-        break;
-        
-    case 'accommodations':
-        require_once __DIR__ . '/routes/accommodations.php';
-        handleAccommodationsRequest($_SERVER['REQUEST_METHOD'], $id);
-        break;
-        
-    case 'restaurants':
-        require_once __DIR__ . '/routes/restaurants.php';
-        handleRestaurantsRequest($_SERVER['REQUEST_METHOD'], $id);
-        break;
-        
-    case 'attractions':
-        require_once __DIR__ . '/routes/attractions.php';
-        handleAttractionsRequest($_SERVER['REQUEST_METHOD'], $id);
-        break;
-
-    default:
-        http_response_code(404);
-        echo json_encode(["message" => "Endpoint '$endpoint' not recognized."]);
-        break;
+/**
+ * We wrap the entire router in a try/catch block so that if a database query crashes 
+ * inside one of the route files, the API catches it here and returns a clean 500 JSON error.
+ * Without this, the server would spit out ugly HTML error logs that break frontend apps.
+ */
+try {
+    // Route the request
+    switch ($endpoint) {
+        case 'destinations':
+            require_once __DIR__ . '/routes/destinations.php';
+            handleDestinationsRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+            
+        case 'packages':
+            require_once __DIR__ . '/routes/packages.php';
+            handlePackagesRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+            
+        case 'flights':
+            require_once __DIR__ . '/routes/flights.php';
+            handleFlightsRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+            
+        case 'accommodations':
+            require_once __DIR__ . '/routes/accommodations.php';
+            handleAccommodationsRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+            
+        case 'restaurants':
+            require_once __DIR__ . '/routes/restaurants.php';
+            handleRestaurantsRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+            
+        case 'attractions':
+            require_once __DIR__ . '/routes/attractions.php';
+            handleAttractionsRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+    
+        default:
+            http_response_code(404);
+            echo json_encode(["message" => "Endpoint '$endpoint' not recognized."]);
+            break;
+    }
+} catch (PDOException $e) {
+    // Catch database connection or query errors
+    http_response_code(500);
+    echo json_encode(["message" => "Database Error: " . $e->getMessage()]);
+} catch (Exception $e) {
+    // Catch any other generic exceptions
+    http_response_code(500);
+    echo json_encode(["message" => "Server Error: " . $e->getMessage()]);
 }
