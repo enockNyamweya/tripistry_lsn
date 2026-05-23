@@ -1,7 +1,7 @@
 <?php
 // Importing Destination Data from OpenTripMap API or Kaggle CSV
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../config/env.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/env.php';
 
 define('OTM_BASE', 'https://api.opentripmap.com/0.1');
 define('CSV_PATH', __DIR__ . '/worldcities.csv');
@@ -10,6 +10,18 @@ define('CSV_PATH', __DIR__ . '/worldcities.csv');
 function country(string $code): string {
     $name = locale_get_display_region(strtoupper($code), 'en');
     return $name ?: $code;
+}
+
+// Find local image for city or fallback to a random destination image
+function getLocalImage(string $cityName): string {
+    $filename = strtolower(str_replace(' ', '_', $cityName)) . '.jpg';
+    $path = __DIR__ . '/../../uploads/destinations/' . $filename;
+    if (file_exists($path)) {
+        return BASE_URL . '/uploads/destinations/' . $filename;
+    }
+    // Fallback to random dest_X.jpg
+    $rand = rand(1, 100);
+    return BASE_URL . '/uploads/destinations/dest_' . $rand . '.jpg';
 }
 
 // Fetch city coordinates and description via OpenTripMap
@@ -31,13 +43,12 @@ function fetchCity(string $city): ?array {
 
     $dJson = @file_get_contents(OTM_BASE . "/en/places/xid/$xid?" . http_build_query(['apikey' => $key]));
     $desc  = '';
-    $image = '';
     if ($dJson) {
         $detail = json_decode($dJson, true);
         $desc   = $detail['wikipedia_extracts']['text'] ?? '';
         $desc   = substr(strip_tags($desc), 0, 500);
-        $image  = $detail['image'] ?? '';
     }
+    $image = getLocalImage($name);
     return ['name' => $name, 'country' => $cc, 'lat' => $lat, 'lon' => $lon, 'desc' => $desc, 'image' => $image];
 }
 
@@ -67,7 +78,7 @@ function readCsv(): array {
             'lat'     => $lat,
             'lon'     => $lon,
             'desc'    => "Explore $city, $cc, a vibrant travel destination.",
-            'image'   => '',
+            'image'   => getLocalImage($city),
         ];
     }
     fclose($handle);
@@ -80,7 +91,7 @@ function save(PDO $pdo, array $d): void {
         INSERT INTO DESTINATION (City, Country, Latitude, Longitude, Description, ImageURL)
         VALUES (:city, :country, :lat, :lon, :desc, :image)
         ON DUPLICATE KEY UPDATE Latitude=VALUES(Latitude), Longitude=VALUES(Longitude),
-                                Description=VALUES(Description)
+                                Description=VALUES(Description), ImageURL=VALUES(ImageURL)
     ');
     $stmt->execute([
         ':city'    => $d['name'],
