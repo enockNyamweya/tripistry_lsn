@@ -146,9 +146,6 @@ will dynamically adjust whether you are using an XAMPP sub-directory or the root
 To ensure the new features from the 'main' branch work seamlessly in all local environments (especially XAMPP), the following critical fixes were applied:
 
 - Dynamic Pathing Implementation: Hardcoded absolute links (e.g. href="/login.php") across all frontend files (including the new chat and bookings pages) were refactored to use a dynamic <?php echo BASE_URL; ?> variable. This prevents broken links when hosting the project in a subdirectory.
-- Database Schema Alignment: 
-  - Prepended 'DROP DATABASE IF EXISTS tripistry_lsn;' to sql/setup.sql to ensure smooth database imports without throwing "Table already exists" errors.
-  - Aligned the api/routes/packages.php and api/routes/accommodations.php endpoints to query the new 22-table schema correctly (e.g., swapping TRAVEL_PACKAGE for PACKAGE, adding the CURATES and VISITS tables, and fixing the spelling of ACCOMODATION).
 - README Cleanup: Removed duplicate and conflicting legacy schema definitions to accurately reflect the unified 22-table structure.
 
 END OF README
