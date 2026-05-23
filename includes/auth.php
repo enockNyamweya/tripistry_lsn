@@ -15,7 +15,7 @@ function isAgency() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: ' . BASE_URL . '/login.php');
+        header('Location: /login.php');
         exit;
     }
 }
@@ -23,7 +23,7 @@ function requireLogin() {
 function requireTraveller() {
     requireLogin();
     if (!isTraveller()) {
-        header('Location: ' . BASE_URL . '/dashboard.php');
+        header('Location: /dashboard.php');
         exit;
     }
 }
@@ -31,7 +31,7 @@ function requireTraveller() {
 function requireAgency() {
     requireLogin();
     if (!isAgency()) {
-        header('Location: ' . BASE_URL . '/dashboard.php');
+        header('Location: /dashboard.php');
         exit;
     }
 }
@@ -61,8 +61,8 @@ function registerUser($email, $password, $userType, $extra) {
         $userId = $pdo->lastInsertId();
 
         if ($userType === 'Traveller') {
-            $stmt = $pdo->prepare('INSERT INTO TRAVELLER (UserID, FirstName, LastName, PreferenceID) VALUES (?, ?, ?, NULL)');
-            $stmt->execute([$userId, $extra['first_name'], $extra['last_name']]);
+            $stmt = $pdo->prepare('INSERT INTO TRAVELLER (UserID, FirstName, LastName, PassportNum) VALUES (?, ?, ?, ?)');
+            $stmt->execute([$userId, $extra['first_name'], $extra['last_name'], $extra['passport'] ?? null]);
         } elseif ($userType === 'Agency') {
             $stmt = $pdo->prepare('INSERT INTO TRAVEL_AGENCY (UserID, AgencyName, VerificationStatus, CommissionRate) VALUES (?, ?, ?, ?)');
             $stmt->execute([$userId, $extra['agency_name'], 'Pending', 10.00]);
@@ -78,13 +78,13 @@ function registerUser($email, $password, $userType, $extra) {
 
 function logoutUser() {
     session_destroy();
-    header('Location: ' . BASE_URL . '/login.php');
+    header('Location: /login.php');
     exit;
 }
 
 function getUserInfo($userId) {
     global $pdo;
-    $stmt = $pdo->prepare('SELECT u.*, t.FirstName, t.LastName, t.PreferenceID, ta.AgencyName, ta.VerificationStatus FROM USER u LEFT JOIN TRAVELLER t ON u.UserID = t.UserID LEFT JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID WHERE u.UserID = ?');
+    $stmt = $pdo->prepare('SELECT u.*, t.FirstName, t.LastName, t.PassportNum, ta.AgencyName, ta.VerificationStatus FROM USER u LEFT JOIN TRAVELLER t ON u.UserID = t.UserID LEFT JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID WHERE u.UserID = ?');
     $stmt->execute([$userId]);
     return $stmt->fetch();
 }
@@ -98,7 +98,7 @@ function getAgencyInfo($userId) {
 
 function getTravellerInfo($userId) {
     global $pdo;
-    $stmt = $pdo->prepare('SELECT u.UserID, t.FirstName, t.LastName, t.PreferenceID FROM USER u JOIN TRAVELLER t ON u.UserID = t.UserID WHERE u.UserID = ?');
+    $stmt = $pdo->prepare('SELECT u.UserID, t.FirstName, t.LastName, t.PassportNum FROM USER u JOIN TRAVELLER t ON u.UserID = t.UserID WHERE u.UserID = ?');
     $stmt->execute([$userId]);
     return $stmt->fetch();
 }

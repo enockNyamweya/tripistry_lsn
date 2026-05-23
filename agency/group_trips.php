@@ -1,13 +1,14 @@
 <?php include __DIR__ . '/../includes/header.php'; requireAgency();
 
 $stmt = $pdo->prepare('
-    SELECT g.*, p.Title as PackageTitle, p.PackageID as PID, p.Status as PackageStatus, p.DurationDays,
-        (SELECT COUNT(*) FROM ENROLS ge WHERE ge.GroupTripID = g.GroupTripID) as EnrolmentCount,
-        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+    SELECT g.*, p.Title as PackageTitle, p.PackageID as PID,
+        (SELECT COUNT(*) FROM GROUP_TRIP_ENROLMENT ge WHERE ge.GroupTripID = g.GroupTripID) as EnrolmentCount,
+        (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
     FROM GROUP_TRIP g
-    JOIN TRAVEL_PACKAGE p ON g.PackageID = p.PackageID
-    WHERE g.AgencyID = ?
-    ORDER BY g.GroupTripID DESC
+    JOIN PACKAGE p ON g.PackageID = p.PackageID
+    JOIN CURATES c ON p.PackageID = c.PackageID
+    WHERE c.UserID = ?
+    ORDER BY g.DepartureDate ASC
 ');
 $stmt->execute([$_SESSION['user_id']]);
 $groupTrips = $stmt->fetchAll();
@@ -16,8 +17,8 @@ $groupTrips = $stmt->fetchAll();
 if (isset($_GET['status']) && isset($_GET['gid'])) {
     $newStatus = $_GET['status'];
     $gid = (int)$_GET['gid'];
-    if (in_array($newStatus, ['Active', 'Inactive'])) {
-        $stmt = $pdo->prepare('UPDATE TRAVEL_PACKAGE p JOIN GROUP_TRIP g ON p.PackageID = g.PackageID SET p.Status = ? WHERE g.GroupTripID = ? AND g.AgencyID = ?');
+    if (in_array($newStatus, ['Open', 'Closed', 'Cancelled'])) {
+        $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET Status = ? WHERE GroupTripID = ? AND PackageID IN (SELECT PackageID FROM CURATES WHERE UserID = ?)');
         $stmt->execute([$newStatus, $gid, $_SESSION['user_id']]);
     }
     header('Location: group_trips.php?updated=1');
@@ -28,7 +29,7 @@ if (isset($_GET['status']) && isset($_GET['gid'])) {
 <h1>Group Trips</h1>
 
 <?php if (isset($_GET['updated'])): ?>
-    <div class="alert alert-success">Group trip status updated successfully.</div>
+    <div class="alert alert-success">Group trip updated successfully.</div>
 <?php endif; ?>
 
 <a href="create_package.php" class="btn btn-primary" style="margin-bottom:1rem;">Create New Group Trip</a>
@@ -42,8 +43,8 @@ if (isset($_GET['status']) && isset($_GET['gid'])) {
                 <th>Group Name</th>
                 <th>Package</th>
                 <th>Destination</th>
-                <th>Duration</th>
-                <th>Max Capacity</th>
+                <th>Dates</th>
+                <th>Participants</th>
                 <th>Enrolments</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -52,19 +53,22 @@ if (isset($_GET['status']) && isset($_GET['gid'])) {
         <tbody>
             <?php foreach ($groupTrips as $g): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($g['TripName']); ?></td>
+                    <td><?php echo htmlspecialchars($g['GroupName']); ?></td>
                     <td><?php echo htmlspecialchars($g['PackageTitle']); ?></td>
                     <td><?php echo htmlspecialchars($g['DestinationCity'] ?? 'N/A'); ?></td>
-                    <td><?php echo $g['DurationDays']; ?> days</td>
-                    <td><?php echo $g['MaxCapacity']; ?></td>
+                    <td><?php echo date('M d', strtotime($g['DepartureDate'])); ?> — <?php echo date('M d', strtotime($g['ReturnDate'])); ?></td>
+                    <td><?php echo $g['MinParticipants']; ?>-<?php echo $g['MaxParticipants']; ?></td>
                     <td><?php echo $g['EnrolmentCount']; ?></td>
-                    <td><span class="status-badge status-<?php echo strtolower($g['PackageStatus']); ?>"><?php echo htmlspecialchars($g['PackageStatus']); ?></span></td>
+                    <td><span class="status-badge status-<?php echo strtolower($g['Status']); ?>"><?php echo htmlspecialchars($g['Status']); ?></span></td>
                     <td class="actions">
                         <a href="edit_package.php?id=<?php echo $g['PID']; ?>" class="btn btn-secondary btn-sm">Edit Package</a>
-                        <?php if ($g['PackageStatus'] === 'Active'): ?>
-                            <a href="?gid=<?php echo $g['GroupTripID']; ?>&status=Inactive" class="btn btn-secondary btn-sm">Deactivate</a>
-                        <?php else: ?>
-                            <a href="?gid=<?php echo $g['GroupTripID']; ?>&status=Active" class="btn btn-secondary btn-sm">Activate</a>
+                        <?php if ($g['Status'] === 'Open'): ?>
+                            <a href="?gid=<?php echo $g['GroupTripID']; ?>&status=Closed" class="btn btn-secondary btn-sm">Close</a>
+                        <?php elseif ($g['Status'] === 'Closed'): ?>
+                            <a href="?gid=<?php echo $g['GroupTripID']; ?>&status=Open" class="btn btn-secondary btn-sm">Reopen</a>
+                        <?php endif; ?>
+                        <?php if ($g['Status'] !== 'Cancelled'): ?>
+                            <a href="?gid=<?php echo $g['GroupTripID']; ?>&status=Cancelled" class="btn btn-danger btn-sm" onclick="return confirm('Cancel this group trip?')">Cancel</a>
                         <?php endif; ?>
                     </td>
                 </tr>

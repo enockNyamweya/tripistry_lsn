@@ -2,9 +2,10 @@
 
 $stmt = $pdo->prepare('
     SELECT b.*, p.Title, p.PackageID as PID, p.ImageURL, ta.AgencyName
-    FROM BOOKING b
-    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
-    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
+    FROM BOOKS b
+    JOIN PACKAGE p ON b.PackageID = p.PackageID
+    JOIN CURATES c ON p.PackageID = c.PackageID
+    JOIN TRAVEL_AGENCY ta ON c.UserID = ta.UserID
     WHERE b.UserID = ?
     ORDER BY b.BookingDate DESC
 ');
@@ -23,6 +24,7 @@ $bookings = $stmt->fetchAll();
                 <th>Package</th>
                 <th>Agency</th>
                 <th>Booking Date</th>
+                <th>Travellers</th>
                 <th>Total Cost</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -34,6 +36,7 @@ $bookings = $stmt->fetchAll();
                     <td><?php echo htmlspecialchars($b['Title']); ?></td>
                     <td><?php echo htmlspecialchars($b['AgencyName']); ?></td>
                     <td><?php echo date('M d Y', strtotime($b['BookingDate'])); ?></td>
+                    <td><?php echo $b['NumTravellers']; ?></td>
                     <td>R<?php echo number_format($b['TotalCost'], 2); ?></td>
                     <td><span class="status-badge status-<?php echo strtolower($b['Status']); ?>"><?php echo htmlspecialchars($b['Status']); ?></span></td>
                     <td><a href="package_detail.php?id=<?php echo $b['PID']; ?>" class="btn btn-secondary btn-sm">View / Review</a></td>

@@ -1,6 +1,6 @@
 <?php include __DIR__ . '/../includes/header.php'; requireTraveller(); ?>
 
-<h1>Browse Tripistry_lsn</h1>
+<h1>Browse Tripistry</h1>
 
 <div class="browse-tabs">
     <button class="tab-btn active" onclick="showTab('destinations')">Destinations</button>
@@ -20,7 +20,7 @@ $stmt = $pdo->query('SELECT * FROM FLIGHT ORDER BY DepartureTime');
 $flights = $stmt->fetchAll();
 
 // Accommodations
-$stmt = $pdo->query('SELECT a.*, d.City, d.Country FROM ACCOMMODATION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID ORDER BY a.StarRating DESC');
+$stmt = $pdo->query('SELECT a.*, d.City, d.Country FROM ACCOMODATION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID ORDER BY a.StarRating DESC');
 $accommodations = $stmt->fetchAll();
 
 // Restaurants
@@ -37,7 +37,7 @@ $attractions = $stmt->fetchAll();
         <?php foreach ($destinations as $dest): ?>
             <div class="card">
                 <?php if ($dest['ImageURL']): ?>
-                    <img src="<?php echo BASE_URL; ?>/<?php echo htmlspecialchars($dest['ImageURL']); ?>" alt="<?php echo htmlspecialchars($dest['City']); ?>" class="card-img">
+                    <img src="<?php echo htmlspecialchars($dest['ImageURL']); ?>" alt="<?php echo htmlspecialchars($dest['City']); ?>" class="card-img">
                 <?php endif; ?>
                 <div class="card-body">
                     <h3><?php echo htmlspecialchars($dest['City']); ?>, <?php echo htmlspecialchars($dest['Country']); ?></h3>
