@@ -14,7 +14,7 @@ if (!$traveller) {
 }
 
 // Get packages curated by this agency
-$pkgs = $pdo->prepare('SELECT p.PackageID, p.Title FROM PACKAGE p JOIN CURATES c ON p.PackageID = c.PackageID WHERE c.UserID = ?');
+$pkgs = $pdo->prepare('SELECT p.PackageID, p.Title FROM TRAVEL_PACKAGE p WHERE p.AgencyID = ?');
 $pkgs->execute([$_SESSION['user_id']]);
 $packages = $pkgs->fetchAll();
 
@@ -53,7 +53,7 @@ $messages = getMessages($_SESSION['user_id'], $partnerId);
                     <p><?php echo nl2br(htmlspecialchars($msg['Message'])); ?></p>
                     <?php if ($msg['PackageID']): ?>
                         <?php
-                        $pkgStmt = $pdo->prepare('SELECT Title FROM PACKAGE WHERE PackageID = ?');
+                        $pkgStmt = $pdo->prepare('SELECT Title FROM TRAVEL_PACKAGE WHERE PackageID = ?');
                         $pkgStmt->execute([$msg['PackageID']]);
                         $refPkg = $pkgStmt->fetch();
                         if ($refPkg): ?>

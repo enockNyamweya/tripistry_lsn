@@ -68,12 +68,17 @@ try {
     echo "[2/7] Importing Travel Agencies...\n";
     $count = 0;
     $agencyIds = [];
+    $passwordCache = [];
     $stmtUser = $pdo->prepare("INSERT IGNORE INTO USER (Email, Password, UserType) VALUES (?, ?, 'Agency')");
     $stmtUserId = $pdo->prepare("SELECT UserID FROM USER WHERE Email = ?");
     $stmtAgency = $pdo->prepare("INSERT IGNORE INTO TRAVEL_AGENCY (UserID, AgencyName, VerificationStatus, CommissionRate) VALUES (?, ?, ?, ?)");
     foreach ($sections['agency'] as $row) {
         $email  = r($row, 1);
-        $pass   = password_hash(r($row, 2), PASSWORD_DEFAULT);
+        $plainPass = r($row, 2);
+        if (!isset($passwordCache[$plainPass])) {
+            $passwordCache[$plainPass] = password_hash($plainPass, PASSWORD_DEFAULT);
+        }
+        $pass   = $passwordCache[$plainPass];
         $name   = r($row, 3);
         $status = r($row, 4);
         $rate   = r($row, 5);
@@ -97,7 +102,11 @@ try {
     $stmtTraveller = $pdo->prepare("INSERT IGNORE INTO TRAVELLER (UserID, FirstName, LastName) VALUES (?, ?, ?)");
     foreach ($sections['traveller'] as $row) {
         $email  = r($row, 1);
-        $pass   = password_hash(r($row, 2), PASSWORD_DEFAULT);
+        $plainPass = r($row, 2);
+        if (!isset($passwordCache[$plainPass])) {
+            $passwordCache[$plainPass] = password_hash($plainPass, PASSWORD_DEFAULT);
+        }
+        $pass   = $passwordCache[$plainPass];
         $fName  = r($row, 3);
         $lName  = r($row, 4);
 

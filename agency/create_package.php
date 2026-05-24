@@ -24,17 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare('INSERT INTO PACKAGE (Title, Description, Price, DurationDays, StartDate, EndDate, MaxTravellers, IsGroupTrip, ImageURL, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-            $stmt->execute([$title, $description, $price, $duration, $startDate, $endDate, $maxTravellers, $isGroupTrip, $imageURL, $status]);
+            $stmt = $pdo->prepare('INSERT INTO TRAVEL_PACKAGE (Title, Description, Price, DurationDays, IsGroupTrip, ImageURL, Status, AgencyID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+            $stmt->execute([$title, $description, $price, $duration, $isGroupTrip, $imageURL, $status, $_SESSION['user_id']]);
             $packageId = $pdo->lastInsertId();
-
-            // Link agency
-            $stmt = $pdo->prepare('INSERT INTO CURATES (UserID, PackageID) VALUES (?, ?)');
-            $stmt->execute([$_SESSION['user_id'], $packageId]);
 
             // Link destinations
             foreach ($destinations as $did) {
-                $stmt = $pdo->prepare('INSERT IGNORE INTO VISITS (PackageID, DestinationID) VALUES (?, ?)');
+                $stmt = $pdo->prepare('INSERT IGNORE INTO HAS_DESTINATION (PackageID, DestinationID) VALUES (?, ?)');
                 $stmt->execute([$packageId, (int)$did]);
             }
             // Link flights
@@ -44,30 +40,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             // Link accommodations
             foreach ($accommodations as $aid) {
-                $stmt = $pdo->prepare('INSERT IGNORE INTO INCLUDES_STAY (PackageID, AccomodationID) VALUES (?, ?)');
+                $stmt = $pdo->prepare('INSERT IGNORE INTO INCLUDES_ACCOM (PackageID, AccommodationID) VALUES (?, ?)');
                 $stmt->execute([$packageId, (int)$aid]);
             }
             // Link restaurants
             foreach ($restaurants as $rid) {
-                $stmt = $pdo->prepare('INSERT IGNORE INTO PACKAGE_RESTAURANT (PackageID, RestaurantID) VALUES (?, ?)');
+                $stmt = $pdo->prepare('INSERT IGNORE INTO INCLUDES_RESTAURANT (PackageID, RestaurantID) VALUES (?, ?)');
                 $stmt->execute([$packageId, (int)$rid]);
             }
             // Link attractions
             foreach ($attractions as $aid) {
-                $stmt = $pdo->prepare('INSERT IGNORE INTO PACKAGE_ATTRACTION (PackageID, AttractionID) VALUES (?, ?)');
+                $stmt = $pdo->prepare('INSERT IGNORE INTO INCLUDES_ATTRACTION (PackageID, AttractionID) VALUES (?, ?)');
                 $stmt->execute([$packageId, (int)$aid]);
             }
 
             // Auto-create group trip entry if enabled
             if ($isGroupTrip) {
                 $groupName = trim($_POST['group_name'] ?? '');
-                $minP = (int)($_POST['min_participants'] ?? 2);
                 $maxP = (int)($_POST['max_participants'] ?? $maxTravellers);
-                $depDate = $_POST['group_departure'] ?? $startDate;
-                $retDate = $_POST['group_return'] ?? $endDate;
                 if (empty($groupName)) $groupName = $title . ' Group';
-                $stmt = $pdo->prepare('INSERT INTO GROUP_TRIP (PackageID, GroupName, MinParticipants, MaxParticipants, Status, DepartureDate, ReturnDate) VALUES (?, ?, ?, ?, ?, ?, ?)');
-                $stmt->execute([$packageId, $groupName, $minP, $maxP, 'Open', $depDate, $retDate]);
+                $stmt = $pdo->prepare('INSERT INTO GROUP_TRIP (TripName, MaxCapacity, AgencyID, PackageID) VALUES (?, ?, ?, ?)');
+                $stmt->execute([$groupName, $maxP, $_SESSION['user_id'], $packageId]);
             }
 
             $pdo->commit();
@@ -83,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Fetch all destinations, flights, accommodations etc for selection
 $destinations = $pdo->query('SELECT * FROM DESTINATION ORDER BY Country, City')->fetchAll();
 $flights = $pdo->query('SELECT * FROM FLIGHT ORDER BY DepartureTime')->fetchAll();
-$accommodations = $pdo->query('SELECT * FROM ACCOMODATION ORDER BY Name')->fetchAll();
+$accommodations = $pdo->query('SELECT * FROM ACCOMMODATION ORDER BY Name')->fetchAll();
 $restaurants = $pdo->query('SELECT * FROM RESTAURANT ORDER BY Name')->fetchAll();
 $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll();
 ?>
@@ -208,7 +201,7 @@ $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll()
                 <label>Accommodations</label>
                 <div class="checkbox-list">
                     <?php foreach ($accommodations as $a): ?>
-                        <label><input type="checkbox" name="accommodations[]" value="<?php echo $a['AccomodationID']; ?>">
+                        <label><input type="checkbox" name="accommodations[]" value="<?php echo $a['AccommodationID']; ?>">
                             <?php echo htmlspecialchars($a['Name'] . ' (' . $a['Type'] . ', ' . $a['StarRating'] . '★)'); ?></label>
                     <?php endforeach; ?>
                 </div>

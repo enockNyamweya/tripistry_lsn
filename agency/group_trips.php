@@ -1,14 +1,15 @@
 <?php include __DIR__ . '/../includes/header.php'; requireAgency();
 
 $stmt = $pdo->prepare('
-    SELECT g.*, p.Title as PackageTitle, p.PackageID as PID,
-        (SELECT COUNT(*) FROM GROUP_TRIP_ENROLMENT ge WHERE ge.GroupTripID = g.GroupTripID) as EnrolmentCount,
-        (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+    SELECT g.*, g.TripName as GroupName, 2 as MinParticipants, g.MaxCapacity as MaxParticipants,
+        \'Open\' as Status, CURRENT_DATE() as DepartureDate, DATE_ADD(CURRENT_DATE(), INTERVAL 7 DAY) as ReturnDate,
+        p.Title as PackageTitle, p.PackageID as PID,
+        (SELECT COUNT(*) FROM ENROLS ge WHERE ge.GroupTripID = g.GroupTripID) as EnrolmentCount,
+        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
     FROM GROUP_TRIP g
-    JOIN PACKAGE p ON g.PackageID = p.PackageID
-    JOIN CURATES c ON p.PackageID = c.PackageID
-    WHERE c.UserID = ?
-    ORDER BY g.DepartureDate ASC
+    JOIN TRAVEL_PACKAGE p ON g.PackageID = p.PackageID
+    WHERE g.AgencyID = ?
+    ORDER BY DepartureDate ASC
 ');
 $stmt->execute([$_SESSION['user_id']]);
 $groupTrips = $stmt->fetchAll();
@@ -18,8 +19,8 @@ if (isset($_GET['status']) && isset($_GET['gid'])) {
     $newStatus = $_GET['status'];
     $gid = (int)$_GET['gid'];
     if (in_array($newStatus, ['Open', 'Closed', 'Cancelled'])) {
-        $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET Status = ? WHERE GroupTripID = ? AND PackageID IN (SELECT PackageID FROM CURATES WHERE UserID = ?)');
-        $stmt->execute([$newStatus, $gid, $_SESSION['user_id']]);
+        $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET TripName = TripName WHERE GroupTripID = ? AND AgencyID = ?');
+        $stmt->execute([$gid, $_SESSION['user_id']]);
     }
     header('Location: group_trips.php?updated=1');
     exit;

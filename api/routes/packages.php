@@ -11,11 +11,10 @@ function handlePackagesRequest($method, $id) {
                 $stmt = $pdo->prepare("
                     SELECT p.*, ta.AgencyName, u.Email,
                         (SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID) as AvgRating,
-                        (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
-                    FROM PACKAGE p
-                    JOIN CURATES c ON p.PackageID = c.PackageID
-                    JOIN TRAVEL_AGENCY ta ON c.UserID = ta.UserID
-                    JOIN USER u ON ta.UserID = u.UserID
+                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+                    FROM TRAVEL_PACKAGE p
+                    JOIN USER u ON p.AgencyID = u.UserID
+                    JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
                     WHERE p.PackageID = :id
                 ");
                 $stmt->execute([':id' => $id]);
@@ -42,10 +41,9 @@ function handlePackagesRequest($method, $id) {
                 $stmt = $pdo->prepare("
                     SELECT p.PackageID, p.Title, p.Price, p.DurationDays, ta.AgencyName,
                         COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
-                        (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
-                    FROM PACKAGE p
-                    JOIN CURATES c ON p.PackageID = c.PackageID
-                    JOIN TRAVEL_AGENCY ta ON c.UserID = ta.UserID
+                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+                    FROM TRAVEL_PACKAGE p
+                    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
                     WHERE p.PackageID IN ($placeholders)
                 ");
                 $stmt->execute($compareIds);
@@ -60,10 +58,9 @@ function handlePackagesRequest($method, $id) {
                     SELECT p.PackageID, p.Title, p.Price, p.DurationDays, ta.AgencyName,
                         COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
                         d.City as DestinationCity
-                    FROM PACKAGE p
-                    JOIN CURATES c ON p.PackageID = c.PackageID
-                    JOIN TRAVEL_AGENCY ta ON c.UserID = ta.UserID
-                    JOIN VISITS hd ON p.PackageID = hd.PackageID
+                    FROM TRAVEL_PACKAGE p
+                    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
+                    JOIN HAS_DESTINATION hd ON p.PackageID = hd.PackageID
                     JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
                     WHERE (d.City LIKE :dest OR d.Country LIKE :dest OR d.DestinationID = :dest_id) AND p.Status = 'Active'
                 ";
@@ -80,17 +77,16 @@ function handlePackagesRequest($method, $id) {
                 $query = "
                     SELECT p.*, ta.AgencyName,
                         COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
-                        (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
-                    FROM PACKAGE p
-                    JOIN CURATES c ON p.PackageID = c.PackageID
-                    JOIN TRAVEL_AGENCY ta ON c.UserID = ta.UserID
+                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+                    FROM TRAVEL_PACKAGE p
+                    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
                     WHERE p.Status = 'Active'
                 ";
                 $params = [];
                 
                 if (isset($_GET['destination'])) {
                     $query .= " AND p.PackageID IN (
-                        SELECT hd.PackageID FROM VISITS hd
+                        SELECT hd.PackageID FROM HAS_DESTINATION hd
                         JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
                         WHERE d.City LIKE :destination OR d.Country LIKE :destination
                     )";

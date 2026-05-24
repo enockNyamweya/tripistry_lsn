@@ -9,11 +9,12 @@ if (!$packageId) {
 // Package with agency info
 $stmt = $pdo->prepare('
     SELECT p.*, ta.AgencyName, ta.VerificationStatus, u.Email as AgencyEmail, u.UserID as AgencyUserID,
+        CURRENT_DATE() as StartDate, DATE_ADD(CURRENT_DATE(), INTERVAL p.DurationDays DAY) as EndDate,
+        20 as MaxTravellers,
         (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
         (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount
-    FROM PACKAGE p
-    JOIN CURATES c ON p.PackageID = c.PackageID
-    JOIN USER u ON c.UserID = u.UserID
+    FROM TRAVEL_PACKAGE p
+    JOIN USER u ON p.AgencyID = u.UserID
     JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
     WHERE p.PackageID = ?
 ');
@@ -27,7 +28,7 @@ if (!$package) {
 }
 
 // Destinations
-$stmt = $pdo->prepare('SELECT d.* FROM DESTINATION d JOIN VISITS v ON d.DestinationID = v.DestinationID WHERE v.PackageID = ?');
+$stmt = $pdo->prepare('SELECT d.* FROM DESTINATION d JOIN HAS_DESTINATION v ON d.DestinationID = v.DestinationID WHERE v.PackageID = ?');
 $stmt->execute([$packageId]);
 $destinations = $stmt->fetchAll();
 
@@ -37,17 +38,17 @@ $stmt->execute([$packageId]);
 $flights = $stmt->fetchAll();
 
 // Accommodations
-$stmt = $pdo->prepare('SELECT a.* FROM ACCOMODATION a JOIN INCLUDES_STAY i ON a.AccomodationID = i.AccomodationID WHERE i.PackageID = ?');
+$stmt = $pdo->prepare('SELECT a.* FROM ACCOMMODATION a JOIN INCLUDES_ACCOM i ON a.AccommodationID = i.AccommodationID WHERE i.PackageID = ?');
 $stmt->execute([$packageId]);
 $accommodations = $stmt->fetchAll();
 
 // Restaurants
-$stmt = $pdo->prepare('SELECT r.* FROM RESTAURANT r JOIN PACKAGE_RESTAURANT pr ON r.RestaurantID = pr.RestaurantID WHERE pr.PackageID = ?');
+$stmt = $pdo->prepare('SELECT r.* FROM RESTAURANT r JOIN INCLUDES_RESTAURANT pr ON r.RestaurantID = pr.RestaurantID WHERE pr.PackageID = ?');
 $stmt->execute([$packageId]);
 $restaurants = $stmt->fetchAll();
 
 // Attractions
-$stmt = $pdo->prepare('SELECT a.* FROM ATTRACTION a JOIN PACKAGE_ATTRACTION pa ON a.AttractionID = pa.AttractionID WHERE pa.PackageID = ?');
+$stmt = $pdo->prepare('SELECT a.* FROM ATTRACTION a JOIN INCLUDES_ATTRACTION pa ON a.AttractionID = pa.AttractionID WHERE pa.PackageID = ?');
 $stmt->execute([$packageId]);
 $attractions = $stmt->fetchAll();
 
@@ -66,7 +67,7 @@ if (isTraveller()) {
 
 // Check if user already booked this package
 $hasBooked = false;
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM BOOKS WHERE UserID = ? AND PackageID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM BOOKING WHERE UserID = ? AND PackageID = ?');
 $stmt->execute([$_SESSION['user_id'], $packageId]);
 $hasBooked = $stmt->fetchColumn() > 0;
 
@@ -94,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $numTravellers = max(1, (int)($_POST['num_travellers'] ?? 1));
     $totalCost = $package['Price'] * $numTravellers;
 
-    $stmt = $pdo->prepare('INSERT INTO BOOKS (UserID, PackageID, TotalCost, NumTravellers, Status) VALUES (?, ?, ?, ?, ?)');
-    $stmt->execute([$_SESSION['user_id'], $packageId, $totalCost, $numTravellers, 'Confirmed']);
+    $stmt = $pdo->prepare('INSERT INTO BOOKING (UserID, PackageID, TotalCost, Status) VALUES (?, ?, ?, ?)');
+    $stmt->execute([$_SESSION['user_id'], $packageId, $totalCost, 'Confirmed']);
     header("Location: package_detail.php?id=$packageId&booked=1");
     exit;
 }

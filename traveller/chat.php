@@ -16,10 +16,9 @@ if (!$agency) {
 // Get packages booked by this traveller from this agency
 $pkgs = $pdo->prepare('
     SELECT DISTINCT p.PackageID, p.Title 
-    FROM BOOKS b 
-    JOIN PACKAGE p ON b.PackageID = p.PackageID 
-    JOIN CURATES c ON p.PackageID = c.PackageID 
-    WHERE b.UserID = ? AND c.UserID = ?
+    FROM BOOKING b 
+    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID 
+    WHERE b.UserID = ? AND p.AgencyID = ?
 ');
 $pkgs->execute([$_SESSION['user_id'], $partnerId]);
 $packages = $pkgs->fetchAll();
@@ -57,7 +56,7 @@ $messages = getMessages($_SESSION['user_id'], $partnerId);
                     <p><?php echo nl2br(htmlspecialchars($msg['Message'])); ?></p>
                     <?php if ($msg['PackageID']): ?>
                         <?php
-                        $pkgStmt = $pdo->prepare('SELECT Title FROM PACKAGE WHERE PackageID = ?');
+                        $pkgStmt = $pdo->prepare('SELECT Title FROM TRAVEL_PACKAGE WHERE PackageID = ?');
                         $pkgStmt->execute([$msg['PackageID']]);
                         $refPkg = $pkgStmt->fetch();
                         if ($refPkg): ?>
