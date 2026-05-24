@@ -23,7 +23,6 @@ $revStmt = $pdo->prepare('SELECT COALESCE(SUM(b.TotalCost), 0) FROM BOOKING b JO
 $revStmt->execute([$_SESSION['user_id']]);
 $revenue = $revStmt->fetchColumn();
 
-$unread = getUnreadCount($_SESSION['user_id']);
 ?>
 
 <h1>Agency Dashboard</h1>
@@ -50,11 +49,6 @@ $unread = getUnreadCount($_SESSION['user_id']);
         <h3><?php echo $groupTripCount; ?></h3>
         <p>Group Trips</p>
     </div>
-    <div class="stat-card" style="position:relative;">
-        <h3><?php echo $unread; ?></h3>
-        <p>Unread Messages</p>
-        <?php if ($unread): ?><a href="messages.php" style="position:absolute;inset:0;"></a><?php endif; ?>
-    </div>
 </div>
 
 <div class="quick-actions">
@@ -62,7 +56,6 @@ $unread = getUnreadCount($_SESSION['user_id']);
     <a href="packages.php" class="btn btn-secondary">Manage Packages</a>
     <a href="bookings.php" class="btn btn-secondary">Manage Bookings</a>
     <a href="group_trips.php" class="btn btn-secondary">Group Trips</a>
-    <a href="messages.php" class="btn btn-secondary">Messages<?php if ($unread): ?> (<?php echo $unread; ?>)<?php endif; ?></a>
 </div>
 
 <h2>Recent Bookings</h2>

@@ -13,8 +13,7 @@ book, and review travel packages, while Travel Agencies can create, edit, and
 delete packages and manage associated entities (destinations, flights,
 accommodation, restaurants, and attractions).
 
-The database contains 22 normalized tables, including new features for 
-Private Chat Messaging between Travellers and Agencies, and Group Trip enrolments.
+The database contains 22 normalized tables, including Group Trip enrolments.
 A headless JSON REST API layer has also been implemented.
 
 2.  ARCHITECTURE & FILE STRUCTURE
@@ -26,8 +25,7 @@ tripistry_lsn/
 ├── includes/
 │   ├── auth.php               # Authentication functions and role guards
 │   ├── header.php             # Shared HTML head, navbar with role-based links
-│   ├── footer.php             # Shared footer + closing tags
-│   └── chat_functions.php     # Helper functions for the messaging system
+│   └── footer.php             # Shared footer + closing tags
 ├── sql/
 │   └── setup.sql              # Full database schema (22 tables) + seed data
 ├── assets/
@@ -44,9 +42,7 @@ tripistry_lsn/
 │   ├── browse.php             # Tabbed view: Destinations, Flights, etc.
 │   ├── packages.php           # Package listing with search/sort/filter
 │   ├── package_detail.php     # Detail view + booking + review forms
-│   ├── bookings.php           # Booking history
-│   ├── messages.php           # Inbox for traveller
-│   └── chat.php               # 1-on-1 private chat with agencies
+│   └── bookings.php           # Booking history
 └── agency/                    # AGENCY SECTION
     ├── dashboard.php          # Stats dashboard + recent bookings
     ├── packages.php           # CRUD list with edit/delete actions
@@ -54,9 +50,7 @@ tripistry_lsn/
     ├── edit_package.php       # Edit form with association management
     ├── manage_items.php       # Add/remove associated entities
     ├── group_trips.php        # Group trip status management
-    ├── bookings.php           # List of bookings made by travellers
-    ├── messages.php           # Inbox for agency
-    └── chat.php               # 1-on-1 private chat with travellers
+    └── bookings.php           # List of bookings made by travellers
 
 3.  DATABASE DESIGN & SCHEMA (22 TABLES)
 
@@ -158,7 +152,7 @@ To ensure the new features from the 'main' branch work seamlessly in all local e
 - Seeder Performance Cascade Optimization:
   Optimized the database installer and seeder script (fetch_interactions.php) to utilize runtime caching for password hashing, and kept prepared statement generation outside loop structures. This resolved a major CPU bottleneck, cascading to accelerate the database population of 100,000+ items (10k packages, 40k bookings, and 30k+ reviews) from approximately 15 minutes to under 15 seconds.
 - Dynamic Pathing Implementation: 
-  Hardcoded absolute links (e.g. href="/login.php") across all frontend files (including the new chat and bookings pages) were refactored to use a dynamic <?php echo BASE_URL; ?> variable. This prevents broken links when hosting the project in a subdirectory.
+  Hardcoded absolute links (e.g. href="/login.php") across all frontend files (including bookings pages) were refactored to use a dynamic <?php echo BASE_URL; ?> variable. This prevents broken links when hosting the project in a subdirectory.
 - README Cleanup: Removed duplicate and conflicting legacy schema definitions to accurately reflect the unified 22-table structure.
 
 END OF README

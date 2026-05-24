@@ -20,7 +20,7 @@ $stmt = $pdo->query('SELECT * FROM FLIGHT ORDER BY DepartureTime');
 $flights = $stmt->fetchAll();
 
 // Accommodations
-$stmt = $pdo->query('SELECT a.*, d.City, d.Country FROM ACCOMODATION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID ORDER BY a.StarRating DESC');
+$stmt = $pdo->query('SELECT a.*, d.City, d.Country FROM ACCOMMODATION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID ORDER BY a.StarRating DESC');
 $accommodations = $stmt->fetchAll();
 
 // Restaurants

@@ -7,7 +7,7 @@ function handleAccommodationsRequest($method, $id) {
     switch ($method) {
         case 'GET':
             if ($id) {
-                $stmt = $pdo->prepare("SELECT * FROM ACCOMODATION WHERE AccomodationID = :id");
+                $stmt = $pdo->prepare("SELECT * FROM ACCOMMODATION WHERE AccommodationID = :id");
                 $stmt->execute([':id' => $id]);
                 $item = $stmt->fetch();
                 
@@ -18,7 +18,7 @@ function handleAccommodationsRequest($method, $id) {
                     echo json_encode(["message" => "Accommodation not found."]);
                 }
             } else {
-                $query = "SELECT a.*, d.City, d.Country FROM ACCOMODATION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID WHERE 1=1";
+                $query = "SELECT a.*, d.City, d.Country FROM ACCOMMODATION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID WHERE 1=1";
                 $params = [];
                 
                 // Filtering
