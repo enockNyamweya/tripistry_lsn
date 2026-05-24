@@ -106,7 +106,7 @@ function save(PDO $pdo, array $d): void {
 // MAIN
 $apiKey = env('OPENTRIPMAP_KEY');
 
-if ($apiKey && $apiKey !== 'opentripmap_key') {
+if (false) {
     echo "Fetching destinations from OpenTripMap...\n";
     $cityList = [
         'Cape Town', 'Johannesburg', 'Durban', 'Paris', 'Nice', 'Lyon',

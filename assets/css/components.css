@@ -199,3 +199,229 @@
 
 .alert-success { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
 .alert-error { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+
+/*Bonus UI stuff*/
+
+.dashboard-hero {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hover-lift {
+    transition: all 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 25px 0 15px;
+    color: #111827;
+    border-left: 4px solid #4f46e5;
+    padding-left: 10px;
+}
+
+.recommendation-strip {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.rec-card {
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 12px;
+    flex: 1;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.rec-card:hover {
+    background: #e0e7ff;
+    transform: scale(1.03);
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links a.active-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #4f46e5;
+    border-radius: 2px;
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* SKELETON LOADING */
+.skeleton {
+    background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+    border-radius: 10px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-card {
+    height: 120px;
+    margin-bottom: 12px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+    font-weight: 500;
+}
+
+.user-icon {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* ACTIVE NAV UNDERLINE */
+.nav-links a {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links a.active-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #4f46e5;
+    border-radius: 2px;
+}
+
+/* FORM CONTROLS */
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* FILTER BAR (your min price etc) */
+.filter-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-bar input,
+.filter-bar select {
+    flex: 1;
+    min-width: 160px;
+}
+
+/* MICRO INTERACTIONS */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.stat-card {
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.03);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.data-table th {
+    background: #4f46e5;
+    color: white;
+    text-align: left;
+    padding: 12px;
+}
+
+.data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table tr:hover {
+    background: #f9fafb;
+}
+
+.calendar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.25);
+}
+
+.calendar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(79, 70, 229, 0.35);
+}
