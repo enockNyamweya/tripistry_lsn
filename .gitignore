@@ -5,3 +5,4 @@ uploads/*
 *.save.*
 *.swp
 essay.txt
+*.env
