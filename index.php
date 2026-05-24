@@ -13,18 +13,21 @@
 </div>
 
 <div class="features">
-    <div class="feature-card">
-        <h3>Browse Packages</h3>
-        <p>Explore flights, accommodations, attractions and restaurants curated by top agencies.</p>
-    </div>
-    <div class="feature-card">
-        <h3>Compare & Book</h3>
-        <p>Compare packages side-by-side across different agencies and book the best deal.</p>
-    </div>
-    <div class="feature-card">
-        <h3>Leave Reviews</h3>
-        <p>Share your experience with ratings and reviews for agencies and their packages.</p>
-    </div>
+
+    <a href="traveller/browse.php" class="feature-card">
+    <h3>Browse Packages</h3>
+    <p>Explore flights, accommodations, attractions and restaurants curated by top agencies.</p>
+</a>
+
+<a href="traveller/packages.php" class="feature-card">
+    <h3>Compare & Book</h3>
+    <p>Compare packages side-by-side across agencies and book the best deal.</p>
+</a>
+
+<a href="traveller/bookings.php" class="feature-card">
+    <h3>Leave Reviews</h3>
+    <p>Share your experience with ratings and reviews.</p>
+</a>
 </div>
 <?php endif; ?>
 
