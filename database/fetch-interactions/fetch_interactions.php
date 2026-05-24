@@ -42,19 +42,18 @@ try {
     // 1. DESTINATIONS
     echo "[1/7] Importing Destinations...\n";
     $count = 0;
+    $stmtDest = $pdo->prepare('
+        INSERT INTO DESTINATION (City, Country, Latitude, Longitude, Description, ImageURL)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE Latitude=VALUES(Latitude), Longitude=VALUES(Longitude),
+                                Description=VALUES(Description), ImageURL=VALUES(ImageURL)
+    ');
     foreach ($sections['destination'] as $row) {
         $imgUrl = r($row, 6);
         if ($imgUrl && str_starts_with($imgUrl, '/uploads/')) {
             $imgUrl = '..' . $imgUrl;
         }
-
-        $stmt = $pdo->prepare('
-            INSERT INTO DESTINATION (City, Country, Latitude, Longitude, Description, ImageURL)
-            VALUES (?, ?, ?, ?, ?, ?)
-            ON DUPLICATE KEY UPDATE Latitude=VALUES(Latitude), Longitude=VALUES(Longitude),
-                                    Description=VALUES(Description), ImageURL=VALUES(ImageURL)
-        ');
-        $stmt->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $imgUrl]);
+        $stmtDest->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $imgUrl]);
         $count++;
     }
     echo "  $count destinations imported.\n\n";
@@ -69,6 +68,9 @@ try {
     echo "[2/7] Importing Travel Agencies...\n";
     $count = 0;
     $agencyIds = [];
+    $stmtUser = $pdo->prepare("INSERT IGNORE INTO USER (Email, Password, UserType) VALUES (?, ?, 'Agency')");
+    $stmtUserId = $pdo->prepare("SELECT UserID FROM USER WHERE Email = ?");
+    $stmtAgency = $pdo->prepare("INSERT IGNORE INTO TRAVEL_AGENCY (UserID, AgencyName, VerificationStatus, CommissionRate) VALUES (?, ?, ?, ?)");
     foreach ($sections['agency'] as $row) {
         $email  = r($row, 1);
         $pass   = password_hash(r($row, 2), PASSWORD_DEFAULT);
@@ -76,16 +78,12 @@ try {
         $status = r($row, 4);
         $rate   = r($row, 5);
 
-        $stmt = $pdo->prepare("INSERT IGNORE INTO USER (Email, Password, UserType) VALUES (?, ?, 'Agency')");
-        $stmt->execute([$email, $pass]);
-
-        $uid = $pdo->prepare("SELECT UserID FROM USER WHERE Email = ?");
-        $uid->execute([$email]);
-        $userId = (int)$uid->fetchColumn();
+        $stmtUser->execute([$email, $pass]);
+        $stmtUserId->execute([$email]);
+        $userId = (int)$stmtUserId->fetchColumn();
         $agencyIds[] = $userId;
 
-        $pdo->prepare("INSERT IGNORE INTO TRAVEL_AGENCY (UserID, AgencyName, VerificationStatus, CommissionRate) VALUES (?, ?, ?, ?)")
-            ->execute([$userId, $name, $status, $rate]);
+        $stmtAgency->execute([$userId, $name, $status, $rate]);
         $count++;
     }
     echo "  $count agencies imported.\n\n";
@@ -94,22 +92,21 @@ try {
     echo "[3/7] Importing Travellers...\n";
     $count = 0;
     $travellerIds = [];
+    $stmtUserTrav = $pdo->prepare("INSERT IGNORE INTO USER (Email, Password, UserType) VALUES (?, ?, 'Traveller')");
+    $stmtUserIdTrav = $pdo->prepare("SELECT UserID FROM USER WHERE Email = ?");
+    $stmtTraveller = $pdo->prepare("INSERT IGNORE INTO TRAVELLER (UserID, FirstName, LastName) VALUES (?, ?, ?)");
     foreach ($sections['traveller'] as $row) {
         $email  = r($row, 1);
         $pass   = password_hash(r($row, 2), PASSWORD_DEFAULT);
         $fName  = r($row, 3);
         $lName  = r($row, 4);
 
-        $stmt = $pdo->prepare("INSERT IGNORE INTO USER (Email, Password, UserType) VALUES (?, ?, 'Traveller')");
-        $stmt->execute([$email, $pass]);
-
-        $uid = $pdo->prepare("SELECT UserID FROM USER WHERE Email = ?");
-        $uid->execute([$email]);
-        $userId = (int)$uid->fetchColumn();
+        $stmtUserTrav->execute([$email, $pass]);
+        $stmtUserIdTrav->execute([$email]);
+        $userId = (int)$stmtUserIdTrav->fetchColumn();
         $travellerIds[] = $userId;
 
-        $pdo->prepare("INSERT IGNORE INTO TRAVELLER (UserID, FirstName, LastName) VALUES (?, ?, ?)")
-            ->execute([$userId, $fName, $lName]);
+        $stmtTraveller->execute([$userId, $fName, $lName]);
         $count++;
     }
     echo "  $count travellers imported.\n\n";
@@ -117,15 +114,16 @@ try {
     // 4. ACCOMMODATIONS
     echo "[4/7] Importing Accommodations...\n";
     $count = 0;
+    $stmtAccom = $pdo->prepare('
+        INSERT IGNORE INTO ACCOMMODATION (Name, Type, StarRating, PricePerNight, Address, DestinationID)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ');
     foreach ($sections['accommodation'] as $row) {
         $city = r($row, 6);
         $destId = $destMap[$city] ?? null;
         if (!$destId) { echo "  WARNING: No destination found for city '$city'\n"; continue; }
 
-        $pdo->prepare('
-            INSERT IGNORE INTO ACCOMMODATION (Name, Type, StarRating, PricePerNight, Address, DestinationID)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ')->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $destId]);
+        $stmtAccom->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $destId]);
         $count++;
     }
     echo "  $count accommodations imported.\n\n";
@@ -133,15 +131,16 @@ try {
     // 5. RESTAURANTS
     echo "[5/7] Importing Restaurants...\n";
     $count = 0;
+    $stmtRest = $pdo->prepare('
+        INSERT IGNORE INTO RESTAURANT (Name, CuisineType, PriceRange, Address, Rating, DestinationID)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ');
     foreach ($sections['restaurant'] as $row) {
         $city = r($row, 6);
         $destId = $destMap[$city] ?? null;
         if (!$destId) { echo "  WARNING: No destination found for city '$city'\n"; continue; }
 
-        $pdo->prepare('
-            INSERT IGNORE INTO RESTAURANT (Name, CuisineType, PriceRange, Address, Rating, DestinationID)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ')->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $destId]);
+        $stmtRest->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $destId]);
         $count++;
     }
     echo "  $count restaurants imported.\n\n";
@@ -149,15 +148,16 @@ try {
     // 6. ATTRACTIONS
     echo "[6/7] Importing Attractions...\n";
     $count = 0;
+    $stmtAttr = $pdo->prepare('
+        INSERT IGNORE INTO ATTRACTION (Name, Type, EntryFee, Description, OpeningHours, DestinationID)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ');
     foreach ($sections['attraction'] as $row) {
         $city = r($row, 6);
         $destId = $destMap[$city] ?? null;
         if (!$destId) { echo "  WARNING: No destination found for city '$city'\n"; continue; }
 
-        $pdo->prepare('
-            INSERT IGNORE INTO ATTRACTION (Name, Type, EntryFee, Description, OpeningHours, DestinationID)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ')->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $destId]);
+        $stmtAttr->execute([r($row,1), r($row,2), r($row,3), r($row,4), r($row,5), $destId]);
         $count++;
     }
     echo "  $count attractions imported.\n\n";
@@ -203,10 +203,18 @@ try {
 
     $pkgCount = $bookCount = $reviewCount = 0;
 
+    // Prepare package linking statements outside the loops
+    $stmtPackage    = $pdo->prepare('INSERT INTO TRAVEL_PACKAGE (Title, Description, Price, DurationDays, IsGroupTrip, ImageURL, AgencyID) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    $stmtHasDest    = $pdo->prepare('INSERT IGNORE INTO HAS_DESTINATION (PackageID, DestinationID) VALUES (?, ?)');
+    $stmtIncFlight  = $pdo->prepare('INSERT IGNORE INTO INCLUDES_FLIGHT (PackageID, FlightID) VALUES (?, ?)');
+    $stmtIncAccom   = $pdo->prepare('INSERT IGNORE INTO INCLUDES_ACCOM (PackageID, AccommodationID) VALUES (?, ?)');
+    $stmtIncRest    = $pdo->prepare('INSERT IGNORE INTO INCLUDES_RESTAURANT (PackageID, RestaurantID) VALUES (?, ?)');
+    $stmtIncAttr    = $pdo->prepare('INSERT IGNORE INTO INCLUDES_ATTRACTION (PackageID, AttractionID) VALUES (?, ?)');
+
     foreach ($agencyIds as $agencyId) {
-        // Each agency gets 50 packages across different destinations
+        // Each agency gets 100 packages across different destinations
         $usedDests = [];
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             // Pick a destination not already used by this agency
             $dest = $destList[array_rand($destList)];
             $dId  = (int)$dest['DestinationID'];
@@ -221,16 +229,12 @@ try {
             $imgNum   = rand(1, 200);
             $imageURL = '../uploads/packages/pkg_' . $imgNum . '.jpg';
 
-            $stmt = $pdo->prepare('
-                INSERT INTO TRAVEL_PACKAGE (Title, Description, Price, DurationDays, IsGroupTrip, ImageURL, AgencyID)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            ');
-            $stmt->execute([$title, $desc, $price, $duration, $isGroup, $imageURL, $agencyId]);
+            $stmtPackage->execute([$title, $desc, $price, $duration, $isGroup, $imageURL, $agencyId]);
             $pkgId = (int)$pdo->lastInsertId();
             $pkgCount++;
 
             // Link destination
-            $pdo->prepare('INSERT IGNORE INTO HAS_DESTINATION (PackageID, DestinationID) VALUES (?, ?)')->execute([$pkgId, $dId]);
+            $stmtHasDest->execute([$pkgId, $dId]);
 
             // Link flights
             $fIds = $flightsByDest[$dest['City']] ?? [];
@@ -240,7 +244,7 @@ try {
             if (!empty($fIds)) {
                 shuffle($fIds);
                 foreach (array_slice($fIds, 0, min(rand(1, 2), count($fIds))) as $id) {
-                    $pdo->prepare('INSERT IGNORE INTO INCLUDES_FLIGHT (PackageID, FlightID) VALUES (?, ?)')->execute([$pkgId, $id]);
+                    $stmtIncFlight->execute([$pkgId, $id]);
                 }
             }
 
@@ -248,21 +252,21 @@ try {
             if (!empty($accomByDest[$dId])) {
                 $ids = $accomByDest[$dId]; shuffle($ids);
                 foreach (array_slice($ids, 0, min(rand(1,2), count($ids))) as $id)
-                    $pdo->prepare('INSERT IGNORE INTO INCLUDES_ACCOM (PackageID, AccommodationID) VALUES (?, ?)')->execute([$pkgId, $id]);
+                    $stmtIncAccom->execute([$pkgId, $id]);
             }
 
             // Link restaurants
             if (!empty($restByDest[$dId])) {
                 $ids = $restByDest[$dId]; shuffle($ids);
                 foreach (array_slice($ids, 0, min(rand(2,4), count($ids))) as $id)
-                    $pdo->prepare('INSERT IGNORE INTO INCLUDES_RESTAURANT (PackageID, RestaurantID) VALUES (?, ?)')->execute([$pkgId, $id]);
+                    $stmtIncRest->execute([$pkgId, $id]);
             }
 
             // Link attractions
             if (!empty($attrByDest[$dId])) {
                 $ids = $attrByDest[$dId]; shuffle($ids);
                 foreach (array_slice($ids, 0, min(rand(2,5), count($ids))) as $id)
-                    $pdo->prepare('INSERT IGNORE INTO INCLUDES_ATTRACTION (PackageID, AttractionID) VALUES (?, ?)')->execute([$pkgId, $id]);
+                    $stmtIncAttr->execute([$pkgId, $id]);
             }
         }
     }
@@ -271,8 +275,12 @@ try {
     // Load all package IDs + prices for booking/review generation
     $allPkgs = $pdo->query("SELECT PackageID, Price FROM TRAVEL_PACKAGE")->fetchAll();
 
-    // Generate 3000 bookings + reviews
-    for ($i = 0; $i < 3000; $i++) {
+    // Prepare booking and review statements outside the loop
+    $stmtBooking = $pdo->prepare('INSERT INTO BOOKING (UserID, PackageID, BookingDate, TotalCost, Status) VALUES (?, ?, ?, ?, ?)');
+    $stmtReview  = $pdo->prepare('INSERT INTO REVIEW (UserID, PackageID, BookingID, Comment, RatingScore, DatePosted) VALUES (?, ?, ?, ?, ?, ?)');
+
+    // Generate 40000 bookings + reviews
+    for ($i = 0; $i < 40000; $i++) {
         $userId = $travellerIds[array_rand($travellerIds)];
         $pkg    = $allPkgs[array_rand($allPkgs)];
         $numTrav = rand(1, 4);
@@ -282,8 +290,7 @@ try {
         $daysAgo = rand(1, 365);
         $bookDate = date('Y-m-d H:i:s', strtotime("-$daysAgo days"));
 
-        $stmt = $pdo->prepare('INSERT INTO BOOKING (UserID, PackageID, BookingDate, TotalCost, Status) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute([$userId, $pkg['PackageID'], $bookDate, $total, $status]);
+        $stmtBooking->execute([$userId, $pkg['PackageID'], $bookDate, $total, $status]);
         $bookId = (int)$pdo->lastInsertId();
         $bookCount++;
 
@@ -293,8 +300,7 @@ try {
             if (rand(1, 15) == 1) $rating = rand(1, 2); // Occasional bad review
             $comment = $comments[array_rand($comments)];
             $reviewDate = date('Y-m-d H:i:s', strtotime("$bookDate +" . rand(5,20) . " days"));
-            $pdo->prepare('INSERT INTO REVIEW (UserID, PackageID, BookingID, Comment, RatingScore, DatePosted) VALUES (?, ?, ?, ?, ?, ?)')
-                ->execute([$userId, $pkg['PackageID'], $bookId, $comment, $rating, $reviewDate]);
+            $stmtReview->execute([$userId, $pkg['PackageID'], $bookId, $comment, $rating, $reviewDate]);
             $reviewCount++;
         }
     }
