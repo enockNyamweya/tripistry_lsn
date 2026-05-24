@@ -74,18 +74,11 @@ function handlePackagesRequest($method, $id) {
                 
             } else {
                 // Get all packages with filtering and sorting
-                $query = "
-                    SELECT p.*, ta.AgencyName,
-                        COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
-                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
-                    FROM TRAVEL_PACKAGE p
-                    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
-                    WHERE p.Status = 'Active'
-                ";
+                $whereClause = " FROM TRAVEL_PACKAGE p JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID WHERE p.Status = 'Active'";
                 $params = [];
                 
                 if (isset($_GET['destination'])) {
-                    $query .= " AND p.PackageID IN (
+                    $whereClause .= " AND p.PackageID IN (
                         SELECT hd.PackageID FROM HAS_DESTINATION hd
                         JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
                         WHERE d.City LIKE :destination OR d.Country LIKE :destination
@@ -93,30 +86,38 @@ function handlePackagesRequest($method, $id) {
                     $params[':destination'] = '%' . $_GET['destination'] . '%';
                 }
                 if (isset($_GET['min_price'])) {
-                    $query .= " AND p.Price >= :min_price";
+                    $whereClause .= " AND p.Price >= :min_price";
                     $params[':min_price'] = (float)$_GET['min_price'];
                 }
                 if (isset($_GET['max_price'])) {
-                    $query .= " AND p.Price <= :max_price";
+                    $whereClause .= " AND p.Price <= :max_price";
                     $params[':max_price'] = (float)$_GET['max_price'];
                 }
                 
+                $countQuery = "SELECT COUNT(1)" . $whereClause;
+
+                $selectQuery = "
+                    SELECT p.*, ta.AgencyName,
+                        COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
+                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+                " . $whereClause;
+                
                 $sort = $_GET['sort'] ?? 'price_asc';
                 if ($sort === 'price_asc') {
-                    $query .= " ORDER BY p.Price ASC";
+                    $selectQuery .= " ORDER BY p.Price ASC";
                 } elseif ($sort === 'price_desc') {
-                    $query .= " ORDER BY p.Price DESC";
+                    $selectQuery .= " ORDER BY p.Price DESC";
                 } elseif ($sort === 'duration') {
-                    $query .= " ORDER BY p.DurationDays ASC";
+                    $selectQuery .= " ORDER BY p.DurationDays ASC";
                 } elseif ($sort === 'rating') {
-                    $query .= " ORDER BY AvgRating DESC";
+                    $selectQuery .= " ORDER BY AvgRating DESC";
                 }
                 
-                $stmt = $pdo->prepare($query);
-                $stmt->execute($params);
-                $packages = $stmt->fetchAll();
+                $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+                $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
                 
-                echo json_encode($packages);
+                $response = getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $limit);
+                echo json_encode($response);
             }
             break;
             

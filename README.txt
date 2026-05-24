@@ -89,12 +89,109 @@ A robust REST API layer resides inside /api/index.php. It responds exclusively
 in JSON format and provides headless database query access. It features a global
 try/catch block to gracefully handle 500 Server Errors without breaking the frontend.
 
-* GET /api/index.php/destinations - Retrieve all geographic destinations.
-* GET /api/index.php/packages - Retrieve active travel packages. Supports comparison parameters (e.g., ?compare=1,2,3).
-* GET /api/index.php/flights - Retrieve flight listings.
-* GET /api/index.php/accommodations - Retrieve stays. Supports filtering by minimum star rating ?min_stars=4 and sorting by price ?sort=price_desc.
-* GET /api/index.php/restaurants - Retrieve dining venues.
-* GET /api/index.php/attractions - Retrieve local attractions.
+To prevent performance issues and long loading times on large datasets, all list endpoints support page-based pagination.
+
+Global Pagination Parameters:
+* page (default: 1) — Page number to fetch (>= 1).
+* limit (default: 20) — Number of records per page (1 to 100).
+
+Response Envelope Structure:
+List responses are wrapped in a standard pagination envelope:
+{
+  "success": true,
+  "pagination": {
+    "total_records": 1000,
+    "total_pages": 500,
+    "current_page": 1,
+    "limit": 2,
+    "next_page": 2,
+    "prev_page": null
+  },
+  "data": [ ... ]
+}
+
+Single resource queries (by ID, e.g., /api/index.php/packages/1) continue to return the single object directly.
+
+Endpoints:
+
+* GET /api/index.php/destinations
+  - Description: Retrieve all geographic destinations.
+  - Query Parameters: page, limit
+  - Request Example: GET /api/index.php/destinations?page=1&limit=2
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 1000, "total_pages": 500, "current_page": 1, "limit": 2, "next_page": 2, "prev_page": null},
+      "data": [
+        {"DestinationID": 1, "City": "Cape Town", "Country": "South Africa", "Latitude": "-33.924900", "Longitude": "18.424100", "Description": "A beautiful coastal city...", "ImageURL": "..."}
+      ]
+    }
+
+* GET /api/index.php/packages
+  - Description: Retrieve active travel packages.
+  - Query Parameters: page, limit, destination (City/Country filter), min_price, max_price, sort (price_asc, price_desc, duration, rating), compare (comma-separated IDs), compare_destination (destination name/ID)
+  - Request Example: GET /api/index.php/packages?page=1&limit=1&destination=Paris
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 120, "total_pages": 120, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"PackageID": 12, "Title": "Romantic Parisian Getaway", "Price": "2499.00", "DurationDays": 7, "AgencyName": "Dream Tours", "AvgRating": 4.8, "DestinationCity": "Paris"}
+      ]
+    }
+
+* GET /api/index.php/flights
+  - Description: Retrieve flight listings.
+  - Query Parameters: page, limit, departure (city filter), arrival (city filter), sort (price_asc, price_desc)
+  - Request Example: GET /api/index.php/flights?page=1&limit=1&departure=London
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 250, "total_pages": 250, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"FlightID": 3, "Airline": "British Airways", "FlightNumber": "BA203", "DepartureCity": "London", "ArrivalCity": "New York", "DepartureTime": "2026-06-01 08:30:00", "Price": "450.00"}
+      ]
+    }
+
+* GET /api/index.php/accommodations
+  - Description: Retrieve stays/accommodations.
+  - Query Parameters: page, limit, min_stars, destination_id, sort (price_asc, price_desc)
+  - Request Example: GET /api/index.php/accommodations?page=1&limit=1&min_stars=4
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 1500, "total_pages": 1500, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"AccommodationID": 10, "Name": "The Ritz-Carlton", "StarRating": 5, "PricePerNight": "499.00", "City": "New York"}
+      ]
+    }
+
+* GET /api/index.php/restaurants
+  - Description: Retrieve dining venues.
+  - Query Parameters: page, limit, cuisine, destination_id, sort (rating_desc, rating_asc)
+  - Request Example: GET /api/index.php/restaurants?page=1&limit=1&cuisine=Italian
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 800, "total_pages": 800, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"RestaurantID": 14, "Name": "Gusto Italiano", "CuisineType": "Italian", "Rating": "4.7", "City": "Rome"}
+      ]
+    }
+
+* GET /api/index.php/attractions
+  - Description: Retrieve local attractions.
+  - Query Parameters: page, limit, type, destination_id
+  - Request Example: GET /api/index.php/attractions?page=1&limit=1&type=Museum
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 340, "total_pages": 340, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"AttractionID": 7, "Name": "The Louvre", "Type": "Museum", "EntryFee": "17.00", "City": "Paris"}
+      ]
+    }
+
 
 5.  SECURITY IMPLEMENTATION
 

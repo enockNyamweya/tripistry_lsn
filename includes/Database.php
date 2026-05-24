@@ -1,6 +1,6 @@
 <?php
 // Database.php - Singleton PDO Connection
-require_once __DIR__ . '/../../config/env.php';
+require_once __DIR__ . '/../config/env.php';
 
 class Database {
     private static $instance = null;

@@ -18,9 +18,14 @@ function handleDestinationsRequest($method, $id) {
                     echo json_encode(["message" => "Destination not found."]);
                 }
             } else {
-                $stmt = $pdo->query("SELECT * FROM DESTINATION");
-                $destinations = $stmt->fetchAll();
-                echo json_encode($destinations);
+                $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+                $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
+
+                $countQuery = "SELECT COUNT(1) FROM DESTINATION";
+                $selectQuery = "SELECT * FROM DESTINATION";
+                
+                $response = getPaginatedResponse($pdo, $countQuery, $selectQuery, [], $page, $limit);
+                echo json_encode($response);
             }
             break;
             

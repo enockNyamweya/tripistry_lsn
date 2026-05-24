@@ -18,23 +18,27 @@ function handleAttractionsRequest($method, $id) {
                     echo json_encode(["message" => "Attraction not found."]);
                 }
             } else {
-                $query = "SELECT a.*, d.City, d.Country FROM ATTRACTION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID WHERE 1=1";
+                $whereClause = " FROM ATTRACTION a LEFT JOIN DESTINATION d ON a.DestinationID = d.DestinationID WHERE 1=1";
                 $params = [];
                 
                 // Filtering
                 if (isset($_GET['type'])) {
-                    $query .= " AND a.Type LIKE :type";
+                    $whereClause .= " AND a.Type LIKE :type";
                     $params[':type'] = '%' . $_GET['type'] . '%';
                 }
                 if (isset($_GET['destination_id'])) {
-                    $query .= " AND a.DestinationID = :dest";
+                    $whereClause .= " AND a.DestinationID = :dest";
                     $params[':dest'] = (int)$_GET['destination_id'];
                 }
                 
-                $stmt = $pdo->prepare($query);
-                $stmt->execute($params);
-                $items = $stmt->fetchAll();
-                echo json_encode($items);
+                $countQuery = "SELECT COUNT(1)" . $whereClause;
+                $selectQuery = "SELECT a.*, d.City, d.Country" . $whereClause;
+                
+                $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+                $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
+                
+                $response = getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $limit);
+                echo json_encode($response);
             }
             break;
             
