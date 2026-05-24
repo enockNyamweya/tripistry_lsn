@@ -3,27 +3,26 @@
 $agency = getAgencyInfo($_SESSION['user_id']);
 
 // Stats
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM PACKAGE p JOIN CURATES c ON p.PackageID = c.PackageID WHERE c.UserID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM TRAVEL_PACKAGE p WHERE p.AgencyID = ?');
 $stmt->execute([$_SESSION['user_id']]);
 $packageCount = $stmt->fetchColumn();
 
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM BOOKS b JOIN CURATES c ON b.PackageID = c.PackageID WHERE c.UserID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM BOOKING b JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID WHERE p.AgencyID = ?');
 $stmt->execute([$_SESSION['user_id']]);
 $bookingCount = $stmt->fetchColumn();
 
-$stmt = $pdo->prepare('SELECT AVG(r.RatingScore) FROM REVIEW r JOIN CURATES c ON r.PackageID = c.PackageID WHERE c.UserID = ?');
+$stmt = $pdo->prepare('SELECT AVG(r.RatingScore) FROM REVIEW r JOIN TRAVEL_PACKAGE p ON r.PackageID = p.PackageID WHERE p.AgencyID = ?');
 $stmt->execute([$_SESSION['user_id']]);
 $avgRating = $stmt->fetchColumn();
 
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM GROUP_TRIP g JOIN CURATES c ON g.PackageID = c.PackageID WHERE c.UserID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM GROUP_TRIP g WHERE g.AgencyID = ?');
 $stmt->execute([$_SESSION['user_id']]);
 $groupTripCount = $stmt->fetchColumn();
 
-$revStmt = $pdo->prepare('SELECT COALESCE(SUM(TotalCost), 0) FROM BOOKS b JOIN CURATES c ON b.PackageID = c.PackageID WHERE c.UserID = ? AND b.Status = "Confirmed"');
+$revStmt = $pdo->prepare('SELECT COALESCE(SUM(b.TotalCost), 0) FROM BOOKING b JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID WHERE p.AgencyID = ? AND b.Status = "Confirmed"');
 $revStmt->execute([$_SESSION['user_id']]);
 $revenue = $revStmt->fetchColumn();
 
-$unread = getUnreadCount($_SESSION['user_id']);
 ?>
 
 <h1>Agency Dashboard</h1>
@@ -50,11 +49,6 @@ $unread = getUnreadCount($_SESSION['user_id']);
         <h3><?php echo $groupTripCount; ?></h3>
         <p>Group Trips</p>
     </div>
-    <div class="stat-card" style="position:relative;">
-        <h3><?php echo $unread; ?></h3>
-        <p>Unread Messages</p>
-        <?php if ($unread): ?><a href="messages.php" style="position:absolute;inset:0;"></a><?php endif; ?>
-    </div>
 </div>
 
 <div class="quick-actions">
@@ -62,18 +56,16 @@ $unread = getUnreadCount($_SESSION['user_id']);
     <a href="packages.php" class="btn btn-secondary">Manage Packages</a>
     <a href="bookings.php" class="btn btn-secondary">Manage Bookings</a>
     <a href="group_trips.php" class="btn btn-secondary">Group Trips</a>
-    <a href="messages.php" class="btn btn-secondary">Messages<?php if ($unread): ?> (<?php echo $unread; ?>)<?php endif; ?></a>
 </div>
 
 <h2>Recent Bookings</h2>
 <?php
 $stmt = $pdo->prepare('
     SELECT b.*, p.Title, t.FirstName, t.LastName
-    FROM BOOKS b
-    JOIN PACKAGE p ON b.PackageID = p.PackageID
-    JOIN CURATES c ON p.PackageID = c.PackageID
+    FROM BOOKING b
+    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
     JOIN TRAVELLER t ON b.UserID = t.UserID
-    WHERE c.UserID = ?
+    WHERE p.AgencyID = ?
     ORDER BY b.BookingDate DESC LIMIT 5
 ');
 $stmt->execute([$_SESSION['user_id']]);

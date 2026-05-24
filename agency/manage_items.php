@@ -3,7 +3,7 @@
 $packageId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 // Verify ownership
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM CURATES WHERE UserID = ? AND PackageID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM TRAVEL_PACKAGE WHERE AgencyID = ? AND PackageID = ?');
 $stmt->execute([$_SESSION['user_id'], $packageId]);
 if (!$packageId || $stmt->fetchColumn() == 0) {
     echo '<p class="empty-state">Package not found or access denied.</p>';
@@ -11,7 +11,7 @@ if (!$packageId || $stmt->fetchColumn() == 0) {
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT Title FROM PACKAGE WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT Title FROM TRAVEL_PACKAGE WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $package = $stmt->fetch();
 
@@ -20,11 +20,11 @@ if (isset($_GET['remove']) && isset($_GET['type'])) {
     $type = $_GET['type'];
     $id = (int)$_GET['remove'];
     $tableMap = [
-        'destination' => ['VISITS', 'DestinationID'],
+        'destination' => ['HAS_DESTINATION', 'DestinationID'],
         'flight' => ['INCLUDES_FLIGHT', 'FlightID'],
-        'accommodation' => ['INCLUDES_STAY', 'AccomodationID'],
-        'restaurant' => ['PACKAGE_RESTAURANT', 'RestaurantID'],
-        'attraction' => ['PACKAGE_ATTRACTION', 'AttractionID'],
+        'accommodation' => ['INCLUDES_ACCOM', 'AccommodationID'],
+        'restaurant' => ['INCLUDES_RESTAURANT', 'RestaurantID'],
+        'attraction' => ['INCLUDES_ATTRACTION', 'AttractionID'],
     ];
     if (isset($tableMap[$type])) {
         [$table, $col] = $tableMap[$type];
@@ -36,7 +36,7 @@ if (isset($_GET['remove']) && isset($_GET['type'])) {
 }
 
 // Get all associations
-$stmt = $pdo->prepare('SELECT d.* FROM DESTINATION d JOIN VISITS v ON d.DestinationID = v.DestinationID WHERE v.PackageID = ?');
+$stmt = $pdo->prepare('SELECT d.* FROM DESTINATION d JOIN HAS_DESTINATION v ON d.DestinationID = v.DestinationID WHERE v.PackageID = ?');
 $stmt->execute([$packageId]);
 $pkgDestinations = $stmt->fetchAll();
 
@@ -44,15 +44,15 @@ $stmt = $pdo->prepare('SELECT f.* FROM FLIGHT f JOIN INCLUDES_FLIGHT i ON f.Flig
 $stmt->execute([$packageId]);
 $pkgFlights = $stmt->fetchAll();
 
-$stmt = $pdo->prepare('SELECT a.* FROM ACCOMODATION a JOIN INCLUDES_STAY i ON a.AccomodationID = i.AccomodationID WHERE i.PackageID = ?');
+$stmt = $pdo->prepare('SELECT a.* FROM ACCOMMODATION a JOIN INCLUDES_ACCOM i ON a.AccommodationID = i.AccommodationID WHERE i.PackageID = ?');
 $stmt->execute([$packageId]);
 $pkgAccommodations = $stmt->fetchAll();
 
-$stmt = $pdo->prepare('SELECT r.* FROM RESTAURANT r JOIN PACKAGE_RESTAURANT pr ON r.RestaurantID = pr.RestaurantID WHERE pr.PackageID = ?');
+$stmt = $pdo->prepare('SELECT r.* FROM RESTAURANT r JOIN INCLUDES_RESTAURANT pr ON r.RestaurantID = pr.RestaurantID WHERE pr.PackageID = ?');
 $stmt->execute([$packageId]);
 $pkgRestaurants = $stmt->fetchAll();
 
-$stmt = $pdo->prepare('SELECT a.* FROM ATTRACTION a JOIN PACKAGE_ATTRACTION pa ON a.AttractionID = pa.AttractionID WHERE pa.PackageID = ?');
+$stmt = $pdo->prepare('SELECT a.* FROM ATTRACTION a JOIN INCLUDES_ATTRACTION pa ON a.AttractionID = pa.AttractionID WHERE pa.PackageID = ?');
 $stmt->execute([$packageId]);
 $pkgAttractions = $stmt->fetchAll();
 
@@ -61,11 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_type'])) {
     $type = $_POST['add_type'];
     $id = (int)$_POST['add_id'];
     $insertMap = [
-        'destination' => ['VISITS', 'DestinationID'],
+        'destination' => ['HAS_DESTINATION', 'DestinationID'],
         'flight' => ['INCLUDES_FLIGHT', 'FlightID'],
-        'accommodation' => ['INCLUDES_STAY', 'AccomodationID'],
-        'restaurant' => ['PACKAGE_RESTAURANT', 'RestaurantID'],
-        'attraction' => ['PACKAGE_ATTRACTION', 'AttractionID'],
+        'accommodation' => ['INCLUDES_ACCOM', 'AccommodationID'],
+        'restaurant' => ['INCLUDES_RESTAURANT', 'RestaurantID'],
+        'attraction' => ['INCLUDES_ATTRACTION', 'AttractionID'],
     ];
     if (isset($insertMap[$type]) && $id > 0) {
         [$table, $col] = $insertMap[$type];
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_type'])) {
 }
 
 // Available items not yet associated
-$stmt = $pdo->prepare('SELECT * FROM DESTINATION WHERE DestinationID NOT IN (SELECT DestinationID FROM VISITS WHERE PackageID = ?)');
+$stmt = $pdo->prepare('SELECT * FROM DESTINATION WHERE DestinationID NOT IN (SELECT DestinationID FROM HAS_DESTINATION WHERE PackageID = ?)');
 $stmt->execute([$packageId]);
 $availableDest = $stmt->fetchAll();
 
@@ -85,15 +85,15 @@ $stmt = $pdo->prepare('SELECT * FROM FLIGHT WHERE FlightID NOT IN (SELECT Flight
 $stmt->execute([$packageId]);
 $availableFlights = $stmt->fetchAll();
 
-$stmt = $pdo->prepare('SELECT * FROM ACCOMODATION WHERE AccomodationID NOT IN (SELECT AccomodationID FROM INCLUDES_STAY WHERE PackageID = ?)');
+$stmt = $pdo->prepare('SELECT * FROM ACCOMMODATION WHERE AccommodationID NOT IN (SELECT AccommodationID FROM INCLUDES_ACCOM WHERE PackageID = ?)');
 $stmt->execute([$packageId]);
 $availableAcc = $stmt->fetchAll();
 
-$stmt = $pdo->prepare('SELECT * FROM RESTAURANT WHERE RestaurantID NOT IN (SELECT RestaurantID FROM PACKAGE_RESTAURANT WHERE PackageID = ?)');
+$stmt = $pdo->prepare('SELECT * FROM RESTAURANT WHERE RestaurantID NOT IN (SELECT RestaurantID FROM INCLUDES_RESTAURANT WHERE PackageID = ?)');
 $stmt->execute([$packageId]);
 $availableRest = $stmt->fetchAll();
 
-$stmt = $pdo->prepare('SELECT * FROM ATTRACTION WHERE AttractionID NOT IN (SELECT AttractionID FROM PACKAGE_ATTRACTION WHERE PackageID = ?)');
+$stmt = $pdo->prepare('SELECT * FROM ATTRACTION WHERE AttractionID NOT IN (SELECT AttractionID FROM INCLUDES_ATTRACTION WHERE PackageID = ?)');
 $stmt->execute([$packageId]);
 $availableAttr = $stmt->fetchAll();
 ?>
@@ -112,7 +112,7 @@ $availableAttr = $stmt->fetchAll();
     $sections = [
         ['Destinations', $pkgDestinations, $availableDest, 'destination', 'DestinationID', 'City', 'Country'],
         ['Flights', $pkgFlights, $availableFlights, 'flight', 'FlightID', 'Airline', 'FlightNumber'],
-        ['Accommodations', $pkgAccommodations, $availableAcc, 'accommodation', 'AccomodationID', 'Name', 'Type'],
+        ['Accommodations', $pkgAccommodations, $availableAcc, 'accommodation', 'AccommodationID', 'Name', 'Type'],
         ['Restaurants', $pkgRestaurants, $availableRest, 'restaurant', 'RestaurantID', 'Name', 'CuisineType'],
         ['Attractions', $pkgAttractions, $availableAttr, 'attraction', 'AttractionID', 'Name', 'Type'],
     ];

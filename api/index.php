@@ -35,10 +35,41 @@ $endpoint = isset($uriParts[$nextIndex]) ? $uriParts[$nextIndex] : '';
 $id = isset($uriParts[$nextIndex + 1]) ? $uriParts[$nextIndex + 1] : null;
 
 /**
- * We wrap the entire router in a try/catch block so that if a database query crashes 
- * inside one of the route files, the API catches it here and returns a clean 500 JSON error.
- * Without this, the server would spit out ugly HTML error logs that break frontend apps.
+ * Reusable helper function to build a standardized paginated response envelope.
  */
+function getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $limit) {
+    // 1. Calculate totals
+    $stmt = $pdo->prepare($countQuery);
+    $stmt->execute($params);
+    $totalRecords = (int)$stmt->fetchColumn();
+
+    $totalPages = (int)ceil($totalRecords / $limit);
+    $page = max(1, min($totalPages, $page));
+    if ($totalPages === 0) {
+        $page = 1;
+    }
+    $offset = ($page - 1) * $limit;
+
+    // 2. Fetch data
+    $paginatedQuery = $selectQuery . " LIMIT $limit OFFSET $offset";
+    $stmt = $pdo->prepare($paginatedQuery);
+    $stmt->execute($params);
+    $data = $stmt->fetchAll();
+
+    return [
+        "success" => true,
+        "pagination" => [
+            "total_records" => $totalRecords,
+            "total_pages" => $totalPages,
+            "current_page" => $page,
+            "limit" => $limit,
+            "next_page" => ($page < $totalPages) ? $page + 1 : null,
+            "prev_page" => ($page > 1) ? $page - 1 : null
+        ],
+        "data" => $data
+    ];
+}
+
 try {
     // Route the request
     switch ($endpoint) {

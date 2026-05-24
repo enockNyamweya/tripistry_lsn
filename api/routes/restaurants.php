@@ -18,33 +18,35 @@ function handleRestaurantsRequest($method, $id) {
                     echo json_encode(["message" => "Restaurant not found."]);
                 }
             } else {
-                $query = "SELECT r.*, d.City, d.Country FROM RESTAURANT r LEFT JOIN DESTINATION d ON r.DestinationID = d.DestinationID WHERE 1=1";
+                $whereClause = " FROM RESTAURANT r LEFT JOIN DESTINATION d ON r.DestinationID = d.DestinationID WHERE 1=1";
                 $params = [];
                 
                 // Filtering
                 if (isset($_GET['cuisine'])) {
-                    $query .= " AND r.CuisineType LIKE :cuisine";
+                    $whereClause .= " AND r.CuisineType LIKE :cuisine";
                     $params[':cuisine'] = '%' . $_GET['cuisine'] . '%';
                 }
                 if (isset($_GET['destination_id'])) {
-                    $query .= " AND r.DestinationID = :dest";
+                    $whereClause .= " AND r.DestinationID = :dest";
                     $params[':dest'] = (int)$_GET['destination_id'];
                 }
                 
+                $countQuery = "SELECT COUNT(1)" . $whereClause;
+                $selectQuery = "SELECT r.*, d.City, d.Country" . $whereClause;
+
                 // Sorting
                 $sort = $_GET['sort'] ?? '';
-                if ($sort === 'rating_desc') {
-                    $query .= " ORDER BY r.Rating DESC";
-                } elseif ($sort === 'rating_asc') {
-                    $query .= " ORDER BY r.Rating ASC";
+                if ($sort === 'rating_asc') {
+                    $selectQuery .= " ORDER BY r.Rating ASC";
                 } else {
-                    $query .= " ORDER BY r.Rating DESC";
+                    $selectQuery .= " ORDER BY r.Rating DESC";
                 }
                 
-                $stmt = $pdo->prepare($query);
-                $stmt->execute($params);
-                $items = $stmt->fetchAll();
-                echo json_encode($items);
+                $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+                $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
+                
+                $response = getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $limit);
+                echo json_encode($response);
             }
             break;
             

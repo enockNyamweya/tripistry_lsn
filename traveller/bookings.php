@@ -1,11 +1,10 @@
 <?php include __DIR__ . '/../includes/header.php'; requireTraveller();
 
 $stmt = $pdo->prepare('
-    SELECT b.*, p.Title, p.PackageID as PID, p.ImageURL, ta.AgencyName
-    FROM BOOKS b
-    JOIN PACKAGE p ON b.PackageID = p.PackageID
-    JOIN CURATES c ON p.PackageID = c.PackageID
-    JOIN TRAVEL_AGENCY ta ON c.UserID = ta.UserID
+    SELECT b.*, ROUND(b.TotalCost / p.Price) as NumTravellers, p.Title, p.PackageID as PID, p.ImageURL, ta.AgencyName
+    FROM BOOKING b
+    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
+    JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
     WHERE b.UserID = ?
     ORDER BY b.BookingDate DESC
 ');

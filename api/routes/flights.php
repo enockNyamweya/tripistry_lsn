@@ -18,33 +18,37 @@ function handleFlightsRequest($method, $id) {
                     echo json_encode(["message" => "Flight not found."]);
                 }
             } else {
-                $query = "SELECT * FROM FLIGHT WHERE 1=1";
+                $whereClause = " FROM FLIGHT WHERE 1=1";
                 $params = [];
                 
                 // Filtering
                 if (isset($_GET['departure'])) {
-                    $query .= " AND DepartureCity LIKE :departure";
+                    $whereClause .= " AND DepartureCity LIKE :departure";
                     $params[':departure'] = '%' . $_GET['departure'] . '%';
                 }
                 if (isset($_GET['arrival'])) {
-                    $query .= " AND ArrivalCity LIKE :arrival";
+                    $whereClause .= " AND ArrivalCity LIKE :arrival";
                     $params[':arrival'] = '%' . $_GET['arrival'] . '%';
                 }
                 
+                $countQuery = "SELECT COUNT(1)" . $whereClause;
+                $selectQuery = "SELECT *" . $whereClause;
+
                 // Sorting
                 $sort = $_GET['sort'] ?? '';
                 if ($sort === 'price_asc') {
-                    $query .= " ORDER BY Price ASC";
+                    $selectQuery .= " ORDER BY Price ASC";
                 } elseif ($sort === 'price_desc') {
-                    $query .= " ORDER BY Price DESC";
+                    $selectQuery .= " ORDER BY Price DESC";
                 } else {
-                    $query .= " ORDER BY DepartureTime ASC";
+                    $selectQuery .= " ORDER BY DepartureTime ASC";
                 }
                 
-                $stmt = $pdo->prepare($query);
-                $stmt->execute($params);
-                $flights = $stmt->fetchAll();
-                echo json_encode($flights);
+                $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+                $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
+                
+                $response = getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $limit);
+                echo json_encode($response);
             }
             break;
             

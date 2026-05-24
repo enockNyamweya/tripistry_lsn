@@ -4,21 +4,20 @@
 if (isset($_POST['action']) && isset($_POST['booking_id'])) {
     $bid = (int)$_POST['booking_id'];
     $newStatus = $_POST['action'] === 'confirm' ? 'Confirmed' : 'Cancelled';
-    $stmt = $pdo->prepare('UPDATE BOOKS SET Status = ? WHERE BookingID = ? AND PackageID IN (SELECT PackageID FROM CURATES WHERE UserID = ?)');
+    $stmt = $pdo->prepare('UPDATE BOOKING SET Status = ? WHERE BookingID = ? AND PackageID IN (SELECT PackageID FROM TRAVEL_PACKAGE WHERE AgencyID = ?)');
     $stmt->execute([$newStatus, $bid, $_SESSION['user_id']]);
     header('Location: ' . BASE_URL . '/agency/bookings.php?updated=1');
     exit;
 }
 
 $stmt = $pdo->prepare('
-    SELECT b.*, p.Title as PackageTitle, t.FirstName, t.LastName, t.PassportNum,
-        tp.PhoneNumber
-    FROM BOOKS b
-    JOIN PACKAGE p ON b.PackageID = p.PackageID
-    JOIN CURATES c ON p.PackageID = c.PackageID
+    SELECT b.*, p.Title as PackageTitle, t.FirstName, t.LastName, NULL as PassportNum,
+        u.Phone as PhoneNumber, ROUND(b.TotalCost / p.Price) as NumTravellers
+    FROM BOOKING b
+    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
     JOIN TRAVELLER t ON b.UserID = t.UserID
-    LEFT JOIN TRAVELLER_PHONE tp ON b.UserID = tp.UserID
-    WHERE c.UserID = ?
+    JOIN USER u ON t.UserID = u.UserID
+    WHERE p.AgencyID = ?
     ORDER BY b.BookingDate DESC
 ');
 $stmt->execute([$_SESSION['user_id']]);
@@ -26,14 +25,13 @@ $bookings = $stmt->fetchAll();
 
 // Revenue totals
 $stmt = $pdo->prepare('
-    SELECT SUM(TotalCost) as Revenue, COUNT(*) as Total, 
-        SUM(CASE WHEN Status = "Confirmed" THEN 1 ELSE 0 END) as Confirmed,
-        SUM(CASE WHEN Status = "Cancelled" THEN 1 ELSE 0 END) as Cancelled,
-        SUM(CASE WHEN Status = "Pending" THEN 1 ELSE 0 END) as Pending
-    FROM BOOKS b
-    JOIN PACKAGE p ON b.PackageID = p.PackageID
-    JOIN CURATES c ON p.PackageID = c.PackageID
-    WHERE c.UserID = ?
+    SELECT SUM(b.TotalCost) as Revenue, COUNT(*) as Total, 
+        SUM(CASE WHEN b.Status = "Confirmed" THEN 1 ELSE 0 END) as Confirmed,
+        SUM(CASE WHEN b.Status = "Cancelled" THEN 1 ELSE 0 END) as Cancelled,
+        SUM(CASE WHEN b.Status = "Pending" THEN 1 ELSE 0 END) as Pending
+    FROM BOOKING b
+    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
+    WHERE p.AgencyID = ?
 ');
 $stmt->execute([$_SESSION['user_id']]);
 $summary = $stmt->fetch();
@@ -107,7 +105,6 @@ $summary = $stmt->fetch();
                                 <button type="submit" name="action" value="cancel" class="btn btn-danger btn-sm">Cancel</button>
                             </form>
                         <?php endif; ?>
-                        <a href="<?php echo BASE_URL; ?>/agency/chat.php?user=<?php echo $b['UserID']; ?>" class="btn btn-secondary btn-sm">Message</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

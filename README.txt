@@ -13,8 +13,7 @@ book, and review travel packages, while Travel Agencies can create, edit, and
 delete packages and manage associated entities (destinations, flights,
 accommodation, restaurants, and attractions).
 
-The database contains 22 normalized tables, including new features for 
-Private Chat Messaging between Travellers and Agencies, and Group Trip enrolments.
+The database contains 22 normalized tables, including Group Trip enrolments.
 A headless JSON REST API layer has also been implemented.
 
 2.  ARCHITECTURE & FILE STRUCTURE
@@ -26,8 +25,7 @@ tripistry_lsn/
 ├── includes/
 │   ├── auth.php               # Authentication functions and role guards
 │   ├── header.php             # Shared HTML head, navbar with role-based links
-│   ├── footer.php             # Shared footer + closing tags
-│   └── chat_functions.php     # Helper functions for the messaging system
+│   └── footer.php             # Shared footer + closing tags
 ├── sql/
 │   └── setup.sql              # Full database schema (22 tables) + seed data
 ├── assets/
@@ -44,9 +42,7 @@ tripistry_lsn/
 │   ├── browse.php             # Tabbed view: Destinations, Flights, etc.
 │   ├── packages.php           # Package listing with search/sort/filter
 │   ├── package_detail.php     # Detail view + booking + review forms
-│   ├── bookings.php           # Booking history
-│   ├── messages.php           # Inbox for traveller
-│   └── chat.php               # 1-on-1 private chat with agencies
+│   └── bookings.php           # Booking history
 └── agency/                    # AGENCY SECTION
     ├── dashboard.php          # Stats dashboard + recent bookings
     ├── packages.php           # CRUD list with edit/delete actions
@@ -54,37 +50,38 @@ tripistry_lsn/
     ├── edit_package.php       # Edit form with association management
     ├── manage_items.php       # Add/remove associated entities
     ├── group_trips.php        # Group trip status management
-    ├── bookings.php           # List of bookings made by travellers
-    ├── messages.php           # Inbox for agency
-    └── chat.php               # 1-on-1 private chat with travellers
+    └── bookings.php           # List of bookings made by travellers
 
 3.  DATABASE DESIGN & SCHEMA (22 TABLES)
 
 The database (`tripistry_lsn`) strictly maintains referential integrity using
 foreign keys with ON DELETE CASCADE rules.
 
- 1. USER                  — Superclass: UserID, Email, Password, UserType
- 2. TRAVELLER             — Subclass (UserID FK): FirstName, LastName, PassportNum
- 3. TRAVEL_AGENCY         — Subclass (UserID FK): AgencyName, VerificationStatus, CommissionRate
- 4. DESTINATION           — City, Country, Latitude, Longitude, Description, ImageURL
- 5. FLIGHT                — Airline, FlightNumber, DepartureCity, ArrivalCity, DepartureTime, ArrivalTime, Price
- 6. ACCOMODATION          — Name, Type, StarRating, PricePerNight, Address, DestinationID FK
- 7. RESTAURANT            — Name, CuisineType, PriceRange, Address, Rating, DestinationID FK
- 8. ATTRACTION            — Name, Type, EntryFee, Description, OpeningHours, DestinationID FK
- 9. PACKAGE               — Title, Description, Price, DurationDays, StartDate, EndDate, MaxTravellers, IsGroupTrip, ImageURL, Status
-10. CURATES               — M:N Agency–Package (UserID, PackageID) [PK on PackageID]
-11. VISITS                — M:N Package–Destination (PackageID, DestinationID)
-12. INCLUDES_FLIGHT       — 1:N Package–Flight (PackageID, FlightID)
-13. INCLUDES_STAY         — 1:N Package–Accommodation (PackageID, AccomodationID)
-14. PACKAGE_RESTAURANT    — M:N Package–Restaurant (PackageID, RestaurantID)
-15. PACKAGE_ATTRACTION    — M:N Package–Attraction (PackageID, AttractionID)
-16. REVIEW                — Weak entity: ReviewID, UserID, PackageID, Comment, RatingScore
-17. BOOKS                 — Booking relation: BookingID, UserID, PackageID, BookingDate, TotalCost, NumTravellers, Status
-18. TRAVELLER_PHONE       — Multivalued attribute: (UserID, PhoneNumber)
-19. ACCOMODATION_AMENITY  — Multivalued attribute: (AccomodationID, Amenity)
-20. GROUP_TRIP            — GroupTripID, PackageID FK, GroupName, MinParticipants, MaxParticipants, Status
-21. GROUP_TRIP_ENROLMENT  — EnrolmentID, GroupTripID FK, UserID FK, Status
-22. MESSAGE               — Chat relation: MessageID, SenderID, ReceiverID, PackageID, Message, IsRead, SentDate
+ 1. USER                  — Superclass: UserID, Email, Password, UserType, DateCreated, Address, Phone
+ 2. TRAVELLER             — Subclass (UserID FK): UserID, FirstName, LastName, PreferenceID
+ 3. TRAVEL_AGENCY         — Subclass (UserID FK): UserID, AgencyName, VerificationStatus, CommissionRate
+ 4. TRAVELLER_PREFERENCE  — PreferenceID, BudgetRange, TravelPace
+ 5. TRAVELLER_PREFERENCE_TAGS — PreferenceID FK, PreferenceTag
+ 6. TRAVEL_PACKAGE        — PackageID, Title, Description, Price, DurationDays, IsGroupTrip, Status, ImageURL, AgencyID FK
+ 7. GROUP_TRIP            — GroupTripID, TripName, MaxCapacity, AgencyID FK, PackageID FK
+ 8. BOOKING               — BookingID, BookingDate, TotalCost, Status, UserID FK, PackageID FK
+ 9. PAYMENT               — BookingID FK, PaymentSeq, Amount, PaymentDate, Status
+10. REVIEW                — UserID FK, ReviewID, PackageID FK, Comment, RatingScore, DatePosted, BookingID FK
+11. DESTINATION           — DestinationID, City, Country, Latitude, Longitude, Description, ImageURL
+12. FLIGHT                — FlightID, Airline, FlightNumber, DepartureCity, ArrivalCity, DepartureTime, ArrivalTime, Price
+13. ACCOMMODATION         — AccommodationID, Name, Type, StarRating, PricePerNight, Address, DestinationID FK
+14. ACCOMMODATION_AMENITIES — AccommodationID FK, Amenity
+15. RESTAURANT            — RestaurantID, Name, CuisineType, PriceRange, Address, Rating, DestinationID FK
+16. ATTRACTION            — AttractionID, Name, Type, EntryFee, Description, OpeningHours, DestinationID FK
+17. INCLUDES_FLIGHT       — PackageID FK, FlightID FK
+18. INCLUDES_ACCOM        — PackageID FK, AccommodationID FK
+19. INCLUDES_RESTAURANT   — PackageID FK, RestaurantID FK
+20. INCLUDES_ATTRACTION   — PackageID FK, AttractionID FK
+21. HAS_DESTINATION       — PackageID FK, DestinationID FK
+22. ENROLS                — UserID FK, GroupTripID FK
+
+*Note on Seed Data:
+To support clean runtime operations, certain relational and transactional tables (specifically GROUP_TRIP, ENROLS, PAYMENT, TRAVELLER_PREFERENCE, TRAVELLER_PREFERENCE_TAGS, and ACCOMMODATION_AMENITIES) do not receive pre-populated seed data during database setup. These tables are intentionally left with 0 entries initially and will be populated dynamically through user actions as the system is utilized (e.g., when travellers specify preferences, when agencies create group trips and travellers enrol in them, or when payments are made).
 
 4.  REST API LAYOUT (TASK B)
 
@@ -92,12 +89,109 @@ A robust REST API layer resides inside /api/index.php. It responds exclusively
 in JSON format and provides headless database query access. It features a global
 try/catch block to gracefully handle 500 Server Errors without breaking the frontend.
 
-* GET /api/index.php/destinations - Retrieve all geographic destinations.
-* GET /api/index.php/packages - Retrieve active travel packages. Supports comparison parameters (e.g., ?compare=1,2,3).
-* GET /api/index.php/flights - Retrieve flight listings.
-* GET /api/index.php/accommodations - Retrieve stays. Supports filtering by minimum star rating ?min_stars=4 and sorting by price ?sort=price_desc.
-* GET /api/index.php/restaurants - Retrieve dining venues.
-* GET /api/index.php/attractions - Retrieve local attractions.
+To prevent performance issues and long loading times on large datasets, all list endpoints support page-based pagination.
+
+Global Pagination Parameters:
+* page (default: 1) — Page number to fetch (>= 1).
+* limit (default: 20) — Number of records per page (1 to 100).
+
+Response Envelope Structure:
+List responses are wrapped in a standard pagination envelope:
+{
+  "success": true,
+  "pagination": {
+    "total_records": 1000,
+    "total_pages": 500,
+    "current_page": 1,
+    "limit": 2,
+    "next_page": 2,
+    "prev_page": null
+  },
+  "data": [ ... ]
+}
+
+Single resource queries (by ID, e.g., /api/index.php/packages/1) continue to return the single object directly.
+
+Endpoints:
+
+* GET /api/index.php/destinations
+  - Description: Retrieve all geographic destinations.
+  - Query Parameters: page, limit
+  - Request Example: GET /api/index.php/destinations?page=1&limit=2
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 1000, "total_pages": 500, "current_page": 1, "limit": 2, "next_page": 2, "prev_page": null},
+      "data": [
+        {"DestinationID": 1, "City": "Cape Town", "Country": "South Africa", "Latitude": "-33.924900", "Longitude": "18.424100", "Description": "A beautiful coastal city...", "ImageURL": "..."}
+      ]
+    }
+
+* GET /api/index.php/packages
+  - Description: Retrieve active travel packages.
+  - Query Parameters: page, limit, destination (City/Country filter), min_price, max_price, sort (price_asc, price_desc, duration, rating), compare (comma-separated IDs), compare_destination (destination name/ID)
+  - Request Example: GET /api/index.php/packages?page=1&limit=1&destination=Paris
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 120, "total_pages": 120, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"PackageID": 12, "Title": "Romantic Parisian Getaway", "Price": "2499.00", "DurationDays": 7, "AgencyName": "Dream Tours", "AvgRating": 4.8, "DestinationCity": "Paris"}
+      ]
+    }
+
+* GET /api/index.php/flights
+  - Description: Retrieve flight listings.
+  - Query Parameters: page, limit, departure (city filter), arrival (city filter), sort (price_asc, price_desc)
+  - Request Example: GET /api/index.php/flights?page=1&limit=1&departure=London
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 250, "total_pages": 250, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"FlightID": 3, "Airline": "British Airways", "FlightNumber": "BA203", "DepartureCity": "London", "ArrivalCity": "New York", "DepartureTime": "2026-06-01 08:30:00", "Price": "450.00"}
+      ]
+    }
+
+* GET /api/index.php/accommodations
+  - Description: Retrieve stays/accommodations.
+  - Query Parameters: page, limit, min_stars, destination_id, sort (price_asc, price_desc)
+  - Request Example: GET /api/index.php/accommodations?page=1&limit=1&min_stars=4
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 1500, "total_pages": 1500, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"AccommodationID": 10, "Name": "The Ritz-Carlton", "StarRating": 5, "PricePerNight": "499.00", "City": "New York"}
+      ]
+    }
+
+* GET /api/index.php/restaurants
+  - Description: Retrieve dining venues.
+  - Query Parameters: page, limit, cuisine, destination_id, sort (rating_desc, rating_asc)
+  - Request Example: GET /api/index.php/restaurants?page=1&limit=1&cuisine=Italian
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 800, "total_pages": 800, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"RestaurantID": 14, "Name": "Gusto Italiano", "CuisineType": "Italian", "Rating": "4.7", "City": "Rome"}
+      ]
+    }
+
+* GET /api/index.php/attractions
+  - Description: Retrieve local attractions.
+  - Query Parameters: page, limit, type, destination_id
+  - Request Example: GET /api/index.php/attractions?page=1&limit=1&type=Museum
+  - Response Example:
+    {
+      "success": true,
+      "pagination": {"total_records": 340, "total_pages": 340, "current_page": 1, "limit": 1, "next_page": 2, "prev_page": null},
+      "data": [
+        {"AttractionID": 7, "Name": "The Louvre", "Type": "Museum", "EntryFee": "17.00", "City": "Paris"}
+      ]
+    }
+
 
 5.  SECURITY IMPLEMENTATION
 
@@ -123,18 +217,24 @@ Prerequisites:
   - MySQL 8.0+ (or MariaDB 10.3+)
   - XAMPP / LAMP / MAMP or built-in PHP server
 
+Quick Database Installation & Seeding (Recommended):
+  Run the unified setup script from the project root:
+       php setup_db.php
+  This will automatically:
+    1. Recreate the schema by running the SQL scripts.
+    2. Seed 10,000 packages, 40,000 bookings, and 30,000+ reviews from the dataset.
+
 Steps for XAMPP (Windows):
   1. Clone or extract the project into C:\xampp\htdocs\tripistry_lsn
   2. Start Apache and MySQL from the XAMPP Control Panel.
-  3. Open Command Prompt or PowerShell and import the database:
-       mysql -u root -p -e "source sql/setup.sql"
-     (The script handles dropping and recreating the 'tripistry_lsn' database).
+  3. Run the setup script in PowerShell or Command Prompt:
+       php setup_db.php
   4. Open in browser: http://localhost/tripistry_lsn
 
 Steps for Built-in PHP Server (Linux/macOS):
-  1. Import the database:
-       mysql -u root -p < sql/setup.sql
-  2. Start the server from the project root:
+  1. Run the setup script from the project root:
+       php setup_db.php
+  2. Start the server:
        php -S localhost:8000
   3. Open in browser: http://localhost:8000
 
@@ -145,7 +245,17 @@ will dynamically adjust whether you are using an XAMPP sub-directory or the root
 
 To ensure the new features from the 'main' branch work seamlessly in all local environments (especially XAMPP), the following critical fixes were applied:
 
-- Dynamic Pathing Implementation: Hardcoded absolute links (e.g. href="/login.php") across all frontend files (including the new chat and bookings pages) were refactored to use a dynamic <?php echo BASE_URL; ?> variable. This prevents broken links when hosting the project in a subdirectory.
+- Database Query Alignment with the 22-Table Schema: 
+  Migrated every query and data interaction surface in the codebase away from legacy entities (such as PACKAGE, BOOKS, VISITS, CURATES, INCLUDES_STAY) to the official schema tables (TRAVEL_PACKAGE, BOOKING, HAS_DESTINATION, INCLUDES_ACCOM). Adjusted JOIN criteria to remove the CURATES table completely, joining directly on the AgencyID.
+- Spelling & Column Compliance:
+  Corrected all references of ACCOMODATION to ACCOMMODATION (double 'm') in database queries. Since the BOOKING table does not possess a NumTravellers column, queries select this dynamically as ROUND(TotalCost / Price) to support the UI without database errors.
+- Seeder Performance Cascade Optimization:
+  Optimized the database installer and seeder script (fetch_interactions.php) to utilize runtime caching for password hashing, and kept prepared statement generation outside loop structures. This resolved a major CPU bottleneck, cascading to accelerate the database population of 100,000+ items (10k packages, 40k bookings, and 30k+ reviews) from approximately 15 minutes to under 15 seconds.
+- Dynamic Pathing Implementation: 
+  Hardcoded absolute links (e.g. href="/login.php") across all frontend files (including bookings pages) were refactored to use a dynamic <?php echo BASE_URL; ?> variable. This prevents broken links when hosting the project in a subdirectory.
 - README Cleanup: Removed duplicate and conflicting legacy schema definitions to accurately reflect the unified 22-table structure.
+- Chat/Messaging Removal: Completely removed all chat, inbox, and messaging interfaces (including traveller/chat.php, traveller/messages.php, agency/chat.php, agency/messages.php, and includes/chat_functions.php) since the MESSAGE table is not part of the official 22-table schema. All corresponding nav links, message buttons, and dashboard notifications have been disabled.
+- Seed Data Scope & Empty Tables Note:
+  Certain relational tables (like GROUP_TRIP, ENROLS, PAYMENT, TRAVELLER_PREFERENCE, TRAVELLER_PREFERENCE_TAGS, and ACCOMMODATION_AMENITIES) are designed to hold transactional or user-configured data. These do not receive pre-populated seed data from the CSV and are intentionally left empty initially. They are populated dynamically by the application during runtime as agencies create group trips, travellers register their preferences, make bookings, and complete payments.
 
 END OF README

@@ -8,13 +8,14 @@ $maxPrice = $_GET['max_price'] ?? '';
 $minRating = $_GET['min_rating'] ?? '';
 
 $query = 'SELECT p.*, ta.AgencyName, u.Email,
+    CURRENT_DATE() as StartDate, DATE_ADD(CURRENT_DATE(), INTERVAL p.DurationDays DAY) as EndDate,
+    20 as MaxTravellers,
     (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
     (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount,
-    (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
-    (SELECT d.Country FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
-    FROM PACKAGE p
-    JOIN CURATES c ON p.PackageID = c.PackageID
-    JOIN USER u ON c.UserID = u.UserID
+    (SELECT d.City FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE hd.PackageID = p.PackageID LIMIT 1) as DestinationCity,
+    (SELECT d.Country FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE hd.PackageID = p.PackageID LIMIT 1) as DestinationCountry
+    FROM TRAVEL_PACKAGE p
+    JOIN USER u ON p.AgencyID = u.UserID
     JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
     WHERE p.Status = \'Active\'';
 
@@ -25,7 +26,7 @@ if ($search) {
     $params = array_merge($params, ["%$search%", "%$search%", "%$search%"]);
 }
 if ($destFilter) {
-    $query .= ' AND p.PackageID IN (SELECT PackageID FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE d.City = ? OR d.Country = ?)';
+    $query .= ' AND p.PackageID IN (SELECT PackageID FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE d.City = ? OR d.Country = ?)';
     $params[] = $destFilter;
     $params[] = $destFilter;
 }
@@ -70,13 +71,14 @@ if ($compareIds) {
     $placeholders = implode(',', array_fill(0, count($compareIds), '?'));
     $stmt = $pdo->prepare("
         SELECT p.*, ta.AgencyName, u.Email,
+            CURRENT_DATE() as StartDate, DATE_ADD(CURRENT_DATE(), INTERVAL p.DurationDays DAY) as EndDate,
+            20 as MaxTravellers,
             (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
             (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount,
-            (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
-            (SELECT d.Country FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
-        FROM PACKAGE p
-        JOIN CURATES c ON p.PackageID = c.PackageID
-        JOIN USER u ON c.UserID = u.UserID
+            (SELECT d.City FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE hd.PackageID = p.PackageID LIMIT 1) as DestinationCity,
+            (SELECT d.Country FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE hd.PackageID = p.PackageID LIMIT 1) as DestinationCountry
+        FROM TRAVEL_PACKAGE p
+        JOIN USER u ON p.AgencyID = u.UserID
         JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
         WHERE p.PackageID IN ($placeholders)
     ");

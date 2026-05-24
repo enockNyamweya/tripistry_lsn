@@ -3,11 +3,10 @@
 $stmt = $pdo->prepare('
     SELECT p.*,
         (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
-        (SELECT COUNT(*) FROM BOOKS b WHERE b.PackageID = p.PackageID) as BookingCount,
-        (SELECT d.City FROM VISITS v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
-    FROM PACKAGE p
-    JOIN CURATES c ON p.PackageID = c.PackageID
-    WHERE c.UserID = ?
+        (SELECT COUNT(*) FROM BOOKING b WHERE b.PackageID = p.PackageID) as BookingCount,
+        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
+    FROM TRAVEL_PACKAGE p
+    WHERE p.AgencyID = ?
     ORDER BY p.PackageID DESC
 ');
 $stmt->execute([$_SESSION['user_id']]);
@@ -15,7 +14,7 @@ $packages = $stmt->fetchAll();
 
 // Handle delete
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
-    $stmt = $pdo->prepare('DELETE FROM PACKAGE WHERE PackageID = ? AND PackageID IN (SELECT PackageID FROM CURATES WHERE UserID = ?)');
+    $stmt = $pdo->prepare('DELETE FROM TRAVEL_PACKAGE WHERE PackageID = ? AND AgencyID = ?');
     $stmt->execute([(int)$_GET['delete'], $_SESSION['user_id']]);
     header('Location: packages.php?deleted=1');
     exit;

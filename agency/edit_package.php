@@ -4,7 +4,7 @@ $packageId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $error = '';
 
 // Verify ownership
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM CURATES WHERE UserID = ? AND PackageID = ?');
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM TRAVEL_PACKAGE WHERE AgencyID = ? AND PackageID = ?');
 $stmt->execute([$_SESSION['user_id'], $packageId]);
 if (!$packageId || $stmt->fetchColumn() == 0) {
     echo '<p class="empty-state">Package not found or access denied.</p>';
@@ -13,13 +13,13 @@ if (!$packageId || $stmt->fetchColumn() == 0) {
 }
 
 // Get existing package
-$stmt = $pdo->prepare('SELECT * FROM PACKAGE WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT *, CURRENT_DATE() as StartDate, DATE_ADD(CURRENT_DATE(), INTERVAL DurationDays DAY) as EndDate, 20 as MaxTravellers FROM TRAVEL_PACKAGE WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $package = $stmt->fetch();
 
 // Get existing associations
 $assoc = [];
-$stmt = $pdo->prepare('SELECT DestinationID FROM VISITS WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT DestinationID FROM HAS_DESTINATION WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $assoc['destinations'] = $stmt->fetchAll(\PDO::FETCH_COLUMN);
 
@@ -27,20 +27,20 @@ $stmt = $pdo->prepare('SELECT FlightID FROM INCLUDES_FLIGHT WHERE PackageID = ?'
 $stmt->execute([$packageId]);
 $assoc['flights'] = $stmt->fetchAll(\PDO::FETCH_COLUMN);
 
-$stmt = $pdo->prepare('SELECT AccomodationID FROM INCLUDES_STAY WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT AccommodationID FROM INCLUDES_ACCOM WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $assoc['accommodations'] = $stmt->fetchAll(\PDO::FETCH_COLUMN);
 
-$stmt = $pdo->prepare('SELECT RestaurantID FROM PACKAGE_RESTAURANT WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT RestaurantID FROM INCLUDES_RESTAURANT WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $assoc['restaurants'] = $stmt->fetchAll(\PDO::FETCH_COLUMN);
 
-$stmt = $pdo->prepare('SELECT AttractionID FROM PACKAGE_ATTRACTION WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT AttractionID FROM INCLUDES_ATTRACTION WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $assoc['attractions'] = $stmt->fetchAll(\PDO::FETCH_COLUMN);
 
 // Get existing group trip
-$stmt = $pdo->prepare('SELECT * FROM GROUP_TRIP WHERE PackageID = ?');
+$stmt = $pdo->prepare('SELECT *, TripName as GroupName, MaxCapacity as MaxParticipants, 2 as MinParticipants, CURRENT_DATE() as DepartureDate, DATE_ADD(CURRENT_DATE(), INTERVAL 7 DAY) as ReturnDate FROM GROUP_TRIP WHERE PackageID = ?');
 $stmt->execute([$packageId]);
 $groupTrip = $stmt->fetch();
 
@@ -61,12 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare('UPDATE PACKAGE SET Title=?, Description=?, Price=?, DurationDays=?, StartDate=?, EndDate=?, MaxTravellers=?, IsGroupTrip=?, ImageURL=?, Status=? WHERE PackageID=?');
-            $stmt->execute([$title, $description, $price, $duration, $startDate, $endDate, $maxTravellers, $isGroupTrip, $imageURL, $status, $packageId]);
+            $stmt = $pdo->prepare('UPDATE TRAVEL_PACKAGE SET Title=?, Description=?, Price=?, DurationDays=?, IsGroupTrip=?, ImageURL=?, Status=? WHERE PackageID=? AND AgencyID=?');
+            $stmt->execute([$title, $description, $price, $duration, $isGroupTrip, $imageURL, $status, $packageId, $_SESSION['user_id']]);
 
             // Rebuild associations - delete and re-insert
-            $tables = ['VISITS', 'INCLUDES_FLIGHT', 'INCLUDES_STAY', 'PACKAGE_RESTAURANT', 'PACKAGE_ATTRACTION'];
-            $columns = ['DestinationID', 'FlightID', 'AccomodationID', 'RestaurantID', 'AttractionID'];
+            $tables = ['HAS_DESTINATION', 'INCLUDES_FLIGHT', 'INCLUDES_ACCOM', 'INCLUDES_RESTAURANT', 'INCLUDES_ATTRACTION'];
+            $columns = ['DestinationID', 'FlightID', 'AccommodationID', 'RestaurantID', 'AttractionID'];
             $postKeys = ['destinations', 'flights', 'accommodations', 'restaurants', 'attractions'];
 
             foreach ($tables as $i => $table) {
@@ -81,11 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 $values = $_POST[$postKeys[$i]] ?? [];
                 foreach ($values as $vid) {
-                    if ($table === 'INCLUDES_FLIGHT') {
-                        $stmt = $pdo->prepare("INSERT IGNORE INTO $table (PackageID, $columns[$i]) VALUES (?, ?)");
-                    } else {
-                        $stmt = $pdo->prepare("INSERT IGNORE INTO $table (PackageID, $columns[$i]) VALUES (?, ?)");
-                    }
+                    $stmt = $pdo->prepare("INSERT IGNORE INTO $table (PackageID, $columns[$i]) VALUES (?, ?)");
                     $stmt->execute([$packageId, (int)$vid]);
                 }
             }
@@ -93,16 +89,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Update group trip
             if ($isGroupTrip) {
                 $groupName = trim($_POST['group_name'] ?? $title . ' Group');
-                $minP = (int)($_POST['min_participants'] ?? 2);
                 $maxP = (int)($_POST['max_participants'] ?? 20);
-                $depDate = $_POST['group_departure'] ?? $startDate;
-                $retDate = $_POST['group_return'] ?? $endDate;
                 if ($groupTrip) {
-                    $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET GroupName=?, MinParticipants=?, MaxParticipants=?, DepartureDate=?, ReturnDate=? WHERE GroupTripID=?');
-                    $stmt->execute([$groupName, $minP, $maxP, $depDate, $retDate, $groupTrip['GroupTripID']]);
+                    $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET TripName=?, MaxCapacity=? WHERE GroupTripID=? AND AgencyID=?');
+                    $stmt->execute([$groupName, $maxP, $groupTrip['GroupTripID'], $_SESSION['user_id']]);
                 } else {
-                    $stmt = $pdo->prepare('INSERT INTO GROUP_TRIP (PackageID, GroupName, MinParticipants, MaxParticipants, Status, DepartureDate, ReturnDate) VALUES (?, ?, ?, ?, ?, ?, ?)');
-                    $stmt->execute([$packageId, $groupName, $minP, $maxP, 'Open', $depDate, $retDate]);
+                    $stmt = $pdo->prepare('INSERT INTO GROUP_TRIP (TripName, MaxCapacity, AgencyID, PackageID) VALUES (?, ?, ?, ?)');
+                    $stmt->execute([$groupName, $maxP, $_SESSION['user_id'], $packageId]);
                 }
             }
 
@@ -116,14 +109,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Refresh package data after failed update
-    $stmt = $pdo->prepare('SELECT * FROM PACKAGE WHERE PackageID = ?');
+    $stmt = $pdo->prepare('SELECT *, CURRENT_DATE() as StartDate, DATE_ADD(CURRENT_DATE(), INTERVAL DurationDays DAY) as EndDate, 20 as MaxTravellers FROM TRAVEL_PACKAGE WHERE PackageID = ?');
     $stmt->execute([$packageId]);
     $package = $stmt->fetch();
 }
 
 $destinations = $pdo->query('SELECT * FROM DESTINATION ORDER BY Country, City')->fetchAll();
 $flights = $pdo->query('SELECT * FROM FLIGHT ORDER BY DepartureTime')->fetchAll();
-$accommodations = $pdo->query('SELECT * FROM ACCOMODATION ORDER BY Name')->fetchAll();
+$accommodations = $pdo->query('SELECT * FROM ACCOMMODATION ORDER BY Name')->fetchAll();
 $restaurants = $pdo->query('SELECT * FROM RESTAURANT ORDER BY Name')->fetchAll();
 $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll();
 ?>
@@ -248,7 +241,7 @@ $attractions = $pdo->query('SELECT * FROM ATTRACTION ORDER BY Name')->fetchAll()
                 <label>Accommodations</label>
                 <div class="checkbox-list">
                     <?php foreach ($accommodations as $a): ?>
-                        <label><input type="checkbox" name="accommodations[]" value="<?php echo $a['AccomodationID']; ?>" <?php echo in_array($a['AccomodationID'], $assoc['accommodations']) ? 'checked' : ''; ?>>
+                        <label><input type="checkbox" name="accommodations[]" value="<?php echo $a['AccommodationID']; ?>" <?php echo in_array($a['AccommodationID'], $assoc['accommodations']) ? 'checked' : ''; ?>>
                             <?php echo htmlspecialchars($a['Name'] . ' (' . $a['Type'] . ')'); ?></label>
                     <?php endforeach; ?>
                 </div>
