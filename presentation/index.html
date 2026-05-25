@@ -413,7 +413,7 @@ body {
 <body>
 
 <div class="slide-counter">
-  <span class="current" id="slideCurrent">01</span> / <span id="slideTotal">14</span>
+  <span class="current" id="slideCurrent">01</span> / <span id="slideTotal">17</span>
 </div>
 
 <div class="slides-wrapper" id="slidesWrapper">
@@ -756,7 +756,90 @@ body {
   <p style="color:var(--slate-400);font-size:0.85rem;">No frameworks. No build tools. Pure performance.</p>
 </div>
 
-<!-- SLIDE 14: THANK YOU -->
+<!-- SLIDE 14: LANDING & UX -->
+<div class="slide slide-accent content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">User Experience</p>
+    <h2 class="fade-up fade-up-delay-1">Polished Landing<br>&amp; Role-Based UI</h2>
+    <p class="fade-up fade-up-delay-2">Clean hero section introducing Tripistry with clear call-to-action buttons. Dynamic navigation that adapts based on user role — travellers and agencies each see personalised interfaces.</p>
+    <p class="fade-up fade-up-delay-3"><span class="badge">Responsive Layout</span> <span class="badge">Mobile-First Grid</span> <span class="badge">Glassmorphism</span></p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="feature-card">
+      <div class="feat-icon blue">&#127968;</div>
+      <h4>Landing Page</h4>
+      <p>Clean onboarding with clear CTAs guiding users to login or register</p>
+    </div>
+    <div class="feature-card" style="margin-top:1rem;">
+      <div class="feat-icon violet">&#128100;</div>
+      <h4>Dynamic Navbar</h4>
+      <p>Session-based rendering shows different menus per role</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 15: BOOKINGS & CALENDAR -->
+<div class="slide slide-white content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">Bookings &amp; Integration</p>
+    <h2 class="fade-up fade-up-delay-1">Booking Management<br>&amp; Google Calendar</h2>
+    <div class="timeline fade-up fade-up-delay-2">
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Structured Booking History</h4><p>Active, Pending, Cancelled badges with JOIN queries across packages and agencies</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>One-Click Calendar Export</h4><p>Dynamic Google Calendar event links auto-filled with trip title, dates, and location</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>No API Login Required</h4><p>Uses browser-session Google account — pre-filled event URL, no OAuth complexity</p></div></div>
+    </div>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="stat-card" style="text-align:center;">
+      <span style="font-size:2.5rem;">&#128197;</span>
+      <h4 style="color:var(--blue-900);margin-top:0.5rem;">Calendar Integration</h4>
+      <p style="font-size:0.85rem;color:var(--slate-500);line-height:1.5;">
+        Uses <code style="background:var(--blue-50);padding:0.15rem 0.4rem;border-radius:4px;">calendar.google.com/render?action=TEMPLATE</code><br>
+        with dynamic PHP-generated parameters
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 16: MICRO-INTERACTIONS & ACCESSIBILITY -->
+<div class="slide slide-light center-slide">
+  <p class="overline fade-up">Interaction Design</p>
+  <h2 class="fade-up fade-up-delay-1" style="color:var(--blue-900);">Micro-Interactions<br>&amp; Accessibility</h2>
+  <div class="grid-3 fade-up fade-up-delay-2">
+    <div class="feature-card">
+      <div class="feat-icon blue">&#10024;</div>
+      <h4>Shimmer Loading</h4>
+      <p>Skeleton screens with shimmer animation during data fetch</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon green">&#127754;</div>
+      <h4>Hover Lift Effects</h4>
+      <p>Cards elevate smoothly on hover with shadow transitions</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon violet">&#128065;</div>
+      <h4>Button Feedback</h4>
+      <p>Click animations provide tactile response on all interactive elements</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon rose">&#127769;</div>
+      <h4>Dark Mode</h4>
+      <p>Theme toggle with CSS custom properties for light and dark themes</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon amber">&#128065;</div>
+      <h4>Font Scaling</h4>
+      <p>Small, medium, and large text sizes for readability</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon blue">&#128241;</div>
+      <h4>Responsive Grid</h4>
+      <p>Mobile-first flexible grid adapts navigation and cards across devices</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 17: THANK YOU -->
 <div class="slide slide-gradient title-slide dark">
   <div class="fade-up"><div class="logo-mark" style="background:linear-gradient(135deg, var(--blue-400), var(--blue-500));">T</div></div>
   <h1 class="fade-up fade-up-delay-1">Thank<span> You</span></h1>
