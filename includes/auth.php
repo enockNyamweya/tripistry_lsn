@@ -128,3 +128,19 @@ function formatRevenueShort($amount) {
 function formatRevenueFull($amount) {
     return 'R' . number_format((float)$amount, 2, '.', ',');
 }
+
+/** Normalise price filter input for HTML number fields (dot decimal, non-negative). */
+function normalizeFilterPrice($value) {
+    if ($value === '' || $value === null) {
+        return '';
+    }
+    $normalized = str_replace(',', '.', trim((string)$value));
+    if ($normalized === '' || !is_numeric($normalized)) {
+        return '';
+    }
+    $amount = (float)$normalized;
+    if ($amount <= 0) {
+        return '';
+    }
+    return rtrim(rtrim(number_format($amount, 2, '.', ''), '0'), '.');
+}

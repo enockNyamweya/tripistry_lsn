@@ -81,6 +81,26 @@ function initPackagesInfinite() {
         statusEl.style.display = message ? 'block' : 'none';
     }
 
+    function parseFilterPrice(field) {
+        if (!field || field.value === '' || field.value === null) return null;
+        const n = parseFloat(String(field.value).replace(',', '.').trim());
+        if (Number.isNaN(n) || n <= 0) return null;
+        return n;
+    }
+
+    function validateFilterPrices(form) {
+        if (!form) return { ok: true, min: null, max: null };
+        const min = parseFilterPrice(form.elements['min_price']);
+        const max = parseFilterPrice(form.elements['max_price']);
+        if (min !== null && max !== null && max < min) {
+            return {
+                ok: false,
+                message: 'Max price must be higher than min price, or leave max empty for no upper limit.'
+            };
+        }
+        return { ok: true, min: min, max: max };
+    }
+
     function buildFilterParams(page) {
         const form = document.getElementById('packages-filter-form');
         const params = new URLSearchParams();
@@ -88,10 +108,16 @@ function initPackagesInfinite() {
         params.set('limit', String(pageSize));
         if (!form) return params;
 
-        ['search', 'destination', 'min_price', 'max_price', 'sort'].forEach(function (name) {
+        const prices = validateFilterPrices(form);
+        if (!prices.ok) return params;
+
+        ['search', 'destination', 'sort'].forEach(function (name) {
             const field = form.elements[name];
             if (field && field.value !== '') params.set(name, field.value);
         });
+        if (prices.min !== null) params.set('min_price', String(prices.min));
+        if (prices.max !== null) params.set('max_price', String(prices.max));
+
         const minRating = form.elements['min_rating'];
         if (minRating && minRating.value !== '') params.set('min_rating', minRating.value);
         return params;
@@ -141,6 +167,18 @@ function initPackagesInfinite() {
         setStatus(page === 1 ? 'Loading packages...' : '', false);
 
         try {
+            const form = document.getElementById('packages-filter-form');
+            const priceCheck = validateFilterPrices(form);
+            if (!priceCheck.ok) {
+                if (reset) listEl.innerHTML = '';
+                listEl.innerHTML = '<p class="empty-state packages-filter-hint">' + escHtml(priceCheck.message) + '</p>';
+                nextPage = null;
+                hasMore = false;
+                setStatus('', false);
+                loading = false;
+                return;
+            }
+
             const params = buildFilterParams(page);
             const res = await fetch(apiBase + '/packages?' + params.toString());
             if (!res.ok) throw new Error('Failed to load packages');
@@ -172,6 +210,25 @@ function initPackagesInfinite() {
 
     const filterForm = document.getElementById('packages-filter-form');
     if (filterForm) {
+        filterForm.querySelectorAll('.filter-price-input').forEach(function (input) {
+            input.addEventListener('keydown', function (e) {
+                if (e.key === '-' || e.key === 'e' || e.key === 'E') e.preventDefault();
+            });
+            input.addEventListener('input', function () {
+                const raw = String(input.value).trim();
+                if (raw === '' || raw === '0' || raw === '00') {
+                    if (input.name === 'max_price') input.value = '';
+                    return;
+                }
+                const n = parseFloat(raw.replace(',', '.'));
+                if (Number.isNaN(n) || n <= 0) input.value = '';
+            });
+            input.addEventListener('change', function () {
+                const n = parseFloat(String(input.value).replace(',', '.'));
+                if (input.value !== '' && (Number.isNaN(n) || n <= 0)) input.value = '';
+            });
+        });
+
         filterForm.addEventListener('submit', function (e) {
             e.preventDefault();
             hasMore = true;

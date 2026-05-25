@@ -92,13 +92,26 @@ function handlePackagesRequest($method, $id) {
                     $whereClause .= " AND (p.Title LIKE :search OR p.Description LIKE :search OR ta.AgencyName LIKE :search)";
                     $params[':search'] = '%' . $_GET['search'] . '%';
                 }
-                if (isset($_GET['min_price']) && $_GET['min_price'] !== '') {
-                    $whereClause .= " AND p.Price >= :min_price";
-                    $params[':min_price'] = (float)$_GET['min_price'];
+                $minPriceFilter = isset($_GET['min_price']) && $_GET['min_price'] !== ''
+                    ? (float)$_GET['min_price'] : null;
+                $maxPriceFilter = isset($_GET['max_price']) && $_GET['max_price'] !== ''
+                    ? (float)$_GET['max_price'] : null;
+                if ($minPriceFilter !== null && $minPriceFilter <= 0) {
+                    $minPriceFilter = null;
                 }
-                if (isset($_GET['max_price']) && $_GET['max_price'] !== '') {
+                if ($maxPriceFilter !== null && $maxPriceFilter <= 0) {
+                    $maxPriceFilter = null;
+                }
+                if ($minPriceFilter !== null && $maxPriceFilter !== null && $maxPriceFilter < $minPriceFilter) {
+                    $maxPriceFilter = null;
+                }
+                if ($minPriceFilter !== null) {
+                    $whereClause .= " AND p.Price >= :min_price";
+                    $params[':min_price'] = $minPriceFilter;
+                }
+                if ($maxPriceFilter !== null) {
                     $whereClause .= " AND p.Price <= :max_price";
-                    $params[':max_price'] = (float)$_GET['max_price'];
+                    $params[':max_price'] = $maxPriceFilter;
                 }
 
                 $havingClause = '';

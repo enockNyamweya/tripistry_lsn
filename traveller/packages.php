@@ -3,8 +3,11 @@
 $sort = $_GET['sort'] ?? 'price_asc';
 $search = $_GET['search'] ?? '';
 $destFilter = $_GET['destination'] ?? '';
-$minPrice = $_GET['min_price'] ?? '';
-$maxPrice = $_GET['max_price'] ?? '';
+$minPrice = normalizeFilterPrice($_GET['min_price'] ?? '');
+$maxPrice = normalizeFilterPrice($_GET['max_price'] ?? '');
+if ($minPrice !== '' && $maxPrice !== '' && (float)$maxPrice < (float)$minPrice) {
+    $maxPrice = '';
+}
 // Package list loaded via API (main.js infinite scroll)
 
 // Get all destinations for filter dropdown
@@ -36,20 +39,38 @@ if ($compareIds) {
 
 <h1>Travel Packages</h1>
 
-<div class="filter-bar">
-    <form method="GET" action="" class="filter-form" id="packages-filter-form">
-        <input type="text" name="search" placeholder="Search packages..." value="<?php echo htmlspecialchars($search); ?>">
-        <select name="destination">
+<div id="traveller-packages" class="traveller-packages">
+
+<div class="filter-bar packages-filter-bar">
+    <form method="GET" action="" class="filter-form packages-filter-form" id="packages-filter-form">
+        <label class="filter-field filter-field-search">
+            <span class="filter-label">Search</span>
+            <input type="text" name="search" placeholder="Search packages..." value="<?php echo htmlspecialchars($search); ?>">
+        </label>
+        <label class="filter-field">
+            <span class="filter-label">Destination</span>
+            <select name="destination">
             <option value="">All Destinations</option>
             <?php foreach ($destList as $d): ?>
                 <option value="<?php echo htmlspecialchars($d['City']); ?>" <?php echo $destFilter === $d['City'] ? 'selected' : ''; ?>>
                     <?php echo htmlspecialchars($d['City'] . ', ' . $d['Country']); ?>
                 </option>
             <?php endforeach; ?>
-        </select>
-        <input type="number" name="min_price" placeholder="Min Price" step="0.01" value="<?php echo htmlspecialchars($minPrice); ?>" style="width:100px;">
-        <input type="number" name="max_price" placeholder="Max Price" step="0.01" value="<?php echo htmlspecialchars($maxPrice); ?>" style="width:100px;">
-        <select name="sort">
+            </select>
+        </label>
+        <label class="filter-field filter-field-price">
+            <span class="filter-label">Min price (R)</span>
+            <input type="number" name="min_price" class="filter-price-input" placeholder="0" min="0" step="1" inputmode="numeric"
+                   value="<?php echo $minPrice !== '' ? htmlspecialchars($minPrice) : ''; ?>">
+        </label>
+        <label class="filter-field filter-field-price">
+            <span class="filter-label">Max price (R)</span>
+            <input type="number" name="max_price" class="filter-price-input" placeholder="Any" min="0" step="1" inputmode="numeric"
+                   value="<?php echo $maxPrice !== '' ? htmlspecialchars($maxPrice) : ''; ?>">
+        </label>
+        <label class="filter-field">
+            <span class="filter-label">Sort</span>
+            <select name="sort">
             <option value="price_asc" <?php echo $sort === 'price_asc' ? 'selected' : ''; ?>>Price: Low-High</option>
             <option value="price_desc" <?php echo $sort === 'price_desc' ? 'selected' : ''; ?>>Price: High-Low</option>
             <option value="rating_desc" <?php echo $sort === 'rating_desc' ? 'selected' : ''; ?>>Rating: High-Low</option>
@@ -59,8 +80,11 @@ if ($compareIds) {
             <option value="date_asc" <?php echo $sort === 'date_asc' ? 'selected' : ''; ?>>Date: Earliest</option>
             <option value="title_asc" <?php echo $sort === 'title_asc' ? 'selected' : ''; ?>>Title: A-Z</option>
         </select>
-        <button type="submit" class="btn btn-primary">Filter</button>
-        <a href="packages.php" class="btn btn-secondary">Clear</a>
+        </label>
+        <div class="filter-actions">
+            <button type="submit" class="btn btn-primary">Filter</button>
+            <a href="packages.php" class="btn btn-secondary">Clear</a>
+        </div>
     </form>
 </div>
 
@@ -141,5 +165,7 @@ if ($compareIds) {
     <div class="package-list" data-packages-list></div>
     <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
 </div>
+
+</div><!-- #traveller-packages -->
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
