@@ -1,4 +1,7 @@
-<?php include __DIR__ . '/../includes/header.php'; requireAgency();
+<?php
+include __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/format.php';
+requireAgency();
 
 $agency = getAgencyInfo($_SESSION['user_id']);
 
@@ -21,7 +24,7 @@ $groupTripCount = $stmt->fetchColumn();
 
 $revStmt = $pdo->prepare('SELECT COALESCE(SUM(b.TotalCost), 0) FROM BOOKING b JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID WHERE p.AgencyID = ? AND b.Status = "Confirmed"');
 $revStmt->execute([$_SESSION['user_id']]);
-$revenue = $revStmt->fetchColumn();
+$revenueStat = formatStatRevenue((float)$revStmt->fetchColumn());
 
 ?>
 
@@ -29,26 +32,28 @@ $revenue = $revStmt->fetchColumn();
 <p class="text-muted">Welcome, <?php echo htmlspecialchars($agency['AgencyName']); ?> — Status: <?php echo htmlspecialchars($agency['VerificationStatus']); ?></p>
 
 <div class="stats-grid">
-    <div class="stat-card">
-        <h3><?php echo $packageCount; ?></h3>
+    <a href="packages.php" class="stat-card stat-card-link">
+        <h3><?php echo (int)$packageCount; ?></h3>
         <p>Packages</p>
-    </div>
-    <div class="stat-card">
-        <h3><?php echo $bookingCount; ?></h3>
+    </a>
+    <a href="bookings.php" class="stat-card stat-card-link">
+        <h3><?php echo (int)$bookingCount; ?></h3>
         <p>Bookings</p>
-    </div>
-    <div class="stat-card">
-        <h3>R<?php echo number_format($revenue, 0); ?></h3>
+    </a>
+    <div class="stat-card stat-card-revenue">
+        <h3 class="stat-value-money"
+            data-full="<?php echo htmlspecialchars($revenueStat['full']); ?>"
+            title="<?php echo htmlspecialchars($revenueStat['full']); ?>"><?php echo htmlspecialchars($revenueStat['display']); ?></h3>
         <p>Revenue</p>
     </div>
     <div class="stat-card">
         <h3><?php echo $avgRating ? number_format($avgRating, 1) . ' ★' : 'N/A'; ?></h3>
         <p>Avg Rating</p>
     </div>
-    <div class="stat-card">
-        <h3><?php echo $groupTripCount; ?></h3>
+    <a href="group_trips.php" class="stat-card stat-card-link">
+        <h3><?php echo (int)$groupTripCount; ?></h3>
         <p>Group Trips</p>
-    </div>
+    </a>
 </div>
 
 <div class="quick-actions">
@@ -59,37 +64,25 @@ $revenue = $revStmt->fetchColumn();
 </div>
 
 <h2>Recent Bookings</h2>
-<?php
-$stmt = $pdo->prepare('
-    SELECT b.*, p.Title, t.FirstName, t.LastName
-    FROM BOOKING b
-    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
-    JOIN TRAVELLER t ON b.UserID = t.UserID
-    WHERE p.AgencyID = ?
-    ORDER BY b.BookingDate DESC LIMIT 5
-');
-$stmt->execute([$_SESSION['user_id']]);
-$recent = $stmt->fetchAll();
-?>
-<?php if ($recent): ?>
-<table class="data-table">
-    <thead>
-        <tr><th>Package</th><th>Traveller</th><th>Date</th><th>Cost</th><th>Status</th></tr>
-    </thead>
-    <tbody>
-        <?php foreach ($recent as $r): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($r['Title']); ?></td>
-                <td><?php echo htmlspecialchars($r['FirstName'] . ' ' . $r['LastName']); ?></td>
-                <td><?php echo date('M d Y', strtotime($r['BookingDate'])); ?></td>
-                <td>R<?php echo number_format($r['TotalCost'], 2); ?></td>
-                <td><span class="status-badge status-<?php echo strtolower($r['Status']); ?>"><?php echo htmlspecialchars($r['Status']); ?></span></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-<?php else: ?>
-    <p>No bookings yet.</p>
-<?php endif; ?>
+<p class="text-muted">Scroll for more — opens full list on <a href="bookings.php">Manage Bookings</a>.</p>
+
+<div class="agency-infinite dashboard-bookings-scroll"
+     data-agency-infinite
+     data-variant="dashboard"
+     data-api-base="<?php echo htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES); ?>"
+     data-resource="bookings"
+     data-page-size="10"
+     data-empty-message="No bookings yet.">
+
+    <p class="lazy-status" data-agency-status style="display:none"></p>
+
+    <table class="data-table">
+        <thead>
+            <tr><th>Package</th><th>Traveller</th><th>Date</th><th>Cost</th><th>Status</th></tr>
+        </thead>
+        <tbody data-agency-list></tbody>
+    </table>
+    <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
+</div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -233,6 +233,16 @@ function initAgencyInfinite() {
                     '<a href="?delete=' + encodeURIComponent(item.PackageID) + '" class="btn btn-danger btn-sm" onclick="return confirm(\'Delete this package?\')">Delete</a>' +
                     '</td></tr>';
             }
+            if (resource === 'bookings' && root.dataset.variant === 'dashboard') {
+                const statusClass = (item.Status || '').toLowerCase();
+                return '<tr>' +
+                    '<td>' + escHtml(item.PackageTitle) + '</td>' +
+                    '<td>' + escHtml(item.FirstName + ' ' + item.LastName) + '</td>' +
+                    '<td>' + formatShortDate(item.BookingDate) + '</td>' +
+                    '<td>' + formatMoney(item.TotalCost) + '</td>' +
+                    '<td><span class="status-badge status-' + escHtml(statusClass) + '">' + escHtml(item.Status) + '</span></td>' +
+                    '</tr>';
+            }
             if (resource === 'bookings') {
                 let actions = '';
                 if (item.Status === 'Pending') {
@@ -341,7 +351,9 @@ function initAgencyInfinite() {
             }
         }
 
-        const scrollRoot = listMode === 'picker' ? listEl : null;
+        const scrollRoot = listMode === 'picker'
+            ? listEl
+            : (root.classList.contains('dashboard-bookings-scroll') ? root : null);
         observeInfiniteSentinel(sentinel, function () {
             if (nextPage && !loading) loadPage(nextPage, false);
         }, scrollRoot);

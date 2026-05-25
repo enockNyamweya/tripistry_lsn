@@ -1,3 +1,26 @@
+/* Agency dashboard */
+.stat-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.stat-card-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.stat-card-revenue .stat-value-money {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+    font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+}
+.dashboard-bookings-scroll {
+    max-height: 420px;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+}
+
 /* Infinite scroll (browse / packages) */
 .lazy-status {
     margin: 0.75rem 0;
