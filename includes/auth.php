@@ -109,3 +109,22 @@ function getUserFirstName(PDO $pdo, $userId) {
     $stmt->execute([$userId]);
     return $stmt->fetchColumn();
 }
+
+/** Compact revenue for stat cards (R7.8M) — full amount in title attribute. */
+function formatRevenueShort($amount) {
+    $amount = (float)$amount;
+    if ($amount >= 1000000000) {
+        return 'R' . rtrim(rtrim(number_format($amount / 1000000000, 2, '.', ''), '0'), '.') . 'B';
+    }
+    if ($amount >= 1000000) {
+        return 'R' . rtrim(rtrim(number_format($amount / 1000000, 2, '.', ''), '0'), '.') . 'M';
+    }
+    if ($amount >= 1000) {
+        return 'R' . rtrim(rtrim(number_format($amount / 1000, 1, '.', ''), '0'), '.') . 'K';
+    }
+    return 'R' . number_format($amount, 0, '.', ',');
+}
+
+function formatRevenueFull($amount) {
+    return 'R' . number_format((float)$amount, 2, '.', ',');
+}

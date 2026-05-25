@@ -1,7 +1,4 @@
-<?php
-include __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/format.php';
-requireAgency();
+<?php include __DIR__ . '/../includes/header.php'; requireAgency();
 
 // Handle status update
 if (isset($_POST['action']) && isset($_POST['booking_id'])) {
@@ -25,7 +22,9 @@ $stmt = $pdo->prepare('
 ');
 $stmt->execute([$_SESSION['user_id']]);
 $summary = $stmt->fetch();
-$revenueStat = formatStatRevenue($summary['Revenue'] ?? 0);
+$revenueAmount = (float)($summary['Revenue'] ?? 0);
+$revenueShort = formatRevenueShort($revenueAmount);
+$revenueFull = formatRevenueFull($revenueAmount);
 ?>
 
 <h1>Booking Management</h1>
@@ -36,10 +35,8 @@ $revenueStat = formatStatRevenue($summary['Revenue'] ?? 0);
 
 <div class="stats-grid">
     <div class="stat-card stat-card-revenue">
-        <h3 class="stat-value-money"
-            data-full="<?php echo htmlspecialchars($revenueStat['full']); ?>"
-            title="<?php echo htmlspecialchars($revenueStat['full']); ?>"><?php echo htmlspecialchars($revenueStat['display']); ?></h3>
-        <p>Total Revenue</p>
+        <p class="stat-revenue-value" title="<?php echo htmlspecialchars($revenueFull); ?>"><?php echo htmlspecialchars($revenueShort); ?></p>
+        <p class="stat-revenue-label">Total Revenue</p>
     </div>
     <div class="stat-card">
         <h3><?php echo $summary['Total'] ?? 0; ?></h3>

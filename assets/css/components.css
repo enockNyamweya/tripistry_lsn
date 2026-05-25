@@ -173,15 +173,23 @@
 
     font-size: clamp(1rem, 2vw, 2rem);
 
-    /* KEY FIX: stable layout */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    /* prevents weird hover collapse */
     display: block;
-
     position: relative;
+}
+
+.stat-card .stat-revenue-value {
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    line-height: 1.1;
+    margin: 0 0 0.25rem;
+    color: var(--primary, #4f46e5);
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
 }
 
 /* EXPAND FULL VALUE ON HOVER 
@@ -244,7 +252,7 @@ h3 {
     margin: 0 auto;
 }
 
-.stat-card h3 {
+.stat-card h3:not(.stat-revenue-value) {
     font-size: clamp(1rem, 2vw, 2rem);
     white-space: nowrap;
     overflow: hidden;

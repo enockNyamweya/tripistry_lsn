@@ -1,7 +1,4 @@
-<?php
-include __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/format.php';
-requireAgency();
+<?php include __DIR__ . '/../includes/header.php'; requireAgency();
 
 $agency = getAgencyInfo($_SESSION['user_id']);
 
@@ -24,7 +21,9 @@ $groupTripCount = $stmt->fetchColumn();
 
 $revStmt = $pdo->prepare('SELECT COALESCE(SUM(b.TotalCost), 0) FROM BOOKING b JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID WHERE p.AgencyID = ? AND b.Status = "Confirmed"');
 $revStmt->execute([$_SESSION['user_id']]);
-$revenueStat = formatStatRevenue((float)$revStmt->fetchColumn());
+$revenueAmount = (float)$revStmt->fetchColumn();
+$revenueShort = formatRevenueShort($revenueAmount);
+$revenueFull = formatRevenueFull($revenueAmount);
 
 ?>
 
@@ -41,10 +40,8 @@ $revenueStat = formatStatRevenue((float)$revStmt->fetchColumn());
         <p>Bookings</p>
     </a>
     <div class="stat-card stat-card-revenue">
-        <h3 class="stat-value-money"
-            data-full="<?php echo htmlspecialchars($revenueStat['full']); ?>"
-            title="<?php echo htmlspecialchars($revenueStat['full']); ?>"><?php echo htmlspecialchars($revenueStat['display']); ?></h3>
-        <p>Revenue</p>
+        <p class="stat-revenue-value" title="<?php echo htmlspecialchars($revenueFull); ?>"><?php echo htmlspecialchars($revenueShort); ?></p>
+        <p class="stat-revenue-label">Revenue</p>
     </div>
     <div class="stat-card">
         <h3><?php echo $avgRating ? number_format($avgRating, 1) . ' ★' : 'N/A'; ?></h3>

@@ -9,29 +9,17 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-/* Revenue stat: never clip or ellipsis (overrides components.css gradient + overflow) */
 .stat-card.stat-card-revenue {
     overflow: visible;
-    min-width: 11rem;
 }
-.stat-card-revenue .stat-value-money {
-    font-size: clamp(0.85rem, 1.5vw, 1.25rem) !important;
-    font-weight: 800;
-    line-height: 1.25;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: unset !important;
-    word-break: break-word;
-    max-width: 100%;
-    /* Solid color — gradient + background-clip causes clipped/garbled text */
-    background: none !important;
-    -webkit-background-clip: border-box !important;
-    background-clip: border-box !important;
-    -webkit-text-fill-color: var(--primary, #4f46e5) !important;
-    color: var(--primary, #4f46e5) !important;
+.stat-card-revenue .stat-revenue-value {
+    background: none;
+    -webkit-text-fill-color: var(--primary, #4f46e5);
 }
-.stat-card-revenue .stat-value-money::after {
-    display: none !important;
+.stat-card-revenue .stat-revenue-label {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted, #64748b);
 }
 .dashboard-bookings-scroll {
     max-height: 420px;
