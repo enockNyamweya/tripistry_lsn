@@ -133,6 +133,7 @@ if ($compareIds) {
 
 <div id="packages-lazy"
      data-api-base="<?php echo htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES); ?>"
+     data-base-url="<?php echo htmlspecialchars(BASE_URL, ENT_QUOTES); ?>"
      data-page-size="12"
      data-compare-ids="<?php echo htmlspecialchars(implode(',', $compareIds), ENT_QUOTES); ?>">
 

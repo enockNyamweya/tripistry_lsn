@@ -45,11 +45,21 @@ function observeInfiniteSentinel(sentinel, callback, scrollRoot) {
     observer.observe(sentinel);
 }
 
+function resolveImageUrl(url, baseUrl) {
+    if (!url || !String(url).trim()) return '';
+    const u = String(url).trim();
+    if (/^https?:\/\//i.test(u)) return u;
+    if (u.startsWith('/')) return baseUrl + u;
+    if (u.startsWith('..')) return baseUrl + '/' + u.replace(/^\.\.\//, '');
+    return u;
+}
+
 function initPackagesInfinite() {
     const root = document.getElementById('packages-lazy');
     if (!root) return;
 
     const apiBase = root.dataset.apiBase;
+    const baseUrl = root.dataset.baseUrl || '';
     const pageSize = parseInt(root.dataset.pageSize, 10) || 12;
     const compareIds = (root.dataset.compareIds || '')
         .split(',')
@@ -93,28 +103,34 @@ function initPackagesInfinite() {
         const ratingHtml = rating > 0
             ? stars + ' ' + rating.toFixed(1) + ' (' + (pkg.ReviewCount || 0) + ' reviews)'
             : 'No reviews yet';
-        const img = pkg.ImageURL
-            ? '<img src="' + escHtml(pkg.ImageURL) + '" alt="' + escHtml(pkg.Title) + '" class="package-img">'
-            : '';
+        const imgUrl = resolveImageUrl(pkg.ImageURL, baseUrl);
+        const placeholderClass = imgUrl ? 'card-img-placeholder is-hidden' : 'card-img-placeholder';
+        const mediaBlock = '<div class="card-media">' +
+            (imgUrl ? '<img src="' + escHtml(imgUrl) + '" alt="' + escHtml(pkg.Title) + '" class="card-img" loading="lazy" onerror="this.classList.add(\'is-hidden\');var n=this.nextElementSibling;if(n)n.classList.remove(\'is-hidden\');">' : '') +
+            '<div class="' + placeholderClass + '"' + (imgUrl ? ' hidden' : '') + '><span class="card-img-placeholder-icon">✈</span><span class="card-img-placeholder-text">No photo</span></div></div>';
         const ids = compareIds.slice();
         if (ids.indexOf(pkg.PackageID) === -1) ids.push(pkg.PackageID);
         const compareUrl = 'packages.php?compare=' + encodeURIComponent(ids.slice(0, 3).join(','));
 
-        return '<div class="package-card">' +
-            '<div class="package-card-header">' +
-            '<h2>' + escHtml(pkg.Title) + '</h2>' +
-            '<span class="agency-badge">' + escHtml(pkg.AgencyName) + '</span></div>' +
-            '<div class="package-card-body">' + img +
+        const dest = escHtml((pkg.DestinationCity || 'N/A') + ', ' + (pkg.DestinationCountry || ''));
+
+        return '<article class="package-card">' +
+            '<header class="package-card-header">' +
+            '<h2 class="package-card-title">' + escHtml(pkg.Title) + '</h2>' +
+            '<span class="agency-badge">' + escHtml(pkg.AgencyName) + '</span></header>' +
+            '<div class="package-card-body">' + mediaBlock +
             '<div class="package-info">' +
-            '<p><strong>Destination:</strong> ' + escHtml((pkg.DestinationCity || 'N/A') + ', ' + (pkg.DestinationCountry || '')) + '</p>' +
-            '<p><strong>Duration:</strong> ' + escHtml(pkg.DurationDays) + ' days</p>' +
-            '<p><strong>Dates:</strong> ' + formatPackageDate(pkg.StartDate) + ' — ' + formatPackageDate(pkg.EndDate) + '</p>' +
-            '<p><strong>Max Travellers:</strong> ' + escHtml(pkg.MaxTravellers) + '</p>' +
+            '<ul class="package-meta">' +
+            '<li><strong>Destination</strong><span>' + dest + '</span></li>' +
+            '<li><strong>Duration</strong><span>' + escHtml(pkg.DurationDays) + ' days</span></li>' +
+            '<li><strong>Dates</strong><span>' + formatPackageDate(pkg.StartDate) + ' — ' + formatPackageDate(pkg.EndDate) + '</span></li>' +
+            '<li><strong>Max travellers</strong><span>' + escHtml(pkg.MaxTravellers) + '</span></li>' +
+            '</ul>' +
             '<p class="package-rating">' + ratingHtml + '</p>' +
             '<p class="package-price">' + formatMoney(pkg.Price) + '</p></div></div>' +
-            '<div class="package-card-footer">' +
+            '<footer class="package-card-footer">' +
             '<a href="package_detail.php?id=' + encodeURIComponent(pkg.PackageID) + '" class="btn btn-primary">View Details</a>' +
-            '<a href="' + escHtml(compareUrl) + '" class="btn btn-secondary">Compare</a></div></div>';
+            '<a href="' + escHtml(compareUrl) + '" class="btn btn-secondary">Compare</a></footer></article>';
     }
 
     async function loadPage(page, reset) {
