@@ -1,4 +1,5 @@
 <?php include __DIR__ . '/../includes/header.php'; requireTraveller();
+require_once __DIR__ . '/../includes/sentiment.php';
 
 $packageId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if (!$packageId) {
@@ -271,6 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                     <div class="review-header">
                         <strong><?php echo htmlspecialchars($rev['FirstName'] . ' ' . $rev['LastName']); ?></strong>
                         <span class="stars"><?php echo str_repeat('★', $rev['RatingScore']); ?></span>
+                        <?php $sentiment = analyze_sentiment($rev['Comment'] ?? ''); echo sentiment_badge($sentiment); ?>
                         <span class="text-muted"><?php echo date('M d Y', strtotime($rev['DatePosted'])); ?></span>
                     </div>
                     <p><?php echo htmlspecialchars($rev['Comment']); ?></p>

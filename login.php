@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/includes/security.php';
 
 if (isLoggedIn()) {
     header('Location: ' . BASE_URL . '/dashboard.php');
@@ -12,13 +13,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    if (empty($email) || empty($password)) {
+    // CSRF check
+    $token = $_POST['csrf_token'] ?? '';
+    if (empty($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $token)) {
+        $error = 'Invalid form submission. Please refresh and try again.';
+    } elseif (empty($email) || empty($password)) {
         $error = 'Please fill in all fields.';
-    } elseif (loginUser($email, $password)) {
-        header('Location: ' . BASE_URL . '/dashboard.php');
-        exit;
     } else {
-        $error = 'Invalid email or password.';
+        // Rate limit check
+        $rateLimitMsg = check_login_rate_limit($email);
+        if ($rateLimitMsg) {
+            $error = $rateLimitMsg;
+        } elseif (loginUser($email, $password)) {
+            secure_session_start();
+            header('Location: ' . BASE_URL . '/dashboard.php');
+            exit;
+        } else {
+            record_login_attempt();
+            $error = 'Invalid email or password.';
+        }
     }
 }
 ?>
@@ -45,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
         <form method="POST" action="">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token()) ?>">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
