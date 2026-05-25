@@ -5,4 +5,6 @@ uploads/*
 *.save.*
 *.swp
 essay.txt
+pdf_contents.txt
+EER_to_Relational_Mapping.txt
 *.env
