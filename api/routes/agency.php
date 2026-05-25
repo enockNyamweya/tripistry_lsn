@@ -66,7 +66,7 @@ function handleAgencyRequest($method, $resource, $subResource) {
             $countQuery = 'SELECT COUNT(1)' . $where;
             $selectQuery = "
                 SELECT g.*, g.TripName as GroupName, 2 as MinParticipants, g.MaxCapacity as MaxParticipants,
-                    'Open' as Status, CURRENT_DATE() as DepartureDate,
+                    COALESCE(g.Status, 'Open') as Status, CURRENT_DATE() as DepartureDate,
                     DATE_ADD(CURRENT_DATE(), INTERVAL 7 DAY) as ReturnDate,
                     p.Title as PackageTitle, p.PackageID as PID,
                     (SELECT COUNT(*) FROM ENROLS ge WHERE ge.GroupTripID = g.GroupTripID) as EnrolmentCount,

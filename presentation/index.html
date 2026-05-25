@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tripistry — Platform Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-900: #0f172a;
+  --blue-800: #1e3a5f;
+  --blue-700: #1e40af;
+  --blue-600: #2563eb;
+  --blue-500: #3b82f6;
+  --blue-400: #60a5fa;
+  --blue-300: #93c5fd;
+  --blue-200: #bfdbfe;
+  --blue-100: #dbeafe;
+  --blue-50: #eff6ff;
+  --white: #ffffff;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-800: #1e293b;
+  --amber-500: #f59e0b;
+  --emerald-500: #10b981;
+  --rose-500: #f43f5e;
+  --violet-500: #8b5cf6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--blue-900);
+  color: var(--slate-800);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* SLIDES CONTAINER */
+.slides-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  padding: 3rem;
+}
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+/* SLIDE BACKGROUNDS */
+.slide-light { background: linear-gradient(135deg, var(--white) 0%, var(--blue-50) 50%, var(--blue-100) 100%); }
+.slide-dark { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 60%, var(--blue-700) 100%); }
+.slide-accent { background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, var(--blue-100) 100%); }
+.slide-gradient { background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 40%, #1e40af 100%); }
+.slide-white { background: var(--white); }
+
+/* TITLE SLIDE */
+.title-slide {
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+}
+.title-slide .logo-mark {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem; color: white; font-weight: 800;
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.4);
+  margin-bottom: 0.5rem;
+}
+.title-slide h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--blue-900);
+  line-height: 1.15;
+}
+.title-slide h1 span { color: var(--blue-600); }
+.title-slide .subtitle {
+  font-size: 1.25rem; font-weight: 400;
+  color: var(--slate-500); max-width: 600px; line-height: 1.6;
+}
+.title-slide.dark h1 { color: var(--white); }
+.title-slide.dark h1 span { color: var(--blue-400); }
+.title-slide.dark .subtitle { color: var(--blue-200); }
+
+/* CONTENT SLIDES */
+.content-slide {
+  flex-direction: row;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.content-slide .text-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.content-slide .visual-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-slide .overline {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--blue-600);
+}
+.content-slide h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--blue-900);
+  line-height: 1.2;
+}
+.content-slide h3 {
+  font-size: 1.2rem; font-weight: 600;
+  color: var(--blue-800);
+}
+.content-slide p {
+  font-size: 1rem; line-height: 1.7;
+  color: var(--slate-600);
+}
+.content-slide.dark .overline { color: var(--blue-300); }
+.content-slide.dark h2 { color: var(--white); }
+.content-slide.dark h3 { color: var(--blue-200); }
+.content-slide.dark p { color: var(--blue-100); }
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--slate-200);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1); }
+.stat-card .stat-number {
+  font-size: 2.2rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-card .stat-label {
+  font-size: 0.85rem; color: var(--slate-500);
+  font-weight: 500; margin-top: 0.25rem;
+}
+.stat-card .stat-icon {
+  font-size: 1.5rem; margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* FEATURE CARDS */
+.feature-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 16px rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--slate-200);
+  transition: all 0.3s ease;
+}
+.feature-card:hover { border-color: var(--blue-300); }
+.feature-card .feat-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+}
+.feature-card .feat-icon.blue { background: var(--blue-100); color: var(--blue-600); }
+.feature-card .feat-icon.green { background: #d1fae5; color: var(--emerald-500); }
+.feature-card .feat-icon.amber { background: #fef3c7; color: var(--amber-500); }
+.feature-card .feat-icon.violet { background: #ede9fe; color: var(--violet-500); }
+.feature-card .feat-icon.rose { background: #ffe4e6; color: var(--rose-500); }
+.feature-card h4 { font-size: 1rem; font-weight: 700; color: var(--blue-900); margin-bottom: 0.4rem; }
+.feature-card p { font-size: 0.85rem; color: var(--slate-500); line-height: 1.5; }
+
+/* ARCHITECTURE DIAGRAM */
+.arch-diagram {
+  display: flex; flex-direction: column; gap: 1rem;
+  width: 100%; max-width: 500px;
+}
+.arch-layer {
+  background: var(--white);
+  border: 2px solid var(--blue-200);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--blue-800);
+  font-size: 0.9rem;
+  position: relative;
+}
+.arch-layer.frontend { border-color: var(--blue-400); background: var(--blue-50); }
+.arch-layer.api { border-color: var(--blue-500); background: linear-gradient(135deg, var(--blue-50), var(--blue-100)); }
+.arch-layer.db { border-color: var(--blue-600); background: var(--blue-100); }
+.arch-arrow {
+  text-align: center; color: var(--blue-400); font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+/* CHAT DEMO */
+.chat-demo {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--slate-200);
+  box-shadow: 0 8px 40px rgba(15, 23, 42, 0.08);
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+}
+.chat-demo .chat-demo-header {
+  background: var(--blue-600);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.chat-demo .chat-demo-msgs {
+  padding: 1rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  min-height: 160px;
+}
+.chat-demo .demo-msg {
+  max-width: 80%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.chat-demo .demo-msg.left {
+  align-self: flex-start;
+  background: var(--slate-100);
+  color: var(--slate-800);
+  border-bottom-left-radius: 4px;
+}
+.chat-demo .demo-msg.right {
+  align-self: flex-end;
+  background: var(--blue-600);
+  color: var(--white);
+  border-bottom-right-radius: 4px;
+}
+.chat-demo .chat-demo-input {
+  border-top: 1px solid var(--slate-200);
+  padding: 0.7rem 1rem;
+  display: flex; gap: 0.5rem;
+}
+.chat-demo .chat-demo-input input {
+  flex: 1; border: 1px solid var(--slate-200); border-radius: 8px;
+  padding: 0.5rem 0.8rem; font-size: 0.8rem;
+}
+.chat-demo .chat-demo-input button {
+  background: var(--blue-600); color: white; border: none;
+  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+}
+
+/* NAVIGATION */
+.nav-bar {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.nav-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--slate-400);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-dot.active { background: var(--blue-600); width: 28px; border-radius: 10px; }
+.nav-arrow {
+  background: none; border: none;
+  font-size: 1.2rem; cursor: pointer;
+  color: var(--slate-500);
+  padding: 0 0.5rem;
+  transition: color 0.3s;
+}
+.nav-arrow:hover { color: var(--blue-600); }
+.slide-counter {
+  position: fixed; top: 2rem; right: 2.5rem;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--slate-400); z-index: 100;
+  letter-spacing: 0.05em;
+}
+.slide-counter .current { color: var(--blue-600); }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0; transform: translateY(30px);
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.fade-up-delay-1 { animation-delay: 0.15s; }
+.fade-up-delay-2 { animation-delay: 0.3s; }
+.fade-up-delay-3 { animation-delay: 0.45s; }
+.fade-up-delay-4 { animation-delay: 0.6s; }
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+.timeline-item {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+}
+.timeline-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--blue-600);
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--blue-100);
+}
+.timeline-content h4 { font-size: 0.95rem; font-weight: 700; color: var(--blue-900); margin-bottom: 0.2rem; }
+.timeline-content p { font-size: 0.8rem; color: var(--slate-500); }
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge.green { background: #d1fae5; color: #065f46; }
+.badge.new { background: var(--blue-600); color: white; }
+
+.center-slide { flex-direction: column; text-align: center; gap: 2rem; }
+.center-slide h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+
+/* GRID 3 */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; width: 100%; max-width: 900px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-slide { flex-direction: column; gap: 2rem; padding: 2rem 0; }
+  .slide { padding: 1.5rem; }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* TABLE DEMO */
+.demo-table {
+  width: 100%; max-width: 500px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(15,23,42,0.06);
+}
+.demo-table th {
+  background: var(--blue-600);
+  color: white;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.demo-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--slate-100);
+  color: var(--slate-700);
+}
+.demo-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<div class="slide-counter">
+  <span class="current" id="slideCurrent">01</span> / <span id="slideTotal">14</span>
+</div>
+
+<div class="slides-wrapper" id="slidesWrapper">
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide slide-light title-slide active">
+  <div class="fade-up"><div class="logo-mark">T</div></div>
+  <h1 class="fade-up fade-up-delay-1">Tripistry<span>.</span></h1>
+  <p class="subtitle fade-up fade-up-delay-2">
+    Intelligent Travel Package Management Platform<br>
+    Connecting Travellers &amp; Agencies Seamlessly
+  </p>
+  <p class="fade-up fade-up-delay-3" style="font-size:0.85rem;color:var(--slate-400);">Platform Demonstration &bull; May 2026</p>
+</div>
+
+<!-- SLIDE 2: MISSION -->
+<div class="slide slide-white content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">The Vision</p>
+    <h2 class="fade-up fade-up-delay-1">Reimagining Travel<br>Package Management</h2>
+    <p class="fade-up fade-up-delay-2">Tripistry bridges the gap between travel agencies and modern travellers. A unified platform where agencies create, manage and sell curated travel packages, while travellers discover, compare and book their perfect journey — all in one place.</p>
+    <p class="fade-up fade-up-delay-3" style="color:var(--slate-400);font-size:0.9rem;">Built with vanilla PHP &bull; MySQL 8.0 &bull; REST API &bull; Zero frameworks</p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="card-grid" style="grid-template-columns:1fr 1fr;">
+<div class="stat-card">
+        <span class="stat-icon">&#128451;</span>
+        <div class="stat-number">22</div>
+        <div class="stat-label">Database Tables</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">&#127758;</span>
+        <div class="stat-number">REST</div>
+        <div class="stat-label">API Architecture</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">&#128274;</span>
+        <div class="stat-number">2</div>
+        <div class="stat-label">User Roles</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">&#9889;</span>
+        <div class="stat-number">10K+</div>
+        <div class="stat-label">Seed Packages</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: ARCHITECTURE -->
+<div class="slide slide-light content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">Architecture</p>
+    <h2 class="fade-up fade-up-delay-1">Clean, Layered<br>Architecture</h2>
+    <p class="fade-up fade-up-delay-2">Monolithic PHP with a dedicated REST API layer. Session-based authentication, PDO prepared statements, and a normalized 23-table MySQL schema with full referential integrity.</p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="arch-diagram">
+      <div class="arch-layer frontend">&#127760; Frontend — HTML5 / CSS3 / Vanilla JS</div>
+      <div class="arch-arrow">&#8595; &#8593; JSON / Form POST</div>
+      <div class="arch-layer api">&#9881; REST API Layer — Central Router + Route Handlers</div>
+      <div class="arch-arrow">&#8595; &#8593; PDO Prepared Statements</div>
+      <div class="arch-layer db">&#128451; MySQL 8.0 — 23 Normalized Tables</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: DATABASE -->
+<div class="slide slide-white content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">Data Model</p>
+    <h2 class="fade-up fade-up-delay-1">22-Table<br>Relational Schema</h2>
+    <p class="fade-up fade-up-delay-2">User superclass with Traveller &amp; Agency subclasses. Full M:N junction tables for packages, destinations, flights, accommodations, restaurants, and attractions.</p>
+    <p class="fade-up fade-up-delay-3"><span class="badge">CASCADE DELETES</span> <span class="badge">COMPOSITE KEYS</span> <span class="badge">ENUMS</span> <span class="badge">CHECK CONSTRAINTS</span></p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <table class="demo-table">
+      <tr><th>Entity</th><th>Table</th><th>Key Type</th></tr>
+      <tr><td>Users</td><td>USER</td><td>Superclass PK</td></tr>
+      <tr><td>Travellers</td><td>TRAVELLER</td><td>Subclass FK</td></tr>
+      <tr><td>Agencies</td><td>TRAVEL_AGENCY</td><td>Subclass FK</td></tr>
+      <tr><td>Packages</td><td>TRAVEL_PACKAGE</td><td>Agency-owned</td></tr>
+      <tr><td>Bookings</td><td>BOOKING</td><td>Traveller↔Package</td></tr>
+      <tr><td>Reviews</td><td>REVIEW</td><td>Traveller↔Package</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 5: TRAVELLER EXPERIENCE -->
+<div class="slide slide-accent content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">Traveller Journey</p>
+    <h2 class="fade-up fade-up-delay-1">Discover, Compare,<br>Book &amp; Review</h2>
+    <div class="timeline fade-up fade-up-delay-2">
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Browse &amp; Filter</h4><p>Search packages by destination, price, rating, duration</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Compare Side-by-Side</h4><p>Multi-package comparison with detailed breakdown</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Book Instantly</h4><p>One-click booking with secure payment flow</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Review &amp; Rate</h4><p>Leave 1–5 star ratings and detailed reviews</p></div></div>
+    </div>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="stat-card" style="text-align:center;">
+      <span class="stat-icon" style="font-size:3rem;">&#127759;</span>
+      <div class="stat-number" style="font-size:2.5rem;">40K+</div>
+      <div class="stat-label">Bookings seeded for testing</div>
+      <div style="margin-top:1rem; display:flex; gap:0.5rem; justify-content:center;">
+        <span class="badge green">&#9733; Ratings</span>
+        <span class="badge">&#128197; Calendar Export</span>
+        <span class="badge">&#128269; Lazy Loading</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: AGENCY DASHBOARD -->
+<div class="slide slide-white content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">Agency Tools</p>
+    <h2 class="fade-up fade-up-delay-1">Powerful Agency<br>Dashboard</h2>
+    <p class="fade-up fade-up-delay-2">Real-time revenue metrics, package lifecycle management, booking processing, and group trip coordination — all from a single unified dashboard.</p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="card-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="stat-card">
+        <span class="stat-icon">&#128200;</span>
+        <div class="stat-number">R7.8M</div>
+        <div class="stat-label">Revenue Tracking</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">&#128230;</span>
+        <div class="stat-number">CRUD</div>
+        <div class="stat-label">Package Management</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">&#10003;</span>
+        <div class="stat-number">Confirm</div>
+        <div class="stat-label">Booking Processing</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">&#128101;</span>
+        <div class="stat-number">Groups</div>
+        <div class="stat-label">Trip Coordination</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: PACKAGE CREATION -->
+<div class="slide slide-light content-slide">
+  <div class="text-col">
+    <p class="overline fade-up"><span class="badge new">NEW</span> Smart Forms</p>
+    <h2 class="fade-up fade-up-delay-1">Instant Date<br>Calculation</h2>
+    <p class="fade-up fade-up-delay-2">Enter a start date and duration — the end date calculates instantly. No more manual counting. Client-side JavaScript + server-side validation ensure accuracy.</p>
+    <p class="fade-up fade-up-delay-3"><span class="badge green">&#10003; Two-way Binding</span> <span class="badge">Change end date → recalculates duration</span></p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div style="background:white;border-radius:16px;padding:2rem;box-shadow:0 4px 24px rgba(15,23,42,0.06);text-align:center;width:100%;max-width:380px;">
+      <p style="font-weight:700;color:var(--blue-900);margin-bottom:1rem;">Create Package</p>
+      <div style="display:flex;gap:0.8rem;margin-bottom:0.8rem;">
+        <div style="flex:1;text-align:left;"><small style="color:var(--slate-400);">Start Date</small><br><span style="font-weight:600;color:var(--blue-800);">15 Jun 2026</span></div>
+        <div style="flex:1;text-align:left;"><small style="color:var(--slate-400);">Duration</small><br><span style="font-weight:600;color:var(--blue-800);">7 days</span></div>
+      </div>
+      <div style="text-align:center;padding:0.5rem;background:var(--blue-50);border-radius:10px;margin-top:0.5rem;">
+        <small style="color:var(--slate-400);">&#8595; Auto-calculated</small><br>
+        <span style="font-weight:700;font-size:1.3rem;color:var(--blue-600);">End Date: 21 Jun 2026</span>
+      </div>
+      <div style="margin-top:0.5rem;font-size:0.7rem;color:var(--emerald-500);">&#9889; Instant — no page reload</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: CHAT FEATURE -->
+<div class="slide slide-gradient content-slide dark">
+  <div class="text-col" style="color:white;">
+    <p class="overline"><span class="badge new" style="background:var(--blue-400);color:var(--blue-900);">NEW</span> Communication</p>
+    <h2>Private Chat<br>Between Travellers<br>&amp; Agencies</h2>
+    <p>Direct, private messaging — each conversation is isolated between one traveller and one agency. No group clutter, no cross-visibility.</p>
+    <p><span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#128274; Private</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#9889; Real-time Polling</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#128172; 1-to-1</span></p>
+  </div>
+  <div class="visual-col">
+    <div class="chat-demo" style="box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+      <div class="chat-demo-header">&#128172; Wanderlust Travel Co</div>
+      <div class="chat-demo-msgs">
+        <div class="demo-msg left">Hi! I'm interested in the Bali package for July. Any availability?</div>
+        <div class="demo-msg right">Hello! Yes, we have 4 spots left for the July 12th departure. Would you like to book?</div>
+        <div class="demo-msg left">That sounds perfect! What's included in the package?</div>
+        <div class="demo-msg right">Flights, 5-star resort, guided tours, and all meals included. R25,000 per person.</div>
+      </div>
+      <div class="chat-demo-input">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: CHAT TECHNICAL -->
+<div class="slide slide-white content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">Chat Architecture</p>
+    <h2 class="fade-up fade-up-delay-1">How Private<br>Messaging Works</h2>
+    <p style="font-size:0.8rem;color:var(--blue-300);margin-top:-0.3rem;margin-bottom:0.5rem;">Separate migration — keeps EER diagram at 22 tables</p>
+    <div class="timeline fade-up fade-up-delay-2">
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>MESSAGE Table</h4><p>SenderID + ReceiverID with IsRead flag for unread badges</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>REST API Endpoints</h4><p>/conversations, /messages/{id}, /send, /contacts</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>3-Second Polling</h4><p>Auto-refresh for real-time feel without WebSockets</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Read Receipts</h4><p>Messages auto-marked as read when conversation opens</p></div></div>
+    </div>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <div class="stat-card" style="text-align:center;">
+      <span style="font-size:2.5rem;">&#128274;</span>
+      <h4 style="color:var(--blue-900);margin-top:0.5rem;">Isolation Guarantee</h4>
+      <p style="font-size:0.85rem;color:var(--slate-500);line-height:1.5;">
+        Messages are scoped to<br>
+        <strong>(SenderID, ReceiverID)</strong><br>
+        No traveller sees another traveller's chat.<br>
+        No agency sees another agency's messages.
+      </p>
+      <p style="margin-top:0.5rem;"><span class="badge">CASCADE DELETE</span> <span class="badge">PREPARED SQL</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10: API -->
+<div class="slide slide-light content-slide">
+  <div class="text-col">
+    <p class="overline fade-up">API Layer</p>
+    <h2 class="fade-up fade-up-delay-1">RESTful API<br>with Pagination</h2>
+    <p class="fade-up fade-up-delay-2">8 route handlers serving JSON. Every list endpoint returns standardized pagination envelopes. CORS-enabled for external consumption.</p>
+  </div>
+  <div class="visual-col fade-up fade-up-delay-1">
+    <table class="demo-table">
+      <tr><th>Endpoint</th><th>Resource</th></tr>
+      <tr><td>/api/packages</td><td>Packages + compare</td></tr>
+      <tr><td>/api/destinations</td><td>Destination catalog</td></tr>
+      <tr><td>/api/flights</td><td>Flight listings</td></tr>
+      <tr><td>/api/accommodations</td><td>Hotels &amp; stays</td></tr>
+      <tr><td>/api/restaurants</td><td>Dining venues</td></tr>
+      <tr><td>/api/attractions</td><td>Local attractions</td></tr>
+      <tr><td>/api/agency/*</td><td>Agency-scoped data</td></tr>
+      <tr><td>/api/chat/*</td><td>Private messaging</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 11: SECURITY -->
+<div class="slide slide-gradient content-slide dark">
+  <div class="text-col">
+    <p class="overline">Security</p>
+    <h2>Enterprise-Grade<br>Security</h2>
+    <p>bcrypt password hashing, PDO prepared statements everywhere, session-based authentication, role-based access control, and full CASCADE referential integrity.</p>
+    <p style="margin-top:1rem;"><span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#128274; BCRYPT</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#128736; PDO</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#128100; RBAC</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">&#128274; SESSION</span></p>
+  </div>
+  <div class="visual-col">
+    <div class="grid-3">
+      <div class="feature-card" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.1);">
+        <div class="feat-icon blue" style="background:rgba(255,255,255,0.15);">&#128274;</div>
+        <h4 style="color:white;">Password Hashing</h4>
+        <p style="color:rgba(255,255,255,0.6);">bcrypt with automatic salt generation</p>
+      </div>
+      <div class="feature-card" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.1);">
+        <div class="feat-icon rose" style="background:rgba(255,255,255,0.15);">&#128736;</div>
+        <h4 style="color:white;">SQL Injection</h4>
+        <p style="color:rgba(255,255,255,0.6);">100% prepared statements across all queries</p>
+      </div>
+      <div class="feature-card" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.1);">
+        <div class="feat-icon violet" style="background:rgba(255,255,255,0.15);">&#127760;</div>
+        <h4 style="color:white;">XSS Prevention</h4>
+        <p style="color:rgba(255,255,255,0.6);">htmlspecialchars on all dynamic output</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12: KEY FEATURES -->
+<div class="slide slide-accent center-slide">
+  <p class="overline fade-up">Feature Highlights</p>
+  <h2 class="fade-up fade-up-delay-1" style="color:var(--blue-900);">Everything You Need</h2>
+  <div class="grid-3 fade-up fade-up-delay-2">
+    <div class="feature-card">
+      <div class="feat-icon blue">&#128269;</div>
+      <h4>Smart Search &amp; Filter</h4>
+      <p>Price range, destination, rating, duration filters with lazy loading</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon green">&#128200;</div>
+      <h4>Revenue Analytics</h4>
+      <p>Real-time agency dashboard with formatted revenue tracking</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon amber">&#128197;</div>
+      <h4>Calendar Export</h4>
+      <p>ICS file export for booking integration with any calendar</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon violet">&#128101;</div>
+      <h4>Group Trips</h4>
+      <p>Capacity management, enrolment tracking, cancel/restore</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon rose">&#9889;</div>
+      <h4>Auto Date Calc</h4>
+      <p>Start date + duration → instant end date computation</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon blue">&#128172;</div>
+      <h4>Private Chat</h4>
+      <p>1-to-1 messaging between travellers and agencies</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13: TECH STACK -->
+<div class="slide slide-white center-slide">
+  <p class="overline fade-up">Technology</p>
+  <h2 class="fade-up fade-up-delay-1" style="color:var(--blue-900);">Modern Stack,<br>Zero Bloat</h2>
+  <div class="fade-up fade-up-delay-2" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+    <div class="stat-card" style="text-align:center;min-width:140px;">
+      <span style="font-size:2rem;">&#128421;</span>
+      <div style="font-weight:800;color:var(--blue-700);font-size:1rem;">PHP 8+</div>
+      <div style="font-size:0.75rem;color:var(--slate-400);">Backend</div>
+    </div>
+    <div class="stat-card" style="text-align:center;min-width:140px;">
+      <span style="font-size:2rem;">&#128451;</span>
+      <div style="font-weight:800;color:var(--blue-700);font-size:1rem;">MySQL 8.0</div>
+      <div style="font-size:0.75rem;color:var(--slate-400);">Database</div>
+    </div>
+    <div class="stat-card" style="text-align:center;min-width:140px;">
+      <span style="font-size:2rem;">&#127760;</span>
+      <div style="font-weight:800;color:var(--blue-700);font-size:1rem;">REST API</div>
+      <div style="font-size:0.75rem;color:var(--slate-400);">Architecture</div>
+    </div>
+    <div class="stat-card" style="text-align:center;min-width:140px;">
+      <span style="font-size:2rem;">&#127912;</span>
+      <div style="font-weight:800;color:var(--blue-700);font-size:1rem;">Vanilla CSS</div>
+      <div style="font-size:0.75rem;color:var(--slate-400);">Styling</div>
+    </div>
+  </div>
+  <p style="color:var(--slate-400);font-size:0.85rem;">No frameworks. No build tools. Pure performance.</p>
+</div>
+
+<!-- SLIDE 14: THANK YOU -->
+<div class="slide slide-gradient title-slide dark">
+  <div class="fade-up"><div class="logo-mark" style="background:linear-gradient(135deg, var(--blue-400), var(--blue-500));">T</div></div>
+  <h1 class="fade-up fade-up-delay-1">Thank<span> You</span></h1>
+  <p class="subtitle fade-up fade-up-delay-2">Tripistry — Connecting the World, One Journey at a Time</p>
+  <p class="fade-up fade-up-delay-3" style="font-size:0.85rem;color:var(--blue-300);">github.com/tripistry &bull; tripistry.com</p>
+</div>
+
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-bar" id="navBar">
+  <button class="nav-arrow" onclick="prevSlide()">&#8592;</button>
+  <div id="navDots"></div>
+  <button class="nav-arrow" onclick="nextSlide()">&#8594;</button>
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  let isAnimating = false;
+
+  document.getElementById('slideTotal').textContent = String(total).padStart(2, '0');
+
+  // Build dots
+  const dotsContainer = document.getElementById('navDots');
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  function updateCounter(n) {
+    document.getElementById('slideCurrent').textContent = String(n + 1).padStart(2, '0');
+  }
+
+  function goToSlide(n) {
+    if (isAnimating || n === current || n < 0 || n >= total) return;
+    isAnimating = true;
+
+    // Reset animations on new slide
+    const newSlide = slides[n];
+    const animated = newSlide.querySelectorAll('.fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3, .fade-up-delay-4');
+    animated.forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight; // trigger reflow
+      el.style.animation = '';
+    });
+
+    slides[current].classList.remove('active');
+    newSlide.classList.add('active');
+    current = n;
+
+    document.querySelectorAll('.nav-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+    updateCounter(current);
+
+    setTimeout(() => { isAnimating = false; }, 700);
+  }
+
+  window.nextSlide = () => goToSlide(current + 1);
+  window.prevSlide = () => goToSlide(current - 1);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      prevSlide();
+    }
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? nextSlide() : prevSlide();
+    }
+  });
+
+  // Mouse wheel
+  let wheelTimeout;
+  document.addEventListener('wheel', (e) => {
+    if (wheelTimeout) return;
+    wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 800);
+    if (e.deltaY > 30) nextSlide();
+    else if (e.deltaY < -30) prevSlide();
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>

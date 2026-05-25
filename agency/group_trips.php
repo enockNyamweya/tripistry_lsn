@@ -5,8 +5,8 @@ if (isset($_GET['status']) && isset($_GET['gid'])) {
     $newStatus = $_GET['status'];
     $gid = (int)$_GET['gid'];
     if (in_array($newStatus, ['Open', 'Closed', 'Cancelled'])) {
-        $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET TripName = TripName WHERE GroupTripID = ? AND AgencyID = ?');
-        $stmt->execute([$gid, $_SESSION['user_id']]);
+        $stmt = $pdo->prepare('UPDATE GROUP_TRIP SET Status = ? WHERE GroupTripID = ? AND AgencyID = ?');
+        $stmt->execute([$newStatus, $gid, $_SESSION['user_id']]);
     }
     header('Location: group_trips.php?updated=1');
     exit;

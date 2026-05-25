@@ -189,6 +189,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </div>
 
-<script src="/assets/js/package.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/package.js"></script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
