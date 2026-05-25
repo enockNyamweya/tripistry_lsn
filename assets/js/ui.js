@@ -27,6 +27,40 @@ class UIController {
         return s.length <= len ? s : s.slice(0, len) + '...';
     }
 
+    static resolveImageUrl(url, baseUrl) {
+        if (!url || !String(url).trim()) return '';
+        const u = String(url).trim();
+        if (/^https?:\/\//i.test(u)) return u;
+        if (u.startsWith('/')) return baseUrl + u;
+        if (u.startsWith('..')) return baseUrl + '/' + u.replace(/^\.\.\//, '');
+        return u;
+    }
+
+    static renderDestinationCard(dest, baseUrl) {
+        const alt = `${dest.City || ''}, ${dest.Country || ''}`;
+        const imgUrl = UIController.resolveImageUrl(dest.ImageURL, baseUrl);
+        const imgTag = imgUrl
+            ? `<img src="${UIController.esc(imgUrl)}" alt="${UIController.esc(alt)}" class="card-img" loading="lazy" onerror="this.classList.add('is-hidden');var n=this.nextElementSibling;if(n)n.classList.remove('is-hidden');">`
+            : '';
+        const placeholderClass = imgUrl ? 'card-img-placeholder is-hidden' : 'card-img-placeholder';
+        const initials = UIController.esc((dest.City || '?').charAt(0).toUpperCase());
+
+        return `<a href="${UIController.esc(baseUrl)}/traveller/destination.php?id=${encodeURIComponent(dest.DestinationID)}"
+               class="card feature-card hover-lift">
+            <div class="card-media">
+                ${imgTag}
+                <div class="${placeholderClass}" aria-hidden="${imgUrl ? 'true' : 'false'}">
+                    <span class="card-img-placeholder-icon">${initials}</span>
+                    <span class="card-img-placeholder-text">No photo</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3>${UIController.esc(dest.City)}, ${UIController.esc(dest.Country)}</h3>
+                <p>${UIController.esc(UIController.truncate(dest.Description, 120))}</p>
+            </div>
+        </a>`;
+    }
+
     static init() {
         this.initTabs();
         this.initBrowseInfinite();
@@ -76,17 +110,7 @@ class UIController {
         };
 
         UIController.browseRenderers = {
-            destinations: (dest) => {
-                const img = dest.ImageURL
-                    ? `<img src="${UIController.esc(dest.ImageURL)}" alt="${UIController.esc(dest.City)}" class="card-img">`
-                    : '';
-                return `<a href="${UIController.esc(UIController.browseBaseUrl)}/traveller/destination.php?id=${encodeURIComponent(dest.DestinationID)}"
-                   class="card feature-card hover-lift">${img}
-                   <div class="card-body">
-                       <h3>${UIController.esc(dest.City)}, ${UIController.esc(dest.Country)}</h3>
-                       <p>${UIController.esc(UIController.truncate(dest.Description, 120))}</p>
-                   </div></a>`;
-            },
+            destinations: (dest) => UIController.renderDestinationCard(dest, UIController.browseBaseUrl),
             flights: (f) => `<tr>
                 <td>${UIController.esc(f.Airline)}</td>
                 <td>${UIController.esc(f.FlightNumber)}</td>

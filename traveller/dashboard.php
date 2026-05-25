@@ -180,15 +180,28 @@ foreach ($topRecommendations as $d): ?>
     <a href="<?= BASE_URL ?>/traveller/destination.php?id=<?= $d['DestinationID'] ?>"
        class="card feature-card hover-lift">
 
-        <?php if (!empty($d['ImageURL'])): ?>
-
-            <img
-                src="<?= htmlspecialchars($d['ImageURL']) ?>"
-                alt="<?= htmlspecialchars($d['City']) ?>"
-                class="card-img"
-            >
-
-        <?php endif; ?>
+        <div class="card-media">
+            <?php
+            $imgUrl = $d['ImageURL'] ?? '';
+            if ($imgUrl !== '' && str_starts_with($imgUrl, '..')) {
+                $imgUrl = BASE_URL . '/' . ltrim(substr($imgUrl, 3), '/');
+            } elseif ($imgUrl !== '' && str_starts_with($imgUrl, '/')) {
+                $imgUrl = BASE_URL . $imgUrl;
+            }
+            $hasImg = $imgUrl !== '';
+            $placeholderHidden = $hasImg ? ' is-hidden' : '';
+            ?>
+            <?php if ($hasImg): ?>
+            <img src="<?= htmlspecialchars($imgUrl) ?>"
+                 alt="<?= htmlspecialchars($d['City'] . ', ' . $d['Country']) ?>"
+                 class="card-img" loading="lazy"
+                 onerror="this.classList.add('is-hidden');var n=this.nextElementSibling;if(n)n.classList.remove('is-hidden');">
+            <?php endif; ?>
+            <div class="card-img-placeholder<?= $placeholderHidden ?>"<?= $hasImg ? ' aria-hidden="true"' : '' ?>>
+                <span class="card-img-placeholder-icon"><?= strtoupper(substr($d['City'] ?? '?', 0, 1)) ?></span>
+                <span class="card-img-placeholder-text">No photo</span>
+            </div>
+        </div>
 
         <div class="card-body">
 
