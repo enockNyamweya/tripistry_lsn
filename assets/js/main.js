@@ -21,3 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 4000);
     });
 });
+
+document.addEventListener('click', (e) => {
+
+    const stat = e.target.closest('.stat-card h3');
+
+    if (!stat) return;
+
+    stat.classList.toggle('expanded');
+});

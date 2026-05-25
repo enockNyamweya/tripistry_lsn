@@ -79,3 +79,5 @@ if (isset($_GET['status']) && isset($_GET['gid'])) {
 <?php endif; ?>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+
+<script src="/assets/js/group_trips.js"></script>
