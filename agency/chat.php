@@ -23,7 +23,7 @@ let pollTimer = null;
 let lastMessageId = 0;
 
 function api(url, options = {}) {
-    return fetch(url, options).then(r => {
+    return fetch(url, { ...options, credentials: 'same-origin' }).then(r => {
         if (!r.ok) throw new Error('Server error: ' + r.status);
         return r.json();
     });
