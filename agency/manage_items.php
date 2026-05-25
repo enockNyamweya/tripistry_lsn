@@ -76,26 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_type'])) {
     exit;
 }
 
-// Available items not yet associated
-$stmt = $pdo->prepare('SELECT * FROM DESTINATION WHERE DestinationID NOT IN (SELECT DestinationID FROM HAS_DESTINATION WHERE PackageID = ?)');
-$stmt->execute([$packageId]);
-$availableDest = $stmt->fetchAll();
-
-$stmt = $pdo->prepare('SELECT * FROM FLIGHT WHERE FlightID NOT IN (SELECT FlightID FROM INCLUDES_FLIGHT WHERE PackageID = ?)');
-$stmt->execute([$packageId]);
-$availableFlights = $stmt->fetchAll();
-
-$stmt = $pdo->prepare('SELECT * FROM ACCOMMODATION WHERE AccommodationID NOT IN (SELECT AccommodationID FROM INCLUDES_ACCOM WHERE PackageID = ?)');
-$stmt->execute([$packageId]);
-$availableAcc = $stmt->fetchAll();
-
-$stmt = $pdo->prepare('SELECT * FROM RESTAURANT WHERE RestaurantID NOT IN (SELECT RestaurantID FROM INCLUDES_RESTAURANT WHERE PackageID = ?)');
-$stmt->execute([$packageId]);
-$availableRest = $stmt->fetchAll();
-
-$stmt = $pdo->prepare('SELECT * FROM ATTRACTION WHERE AttractionID NOT IN (SELECT AttractionID FROM INCLUDES_ATTRACTION WHERE PackageID = ?)');
-$stmt->execute([$packageId]);
-$availableAttr = $stmt->fetchAll();
+$apiBase = htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES);
 ?>
 
 <h1>Manage Items: <?php echo htmlspecialchars($package['Title']); ?></h1>
@@ -110,14 +91,14 @@ $availableAttr = $stmt->fetchAll();
 <div class="manage-sections">
     <?php
     $sections = [
-        ['Destinations', $pkgDestinations, $availableDest, 'destination', 'DestinationID', 'City', 'Country'],
-        ['Flights', $pkgFlights, $availableFlights, 'flight', 'FlightID', 'Airline', 'FlightNumber'],
-        ['Accommodations', $pkgAccommodations, $availableAcc, 'accommodation', 'AccommodationID', 'Name', 'Type'],
-        ['Restaurants', $pkgRestaurants, $availableRest, 'restaurant', 'RestaurantID', 'Name', 'CuisineType'],
-        ['Attractions', $pkgAttractions, $availableAttr, 'attraction', 'AttractionID', 'Name', 'Type'],
+        ['Destinations', $pkgDestinations, 'destination', 'destinations', 'DestinationID', 'City', 'Country'],
+        ['Flights', $pkgFlights, 'flight', 'flights', 'FlightID', 'Airline', 'FlightNumber'],
+        ['Accommodations', $pkgAccommodations, 'accommodation', 'accommodations', 'AccommodationID', 'Name', 'Type'],
+        ['Restaurants', $pkgRestaurants, 'restaurant', 'restaurants', 'RestaurantID', 'Name', 'CuisineType'],
+        ['Attractions', $pkgAttractions, 'attraction', 'attractions', 'AttractionID', 'Name', 'Type'],
     ];
 
-    foreach ($sections as [$label, $current, $available, $type, $idCol, $nameCol, $subCol]):
+    foreach ($sections as [$label, $current, $type, $apiType, $idCol, $nameCol, $subCol]):
     ?>
         <div class="manage-section">
             <h2><?php echo $label; ?></h2>
@@ -134,20 +115,22 @@ $availableAttr = $stmt->fetchAll();
                 <p class="text-muted">No <?php echo strtolower($label); ?> associated.</p>
             <?php endif; ?>
 
-            <?php if ($available): ?>
-                <form method="POST" action="" class="inline-add-form">
-                    <input type="hidden" name="add_type" value="<?php echo $type; ?>">
-                    <select name="add_id" required>
-                        <option value="">Add <?php echo rtrim($label, 's'); ?>...</option>
-                        <?php foreach ($available as $item): ?>
-                            <option value="<?php echo $item[$idCol]; ?>">
-                                <?php echo htmlspecialchars($item[$nameCol] . ($item[$subCol] ? ' (' . $item[$subCol] . ')' : '')); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
-                </form>
-            <?php endif; ?>
+            <h3 class="text-muted">Add <?php echo rtrim($label, 's'); ?> (scroll to load more)</h3>
+            <div class="available-picker agency-infinite"
+                 data-agency-infinite
+                 data-api-base="<?php echo $apiBase; ?>"
+                 data-resource="available"
+                 data-available-type="<?php echo htmlspecialchars($apiType); ?>"
+                 data-add-type="<?php echo htmlspecialchars($type); ?>"
+                 data-package-id="<?php echo (int)$packageId; ?>"
+                 data-list-mode="picker"
+                 data-page-size="20"
+                 data-empty-message="No more items available to add.">
+
+                <p class="lazy-status" data-agency-status style="display:none"></p>
+                <div data-agency-list class="available-picker-list"></div>
+                <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
+            </div>
         </div>
     <?php endforeach; ?>
 </div>

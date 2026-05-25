@@ -22,7 +22,7 @@ function handleDestinationsRequest($method, $id) {
                 $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
 
                 $countQuery = "SELECT COUNT(1) FROM DESTINATION";
-                $selectQuery = "SELECT * FROM DESTINATION";
+                $selectQuery = "SELECT * FROM DESTINATION ORDER BY Country, City";
                 
                 $response = getPaginatedResponse($pdo, $countQuery, $selectQuery, [], $page, $limit);
                 echo json_encode($response);

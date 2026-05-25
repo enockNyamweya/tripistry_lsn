@@ -74,43 +74,73 @@ function handlePackagesRequest($method, $id) {
                 
             } else {
                 // Get all packages with filtering and sorting
-                $whereClause = " FROM TRAVEL_PACKAGE p JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID WHERE p.Status = 'Active'";
+                $whereClause = " FROM TRAVEL_PACKAGE p
+                    JOIN USER u ON p.AgencyID = u.UserID
+                    JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
+                    WHERE p.Status = 'Active'";
                 $params = [];
                 
-                if (isset($_GET['destination'])) {
+                if (isset($_GET['destination']) && $_GET['destination'] !== '') {
                     $whereClause .= " AND p.PackageID IN (
                         SELECT hd.PackageID FROM HAS_DESTINATION hd
                         JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
-                        WHERE d.City LIKE :destination OR d.Country LIKE :destination
+                        WHERE d.City = :destination OR d.Country = :destination
                     )";
-                    $params[':destination'] = '%' . $_GET['destination'] . '%';
+                    $params[':destination'] = $_GET['destination'];
                 }
-                if (isset($_GET['min_price'])) {
+                if (isset($_GET['search']) && $_GET['search'] !== '') {
+                    $whereClause .= " AND (p.Title LIKE :search OR p.Description LIKE :search OR ta.AgencyName LIKE :search)";
+                    $params[':search'] = '%' . $_GET['search'] . '%';
+                }
+                if (isset($_GET['min_price']) && $_GET['min_price'] !== '') {
                     $whereClause .= " AND p.Price >= :min_price";
                     $params[':min_price'] = (float)$_GET['min_price'];
                 }
-                if (isset($_GET['max_price'])) {
+                if (isset($_GET['max_price']) && $_GET['max_price'] !== '') {
                     $whereClause .= " AND p.Price <= :max_price";
                     $params[':max_price'] = (float)$_GET['max_price'];
                 }
+
+                $havingClause = '';
+                if (isset($_GET['min_rating']) && $_GET['min_rating'] !== '') {
+                    $havingClause = " HAVING AvgRating >= :min_rating OR AvgRating IS NULL";
+                    $params[':min_rating'] = (float)$_GET['min_rating'];
+                }
                 
-                $countQuery = "SELECT COUNT(1)" . $whereClause;
+                $countQuery = "SELECT COUNT(1) FROM (
+                    SELECT p.PackageID,
+                        COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating
+                    " . $whereClause . $havingClause . "
+                ) pkg_count";
 
                 $selectQuery = "
-                    SELECT p.*, ta.AgencyName,
+                    SELECT p.*, ta.AgencyName, u.Email,
+                        CURRENT_DATE() as StartDate,
+                        DATE_ADD(CURRENT_DATE(), INTERVAL p.DurationDays DAY) as EndDate,
+                        20 as MaxTravellers,
                         COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
-                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity
-                " . $whereClause;
+                        (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount,
+                        (SELECT d.City FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCity,
+                        (SELECT d.Country FROM HAS_DESTINATION v JOIN DESTINATION d ON v.DestinationID = d.DestinationID WHERE v.PackageID = p.PackageID LIMIT 1) as DestinationCountry
+                " . $whereClause . $havingClause;
                 
                 $sort = $_GET['sort'] ?? 'price_asc';
                 if ($sort === 'price_asc') {
                     $selectQuery .= " ORDER BY p.Price ASC";
                 } elseif ($sort === 'price_desc') {
                     $selectQuery .= " ORDER BY p.Price DESC";
-                } elseif ($sort === 'duration') {
+                } elseif ($sort === 'duration' || $sort === 'duration_asc') {
                     $selectQuery .= " ORDER BY p.DurationDays ASC";
-                } elseif ($sort === 'rating') {
+                } elseif ($sort === 'duration_desc') {
+                    $selectQuery .= " ORDER BY p.DurationDays DESC";
+                } elseif ($sort === 'rating' || $sort === 'rating_desc') {
                     $selectQuery .= " ORDER BY AvgRating DESC";
+                } elseif ($sort === 'rating_asc') {
+                    $selectQuery .= " ORDER BY AvgRating ASC";
+                } elseif ($sort === 'title_asc') {
+                    $selectQuery .= " ORDER BY p.Title ASC";
+                } elseif ($sort === 'date_asc') {
+                    $selectQuery .= " ORDER BY p.PackageID ASC";
                 }
                 
                 $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;

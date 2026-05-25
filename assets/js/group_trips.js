@@ -9,7 +9,7 @@ document.addEventListener('click', async (e) => {
 
         if (!confirm('Cancel this group trip?')) return;
 
-        const res = await fetch('/agency/cancel_group_trip.php', {
+        const res = await fetch('cancel_group_trip.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -41,7 +41,7 @@ document.addEventListener('click', async (e) => {
 
         const id = undoBtn.dataset.id;
 
-        const res = await fetch('/agency/undo_cancel_group_trip.php', {
+        const res = await fetch('undo_group_trip.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

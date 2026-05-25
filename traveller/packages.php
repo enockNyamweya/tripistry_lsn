@@ -5,60 +5,7 @@ $search = $_GET['search'] ?? '';
 $destFilter = $_GET['destination'] ?? '';
 $minPrice = $_GET['min_price'] ?? '';
 $maxPrice = $_GET['max_price'] ?? '';
-$minRating = $_GET['min_rating'] ?? '';
-
-$query = 'SELECT p.*, ta.AgencyName, u.Email,
-    CURRENT_DATE() as StartDate, DATE_ADD(CURRENT_DATE(), INTERVAL p.DurationDays DAY) as EndDate,
-    20 as MaxTravellers,
-    (SELECT AVG(RatingScore) FROM REVIEW r2 WHERE r2.PackageID = p.PackageID) as AvgRating,
-    (SELECT COUNT(*) FROM REVIEW r3 WHERE r3.PackageID = p.PackageID) as ReviewCount,
-    (SELECT d.City FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE hd.PackageID = p.PackageID LIMIT 1) as DestinationCity,
-    (SELECT d.Country FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE hd.PackageID = p.PackageID LIMIT 1) as DestinationCountry
-    FROM TRAVEL_PACKAGE p
-    JOIN USER u ON p.AgencyID = u.UserID
-    JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
-    WHERE p.Status = \'Active\'';
-
-$params = [];
-
-if ($search) {
-    $query .= ' AND (p.Title LIKE ? OR p.Description LIKE ? OR ta.AgencyName LIKE ?)';
-    $params = array_merge($params, ["%$search%", "%$search%", "%$search%"]);
-}
-if ($destFilter) {
-    $query .= ' AND p.PackageID IN (SELECT PackageID FROM HAS_DESTINATION hd JOIN DESTINATION d ON hd.DestinationID = d.DestinationID WHERE d.City = ? OR d.Country = ?)';
-    $params[] = $destFilter;
-    $params[] = $destFilter;
-}
-if ($minPrice !== '' && is_numeric($minPrice)) {
-    $query .= ' AND p.Price >= ?';
-    $params[] = (float)$minPrice;
-}
-if ($maxPrice !== '' && is_numeric($maxPrice)) {
-    $query .= ' AND p.Price <= ?';
-    $params[] = (float)$maxPrice;
-}
-if ($minRating !== '' && is_numeric($minRating)) {
-    $query .= ' HAVING AvgRating >= ? OR AvgRating IS NULL';
-    $params[] = (float)$minRating;
-}
-
-$sortMap = [
-    'price_asc' => 'p.Price ASC',
-    'price_desc' => 'p.Price DESC',
-    'duration_asc' => 'p.DurationDays ASC',
-    'duration_desc' => 'p.DurationDays DESC',
-    'rating_desc' => 'AvgRating DESC',
-    'rating_asc' => 'AvgRating ASC',
-    'title_asc' => 'p.Title ASC',
-    'date_asc' => 'p.StartDate ASC',
-];
-$order = $sortMap[$sort] ?? 'p.Price ASC';
-$query .= ' ORDER BY ' . $order;
-
-$stmt = $pdo->prepare($query);
-$stmt->execute($params);
-$packages = $stmt->fetchAll();
+// Package list loaded via API (main.js infinite scroll)
 
 // Get all destinations for filter dropdown
 $destStmt = $pdo->query('SELECT DISTINCT City, Country FROM DESTINATION ORDER BY Country, City');
@@ -90,7 +37,7 @@ if ($compareIds) {
 <h1>Travel Packages</h1>
 
 <div class="filter-bar">
-    <form method="GET" action="" class="filter-form">
+    <form method="GET" action="" class="filter-form" id="packages-filter-form">
         <input type="text" name="search" placeholder="Search packages..." value="<?php echo htmlspecialchars($search); ?>">
         <select name="destination">
             <option value="">All Destinations</option>
@@ -184,46 +131,14 @@ if ($compareIds) {
 </div>
 <?php endif; ?>
 
-<div class="package-list">
-    <?php if (empty($packages)): ?>
-        <p class="empty-state">No packages found matching your criteria.</p>
-    <?php endif; ?>
-    <?php foreach ($packages as $pkg): ?>
-        <div class="package-card">
-            <div class="package-card-header">
-                <h2><?php echo htmlspecialchars($pkg['Title']); ?></h2>
-                <span class="agency-badge"><?php echo htmlspecialchars($pkg['AgencyName']); ?></span>
-            </div>
-            <div class="package-card-body">
-                <?php if ($pkg['ImageURL']): ?>
-                    <img src="<?php echo htmlspecialchars($pkg['ImageURL']); ?>" alt="<?php echo htmlspecialchars($pkg['Title']); ?>" class="package-img">
-                <?php endif; ?>
-                <div class="package-info">
-                    <p><strong>Destination:</strong> <?php echo htmlspecialchars(($pkg['DestinationCity'] ?? 'N/A') . ', ' . ($pkg['DestinationCountry'] ?? '')); ?></p>
-                    <p><strong>Duration:</strong> <?php echo $pkg['DurationDays']; ?> days</p>
-                    <p><strong>Dates:</strong> <?php echo date('M d Y', strtotime($pkg['StartDate'])); ?> — <?php echo date('M d Y', strtotime($pkg['EndDate'])); ?></p>
-                    <p><strong>Max Travellers:</strong> <?php echo $pkg['MaxTravellers']; ?></p>
-                    <p class="package-rating">
-                        <?php if ($pkg['AvgRating']): ?>
-                            <?php echo str_repeat('★', round($pkg['AvgRating'])); ?>
-                            <?php echo number_format($pkg['AvgRating'], 1); ?> (<?php echo $pkg['ReviewCount']; ?> reviews)
-                        <?php else: ?>
-                            No reviews yet
-                        <?php endif; ?>
-                    </p>
-                    <p class="package-price">R<?php echo number_format($pkg['Price'], 2); ?></p>
-                </div>
-            </div>
-            <div class="package-card-footer">
-                <a href="package_detail.php?id=<?php echo $pkg['PackageID']; ?>" class="btn btn-primary">View Details</a>
-                <a href="packages.php?compare=<?php
-                    $ids = $compareIds;
-                    if (!in_array($pkg['PackageID'], $ids)) $ids[] = $pkg['PackageID'];
-                    echo implode(',', array_slice($ids, 0, 3));
-                ?>" class="btn btn-secondary">Compare</a>
-            </div>
-        </div>
-    <?php endforeach; ?>
+<div id="packages-lazy"
+     data-api-base="<?php echo htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES); ?>"
+     data-page-size="12"
+     data-compare-ids="<?php echo htmlspecialchars(implode(',', $compareIds), ENT_QUOTES); ?>">
+
+    <p class="lazy-status" data-packages-status style="display:none"></p>
+    <div class="package-list" data-packages-list></div>
+    <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

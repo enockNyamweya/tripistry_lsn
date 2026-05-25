@@ -1,3 +1,38 @@
+/* Infinite scroll (browse / packages) */
+.lazy-status {
+    margin: 0.75rem 0;
+    color: var(--text-muted, #666);
+    font-size: 0.95rem;
+}
+.lazy-status-error {
+    color: var(--danger, #c0392b);
+}
+.infinite-sentinel {
+    height: 1px;
+    width: 100%;
+    pointer-events: none;
+    visibility: hidden;
+}
+.available-picker-list {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 0.5rem;
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+.available-picker-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+.available-picker-row:last-child {
+    border-bottom: none;
+}
+
 /* Auth Pages */
 .auth-form {
     max-width: 440px;

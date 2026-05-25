@@ -33,6 +33,7 @@ if (isset($uriParts[$nextIndex]) && $uriParts[$nextIndex] === 'index.php') {
 }
 $endpoint = isset($uriParts[$nextIndex]) ? $uriParts[$nextIndex] : '';
 $id = isset($uriParts[$nextIndex + 1]) ? $uriParts[$nextIndex + 1] : null;
+$subId = isset($uriParts[$nextIndex + 2]) ? $uriParts[$nextIndex + 2] : null;
 
 /**
  * Reusable helper function to build a standardized paginated response envelope.
@@ -101,6 +102,11 @@ try {
         case 'attractions':
             require_once __DIR__ . '/routes/attractions.php';
             handleAttractionsRequest($_SERVER['REQUEST_METHOD'], $id);
+            break;
+
+        case 'agency':
+            require_once __DIR__ . '/routes/agency.php';
+            handleAgencyRequest($_SERVER['REQUEST_METHOD'], $id, $subId);
             break;
     
         default:

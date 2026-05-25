@@ -10,19 +10,6 @@ if (isset($_POST['action']) && isset($_POST['booking_id'])) {
     exit;
 }
 
-$stmt = $pdo->prepare('
-    SELECT b.*, p.Title as PackageTitle, t.FirstName, t.LastName, NULL as PassportNum,
-        u.Phone as PhoneNumber, ROUND(b.TotalCost / p.Price) as NumTravellers
-    FROM BOOKING b
-    JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
-    JOIN TRAVELLER t ON b.UserID = t.UserID
-    JOIN USER u ON t.UserID = u.UserID
-    WHERE p.AgencyID = ?
-    ORDER BY b.BookingDate DESC
-');
-$stmt->execute([$_SESSION['user_id']]);
-$bookings = $stmt->fetchAll();
-
 // Revenue totals
 $stmt = $pdo->prepare('
     SELECT SUM(b.TotalCost) as Revenue, COUNT(*) as Total, 
@@ -62,9 +49,15 @@ $summary = $stmt->fetch();
     </div>
 </div>
 
-<?php if (empty($bookings)): ?>
-    <p class="empty-state">No bookings yet for your packages.</p>
-<?php else: ?>
+<div class="agency-infinite"
+     data-agency-infinite
+     data-api-base="<?php echo htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES); ?>"
+     data-resource="bookings"
+     data-page-size="15"
+     data-empty-message="No bookings yet for your packages.">
+
+    <p class="lazy-status" data-agency-status style="display:none"></p>
+
     <table class="data-table">
         <thead>
             <tr>
@@ -80,36 +73,9 @@ $summary = $stmt->fetch();
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
-            <?php foreach ($bookings as $b): ?>
-                <tr>
-                    <td>#<?php echo $b['BookingID']; ?></td>
-                    <td><?php echo htmlspecialchars($b['PackageTitle']); ?></td>
-                    <td><?php echo htmlspecialchars($b['FirstName'] . ' ' . $b['LastName']); ?></td>
-                    <td><?php echo htmlspecialchars($b['PassportNum'] ?? '—'); ?></td>
-                    <td><?php echo htmlspecialchars($b['PhoneNumber'] ?? '—'); ?></td>
-                    <td><?php echo date('M d Y', strtotime($b['BookingDate'])); ?></td>
-                    <td><?php echo $b['NumTravellers']; ?></td>
-                    <td>R<?php echo number_format($b['TotalCost'], 2); ?></td>
-                    <td><span class="status-badge status-<?php echo strtolower($b['Status']); ?>"><?php echo htmlspecialchars($b['Status']); ?></span></td>
-                    <td class="actions">
-                        <?php if ($b['Status'] === 'Pending'): ?>
-                            <form method="POST" style="display:inline;">
-                                <input type="hidden" name="booking_id" value="<?php echo $b['BookingID']; ?>">
-                                <button type="submit" name="action" value="confirm" class="btn btn-primary btn-sm">Confirm</button>
-                                <button type="submit" name="action" value="cancel" class="btn btn-danger btn-sm">Cancel</button>
-                            </form>
-                        <?php elseif ($b['Status'] === 'Confirmed'): ?>
-                            <form method="POST" style="display:inline;">
-                                <input type="hidden" name="booking_id" value="<?php echo $b['BookingID']; ?>">
-                                <button type="submit" name="action" value="cancel" class="btn btn-danger btn-sm">Cancel</button>
-                            </form>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
+        <tbody data-agency-list></tbody>
     </table>
-<?php endif; ?>
+    <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
+</div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
