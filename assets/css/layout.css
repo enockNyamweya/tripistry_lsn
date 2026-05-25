@@ -8,6 +8,21 @@ html.force-desktop-view body {
     min-width: 1024px;
 }
 
+html.force-desktop-view main.container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+html.force-desktop-view .navbar {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 /* Navigation Bar */
 .navbar {
     background: var(--surface-glass);

@@ -30,10 +30,12 @@
 /* Traveller packages page only — scoped to #packages-lazy */
 #packages-lazy .package-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
     margin: 1.5rem 0 2.5rem;
     padding: 0;
+    max-width: 100%;
+    min-width: 0;
 }
 
 #packages-lazy .package-card {
@@ -352,6 +354,11 @@
 }
 
 /* Traveller packages — filter bar (scoped) */
+#traveller-packages {
+    max-width: 100%;
+    min-width: 0;
+}
+
 #traveller-packages .packages-filter-bar {
     background: #fff;
     padding: 1.25rem 1.5rem;
@@ -359,14 +366,21 @@
     box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
     margin-bottom: 1.75rem;
     border: 1px solid #e2e8f0;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    container-type: inline-size;
+    container-name: packages-filter;
 }
 
 #traveller-packages .packages-filter-form {
-    display: grid;
-    grid-template-columns: minmax(10rem, 2fr) minmax(8rem, 1.25fr) minmax(5.5rem, 6.5rem) minmax(5.5rem, 6.5rem) minmax(8rem, 1.1fr) auto;
-    align-items: end;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
     gap: 1rem 1.25rem;
     margin: 0;
+    max-width: 100%;
+    min-width: 0;
 }
 
 #traveller-packages .filter-field {
@@ -375,14 +389,18 @@
     gap: 0.35rem;
     margin: 0;
     min-width: 0;
+    flex: 1 1 9rem;
+    max-width: 100%;
 }
 
 #traveller-packages .filter-field-search {
-    grid-column: auto;
+    flex: 2 1 14rem;
+    min-width: min(100%, 12rem);
 }
 
 #traveller-packages .filter-field-price {
-    max-width: none;
+    flex: 0 1 6.5rem;
+    max-width: 7.5rem;
 }
 
 #traveller-packages .filter-label {
@@ -421,6 +439,9 @@
     align-items: center;
     gap: 0.65rem;
     padding-bottom: 0.1rem;
+    flex: 0 1 auto;
+    margin-left: auto;
+    max-width: 100%;
 }
 
 #traveller-packages .filter-actions .btn {
@@ -436,16 +457,40 @@
     padding: 1rem 1.25rem;
 }
 
-@media (max-width: 900px) {
-    #traveller-packages .packages-filter-form {
-        grid-template-columns: 1fr 1fr;
+/* Stack when filter card is narrow (works with forced-desktop viewport too) */
+@container packages-filter (max-width: 52rem) {
+    #traveller-packages .filter-field-search {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
-    #traveller-packages .filter-field-search {
-        grid-column: 1 / -1;
+    #traveller-packages .filter-field-price {
+        flex: 1 1 calc(50% - 0.625rem);
+        max-width: calc(50% - 0.625rem);
     }
 
     #traveller-packages .filter-actions {
-        grid-column: 1 / -1;
+        flex: 1 1 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+}
+
+@container packages-filter (max-width: 28rem) {
+    #traveller-packages .filter-field,
+    #traveller-packages .filter-field-price {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    #traveller-packages .filter-field-search {
+        flex: 1 1 100%;
+    }
+
+    #traveller-packages .filter-actions {
+        margin-left: 0;
+        flex: 1 1 100%;
     }
 }
