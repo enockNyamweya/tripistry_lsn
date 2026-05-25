@@ -17,6 +17,18 @@ function handleChatRequest($method, $resource, $subResource) {
     $userId = requireChatAuth();
     $pdo = Database::getInstance();
 
+    // Auto-create MESSAGE table if missing — no separate migration needed
+    $pdo->exec("CREATE TABLE IF NOT EXISTS MESSAGE (
+        MessageID INT AUTO_INCREMENT PRIMARY KEY,
+        SenderID INT NOT NULL,
+        ReceiverID INT NOT NULL,
+        Message TEXT NOT NULL,
+        SentAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+        IsRead TINYINT(1) DEFAULT 0,
+        FOREIGN KEY (SenderID) REFERENCES USER(UserID) ON DELETE CASCADE,
+        FOREIGN KEY (ReceiverID) REFERENCES USER(UserID) ON DELETE CASCADE
+    )");
+
     $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
     $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 50;
 

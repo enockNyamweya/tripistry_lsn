@@ -9,6 +9,7 @@ $stmt = $pdo->prepare('
         p.Title,
         p.PackageID as PID,
         p.ImageURL,
+        p.DurationDays,
         ta.AgencyName
     FROM BOOKING b
     JOIN TRAVEL_PACKAGE p ON b.PackageID = p.PackageID
@@ -83,10 +84,31 @@ $bookings = $stmt->fetchAll();
                         View / Review
                     </a>
 
-                    <a href="<?= BASE_URL ?>/traveller/export_calendar.php?booking_id=<?= $b['BookingID'] ?>"
-                       class="calendar-btn">
-                       📅 Add To Calendar
-                    </a>
+                    <?php
+$duration = max(1, (int)$b['DurationDays']);
+
+$start = date('Ymd', strtotime('+1 day'));
+
+$end = date(
+    'Ymd',
+    strtotime('+' . ($duration + 1) . ' days')
+);
+
+$googleCalendarUrl =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" .
+    "&text=" . urlencode($b['Title']) .
+    "&dates={$start}/{$end}" .
+    "&details=" . urlencode(
+    "Trip booked via Tripistry with " . $b['AgencyName']
+    ) .
+    "&location=" . urlencode($b['AgencyName']);    
+?>
+
+<a href="<?= $googleCalendarUrl ?>"
+   target="_blank"
+   class="calendar-btn">
+   📅 Add To Google Calendar
+</a>
 
                 </td>
             </tr>
@@ -97,5 +119,7 @@ $bookings = $stmt->fetchAll();
     </table>
 
 <?php endif; ?>
+
+
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
