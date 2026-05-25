@@ -20,32 +20,39 @@ const API_BASE = '<?php echo BASE_URL; ?>/api/index.php/chat';
 let currentOther = null;
 let currentOtherName = '';
 let pollTimer = null;
+let lastMessageId = 0;
 
 function api(url, options = {}) {
-    return fetch(url, options).then(r => r.json());
+    return fetch(url, options).then(r => {
+        if (!r.ok) throw new Error('Server error: ' + r.status);
+        return r.json();
+    });
 }
 
 async function loadConversations() {
-    const res = await api(API_BASE + '/conversations');
-    const list = document.getElementById('conversationList');
-    if (!res.success || !res.data.length) {
-        list.innerHTML = '<p class="text-muted" style="padding:1rem;">No conversations yet. Travellers will appear here when they message you.</p>';
-        return;
-    }
-    list.innerHTML = res.data.map(c => `
-        <div class="conversation-item ${currentOther === c.UserID ? 'active' : ''}"
-             onclick="openChat(${c.UserID}, '${escapeHtml(c.DisplayName)}')">
-            <div class="conv-name">${escapeHtml(c.DisplayName)}</div>
-            <div class="conv-type">${c.UserType}</div>
-            <div class="conv-preview">${escapeHtml((c.LastMessage || '').substring(0, 50))}</div>
-            ${c.UnreadCount > 0 ? `<span class="conv-badge">${c.UnreadCount}</span>` : ''}
-        </div>
-    `).join('');
+    try {
+        const res = await api(API_BASE + '/conversations');
+        const list = document.getElementById('conversationList');
+        if (!res.success || !res.data.length) {
+            list.innerHTML = '<p class="text-muted" style="padding:1rem;">No conversations yet. Travellers will appear here when they message you.</p>';
+            return;
+        }
+        list.innerHTML = res.data.map(c => `
+            <div class="conversation-item ${currentOther === c.UserID ? 'active' : ''}"
+                 onclick="openChat(${c.UserID}, '${escapeHtml(c.DisplayName)}')">
+                <div class="conv-name">${escapeHtml(c.DisplayName)}</div>
+                <div class="conv-type">${c.UserType}</div>
+                <div class="conv-preview">${escapeHtml((c.LastMessage || '').substring(0, 50))}</div>
+                ${c.UnreadCount > 0 ? `<span class="conv-badge">${c.UnreadCount}</span>` : ''}
+            </div>
+        `).join('');
+    } catch(e) { console.error('loadConversations:', e); }
 }
 
 async function openChat(otherId, name) {
     currentOther = otherId;
     currentOtherName = name;
+    lastMessageId = 0;
     document.getElementById('chatMain').innerHTML = `
         <div class="chat-header">
             <h3>${escapeHtml(name)}</h3>
@@ -59,65 +66,90 @@ async function openChat(otherId, name) {
         </div>
     `;
     document.querySelectorAll('.conversation-item').forEach(el => el.classList.remove('active'));
-    loadMessages();
+    await loadMessages();
     startPolling();
 }
 
 async function loadMessages() {
     if (!currentOther) return;
-    const res = await api(API_BASE + '/messages/' + currentOther + '?limit=200');
-    const box = document.getElementById('chatMessages');
-    if (!box) return;
-    if (!res.success || !res.data.length) {
-        box.innerHTML = '<p class="text-muted" style="text-align:center;padding:2rem;">No messages yet.</p>';
-        return;
-    }
-    box.innerHTML = res.data.map(m => `
-        <div class="message ${m.IsMine ? 'message-mine' : 'message-theirs'}">
-            <div class="message-text">${escapeHtml(m.Message)}</div>
-            <div class="message-time">${formatTime(m.SentAt)}</div>
-        </div>
-    `).join('');
-    box.scrollTop = box.scrollHeight;
+    try {
+        const res = await api(API_BASE + '/messages/' + currentOther + '?limit=200');
+        const box = document.getElementById('chatMessages');
+        if (!box) return;
+        if (!res.success || !res.data.length) {
+            box.innerHTML = '<p class="text-muted" style="text-align:center;padding:2rem;">No messages yet.</p>';
+            return;
+        }
+        if (res.data.length > 0) lastMessageId = Math.max(...res.data.map(m => m.MessageID));
+        box.innerHTML = res.data.map(m => `
+            <div class="message ${m.IsMine ? 'message-mine' : 'message-theirs'}">
+                <div class="message-text">${escapeHtml(m.Message)}</div>
+                <div class="message-time">${formatTime(m.SentAt)}</div>
+            </div>
+        `).join('');
+        box.scrollTop = box.scrollHeight;
+    } catch(e) { console.error('loadMessages:', e); }
 }
 
 async function sendMessage() {
     const input = document.getElementById('messageInput');
+    if (!input) return;
     const msg = input.value.trim();
     if (!msg || !currentOther) return;
-    input.value = '';
-    const res = await api(API_BASE + '/send', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({receiver_id: currentOther, message: msg})
-    });
-    if (res.success) {
-        await loadMessages();
-        loadConversations();
+    input.disabled = true;
+    try {
+        const res = await api(API_BASE + '/send', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({receiver_id: currentOther, message: msg})
+        });
+        if (res.success) {
+            input.value = '';
+            await loadMessages();
+            await loadConversations();
+        } else {
+            alert('Failed to send: ' + (res.message || 'Unknown error'));
+        }
+    } catch(e) {
+        alert('Connection error. Please try again.');
+        console.error('sendMessage:', e);
     }
+    input.disabled = false;
+    input.focus();
+}
+
+function pollNewMessages() {
+    if (!currentOther) return;
+    api(API_BASE + '/messages/' + currentOther + '?limit=10')
+        .then(res => {
+            if (!res.success || !res.data.length) return;
+            const newMsgs = res.data.filter(m => m.MessageID > lastMessageId);
+            if (newMsgs.length > 0) {
+                lastMessageId = Math.max(...res.data.map(m => m.MessageID));
+                loadMessages();
+                loadConversations();
+            }
+        }).catch(() => {});
 }
 
 function startPolling() {
     if (pollTimer) clearInterval(pollTimer);
-    pollTimer = setInterval(async () => {
-        if (!currentOther) return;
-        await loadMessages();
-        await loadConversations();
-    }, 3000);
+    pollTimer = setInterval(() => { pollNewMessages(); }, 3000);
 }
 
 function escapeHtml(str) {
     const div = document.createElement('div');
-    div.textContent = str;
+    div.textContent = str || '';
     return div.innerHTML;
 }
 
 function formatTime(dt) {
     if (!dt) return '';
-    const d = new Date(dt.replace(' ', 'T') + 'Z');
+    const d = new Date(dt.replace(' ', 'T'));
+    if (isNaN(d.getTime())) return '';
     const now = new Date();
     const diff = now - d;
-    if (diff < 86400000) return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+    if (diff < 86400000 && diff > 0) return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
     return d.toLocaleDateString([], {month:'short',day:'numeric'}) + ' ' + d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
 }
 
@@ -150,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 .message-theirs .message-time { text-align: left; }
 .chat-input { padding: 1rem 1.5rem; border-top: 1px solid #e2e8f0; display: flex; gap: 0.5rem; background: #fff; }
 .chat-input input { flex: 1; padding: 0.7rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; }
+.chat-input input:disabled { background: #f1f5f9; }
 .chat-input button { padding: 0.7rem 1.2rem; }
 </style>
 
