@@ -56,6 +56,11 @@ $currentPath = $_SERVER['REQUEST_URI'];
                     My Bookings
                 </a>
 
+                <a href="<?php echo BASE_URL; ?>/traveller/chat.php"
+                   class="<?= str_contains($currentPath, '/traveller/chat') ? 'active-nav' : '' ?>">
+                    Chat
+                </a>
+
             <?php elseif (isAgency()): ?>
 
                 <a href="<?php echo BASE_URL; ?>/agency/dashboard.php"
@@ -76,6 +81,11 @@ $currentPath = $_SERVER['REQUEST_URI'];
                 <a href="<?php echo BASE_URL; ?>/agency/group_trips.php"
                    class="<?= str_contains($currentPath, '/agency/group_trips') ? 'active-nav' : '' ?>">
                     Group Trips
+                </a>
+
+                <a href="<?php echo BASE_URL; ?>/agency/chat.php"
+                   class="<?= str_contains($currentPath, '/agency/chat') ? 'active-nav' : '' ?>">
+                    Chat
                 </a>
 
             <?php endif; ?>

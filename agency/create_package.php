@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $startDate = $_POST['start_date'] ?? null;
     $endDate = $_POST['end_date'] ?? null;
+    $durationInput = (int)($_POST['duration'] ?? 0);
 
     $maxTravellers = (int)($_POST['max_travellers'] ?? 10);
     $isGroupTrip = isset($_POST['is_group_trip']) ? 1 : 0;
@@ -22,15 +23,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $restaurants = $_POST['restaurants'] ?? [];
     $attractions = $_POST['attractions'] ?? [];
 
-    if (empty($title) || $price <= 0 || !$startDate || !$endDate) {
-        $error = 'Title, price, start date and end date are required.';
+    if (empty($title) || $price <= 0 || !$startDate) {
+        $error = 'Title, price, and start date are required.';
     } else {
         try {
+            // Calculate end date from start + duration if end date not provided
+            if (!$endDate && $durationInput > 0 && $startDate) {
+                $start = new DateTime($startDate);
+                $start->modify('+' . ($durationInput - 1) . ' days');
+                $endDate = $start->format('Y-m-d');
+            }
 
             // SERVER-SIDE duration (authoritative)
-            $start = new DateTime($startDate);
-            $end = new DateTime($endDate);
-            $duration = $start->diff($end)->days + 1;
+            if ($startDate && $endDate) {
+                $start = new DateTime($startDate);
+                $end = new DateTime($endDate);
+                $duration = $start->diff($end)->days + 1;
+            } else {
+                $duration = $durationInput > 0 ? $durationInput : 1;
+            }
 
             $pdo->beginTransaction();
 
@@ -123,19 +134,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="form-row">
 
     <div class="form-group">
-        <label>Start Date</label>
-        <input type="date" id="start_date" name="start_date">
+        <label>Start Date *</label>
+        <input type="date" id="start_date" name="start_date" required>
+    </div>
+
+    <div class="form-group">
+        <label>Duration (days)</label>
+        <input type="number" id="duration" name="duration" value="1" min="1">
     </div>
 
     <div class="form-group">
         <label>End Date</label>
         <input type="date" id="end_date" name="end_date">
-    </div>
-
-    <div class="form-group">
-        <label>Duration</label>
-        <input type="number" id="duration" readonly>
-        <small class="text-muted">Auto-calculated</small>
+        <small class="text-muted">Auto-calculated from start + duration</small>
     </div>
 
     <div class="form-group">
