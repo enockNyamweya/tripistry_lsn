@@ -25,23 +25,31 @@ tripistry_lsn/
 ├── includes/
 │   ├── auth.php               # Authentication functions and role guards
 │   ├── header.php             # Shared HTML head, navbar with role-based links
-│   └── footer.php             # Shared footer + closing tags
-├── sql/
-│   └── setup.sql              # Full database schema (22 tables) + seed data
+│   ├── footer.php             # Shared footer + closing tags
+│   └── PackageService.php     # Shared helper functions
+├── database/                  # Contains all DB logic and seeding
+│   ├── schema.sql             # Full database schema (22 tables)
+│   ├── import_schema.php      # Helper to import the schema programmatically
+│   └── fetch-interactions/    # Contains master seeder fetch_interactions.php and seed_data.csv
 ├── assets/
 │   ├── css/style.css          # Unified stylesheet
 │   └── js/main.js             # Client-side interactivity (tabs, alerts)
 ├── api/
-│   ├── index.php              # Central REST API router with try-catch safety
-│   └── routes/                # Endpoint handlers (packages, accommodations, etc)
+│   └── index.php              # Central REST API router with try-catch safety (all routes unified)
 ├── index.php                  # Landing page
 ├── login.php                  # Login form (bcrypt password hashing)
 ├── register.php               # Joint registration form for Travellers/Agencies
 ├── dashboard.php              # Role-based routing
+├── setup_db.php               # Master command-line installation script
+├── tripistry_lsn.sql          # Complete exported database dump
 ├── traveller/                 # TRAVELLER SECTION
 │   ├── browse.php             # Tabbed view: Destinations, Flights, etc.
 │   ├── packages.php           # Package listing with search/sort/filter
 │   ├── package_detail.php     # Detail view + booking + review forms
+│   ├── destination.php        # Destination detail view
+│   ├── accommodation_detail.php # Stay detail view
+│   ├── restaurant_detail.php  # Dining detail view
+│   ├── attraction_detail.php  # Tourist attraction detail view
 │   └── bookings.php           # Booking history
 └── agency/                    # AGENCY SECTION
     ├── dashboard.php          # Stats dashboard + recent bookings
