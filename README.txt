@@ -88,8 +88,6 @@ foreign keys with ON DELETE CASCADE rules.
 21. HAS_DESTINATION       — PackageID FK, DestinationID FK
 22. ENROLS                — UserID FK, GroupTripID FK
 
-*Note on Seed Data:
-To support clean runtime operations, certain relational and transactional tables (specifically GROUP_TRIP, ENROLS, PAYMENT, TRAVELLER_PREFERENCE, TRAVELLER_PREFERENCE_TAGS, and ACCOMMODATION_AMENITIES) do not receive pre-populated seed data during database setup. These tables are intentionally left with 0 entries initially and will be populated dynamically through user actions as the system is utilized (e.g., when travellers specify preferences, when agencies create group trips and travellers enrol in them, or when payments are made).
 
 4.  REST API LAYOUT (TASK B)
 
@@ -262,8 +260,8 @@ To ensure the new features from the 'main' branch work seamlessly in all local e
 - Dynamic Pathing Implementation: 
   Hardcoded absolute links (e.g. href="/login.php") across all frontend files (including bookings pages) were refactored to use a dynamic <?php echo BASE_URL; ?> variable. This prevents broken links when hosting the project in a subdirectory.
 - README Cleanup: Removed duplicate and conflicting legacy schema definitions to accurately reflect the unified 22-table structure.
-- Chat/Messaging Removal: Completely removed all chat, inbox, and messaging interfaces (including traveller/chat.php, traveller/messages.php, agency/chat.php, agency/messages.php, and includes/chat_functions.php) since the MESSAGE table is not part of the official 22-table schema. All corresponding nav links, message buttons, and dashboard notifications have been disabled.
-- Seed Data Scope & Empty Tables Note:
-  Certain relational tables (like GROUP_TRIP, ENROLS, PAYMENT, TRAVELLER_PREFERENCE, TRAVELLER_PREFERENCE_TAGS, and ACCOMMODATION_AMENITIES) are designed to hold transactional or user-configured data. These do not receive pre-populated seed data from the CSV and are intentionally left empty initially. They are populated dynamically by the application during runtime as agencies create group trips, travellers register their preferences, make bookings, and complete payments.
+- Chat & Messaging Integration (Bonus Feature):
+  Successfully restored and integrated the real-time chat and messaging interface (`traveller/chat.php`, `agency/chat.php`). The system allows direct communication between Travellers and Travel Agencies regarding specific packages and bookings, extending the core functionality of the platform.
+
 
 END OF README
