@@ -56,6 +56,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'] ?? 'Active';
     $imageURL = trim($_POST['image_url'] ?? '');
 
+    // Calculate end date from start + duration if end date not provided
+    if (empty($endDate) && !empty($startDate) && $duration > 0) {
+        $start = new DateTime($startDate);
+        $start->modify('+' . ($duration - 1) . ' days');
+        $endDate = $start->format('Y-m-d');
+    }
+
+    // Recalculate duration from start/end dates for accuracy
+    if (!empty($startDate) && !empty($endDate)) {
+        $start = new DateTime($startDate);
+        $end = new DateTime($endDate);
+        $duration = $start->diff($end)->days + 1;
+    }
+
     if (empty($title) || $price <= 0) {
         $error = 'Title and price are required.';
     } else {

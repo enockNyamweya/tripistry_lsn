@@ -108,7 +108,12 @@ try {
             require_once __DIR__ . '/routes/agency.php';
             handleAgencyRequest($_SERVER['REQUEST_METHOD'], $id, $subId);
             break;
-    
+
+        case 'chat':
+            require_once __DIR__ . '/routes/chat.php';
+            handleChatRequest($_SERVER['REQUEST_METHOD'], $id, $subId);
+            break;
+
         default:
             http_response_code(404);
             echo json_encode(["message" => "Endpoint '$endpoint' not recognized."]);
