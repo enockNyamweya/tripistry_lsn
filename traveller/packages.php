@@ -8,7 +8,7 @@ $maxPrice = normalizeFilterPrice($_GET['max_price'] ?? '');
 if ($minPrice !== '' && $maxPrice !== '' && (float)$maxPrice < (float)$minPrice) {
     $maxPrice = '';
 }
-// Package list loaded via API (main.js infinite scroll)
+// Package list loaded via API (main.js — Load more button)
 
 // Get all destinations for filter dropdown
 $destStmt = $pdo->query('SELECT DISTINCT City, Country FROM DESTINATION ORDER BY Country, City');
@@ -60,12 +60,12 @@ if ($compareIds) {
         </label>
         <label class="filter-field filter-field-price">
             <span class="filter-label">Min price (R)</span>
-            <input type="number" name="min_price" class="filter-price-input" placeholder="0" min="0" step="1" inputmode="numeric"
+            <input type="number" name="min_price" class="filter-price-input" placeholder="No min" min="1" step="1" inputmode="numeric"
                    value="<?php echo $minPrice !== '' ? htmlspecialchars($minPrice) : ''; ?>">
         </label>
         <label class="filter-field filter-field-price">
             <span class="filter-label">Max price (R)</span>
-            <input type="number" name="max_price" class="filter-price-input" placeholder="Any" min="0" step="1" inputmode="numeric"
+            <input type="number" name="max_price" class="filter-price-input" placeholder="No max" min="1" step="1" inputmode="numeric"
                    value="<?php echo $maxPrice !== '' ? htmlspecialchars($maxPrice) : ''; ?>">
         </label>
         <label class="filter-field">
@@ -163,7 +163,7 @@ if ($compareIds) {
 
     <p class="lazy-status" data-packages-status style="display:none"></p>
     <div class="package-list" data-packages-list></div>
-    <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
+    <button type="button" class="btn btn-secondary load-more-btn" data-packages-load-more style="display:none">Load more</button>
 </div>
 
 </div><!-- #traveller-packages -->

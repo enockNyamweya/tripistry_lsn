@@ -78,7 +78,7 @@ $revenueFull = formatRevenueFull($revenueAmount);
         </thead>
         <tbody data-agency-list></tbody>
     </table>
-    <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
+    <button type="button" class="btn btn-secondary load-more-btn" data-agency-load-more style="display:none">Load more</button>
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

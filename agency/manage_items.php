@@ -115,7 +115,7 @@ $apiBase = htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES);
                 <p class="text-muted">No <?php echo strtolower($label); ?> associated.</p>
             <?php endif; ?>
 
-            <h3 class="text-muted">Add <?php echo rtrim($label, 's'); ?> (scroll to load more)</h3>
+            <h3 class="text-muted">Add <?php echo rtrim($label, 's'); ?></h3>
             <div class="available-picker agency-infinite"
                  data-agency-infinite
                  data-api-base="<?php echo $apiBase; ?>"
@@ -129,7 +129,7 @@ $apiBase = htmlspecialchars(BASE_URL . '/api/index.php', ENT_QUOTES);
 
                 <p class="lazy-status" data-agency-status style="display:none"></p>
                 <div data-agency-list class="available-picker-list"></div>
-                <div class="infinite-sentinel" data-infinite-sentinel aria-hidden="true"></div>
+                <button type="button" class="btn btn-secondary load-more-btn" data-agency-load-more style="display:none">Load more</button>
             </div>
         </div>
     <?php endforeach; ?>

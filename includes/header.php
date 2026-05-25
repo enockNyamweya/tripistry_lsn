@@ -19,7 +19,8 @@ $currentPath = $_SERVER['REQUEST_URI'];
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/variables.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/layout.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/components.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/pages.css">
+    <?php $pagesCss = __DIR__ . '/../assets/css/pages.css'; ?>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/pages.css?v=<?php echo file_exists($pagesCss) ? filemtime($pagesCss) : '1'; ?>">
 </head>
 
 <body>

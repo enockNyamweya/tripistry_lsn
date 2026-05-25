@@ -144,27 +144,14 @@ class UIController {
             </div></div>`
         };
 
-        root.querySelectorAll('[data-infinite-sentinel]').forEach(sentinel => {
-            UIController.observeSentinel(sentinel, () => {
-                const tabId = sentinel.dataset.tab;
-                const panel = document.getElementById('tab-' + tabId);
-                if (!panel || panel.style.display === 'none') return;
-                UIController.browseLoadTab(tabId, false);
+        root.querySelectorAll('[data-browse-load-more]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+                if (tabId) UIController.browseLoadTab(tabId, false);
             });
         });
 
         UIController.browseLoadTab('destinations', true);
-    }
-
-    static observeSentinel(sentinel, callback) {
-        if (!sentinel || !('IntersectionObserver' in window)) return;
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) callback();
-            });
-        }, { root: null, rootMargin: '240px', threshold: 0 });
-        observer.observe(sentinel);
-        return observer;
     }
 
     static browseGetTabElements(tabId) {
@@ -172,8 +159,23 @@ class UIController {
         if (!panel) return null;
         return {
             content: panel.querySelector('[data-browse-content]'),
-            status: panel.querySelector('[data-browse-status]')
+            status: panel.querySelector('[data-browse-status]'),
+            loadMore: panel.querySelector('[data-browse-load-more]')
         };
+    }
+
+    static browseUpdateLoadMore(tabId) {
+        const els = UIController.browseGetTabElements(tabId);
+        const state = UIController.browseTabState[tabId];
+        if (!els?.loadMore || !state) return;
+        if (state.nextPage) {
+            els.loadMore.style.display = '';
+            els.loadMore.disabled = state.loading;
+            els.loadMore.textContent = state.loading ? 'Loading…' : 'Load more';
+        } else {
+            els.loadMore.style.display = 'none';
+            els.loadMore.disabled = true;
+        }
     }
 
     static browseSetStatus(el, message, isError) {
@@ -214,6 +216,7 @@ class UIController {
         }
 
         state.loading = true;
+        UIController.browseUpdateLoadMore(tabId);
         UIController.browseSetStatus(els.status, 'Loading...', false);
 
         try {
@@ -251,6 +254,7 @@ class UIController {
             UIController.browseSetStatus(els.status, err.message || 'Could not load data.', true);
         } finally {
             state.loading = false;
+            UIController.browseUpdateLoadMore(tabId);
         }
     }
 }

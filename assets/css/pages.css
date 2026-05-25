@@ -215,7 +215,7 @@
     }
 }
 
-/* Infinite scroll (browse / packages) */
+/* Paginated lists (browse / packages / agency) */
 .lazy-status {
     margin: 0.75rem 0;
     color: var(--text-muted, #666);
@@ -224,11 +224,9 @@
 .lazy-status-error {
     color: var(--danger, #c0392b);
 }
-.infinite-sentinel {
-    height: 1px;
-    width: 100%;
-    pointer-events: none;
-    visibility: hidden;
+.load-more-btn {
+    display: block;
+    margin: 1rem auto 0;
 }
 .available-picker-list {
     max-height: 220px;
@@ -364,9 +362,9 @@
 }
 
 #traveller-packages .packages-filter-form {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: minmax(10rem, 2fr) minmax(8rem, 1.25fr) minmax(5.5rem, 6.5rem) minmax(5.5rem, 6.5rem) minmax(8rem, 1.1fr) auto;
+    align-items: end;
     gap: 1rem 1.25rem;
     margin: 0;
 }
@@ -376,17 +374,15 @@
     flex-direction: column;
     gap: 0.35rem;
     margin: 0;
-    flex: 1 1 10rem;
     min-width: 0;
 }
 
 #traveller-packages .filter-field-search {
-    flex: 2 1 14rem;
+    grid-column: auto;
 }
 
 #traveller-packages .filter-field-price {
-    flex: 0 0 7.5rem;
-    max-width: 8.5rem;
+    max-width: none;
 }
 
 #traveller-packages .filter-label {
@@ -424,8 +420,6 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.65rem;
-    flex: 0 0 auto;
-    margin-left: auto;
     padding-bottom: 0.1rem;
 }
 
@@ -442,14 +436,16 @@
     padding: 1rem 1.25rem;
 }
 
-@media (max-width: 768px) {
-    #traveller-packages .filter-actions {
-        margin-left: 0;
-        width: 100%;
+@media (max-width: 900px) {
+    #traveller-packages .packages-filter-form {
+        grid-template-columns: 1fr 1fr;
     }
 
-    #traveller-packages .filter-field-price {
-        flex: 1 1 calc(50% - 0.5rem);
-        max-width: none;
+    #traveller-packages .filter-field-search {
+        grid-column: 1 / -1;
+    }
+
+    #traveller-packages .filter-actions {
+        grid-column: 1 / -1;
     }
 }

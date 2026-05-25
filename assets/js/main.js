@@ -39,22 +39,16 @@ function formatPackageDate(value) {
     return d.toLocaleDateString('en-ZA', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
-function observeInfiniteSentinel(sentinel, callback, scrollRoot) {
-    if (!sentinel) return;
-    if (!('IntersectionObserver' in window)) {
-        callback();
+function setLoadMoreButton(btn, nextPage, loading) {
+    if (!btn) return;
+    if (nextPage == null) {
+        btn.style.display = 'none';
+        btn.disabled = true;
         return;
     }
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) callback();
-        });
-    }, {
-        root: scrollRoot || null,
-        rootMargin: scrollRoot ? '80px' : '240px',
-        threshold: 0
-    });
-    observer.observe(sentinel);
+    btn.style.display = '';
+    btn.disabled = !!loading;
+    btn.textContent = loading ? 'Loading…' : 'Load more';
 }
 
 function resolveImageUrl(url, baseUrl) {
@@ -80,7 +74,7 @@ function initPackagesInfinite() {
 
     const listEl = root.querySelector('[data-packages-list]');
     const statusEl = root.querySelector('[data-packages-status]');
-    const sentinel = root.querySelector('[data-infinite-sentinel]');
+    const loadMoreBtn = root.querySelector('[data-packages-load-more]');
 
     let nextPage = 1;
     let loading = false;
@@ -176,6 +170,9 @@ function initPackagesInfinite() {
         if (!hasMore && !reset) return;
 
         loading = true;
+        if (!reset && loadMoreBtn && nextPage) {
+            setLoadMoreButton(loadMoreBtn, nextPage, true);
+        }
         setStatus(page === 1 ? 'Loading packages...' : '', false);
 
         try {
@@ -186,6 +183,7 @@ function initPackagesInfinite() {
                 listEl.innerHTML = '<p class="empty-state packages-filter-hint">' + escHtml(priceCheck.message) + '</p>';
                 nextPage = null;
                 hasMore = false;
+                setLoadMoreButton(loadMoreBtn, null, false);
                 setStatus('', false);
                 loading = false;
                 return;
@@ -213,12 +211,15 @@ function initPackagesInfinite() {
             setStatus(err.message || 'Could not load packages.', true);
         } finally {
             loading = false;
+            setLoadMoreButton(loadMoreBtn, nextPage, false);
         }
     }
 
-    observeInfiniteSentinel(sentinel, function () {
-        if (nextPage && !loading) loadPage(nextPage, false);
-    });
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+            if (nextPage && !loading) loadPage(nextPage, false);
+        });
+    }
 
     const filterForm = document.getElementById('packages-filter-form');
     if (filterForm) {
@@ -229,7 +230,7 @@ function initPackagesInfinite() {
             input.addEventListener('input', function () {
                 const raw = String(input.value).trim();
                 if (raw === '' || raw === '0' || raw === '00') {
-                    if (input.name === 'max_price') input.value = '';
+                    input.value = '';
                     return;
                 }
                 const n = parseFloat(raw.replace(',', '.'));
@@ -276,7 +277,7 @@ function initAgencyInfinite() {
         const availableType = root.dataset.availableType || '';
         const listEl = root.querySelector('[data-agency-list]');
         const statusEl = root.querySelector('[data-agency-status]');
-        const sentinel = root.querySelector('[data-infinite-sentinel]');
+        const loadMoreBtn = root.querySelector('[data-agency-load-more]');
         const listMode = root.dataset.listMode || 'table';
 
         if (!apiBase || !resource || !listEl) return;
@@ -401,6 +402,9 @@ function initAgencyInfinite() {
             if (!hasMore && !reset) return;
 
             loading = true;
+            if (!reset && loadMoreBtn && nextPage) {
+                setLoadMoreButton(loadMoreBtn, nextPage, true);
+            }
             setStatus(page === 1 ? 'Loading...' : '', false);
 
             try {
@@ -433,15 +437,15 @@ function initAgencyInfinite() {
                 setStatus(err.message || 'Could not load data.', true);
             } finally {
                 loading = false;
+                setLoadMoreButton(loadMoreBtn, nextPage, false);
             }
         }
 
-        const scrollRoot = listMode === 'picker'
-            ? listEl
-            : (root.classList.contains('dashboard-bookings-scroll') ? root : null);
-        observeInfiniteSentinel(sentinel, function () {
-            if (nextPage && !loading) loadPage(nextPage, false);
-        }, scrollRoot);
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function () {
+                if (nextPage && !loading) loadPage(nextPage, false);
+            });
+        }
 
         loadPage(1, true);
     });
