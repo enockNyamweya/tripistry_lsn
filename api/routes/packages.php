@@ -118,6 +118,15 @@ function handlePackagesRequest($method, $id) {
                     $params[':max_price'] = $maxPriceFilter;
                 }
 
+                if (isset($_GET['min_duration']) && $_GET['min_duration'] !== '') {
+                    $whereClause .= " AND p.DurationDays >= :min_dur";
+                    $params[':min_dur'] = (int)$_GET['min_duration'];
+                }
+                if (isset($_GET['max_duration']) && $_GET['max_duration'] !== '') {
+                    $whereClause .= " AND p.DurationDays <= :max_dur";
+                    $params[':max_dur'] = (int)$_GET['max_duration'];
+                }
+
                 $havingClause = '';
                 if (isset($_GET['min_rating']) && $_GET['min_rating'] !== '') {
                     $havingClause = " HAVING AvgRating >= :min_rating OR AvgRating IS NULL";

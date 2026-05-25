@@ -124,6 +124,11 @@ function initPackagesInfinite() {
         if (prices.min !== null) params.set('min_price', String(prices.min));
         if (prices.max !== null) params.set('max_price', String(prices.max));
 
+        ['min_duration', 'max_duration'].forEach(function (name) {
+            const field = form.elements[name];
+            if (field && field.value !== '') params.set(name, field.value);
+        });
+
         const minRating = form.elements['min_rating'];
         if (minRating && minRating.value !== '') params.set('min_rating', minRating.value);
         return params;
@@ -136,9 +141,10 @@ function initPackagesInfinite() {
             ? stars + ' ' + rating.toFixed(1) + ' (' + (pkg.ReviewCount || 0) + ' reviews)'
             : 'No reviews yet';
         const imgUrl = resolveImageUrl(pkg.ImageURL, baseUrl);
+        const fallbackImg = 'https://loremflickr.com/400/300/travel,landscape?lock=' + pkg.PackageID;
         const placeholderClass = imgUrl ? 'card-img-placeholder is-hidden' : 'card-img-placeholder';
         const mediaBlock = '<div class="card-media">' +
-            (imgUrl ? '<img src="' + escHtml(imgUrl) + '" alt="' + escHtml(pkg.Title) + '" class="card-img" loading="lazy" onerror="this.classList.add(\'is-hidden\');var n=this.nextElementSibling;if(n)n.classList.remove(\'is-hidden\');">' : '') +
+            (imgUrl ? '<img src="' + escHtml(imgUrl) + '" alt="' + escHtml(pkg.Title) + '" class="card-img" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallbackImg + '\';">' : '') +
             '<div class="' + placeholderClass + '"' + (imgUrl ? ' hidden' : '') + '><span class="card-img-placeholder-icon">✈</span><span class="card-img-placeholder-text">No photo</span></div></div>';
         const ids = compareIds.slice();
         if (ids.indexOf(pkg.PackageID) === -1) ids.push(pkg.PackageID);
