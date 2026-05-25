@@ -1,3 +1,13 @@
+/* Force desktop layout width on phones (see renderViewportMeta in auth.php) */
+html.force-desktop-view {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+html.force-desktop-view body {
+    min-width: 1024px;
+}
+
 /* Navigation Bar */
 .navbar {
     background: var(--surface-glass);

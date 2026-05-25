@@ -129,6 +129,14 @@ function formatRevenueFull($amount) {
     return 'R' . number_format((float)$amount, 2, '.', ',');
 }
 
+/**
+ * Viewport + early script: phones see layout at 1024px (desktop-style, horizontal scroll).
+ */
+function renderViewportMeta() {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport-meta">' . "\n";
+    echo '<script>(function(){if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){document.documentElement.classList.add(\'force-desktop-view\');var m=document.querySelector(\'meta[name=viewport]\');if(m)m.setAttribute(\'content\',\'width=1024\');}})();</script>' . "\n";
+}
+
 /** Normalise price filter input for HTML number fields (dot decimal, non-negative). */
 function normalizeFilterPrice($value) {
     if ($value === '' || $value === null) {

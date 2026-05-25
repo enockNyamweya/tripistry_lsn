@@ -1,3 +1,15 @@
+/** Backup if viewport script did not run (e.g. cached head). */
+function initForceDesktopViewOnMobile() {
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return;
+    }
+    document.documentElement.classList.add('force-desktop-view');
+    var meta = document.querySelector('meta[name="viewport"]');
+    if (meta) {
+        meta.setAttribute('content', 'width=1024');
+    }
+}
+
 function initFlashMessages() {
     document.querySelectorAll('.alert-success, .alert-error').forEach(function (msg) {
         setTimeout(function () {
@@ -436,6 +448,7 @@ function initAgencyInfinite() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    initForceDesktopViewOnMobile();
     initFlashMessages();
     initPackagesInfinite();
     initAgencyInfinite();
