@@ -315,6 +315,58 @@ try {
     }
     echo "  $bookCount bookings and $reviewCount reviews generated.\n\n";
 
+    // 8. GENERATE PLACEHOLDERS FOR REMAINING 6 TABLES
+    echo "[8/8] Generating Placeholders for remaining tables...\n";
+    
+    // GROUP_TRIP
+    $stmtPkg = $pdo->query("SELECT PackageID, AgencyID, Title FROM TRAVEL_PACKAGE LIMIT 10");
+    $packages = $stmtPkg->fetchAll(PDO::FETCH_ASSOC);
+    $insertGroupTrip = $pdo->prepare("INSERT INTO GROUP_TRIP (TripName, MaxCapacity, AgencyID, PackageID) VALUES (?, ?, ?, ?)");
+    foreach ($packages as $pkg) {
+        $insertGroupTrip->execute([$pkg['Title'] . ' Group Tour', rand(10, 30), $pkg['AgencyID'], $pkg['PackageID']]);
+    }
+
+    // ENROLS
+    $groupTrips = $pdo->query("SELECT GroupTripID FROM GROUP_TRIP LIMIT 5")->fetchAll(PDO::FETCH_COLUMN);
+    $travs = $pdo->query("SELECT UserID FROM TRAVELLER LIMIT 20")->fetchAll(PDO::FETCH_COLUMN);
+    $insertEnrols = $pdo->prepare("INSERT IGNORE INTO ENROLS (UserID, GroupTripID) VALUES (?, ?)");
+    for ($i = 0; $i < 20; $i++) {
+        $insertEnrols->execute([$travs[$i], $groupTrips[array_rand($groupTrips)]]);
+    }
+
+    // PAYMENT
+    $bookingsToPay = $pdo->query("SELECT BookingID, TotalCost FROM BOOKING LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
+    $insertPayment = $pdo->prepare("INSERT IGNORE INTO PAYMENT (BookingID, PaymentSeq, Amount, Status) VALUES (?, 1, ?, 'Completed')");
+    foreach ($bookingsToPay as $b) {
+        $insertPayment->execute([$b['BookingID'], $b['TotalCost']]);
+    }
+
+    // TRAVELLER_PREFERENCE & TAGS
+    $insertPref = $pdo->prepare("INSERT INTO TRAVELLER_PREFERENCE (BudgetRange, TravelPace) VALUES (?, ?)");
+    $updateTraveller = $pdo->prepare("UPDATE TRAVELLER SET PreferenceID = ? WHERE UserID = ?");
+    $insertTag = $pdo->prepare("INSERT IGNORE INTO TRAVELLER_PREFERENCE_TAGS (PreferenceID, PreferenceTag) VALUES (?, ?)");
+    $budgets = ['Low', 'Medium', 'High', 'Luxury'];
+    $paces = ['Relaxed', 'Moderate', 'Fast'];
+    $tags = ['Nature', 'City', 'History', 'Food', 'Adventure'];
+    for ($i = 0; $i < 20; $i++) {
+        $insertPref->execute([$budgets[array_rand($budgets)], $paces[array_rand($paces)]]);
+        $prefId = $pdo->lastInsertId();
+        $updateTraveller->execute([$prefId, $travs[$i]]);
+        $t1 = $tags[array_rand($tags)];
+        $t2 = $tags[array_rand($tags)];
+        $insertTag->execute([$prefId, $t1]);
+        if ($t1 !== $t2) $insertTag->execute([$prefId, $t2]);
+    }
+
+    // ACCOMMODATION_AMENITIES
+    $accoms = $pdo->query("SELECT AccommodationID FROM ACCOMMODATION LIMIT 20")->fetchAll(PDO::FETCH_COLUMN);
+    $amenities = ['Free WiFi', 'Pool', 'Gym', 'Breakfast Included', 'Parking'];
+    $insertAmenity = $pdo->prepare("INSERT IGNORE INTO ACCOMMODATION_AMENITIES (AccommodationID, Amenity) VALUES (?, ?)");
+    foreach ($accoms as $accId) {
+        $insertAmenity->execute([$accId, $amenities[array_rand($amenities)]]);
+        $insertAmenity->execute([$accId, $amenities[array_rand($amenities)]]);
+    }
+
     $pdo->commit();
 
     echo "All data successfully imported!\n";
