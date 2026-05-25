@@ -62,12 +62,13 @@ function handlePackagesRequest($method, $id) {
                     JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
                     JOIN HAS_DESTINATION hd ON p.PackageID = hd.PackageID
                     JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
-                    WHERE (d.City LIKE :dest OR d.Country LIKE :dest OR d.DestinationID = :dest_id) AND p.Status = 'Active'
+                    WHERE (d.City LIKE :cdest1 OR d.Country LIKE :cdest2 OR d.DestinationID = :cdest3) AND p.Status = 'Active'
                 ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute([
-                    ':dest' => '%' . $destVal . '%',
-                    ':dest_id' => is_numeric($destVal) ? (int)$destVal : -1
+                    ':cdest1' => '%' . $destVal . '%',
+                    ':cdest2' => '%' . $destVal . '%',
+                    ':cdest3' => is_numeric($destVal) ? (int)$destVal : -1
                 ]);
                 $packages = $stmt->fetchAll();
                 echo json_encode(["comparison" => $packages]);
@@ -84,13 +85,16 @@ function handlePackagesRequest($method, $id) {
                     $whereClause .= " AND p.PackageID IN (
                         SELECT hd.PackageID FROM HAS_DESTINATION hd
                         JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
-                        WHERE d.City = :destination OR d.Country = :destination
+                        WHERE d.City = :dest1 OR d.Country = :dest2
                     )";
-                    $params[':destination'] = $_GET['destination'];
+                    $params[':dest1'] = $_GET['destination'];
+                    $params[':dest2'] = $_GET['destination'];
                 }
                 if (isset($_GET['search']) && $_GET['search'] !== '') {
-                    $whereClause .= " AND (p.Title LIKE :search OR p.Description LIKE :search OR ta.AgencyName LIKE :search)";
-                    $params[':search'] = '%' . $_GET['search'] . '%';
+                    $whereClause .= " AND (p.Title LIKE :search1 OR p.Description LIKE :search2 OR ta.AgencyName LIKE :search3)";
+                    $params[':search1'] = '%' . $_GET['search'] . '%';
+                    $params[':search2'] = '%' . $_GET['search'] . '%';
+                    $params[':search3'] = '%' . $_GET['search'] . '%';
                 }
                 $minPriceFilter = isset($_GET['min_price']) && $_GET['min_price'] !== ''
                     ? (float)$_GET['min_price'] : null;
