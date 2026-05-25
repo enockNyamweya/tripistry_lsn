@@ -237,5 +237,17 @@ The setup script automatically:
   - Seeds 10,000+ packages, 40,000+ bookings, 30,000+ reviews
   - Creates the chat messaging table
   - Populates destinations, flights, accommodations, restaurants, and attractions
+Bonus Mark Features
+1. Enhanced UI/UX — Login as traveller (traveller@test.com / password), go to Dashboard. See top-rated packages + recommended destinations with scores.
 
+2. Security — Try logging in with wrong password 5 times in a row. You'll get locked out for 5 minutes with "Too many login attempts" message.
+
+3. Group Matching — Login as traveller, go to http://localhost:8080/traveller/group_matches.php. If you have bookings, it shows matched group trips with match scores.
+
+4. Sentiment Analysis — Login, book a package, write a review with words like "amazing" or "terrible". The review card shows a colored badge: Positive 85% or Negative 60%.
+
+5. Calendar + Recommendations — Login as traveller, go to My Bookings, click "Add to Google Calendar" on any booking. Dashboard shows recommendation scores per destination.
+
+6. CI — After pushing to GitHub, go to the Actions tab on your repo to see the workflow run (PHP linting, schema validation, file checks).
+7, Chat box
 END OF README
