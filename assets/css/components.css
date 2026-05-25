@@ -162,6 +162,10 @@
     overflow: hidden;
 }
 
+.stat-card.stat-card-revenue {
+    overflow: visible;
+}
+
 .stat-card h3 {
     font-weight: 800;
     line-height: 1.1;

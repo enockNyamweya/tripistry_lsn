@@ -9,11 +9,29 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.stat-card-revenue .stat-value-money {
-    white-space: nowrap;
+/* Revenue stat: never clip or ellipsis (overrides components.css gradient + overflow) */
+.stat-card.stat-card-revenue {
     overflow: visible;
-    text-overflow: unset;
-    font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+    min-width: 11rem;
+}
+.stat-card-revenue .stat-value-money {
+    font-size: clamp(0.85rem, 1.5vw, 1.25rem) !important;
+    font-weight: 800;
+    line-height: 1.25;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    word-break: break-word;
+    max-width: 100%;
+    /* Solid color — gradient + background-clip causes clipped/garbled text */
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: var(--primary, #4f46e5) !important;
+    color: var(--primary, #4f46e5) !important;
+}
+.stat-card-revenue .stat-value-money::after {
+    display: none !important;
 }
 .dashboard-bookings-scroll {
     max-height: 420px;
@@ -84,13 +102,13 @@
     text-align: center;
 }
 
-.stat-card h3 {
+.stat-card h3:not(.stat-value-money) {
     font-size: 2.5rem;
     color: var(--primary);
 }
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
-    .stat-card h3 {
+    .stat-card h3:not(.stat-value-money) {
         background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
         -webkit-background-clip: text;
         background-clip: text;
