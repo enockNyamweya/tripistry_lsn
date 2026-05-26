@@ -23,11 +23,11 @@
 }
 .welcome-logo {
     width: 88px; height: 88px;
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    background: var(--primary);
     border-radius: 22px;
     display: inline-flex; align-items: center; justify-content: center;
     font-size: 2.6rem; font-weight: 800; color: white;
-    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 20px 60px rgba(17, 42, 70, 0.2);
     margin-bottom: 2rem;
 }
 .welcome-page h1 {
@@ -38,7 +38,7 @@
     line-height: 1.15;
     margin-bottom: 1.25rem;
 }
-.welcome-page h1 span { color: #2563eb; }
+.welcome-page h1 span { color: var(--primary); }
 .welcome-page .welcome-subtitle {
     font-size: 1.15rem;
     color: #64748b;
@@ -50,23 +50,24 @@
     display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
 }
 .welcome-buttons .btn-primary {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    background: var(--primary);
     color: white; padding: 0.9rem 2.2rem; border-radius: 12px;
     font-size: 1rem; font-weight: 600; text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(17, 42, 70, 0.2);
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 .welcome-buttons .btn-primary:hover {
+    background: var(--primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 8px 30px rgba(17, 42, 70, 0.3);
 }
 .welcome-buttons .btn-outline {
-    background: white; color: #2563eb; padding: 0.9rem 2.2rem;
+    background: white; color: var(--primary); padding: 0.9rem 2.2rem;
     border-radius: 12px; font-size: 1rem; font-weight: 600;
-    text-decoration: none; border: 2px solid #bfdbfe;
+    text-decoration: none; border: 2px solid var(--border-light);
     transition: border-color 0.2s, background 0.2s;
 }
-.welcome-buttons .btn-outline:hover { border-color: #2563eb; background: #eff6ff; }
+.welcome-buttons .btn-outline:hover { border-color: var(--primary); background: var(--bg-base); }
 </style>
 
 <div class="welcome-page">

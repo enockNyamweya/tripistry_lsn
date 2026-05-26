@@ -67,10 +67,10 @@ body {
 }
 
 /* SLIDE BACKGROUNDS */
-.slide-light { background: linear-gradient(135deg, var(--white) 0%, var(--blue-50) 50%, var(--blue-100) 100%); }
-.slide-dark { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 60%, var(--blue-700) 100%); }
-.slide-accent { background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, var(--blue-100) 100%); }
-.slide-gradient { background: linear-gradient(160deg, #0B1A2C 0%, #112A46 40%, #1D4875 100%); }
+.slide-light { background: var(--blue-50); }
+.slide-dark { background: var(--blue-900); }
+.slide-accent { background: var(--blue-100); }
+.slide-gradient { background: var(--blue-800); }
 .slide-white { background: var(--white); }
 
 /* TITLE SLIDE */
@@ -81,7 +81,7 @@ body {
 }
 .title-slide .logo-mark {
   width: 80px; height: 80px;
-  background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+  background: var(--blue-700);
   border-radius: 20px;
   display: flex; align-items: center; justify-content: center;
   font-size: 2.4rem; color: white; font-weight: 800;
@@ -166,10 +166,7 @@ body {
 .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1); }
 .stat-card .stat-number {
   font-size: 2.2rem; font-weight: 800;
-  background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--blue-700);
 }
 .stat-card .stat-label {
   font-size: 0.85rem; color: var(--slate-500);
@@ -223,7 +220,7 @@ body {
   position: relative;
 }
 .arch-layer.frontend { border-color: var(--blue-400); background: var(--blue-50); }
-.arch-layer.api { border-color: var(--blue-500); background: linear-gradient(135deg, var(--blue-50), var(--blue-100)); }
+.arch-layer.api { border-color: var(--blue-500); background: var(--blue-50); }
 .arch-layer.db { border-color: var(--blue-600); background: var(--blue-100); }
 .arch-arrow {
   text-align: center; color: var(--blue-400); font-size: 0.7rem;
@@ -841,7 +838,7 @@ body {
 
 <!-- SLIDE 17: THANK YOU -->
 <div class="slide slide-gradient title-slide dark">
-  <div class="fade-up"><div class="logo-mark" style="background:linear-gradient(135deg, var(--blue-400), var(--blue-500));">T</div></div>
+  <div class="fade-up"><div class="logo-mark" style="background:var(--blue-500);">T</div></div>
   <h1 class="fade-up fade-up-delay-1">Thank<span> You</span></h1>
   <p class="subtitle fade-up fade-up-delay-2">Tripistry | Connecting the World, One Journey at a Time</p>
   <p class="fade-up fade-up-delay-3" style="font-size:0.85rem;color:var(--blue-300);">github.com/tripistry &bull; tripistry.com</p>

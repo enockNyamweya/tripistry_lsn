@@ -44,13 +44,13 @@ class UIController {
         if (imgUrl && imgUrl.trim()) {
             return `<div class="card-media">
                 <img src="${UIController.esc(imgUrl)}" alt="${UIController.esc(alt)}" class="card-img" loading="lazy" onerror="this.style.display='none';var p=this.parentElement.querySelector('.card-media-fallback');if(p)p.style.display='flex';">
-                <div class="card-media-fallback" style="display:none;background:linear-gradient(160deg, ${color||'#4f46e5'} 0%, ${color||'#4f46e5'}cc 40%, ${color||'#4f46e5'} 100%);min-height:160px;align-items:center;justify-content:center;flex-direction:column;padding:1.5rem;text-align:center;">
+                <div class="card-media-fallback" style="display:none;background:${color||'var(--primary)'};min-height:160px;align-items:center;justify-content:center;flex-direction:column;padding:1.5rem;text-align:center;">
                     <div style="font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;">${UIController.esc(sublabel)}</div>
                     <div style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;max-width:90%;">${UIController.esc(label)}</div>
                 </div>
             </div>`;
         }
-        return `<div class="card-media" style="background:linear-gradient(160deg, ${color||'#4f46e5'} 0%, ${color||'#4f46e5'}cc 40%, ${color||'#4f46e5'} 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;padding:1.5rem;text-align:center;">
+        return `<div class="card-media" style="background:${color||'var(--primary)'};display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;padding:1.5rem;text-align:center;">
             <div style="font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;">${UIController.esc(sublabel)}</div>
             <div style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;max-width:90%;">${UIController.esc(label)}</div>
         </div>`;
@@ -61,7 +61,7 @@ class UIController {
         const imgUrl = UIController.resolveImageUrl(dest.ImageURL, baseUrl) || UIController.photoUrl('city,skyline', dest.DestinationID);
         return `<a href="${UIController.esc(baseUrl)}/traveller/destination.php?id=${encodeURIComponent(dest.DestinationID)}"
                class="card feature-card hover-lift">
-            ${UIController.mediaBlock(imgUrl, alt, `${dest.City}, ${dest.Country}`, 'Destination', '#2563eb')}
+            ${UIController.mediaBlock(imgUrl, alt, `${dest.City}, ${dest.Country}`, 'Destination', 'var(--primary)')}
             <div class="card-body">
                 <h3>${UIController.esc(dest.City)}, ${UIController.esc(dest.Country)}</h3>
                 <p>${UIController.esc(UIController.truncate(dest.Description, 120))}</p>
@@ -133,7 +133,7 @@ class UIController {
                 const imgUrl = UIController.resolveImageUrl(acc.ImageURL, UIController.browseBaseUrl) || UIController.photoUrl('hotel,resort,room', acc.AccommodationID);
                 const city = acc.City ? `${acc.City}, ${acc.Country || ''}` : '';
                 return `<a href="${UIController.browseBaseUrl}/traveller/accommodation_detail.php?id=${encodeURIComponent(acc.AccommodationID)}" class="card hover-lift" style="text-decoration:none;color:inherit;">
-                    ${UIController.mediaBlock(imgUrl, acc.Name, acc.Name, acc.Type || 'Hotel', '#059669')}
+                    ${UIController.mediaBlock(imgUrl, acc.Name, acc.Name, acc.Type || 'Hotel', 'var(--primary-light)')}
                     <div class="card-body">
                         <h3>${UIController.esc(acc.Name)}</h3>
                         <span class="badge">${UIController.esc(acc.Type || 'Hotel')}</span>
@@ -149,7 +149,7 @@ class UIController {
                 const city = r.City ? `${r.City}, ${r.Country || ''}` : '';
                 const cuisine = r.CuisineType || 'Various';
                 return `<a href="${UIController.browseBaseUrl}/traveller/restaurant_detail.php?id=${encodeURIComponent(r.RestaurantID)}" class="card hover-lift" style="text-decoration:none;color:inherit;">
-                    ${UIController.mediaBlock(imgUrl, r.Name, r.Name, cuisine, '#d97706')}
+                    ${UIController.mediaBlock(imgUrl, r.Name, r.Name, cuisine, 'var(--warning)')}
                     <div class="card-body">
                         <h3>${UIController.esc(r.Name)}</h3>
                         <span class="badge">${UIController.esc(cuisine)}</span>
@@ -165,7 +165,7 @@ class UIController {
                 const fee = parseFloat(attr.EntryFee) > 0 ? UIController.formatMoney(attr.EntryFee) : 'Free';
                 const type = attr.Type || 'Attraction';
                 return `<a href="${UIController.browseBaseUrl}/traveller/attraction_detail.php?id=${encodeURIComponent(attr.AttractionID)}" class="card hover-lift" style="text-decoration:none;color:inherit;">
-                    ${UIController.mediaBlock(imgUrl, attr.Name, attr.Name, type, '#7c3aed')}
+                    ${UIController.mediaBlock(imgUrl, attr.Name, attr.Name, type, 'var(--secondary)')}
                     <div class="card-body">
                         <h3>${UIController.esc(attr.Name)}</h3>
                         <span class="badge">${UIController.esc(type)}</span>

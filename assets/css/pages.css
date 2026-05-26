@@ -283,15 +283,7 @@
     color: var(--primary);
 }
 
-@supports (-webkit-background-clip: text) or (background-clip: text) {
-    .stat-card h3:not(.stat-value-money) {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-    }
-}
+
 
 /* Detail Page */
 .package-detail { max-width: 1000px; margin: 0 auto; }
@@ -313,7 +305,7 @@
 }
 
 .booking-section {
-    background: linear-gradient(to right bottom, var(--surface-light), var(--bg-base));
+    background: var(--surface-light);
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow-lg);
