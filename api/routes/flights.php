@@ -8,7 +8,7 @@ function handleFlightsRequest($method, $id) {
         case 'GET':
             if ($id) {
                 $stmt = $pdo->prepare("SELECT * FROM FLIGHT WHERE FlightID = :id");
-                $stmt->execute([':id' => $id]);
+                $stmt->execute([':id' => (int)$id]);
                 $flight = $stmt->fetch();
                 
                 if ($flight) {
