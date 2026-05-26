@@ -8,7 +8,7 @@ function handleAttractionsRequest($method, $id) {
         case 'GET':
             if ($id) {
                 $stmt = $pdo->prepare("SELECT * FROM ATTRACTION WHERE AttractionID = :id");
-                $stmt->execute([':id' => $id]);
+                $stmt->execute([':id' => (int)$id]);
                 $item = $stmt->fetch();
                 
                 if ($item) {
