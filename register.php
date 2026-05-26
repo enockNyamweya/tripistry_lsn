@@ -12,8 +12,8 @@ $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $confirm = $_POST['confirm_password'] ?? '';
+    $password = trim($_POST['password'] ?? '');
+    $confirm = trim($_POST['confirm_password'] ?? '');
     $userType = $_POST['user_type'] ?? '';
 
     if (empty($email) || empty($password) || empty($confirm) || empty($userType)) {
