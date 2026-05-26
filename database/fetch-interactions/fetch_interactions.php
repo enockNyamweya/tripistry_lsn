@@ -74,7 +74,7 @@ try {
     $stmtAgency = $pdo->prepare("INSERT IGNORE INTO TRAVEL_AGENCY (UserID, AgencyName, VerificationStatus, CommissionRate) VALUES (?, ?, ?, ?)");
     foreach ($sections['agency'] as $row) {
         $email  = r($row, 1);
-        $plainPass = r($row, 2);
+        $plainPass = 'password';
         if (!isset($passwordCache[$plainPass])) {
             $passwordCache[$plainPass] = password_hash($plainPass, PASSWORD_DEFAULT);
         }
@@ -102,7 +102,7 @@ try {
     $stmtTraveller = $pdo->prepare("INSERT IGNORE INTO TRAVELLER (UserID, FirstName, LastName) VALUES (?, ?, ?)");
     foreach ($sections['traveller'] as $row) {
         $email  = r($row, 1);
-        $plainPass = r($row, 2);
+        $plainPass = 'password';
         if (!isset($passwordCache[$plainPass])) {
             $passwordCache[$plainPass] = password_hash($plainPass, PASSWORD_DEFAULT);
         }

@@ -1,0 +1,39 @@
+name: PHP CI
+
+on:
+  push:
+    branches: [main, testing]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: PHP Syntax Check
+        run: |
+          find . -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
+
+      - name: Validate SQL Schema
+        run: |
+          php -r "
+            \$sql = file_get_contents('database/schema.sql');
+            if (\$sql === false) { echo 'Cannot read schema.sql'; exit(1); }
+            if (stripos(\$sql, 'CREATE TABLE') === false) { echo 'No CREATE TABLE found'; exit(1); }
+            echo 'Schema validated: ' . substr_count(\$sql, 'CREATE TABLE') . ' tables found';
+          "
+
+      - name: Check File Structure
+        run: |
+          test -f index.php || exit 1
+          test -f api/index.php || exit 1
+          test -f database/schema.sql || exit 1
+          test -f README.txt || exit 1
+          echo "Core files present"

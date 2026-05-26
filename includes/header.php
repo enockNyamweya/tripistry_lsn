@@ -100,8 +100,10 @@ $currentPath = $_SERVER['REQUEST_URI'];
 
         <?php else: ?>
 
+            <?php if (!str_contains($currentPath, '/index.php') && $currentPath !== '/' && !str_ends_with($currentPath, '/')): ?>
             <a href="<?php echo BASE_URL; ?>/login.php">Login</a>
             <a href="<?php echo BASE_URL; ?>/register.php">Register</a>
+            <?php endif; ?>
 
         <?php endif; ?>
 

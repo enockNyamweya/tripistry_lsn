@@ -68,6 +68,23 @@ if ($compareIds) {
             <input type="number" name="max_price" class="filter-price-input" placeholder="No max" min="1" step="1" inputmode="numeric"
                    value="<?php echo $maxPrice !== '' ? htmlspecialchars($maxPrice) : ''; ?>">
         </label>
+        <label class="filter-field filter-field-price">
+            <span class="filter-label">Min Duration</span>
+            <input type="number" name="min_duration" class="filter-price-input" placeholder="Days" min="1" step="1" value="<?= htmlspecialchars($_GET['min_duration'] ?? '') ?>">
+        </label>
+        <label class="filter-field filter-field-price">
+            <span class="filter-label">Max Duration</span>
+            <input type="number" name="max_duration" class="filter-price-input" placeholder="Days" min="1" step="1" value="<?= htmlspecialchars($_GET['max_duration'] ?? '') ?>">
+        </label>
+        <label class="filter-field">
+            <span class="filter-label">Min Rating</span>
+            <select name="min_rating">
+                <option value="">Any Rating</option>
+                <?php foreach ([4,3,2,1] as $r): ?>
+                    <option value="<?= $r ?>" <?= (($_GET['min_rating'] ?? '') == $r) ? 'selected' : '' ?>><?= $r ?>★ & above</option>
+                <?php endforeach; ?>
+            </select>
+        </label>
         <label class="filter-field">
             <span class="filter-label">Sort</span>
             <select name="sort">

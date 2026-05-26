@@ -54,7 +54,6 @@ function handlePackagesRequest($method, $id) {
             } else if (isset($_GET['compare_destination'])) {
                 // Return packages for the same destination side-by-side
                 $destVal = $_GET['compare_destination'];
-                // upsert correction — unique param names for PDO
                 $query = "
                     SELECT p.PackageID, p.Title, p.Price, p.DurationDays, ta.AgencyName,
                         COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
@@ -73,8 +72,7 @@ function handlePackagesRequest($method, $id) {
                 ]);
                 $packages = $stmt->fetchAll();
                 echo json_encode(["comparison" => $packages]);
-                
-            } else {
+            }else {
                 // Get all packages with filtering and sorting
                 $whereClause = " FROM TRAVEL_PACKAGE p
                     JOIN USER u ON p.AgencyID = u.UserID
@@ -86,13 +84,16 @@ function handlePackagesRequest($method, $id) {
                     $whereClause .= " AND p.PackageID IN (
                         SELECT hd.PackageID FROM HAS_DESTINATION hd
                         JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
-                        WHERE d.City = :destination OR d.Country = :destination
+                        WHERE d.City = :dest1 OR d.Country = :dest2
                     )";
-                    $params[':destination'] = $_GET['destination'];
+                    $params[':dest1'] = $_GET['destination'];
+                    $params[':dest2'] = $_GET['destination'];
                 }
                 if (isset($_GET['search']) && $_GET['search'] !== '') {
-                    $whereClause .= " AND (p.Title LIKE :search OR p.Description LIKE :search OR ta.AgencyName LIKE :search)";
-                    $params[':search'] = '%' . $_GET['search'] . '%';
+                    $whereClause .= " AND (p.Title LIKE :search1 OR p.Description LIKE :search2 OR ta.AgencyName LIKE :search3)";
+                    $params[':search1'] = '%' . $_GET['search'] . '%';
+                    $params[':search2'] = '%' . $_GET['search'] . '%';
+                    $params[':search3'] = '%' . $_GET['search'] . '%';
                 }
                 $minPriceFilter = isset($_GET['min_price']) && $_GET['min_price'] !== ''
                     ? (float)$_GET['min_price'] : null;
@@ -114,6 +115,15 @@ function handlePackagesRequest($method, $id) {
                 if ($maxPriceFilter !== null) {
                     $whereClause .= " AND p.Price <= :max_price";
                     $params[':max_price'] = $maxPriceFilter;
+                }
+
+                if (isset($_GET['min_duration']) && $_GET['min_duration'] !== '') {
+                    $whereClause .= " AND p.DurationDays >= :min_dur";
+                    $params[':min_dur'] = (int)$_GET['min_duration'];
+                }
+                if (isset($_GET['max_duration']) && $_GET['max_duration'] !== '') {
+                    $whereClause .= " AND p.DurationDays <= :max_dur";
+                    $params[':max_dur'] = (int)$_GET['max_duration'];
                 }
 
                 $havingClause = '';
