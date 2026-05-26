@@ -8,7 +8,7 @@ function handleRestaurantsRequest($method, $id) {
         case 'GET':
             if ($id) {
                 $stmt = $pdo->prepare("SELECT * FROM RESTAURANT WHERE RestaurantID = :id");
-                $stmt->execute([':id' => $id]);
+                $stmt->execute([':id' => (int)$id]);
                 $item = $stmt->fetch();
                 
                 if ($item) {
