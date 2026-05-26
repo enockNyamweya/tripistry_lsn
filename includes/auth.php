@@ -105,7 +105,7 @@ function getTravellerInfo($userId) {
 
 //Show name:
 function getUserFirstName(PDO $pdo, $userId) {
-    $stmt = $pdo->prepare("SELECT FirstName FROM USERS WHERE UserID = ?");
+    $stmt = $pdo->prepare("SELECT FirstName FROM TRAVELLER WHERE UserID = ?");
     $stmt->execute([$userId]);
     return $stmt->fetchColumn();
 }

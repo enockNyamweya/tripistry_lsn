@@ -11,7 +11,7 @@ if (isLoggedIn()) {
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
+    $password = trim($_POST['password'] ?? '');
 
     // CSRF check
     $token = $_POST['csrf_token'] ?? '';

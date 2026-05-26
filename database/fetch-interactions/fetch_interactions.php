@@ -172,7 +172,56 @@ try {
     echo "  $count attractions imported.\n\n";
 
     // --- Seed Flights ---
-    require_once __DIR__ . '/../fetch-flights/fetch_flights.php';
+    echo "Seeding flights programmatically...\n";
+    $airlines = ['Emirates', 'Air France', 'Qatar Airways', 'Singapore Airlines', 'British Airways', 'Lufthansa', 'Delta Air Lines', 'South African Airways', 'KLM', 'Turkish Airlines'];
+    $destCities = ['Cape Town', 'London', 'Paris', 'Tokyo', 'New York', 'Rome', 'Madrid', 'Sydney', 'Toronto', 'Berlin'];
+    
+    $stmtFlight = $pdo->prepare("
+        INSERT INTO FLIGHT (Airline, FlightNumber, DepartureCity, ArrivalCity, DepartureTime, ArrivalTime, Price)
+        VALUES (:airline, :flight_number, :dep_city, :arr_city, :dep_time, :arr_time, :price)
+    ");
+    
+    $checkFlight = $pdo->prepare("
+        SELECT COUNT(*) FROM FLIGHT 
+        WHERE FlightNumber = :flight_number AND DepartureTime = :dep_time
+    ");
+    
+    $flightCount = 0;
+    for ($i = 1; $i <= 50; $i++) {
+        $airline = $airlines[$i % count($airlines)];
+        $flightNo = strtoupper(substr($airline, 0, 2)) . rand(100, 999);
+        
+        $depCity = 'Johannesburg';
+        if ($i % 3 == 0) $depCity = 'Cape Town';
+        if ($i % 5 == 0) $depCity = 'Durban';
+        
+        $arrCity = $destCities[($i - 1) % count($destCities)];
+        if ($arrCity === $depCity) {
+            $arrCity = 'London';
+        }
+        
+        $departDate = date('Y-m-d H:i:s', strtotime("+ " . ($i * 2 + 1) . " days + " . rand(1, 23) . " hours"));
+        $arrivalDate = date('Y-m-d H:i:s', strtotime($departDate . " + " . rand(2, 16) . " hours"));
+        $price = rand(1500, 16000) + rand(0, 99) / 100;
+        
+        // Prevent duplicates
+        $checkFlight->execute([':flight_number' => $flightNo, ':dep_time' => $departDate]);
+        if ($checkFlight->fetchColumn() > 0) {
+            continue;
+        }
+        
+        $stmtFlight->execute([
+            ':airline' => $airline,
+            ':flight_number' => $flightNo,
+            ':dep_city' => $depCity,
+            ':arr_city' => $arrCity,
+            ':dep_time' => $departDate,
+            ':arr_time' => $arrivalDate,
+            ':price' => $price
+        ]);
+        $flightCount++;
+    }
+    echo "  $flightCount flights seeded.\n\n";
 
     // 7. GENERATE PACKAGES, BOOKINGS, REVIEWS
     echo "[7/7] Generating Packages, Bookings & Reviews...\n";

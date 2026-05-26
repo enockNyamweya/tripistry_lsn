@@ -8,7 +8,7 @@ function handleAccommodationsRequest($method, $id) {
         case 'GET':
             if ($id) {
                 $stmt = $pdo->prepare("SELECT * FROM ACCOMMODATION WHERE AccommodationID = :id");
-                $stmt->execute([':id' => $id]);
+                $stmt->execute([':id' => (int)$id]);
                 $item = $stmt->fetch();
                 
                 if ($item) {

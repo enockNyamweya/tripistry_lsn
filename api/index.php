@@ -51,7 +51,9 @@ function getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $
     }
     $offset = ($page - 1) * $limit;
 
-    // 2. Fetch data
+    // 2. Fetch data — cast to int to prevent injection
+    $limit = (int)$limit;
+    $offset = (int)$offset;
     $paginatedQuery = $selectQuery . " LIMIT $limit OFFSET $offset";
     $stmt = $pdo->prepare($paginatedQuery);
     $stmt->execute($params);
@@ -116,7 +118,7 @@ try {
 
         default:
             http_response_code(404);
-            echo json_encode(["message" => "Endpoint '$endpoint' not recognized."]);
+            echo json_encode(["message" => "Endpoint '" . htmlspecialchars($endpoint) . "' not recognized."]);
             break;
     }
 } catch (PDOException $e) {

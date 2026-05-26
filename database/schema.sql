@@ -129,7 +129,8 @@ CREATE TABLE DESTINATION (
     Latitude DECIMAL(9,6),
     Longitude DECIMAL(9,6),
     Description TEXT,
-    ImageURL VARCHAR(500)
+    ImageURL VARCHAR(500),
+    UNIQUE KEY unique_city_country (City, Country)
 );
 
 -- 12. FLIGHT
@@ -173,7 +174,8 @@ CREATE TABLE RESTAURANT (
     Address VARCHAR(300),
     Rating DECIMAL(2,1) DEFAULT 0,
     DestinationID INT,
-    FOREIGN KEY (DestinationID) REFERENCES DESTINATION(DestinationID) ON DELETE SET NULL
+    FOREIGN KEY (DestinationID) REFERENCES DESTINATION(DestinationID) ON DELETE SET NULL,
+    UNIQUE KEY unique_name_dest (Name(191), DestinationID)
 );
 
 -- 16. ATTRACTION

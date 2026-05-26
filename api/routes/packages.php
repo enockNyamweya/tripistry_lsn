@@ -62,18 +62,17 @@ function handlePackagesRequest($method, $id) {
                     JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
                     JOIN HAS_DESTINATION hd ON p.PackageID = hd.PackageID
                     JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
-                    WHERE (d.City LIKE :cdest1 OR d.Country LIKE :cdest2 OR d.DestinationID = :cdest3) AND p.Status = 'Active'
+                    WHERE (d.City LIKE :dest_city OR d.Country LIKE :dest_country OR d.DestinationID = :dest_id) AND p.Status = 'Active'
                 ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute([
-                    ':cdest1' => '%' . $destVal . '%',
-                    ':cdest2' => '%' . $destVal . '%',
-                    ':cdest3' => is_numeric($destVal) ? (int)$destVal : -1
+                    ':dest_city' => '%' . $destVal . '%',
+                    ':dest_country' => '%' . $destVal . '%',
+                    ':dest_id' => is_numeric($destVal) ? (int)$destVal : -1
                 ]);
                 $packages = $stmt->fetchAll();
                 echo json_encode(["comparison" => $packages]);
-                
-            } else {
+            }else {
                 // Get all packages with filtering and sorting
                 $whereClause = " FROM TRAVEL_PACKAGE p
                     JOIN USER u ON p.AgencyID = u.UserID
