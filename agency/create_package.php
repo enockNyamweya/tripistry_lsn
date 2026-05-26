@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $maxTravellers = (int)($_POST['max_travellers'] ?? 10);
     $isGroupTrip = isset($_POST['is_group_trip']) ? 1 : 0;
-    $status = $_POST['status'] ?? 'Active';
+    $status = in_array($_POST['status'] ?? '', ['Active', 'Draft', 'Inactive']) ? $_POST['status'] : 'Active';
     $imageURL = trim($_POST['image_url'] ?? '');
 
     $destinations = $_POST['destinations'] ?? [];
