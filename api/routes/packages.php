@@ -17,7 +17,7 @@ function handlePackagesRequest($method, $id) {
                     JOIN TRAVEL_AGENCY ta ON u.UserID = ta.UserID
                     WHERE p.PackageID = :id
                 ");
-                $stmt->execute([':id' => $id]);
+                $stmt->execute([':id' => (int)$id]);
                 $package = $stmt->fetch();
                 
                 if ($package) {
