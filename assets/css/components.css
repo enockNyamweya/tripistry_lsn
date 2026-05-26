@@ -957,6 +957,13 @@ body.theme-dark .card-body h3,
 body.theme-dark .card-body h4 {
     color: #ffffff;
 }
+body.theme-dark .stat-card h2,
+body.theme-dark .stat-card h3,
+body.theme-dark .stat-card .stat-revenue-value,
+body.theme-dark .stat-card .text-muted,
+body.theme-dark .stat-card {
+    color: #000000 !important;
+}
 body.theme-dark a:not(.btn):not(.card):not(.package-card):not(.nav-brand a) {
     color: #60a5fa;
 }
@@ -983,7 +990,8 @@ body.theme-dark .card,
 body.theme-dark .package-form,
 body.theme-dark .settings-panel,
 body.theme-dark .data-table,
-body.theme-dark fieldset {
+body.theme-dark fieldset,
+body.theme-dark .auth-form {
     background: #112A46;
     color: #f8fafc;
     border-color: #1D4875;
@@ -1050,12 +1058,15 @@ body.theme-dark .btn-primary:hover {
     background: #2563eb;
 }
 body.theme-dark .data-table th {
-    background: #1D4875;
+    background: var(--primary);
     color: white;
 }
 body.theme-dark .data-table td {
     border-color: #1D4875;
     color: #cbd5e1;
+}
+body.theme-dark .data-table tr:hover td {
+    background: #1e3a5f;
 }
 body.theme-dark .text-muted {
     color: #cbd5e1;
