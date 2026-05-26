@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="form-group">
         <label>Price (R) *</label>
-        <input type="number" name="price" step="0.01" required>
+        <input type="number" name="price" step="0.01" min="1" required>
     </div>
 </div>
 
