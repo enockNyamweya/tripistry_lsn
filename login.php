@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Invalid form submission. Please refresh and try again.';
     } elseif (empty($email) || empty($password)) {
         $error = 'Please fill in all fields.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = 'Please enter a valid email address.';
     } else {
         // Rate limit check
         $rateLimitMsg = check_login_rate_limit($email);
