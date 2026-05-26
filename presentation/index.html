@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tripistry — Platform Demo</title>
+<title>Tripistry | Platform Demo</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --blue-900: #0f172a;
-  --blue-800: #1e3a5f;
-  --blue-700: #1e40af;
-  --blue-600: #2563eb;
-  --blue-500: #3b82f6;
-  --blue-400: #60a5fa;
-  --blue-300: #93c5fd;
-  --blue-200: #bfdbfe;
-  --blue-100: #dbeafe;
-  --blue-50: #eff6ff;
+  --blue-900: #0B1A2C;
+  --blue-800: #112A46;
+  --blue-700: #1D4875;
+  --blue-600: #1D4875;
+  --blue-500: #3B5B7E;
+  --blue-400: #5A738E;
+  --blue-300: #899DB5;
+  --blue-200: #C5D1E0;
+  --blue-100: #E3EBF5;
+  --blue-50: #F6F5F0;
   --white: #ffffff;
-  --slate-50: #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-800: #1e293b;
-  --amber-500: #f59e0b;
-  --emerald-500: #10b981;
-  --rose-500: #f43f5e;
-  --violet-500: #8b5cf6;
+  --slate-50: #F6F5F0;
+  --slate-100: #EBEAE5;
+  --slate-200: #DEDCD5;
+  --slate-400: #8A95A5;
+  --slate-500: #5A738E;
+  --slate-600: #3E5166;
+  --slate-800: #1A2638;
+  --amber-500: #D99726;
+  --emerald-500: #2E7D32;
+  --rose-500: #D32F2F;
+  --violet-500: #1D4875;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +70,7 @@ body {
 .slide-light { background: linear-gradient(135deg, var(--white) 0%, var(--blue-50) 50%, var(--blue-100) 100%); }
 .slide-dark { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 60%, var(--blue-700) 100%); }
 .slide-accent { background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, var(--blue-100) 100%); }
-.slide-gradient { background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 40%, #1e40af 100%); }
+.slide-gradient { background: linear-gradient(160deg, #0B1A2C 0%, #112A46 40%, #1D4875 100%); }
 .slide-white { background: var(--white); }
 
 /* TITLE SLIDE */
@@ -434,7 +434,7 @@ body {
   <div class="text-col">
     <p class="overline fade-up">The Vision</p>
     <h2 class="fade-up fade-up-delay-1">Reimagining Travel<br>Package Management</h2>
-    <p class="fade-up fade-up-delay-2">Tripistry bridges the gap between travel agencies and modern travellers. A unified platform where agencies create, manage and sell curated travel packages, while travellers discover, compare and book their perfect journey — all in one place.</p>
+    <p class="fade-up fade-up-delay-2">Tripistry bridges the gap between travel agencies and modern travellers. A unified platform where agencies create, manage and sell curated travel packages, while travellers discover, compare and book their perfect journey, all in one place.</p>
     <p class="fade-up fade-up-delay-3" style="color:var(--slate-400);font-size:0.9rem;">Built with vanilla PHP &bull; MySQL 8.0 &bull; REST API &bull; Zero frameworks</p>
   </div>
   <div class="visual-col fade-up fade-up-delay-1">
@@ -472,11 +472,11 @@ body {
   </div>
   <div class="visual-col fade-up fade-up-delay-1">
     <div class="arch-diagram">
-      <div class="arch-layer frontend">[Web] Frontend — HTML5 / CSS3 / Vanilla JS</div>
+      <div class="arch-layer frontend">[Web] Frontend: HTML5 / CSS3 / Vanilla JS</div>
       <div class="arch-arrow">&#8595; &#8593; JSON / Form POST</div>
-      <div class="arch-layer api">[API] REST API Layer — Central Router + Route Handlers</div>
+      <div class="arch-layer api">[API] REST API Layer: Central Router + Route Handlers</div>
       <div class="arch-arrow">&#8595; &#8593; PDO Prepared Statements</div>
-      <div class="arch-layer db">[DB] MySQL 8.0 — 23 Normalized Tables</div>
+      <div class="arch-layer db">[DB] MySQL 8.0: 23 Normalized Tables</div>
     </div>
   </div>
 </div>
@@ -533,7 +533,7 @@ body {
   <div class="text-col">
     <p class="overline fade-up">Agency Tools</p>
     <h2 class="fade-up fade-up-delay-1">Powerful Agency<br>Dashboard</h2>
-    <p class="fade-up fade-up-delay-2">Real-time revenue metrics, package lifecycle management, booking processing, and group trip coordination — all from a single unified dashboard.</p>
+    <p class="fade-up fade-up-delay-2">Real-time revenue metrics, package lifecycle management, booking processing, and group trip coordination, all from a single unified dashboard.</p>
   </div>
   <div class="visual-col fade-up fade-up-delay-1">
     <div class="card-grid" style="grid-template-columns:1fr 1fr;">
@@ -566,8 +566,8 @@ body {
   <div class="text-col">
     <p class="overline fade-up"><span class="badge new">NEW</span> Smart Forms</p>
     <h2 class="fade-up fade-up-delay-1">Instant Date<br>Calculation</h2>
-    <p class="fade-up fade-up-delay-2">Enter a start date and duration — the end date calculates instantly. No more manual counting. Client-side JavaScript + server-side validation ensure accuracy.</p>
-    <p class="fade-up fade-up-delay-3"><span class="badge green">&#10004; Two-way Binding</span> <span class="badge">Change end date → recalculates duration</span></p>
+    <p class="fade-up fade-up-delay-2">Enter a start date and duration; the end date calculates instantly. No more manual counting. Client-side JavaScript + server-side validation ensure accuracy.</p>
+    <p class="fade-up fade-up-delay-3"><span class="badge green">&#10004; Two-way Binding</span> <span class="badge">Change end date &rarr; recalculates duration</span></p>
   </div>
   <div class="visual-col fade-up fade-up-delay-1">
     <div style="background:white;border-radius:16px;padding:2rem;box-shadow:0 4px 24px rgba(15,23,42,0.06);text-align:center;width:100%;max-width:380px;">
@@ -580,7 +580,7 @@ body {
         <small style="color:var(--slate-400);">&#8595; Auto-calculated</small><br>
         <span style="font-weight:700;font-size:1.3rem;color:var(--blue-600);">End Date: 21 Jun 2026</span>
       </div>
-      <div style="margin-top:0.5rem;font-size:0.7rem;color:var(--emerald-500);">* Instant — no page reload</div>
+      <div style="margin-top:0.5rem;font-size:0.7rem;color:var(--emerald-500);">* Instant: no page reload</div>
     </div>
   </div>
 </div>
@@ -590,7 +590,7 @@ body {
   <div class="text-col" style="color:white;">
     <p class="overline"><span class="badge new" style="background:var(--blue-400);color:var(--blue-900);">NEW</span> Communication</p>
     <h2>Private Chat<br>Between Travellers<br>&amp; Agencies</h2>
-    <p>Direct, private messaging — each conversation is isolated between one traveller and one agency. No group clutter, no cross-visibility.</p>
+    <p>Direct, private messaging; each conversation is isolated between one traveller and one agency. No group clutter, no cross-visibility.</p>
     <p><span class="badge" style="background:rgba(255,255,255,0.15);color:white;">Lock Private</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">* Real-time Polling</span> <span class="badge" style="background:rgba(255,255,255,0.15);color:white;">Chat 1-to-1</span></p>
   </div>
   <div class="visual-col">
@@ -615,7 +615,7 @@ body {
   <div class="text-col">
     <p class="overline fade-up">Chat Architecture</p>
     <h2 class="fade-up fade-up-delay-1">How Private<br>Messaging Works</h2>
-    <p style="font-size:0.8rem;color:var(--blue-300);margin-top:-0.3rem;margin-bottom:0.5rem;">Separate migration — keeps EER diagram at 22 tables</p>
+    <p style="font-size:0.8rem;color:var(--blue-300);margin-top:-0.3rem;margin-bottom:0.5rem;">Separate migration: keeps EER diagram at 22 tables</p>
     <div class="timeline fade-up fade-up-delay-2">
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>MESSAGE Table</h4><p>SenderID + ReceiverID with IsRead flag for unread badges</p></div></div>
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>REST API Endpoints</h4><p>/conversations, /messages/{id}, /send, /contacts</p></div></div>
@@ -761,7 +761,7 @@ body {
   <div class="text-col">
     <p class="overline fade-up">User Experience</p>
     <h2 class="fade-up fade-up-delay-1">Polished Landing<br>&amp; Role-Based UI</h2>
-    <p class="fade-up fade-up-delay-2">Clean hero section introducing Tripistry with clear call-to-action buttons. Dynamic navigation that adapts based on user role — travellers and agencies each see personalised interfaces.</p>
+    <p class="fade-up fade-up-delay-2">Clean hero section introducing Tripistry with clear call-to-action buttons. Dynamic navigation that adapts based on user role: travellers and agencies each see personalised interfaces.</p>
     <p class="fade-up fade-up-delay-3"><span class="badge">Responsive Layout</span> <span class="badge">Mobile-First Grid</span> <span class="badge">Glassmorphism</span></p>
   </div>
   <div class="visual-col fade-up fade-up-delay-1">
@@ -786,7 +786,7 @@ body {
     <div class="timeline fade-up fade-up-delay-2">
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Structured Booking History</h4><p>Active, Pending, Cancelled badges with JOIN queries across packages and agencies</p></div></div>
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>One-Click Calendar Export</h4><p>Dynamic Google Calendar event links auto-filled with trip title, dates, and location</p></div></div>
-      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>No API Login Required</h4><p>Uses browser-session Google account — pre-filled event URL, no OAuth complexity</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>No API Login Required</h4><p>Uses browser-session Google account (pre-filled event URL, no OAuth complexity)</p></div></div>
     </div>
   </div>
   <div class="visual-col fade-up fade-up-delay-1">
@@ -843,7 +843,7 @@ body {
 <div class="slide slide-gradient title-slide dark">
   <div class="fade-up"><div class="logo-mark" style="background:linear-gradient(135deg, var(--blue-400), var(--blue-500));">T</div></div>
   <h1 class="fade-up fade-up-delay-1">Thank<span> You</span></h1>
-  <p class="subtitle fade-up fade-up-delay-2">Tripistry — Connecting the World, One Journey at a Time</p>
+  <p class="subtitle fade-up fade-up-delay-2">Tripistry | Connecting the World, One Journey at a Time</p>
   <p class="fade-up fade-up-delay-3" style="font-size:0.85rem;color:var(--blue-300);">github.com/tripistry &bull; tripistry.com</p>
 </div>
 

@@ -1,5 +1,5 @@
 <?php
-// api/routes/agency.php — session-scoped agency/admin list endpoints
+// api/routes/agency.php : session-scoped agency/admin list endpoints
 
 function requireAgencyApi() {
     if (session_status() === PHP_SESSION_NONE) {

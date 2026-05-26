@@ -1,4 +1,4 @@
--- Chat Migration — adds MESSAGE table for private traveller-agency chat
+-- Chat Migration; adds MESSAGE table for private traveller-agency chat
 -- Run AFTER importing schema.sql to add messaging capability
 -- This table is intentionally separate from the 22-table core schema
 

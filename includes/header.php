@@ -13,7 +13,7 @@ $currentPath = $_SERVER['REQUEST_URI'];
 <head>
     <meta charset="UTF-8">
     <?php renderViewportMeta(); ?>
-    <title>Tripistry — Travel Package Management</title>
+    <title>Tripistry | Travel Package Management</title>
 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/reset.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/variables.css">
@@ -92,7 +92,6 @@ $currentPath = $_SERVER['REQUEST_URI'];
 
             <!-- USER DISPLAY -->
             <span class="nav-user">
-                <span class="user-icon">👤</span>
                 <?php echo htmlspecialchars($_SESSION['email']); ?>
             </span>
 

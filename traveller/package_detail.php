@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <div class="detail-item">
                     <strong><?php echo htmlspecialchars($f['Airline']); ?> #<?php echo htmlspecialchars($f['FlightNumber']); ?></strong>
                     <p><?php echo htmlspecialchars($f['DepartureCity']); ?> → <?php echo htmlspecialchars($f['ArrivalCity']); ?></p>
-                    <p class="text-muted"><?php echo date('M d H:i', strtotime($f['DepartureTime'])); ?> — <?php echo date('M d H:i', strtotime($f['ArrivalTime'])); ?></p>
+                    <p class="text-muted"><?php echo date('M d H:i', strtotime($f['DepartureTime'])); ?> to <?php echo date('M d H:i', strtotime($f['ArrivalTime'])); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -308,7 +308,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 var options = { year: 'numeric', month: 'long', day: 'numeric' };
                 display.textContent = start.toLocaleDateString('en-US', options);
             } else {
-                display.textContent = '—';
+                display.textContent = 'N/A';
             }
         }
     };

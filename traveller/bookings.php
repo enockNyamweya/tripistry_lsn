@@ -107,7 +107,7 @@ $googleCalendarUrl =
 <a href="<?= $googleCalendarUrl ?>"
    target="_blank"
    class="calendar-btn">
-   📅 Add To Google Calendar
+   Add To Google Calendar
 </a>
 
                 </td>

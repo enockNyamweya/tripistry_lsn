@@ -27,7 +27,7 @@
     margin-bottom: 2rem;
 }
 
-/* Traveller packages page only — scoped to #packages-lazy */
+/* Traveller packages page only: scoped to #packages-lazy */
 #packages-lazy .package-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
@@ -254,12 +254,12 @@
 .auth-form {
     max-width: 440px;
     margin: 4rem auto;
-    background: var(--surface-glass);
+    background: var(--surface-card);
     backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    border: var(--glass-border);
+    border: var(--border-card);
 }
 
 .auth-form h1 { margin-bottom: 1.5rem; text-align: center; }
@@ -285,7 +285,7 @@
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
     .stat-card h3:not(.stat-value-money) {
-        background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -353,7 +353,7 @@
     box-shadow: var(--shadow-sm);
 }
 
-/* Traveller packages — filter bar (scoped) */
+/* Traveller packages (filter bar scoped) */
 #traveller-packages {
     max-width: 100%;
     min-width: 0;

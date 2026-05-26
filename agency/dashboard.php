@@ -28,7 +28,7 @@ $revenueFull = formatRevenueFull($revenueAmount);
 ?>
 
 <h1>Agency Dashboard</h1>
-<p class="text-muted">Welcome, <?php echo htmlspecialchars($agency['AgencyName']); ?> — Status: <?php echo htmlspecialchars($agency['VerificationStatus']); ?></p>
+<p class="text-muted">Welcome, <?php echo htmlspecialchars($agency['AgencyName']); ?> (Status: <?php echo htmlspecialchars($agency['VerificationStatus']); ?>)</p>
 
 <div class="stats-grid">
     <a href="packages.php" class="stat-card stat-card-link">
@@ -61,7 +61,7 @@ $revenueFull = formatRevenueFull($revenueAmount);
 </div>
 
 <h2>Recent Bookings</h2>
-<p class="text-muted">Scroll for more — opens full list on <a href="bookings.php">Manage Bookings</a>.</p>
+<p class="text-muted">Scroll for more; opens full list on <a href="bookings.php">Manage Bookings</a>.</p>
 
 <div class="agency-infinite dashboard-bookings-scroll"
      data-agency-infinite

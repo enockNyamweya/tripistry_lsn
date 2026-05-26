@@ -23,7 +23,7 @@ function csrf_verify() {
     return true;
 }
 
-// Login Rate Limiting — blocks brute force attempts by IP
+// Login Rate Limiting : blocks brute force attempts by IP
 function check_login_rate_limit($email) {
     if (session_status() === PHP_SESSION_NONE) session_start();
     $ip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
@@ -54,7 +54,7 @@ function record_login_attempt() {
     $_SESSION[$key][] = time();
 }
 
-// Session security — regenerate ID on login to prevent fixation
+// Session security : regenerate ID on login to prevent fixation
 function secure_session_start() {
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -65,7 +65,7 @@ function secure_session_start() {
     }
 }
 
-// XSS-safe output — wrapper that always escapes
+// XSS-safe output : wrapper that always escapes
 function safe_html($value) {
     return htmlspecialchars((string)($value ?? ''), ENT_QUOTES, 'UTF-8');
 }

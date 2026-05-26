@@ -39,14 +39,14 @@ $restaurants = $nearbyRest->fetchAll();
 <div class="page-container">
 <div class="detail-hero">
     <div class="detail-hero-content" style="flex:1;">
-        <span class="badge">🎯 <?= htmlspecialchars($attr['Type'] ?? 'Attraction') ?></span>
+        <span class="badge"><?= htmlspecialchars($attr['Type'] ?? 'Attraction') ?></span>
         <h1><?= htmlspecialchars($attr['Name']) ?></h1>
         <?php if (!empty($attr['City'])): ?>
-            <p class="detail-location">📍 <?= htmlspecialchars($attr['City'] . ', ' . $attr['Country']) ?></p>
+            <p class="detail-location"><?= htmlspecialchars($attr['City'] . ', ' . $attr['Country']) ?></p>
         <?php endif; ?>
         <span class="badge" style="font-size:1rem;background:#059669;color:#fff;"><?= $fee ?></span>
         <?php if (!empty($attr['OpeningHours'])): ?>
-            <p>🕐 <?= htmlspecialchars($attr['OpeningHours']) ?></p>
+            <p>Hours: <?= htmlspecialchars($attr['OpeningHours']) ?></p>
         <?php endif; ?>
     </div>
 </div>

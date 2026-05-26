@@ -1,6 +1,6 @@
 <?php
 // Sentiment Analysis for Reviews (Bonus Task 4)
-// Simple lexicon-based sentiment classifier — no external API needed
+// Simple lexicon-based sentiment classifier : no external API needed
 
 function analyze_sentiment($text) {
     $text = strtolower($text);

@@ -94,7 +94,7 @@
     min-width: 200px;
 }
 
-/* Cards (Glassmorphism & Standard) */
+/* Cards */
 /*.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -110,13 +110,11 @@
 }
 
 .card, .package-card, .feature-card, .stat-card {
-    background: var(--surface-glass);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--surface-card);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     overflow: hidden;
-    border: var(--glass-border);
+    border: var(--border-card);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -437,7 +435,7 @@ h3 {
 /*Bonus UI stuff*/
 
 .dashboard-hero {
-    background: linear-gradient(135deg, #6e6ba9, #36808e);
+    background: linear-gradient(135deg, #112A46, #1D4875);
     color: white;
     padding: 3rem 2rem;
     border-radius: 16px;
@@ -499,14 +497,7 @@ h3 {
         transform 0.25s ease,
         box-shadow 0.25s ease;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.9),
-            rgba(255,255,255,0.75)
-        );
-
-    backdrop-filter: blur(10px);
+    background: var(--surface-card);
 }
 
 .stat-card:hover {
@@ -783,19 +774,19 @@ input:focus, select:focus, textarea:focus {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: white;
     padding: 10px 16px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease;
-    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 6px 18px rgba(17, 42, 70, 0.25);
 }
 
 .calendar-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(79, 70, 229, 0.35);
+    box-shadow: 0 10px 24px rgba(17, 42, 70, 0.35);
 }
 
 .package-form {
@@ -853,7 +844,7 @@ legend {
 
 /* Make headings nicer */
 h1 {
-    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
@@ -872,7 +863,7 @@ input, select, textarea {
 
 /* Hover feel for form sections */
 fieldset:hover {
-    border-color: #c7d2fe;
+    border-color: var(--primary-light);
     transition: 0.2s ease;
 }
 
@@ -887,12 +878,12 @@ width: 58px;
 height: 58px;
 border-radius: 50%;
 border: none;
-background: linear-gradient(135deg, #4f46e5, #7c3aed);
+background: linear-gradient(135deg, var(--primary), var(--primary-light));
 color: white;
 font-size: 24px;
 cursor: pointer;
 z-index: 9999;
-box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+box-shadow: 0 10px 25px rgba(17, 42, 70, 0.35);
 transition: all 0.25s ease;
 }
 .settings-fab:hover {
@@ -937,13 +928,13 @@ border: none;
 border-radius: 12px;
 padding: 10px;
 cursor: pointer;
-background: #eef2ff;
-color: #111827;
+background: var(--bg-base);
+color: var(--text-main);
 font-weight: 600;
 transition: all 0.2s ease;
 }
 .theme-btn:hover {
-background: #c7d2fe;
+background: var(--border-light);
 }
 #fontSizeSelect {
 width: 100%;
@@ -952,7 +943,7 @@ width: 100%;
  DARK MODE
 ========================= */
 body.theme-dark {
-background: #0f172a;
+background: #0B1A2C;
 color: #f8fafc;
 }
 body.theme-dark .card,
@@ -960,18 +951,18 @@ body.theme-dark .package-form,
 body.theme-dark .settings-panel,
 body.theme-dark .data-table,
 body.theme-dark fieldset {
-        background: #1e293b;
+        background: #112A46;
 color: #f8fafc;
 }
 body.theme-dark input,
 body.theme-dark textarea,
 body.theme-dark select {
-background: #0f172a;
+background: #0B1A2C;
 color: white;
 border-color: #334155;
 }
 body.theme-dark .data-table th {
-background: #312e81;
+background: #1D4875;
 }
 body.theme-dark .data-table td {
 border-color: #334155;

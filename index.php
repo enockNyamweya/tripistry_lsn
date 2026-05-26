@@ -75,7 +75,7 @@
         <h1>Tripistry<span>.</span></h1>
         <p class="welcome-subtitle">
             Discover curated travel packages from top agencies.
-            Compare flights, accommodations, and attractions — all in one place.
+            Compare flights, accommodations, and attractions, all in one place.
         </p>
         <div class="welcome-buttons">
             <a href="<?php echo BASE_URL; ?>/login.php" class="btn-primary">Log In</a>

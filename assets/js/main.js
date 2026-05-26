@@ -145,7 +145,7 @@ function initPackagesInfinite() {
         const placeholderClass = imgUrl ? 'card-img-placeholder is-hidden' : 'card-img-placeholder';
         const mediaBlock = '<div class="card-media">' +
             (imgUrl ? '<img src="' + escHtml(imgUrl) + '" alt="' + escHtml(pkg.Title) + '" class="card-img" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallbackImg + '\';">' : '') +
-            '<div class="' + placeholderClass + '"' + (imgUrl ? ' hidden' : '') + '><span class="card-img-placeholder-icon">✈</span><span class="card-img-placeholder-text">No photo</span></div></div>';
+            '<div class="' + placeholderClass + '"' + (imgUrl ? ' hidden' : '') + '><span class="card-img-placeholder-text">No photo</span></div></div>';
         const ids = compareIds.slice();
         if (ids.indexOf(pkg.PackageID) === -1) ids.push(pkg.PackageID);
         const compareUrl = 'packages.php?compare=' + encodeURIComponent(ids.slice(0, 3).join(','));
@@ -161,7 +161,7 @@ function initPackagesInfinite() {
             '<ul class="package-meta">' +
             '<li><strong>Destination</strong><span>' + dest + '</span></li>' +
             '<li><strong>Duration</strong><span>' + escHtml(pkg.DurationDays) + ' days</span></li>' +
-            '<li><strong>Dates</strong><span>' + formatPackageDate(pkg.StartDate) + ' — ' + formatPackageDate(pkg.EndDate) + '</span></li>' +
+            '<li><strong>Dates</strong><span>' + formatPackageDate(pkg.StartDate) + ' to ' + formatPackageDate(pkg.EndDate) + '</span></li>' +
             '<li><strong>Max travellers</strong><span>' + escHtml(pkg.MaxTravellers) + '</span></li>' +
             '</ul>' +
             '<p class="package-rating">' + ratingHtml + '</p>' +
@@ -309,7 +309,7 @@ function initAgencyInfinite() {
 
         function renderRow(item) {
             if (resource === 'packages') {
-                const rating = item.AvgRating ? parseFloat(item.AvgRating).toFixed(1) + ' ★' : '—';
+                const rating = item.AvgRating ? parseFloat(item.AvgRating).toFixed(1) + ' ★' : 'N/A';
                 const statusClass = (item.Status || '').toLowerCase();
                 return '<tr>' +
                     '<td>' + escHtml(item.Title) + '</td>' +
@@ -352,8 +352,8 @@ function initAgencyInfinite() {
                     '<td>#' + escHtml(item.BookingID) + '</td>' +
                     '<td>' + escHtml(item.PackageTitle) + '</td>' +
                     '<td>' + escHtml(item.FirstName + ' ' + item.LastName) + '</td>' +
-                    '<td>' + escHtml(item.PassportNum || '—') + '</td>' +
-                    '<td>' + escHtml(item.PhoneNumber || '—') + '</td>' +
+                    '<td>' + escHtml(item.PassportNum || 'N/A') + '</td>' +
+                    '<td>' + escHtml(item.PhoneNumber || 'N/A') + '</td>' +
                     '<td>' + formatShortDate(item.BookingDate) + '</td>' +
                     '<td>' + escHtml(item.NumTravellers) + '</td>' +
                     '<td>' + formatMoney(item.TotalCost) + '</td>' +
@@ -378,7 +378,7 @@ function initAgencyInfinite() {
                     '<td>' + escHtml(item.GroupName) + '</td>' +
                     '<td>' + escHtml(item.PackageTitle) + '</td>' +
                     '<td>' + escHtml(item.DestinationCity || 'N/A') + '</td>' +
-                    '<td>' + dep + ' — ' + retStr + '</td>' +
+                    '<td>' + dep + ' to ' + retStr + '</td>' +
                     '<td>' + escHtml(item.MinParticipants) + '-' + escHtml(item.MaxParticipants) + '</td>' +
                     '<td>' + escHtml(item.EnrolmentCount) + '</td>' +
                     '<td><span class="status-badge status-' + escHtml(statusClass) + '">' + escHtml(item.Status) + '</span></td>' +

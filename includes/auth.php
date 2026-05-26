@@ -110,7 +110,7 @@ function getUserFirstName(PDO $pdo, $userId) {
     return $stmt->fetchColumn();
 }
 
-/** Compact revenue for stat cards (R7.8M) — full amount in title attribute. */
+/** Compact revenue for stat cards (R7.8M) : full amount in title attribute. */
 function formatRevenueShort($amount) {
     $amount = (float)$amount;
     if ($amount >= 1000000000) {

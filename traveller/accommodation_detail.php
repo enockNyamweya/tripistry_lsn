@@ -60,7 +60,7 @@ $attractions = $nearbyAttr->fetchAll();
         <h1><?= htmlspecialchars($acc['Name']) ?></h1>
         <div class="detail-stars"><?= $stars ?> <small>(<?= (int)($acc['StarRating'] ?? 0) ?>-star)</small></div>
         <?php if (!empty($acc['City'])): ?>
-            <p class="detail-location">📍 <?= htmlspecialchars($acc['City'] . ', ' . $acc['Country']) ?></p>
+            <p class="detail-location"><?= htmlspecialchars($acc['City'] . ', ' . $acc['Country']) ?></p>
         <?php endif; ?>
         <?php if (!empty($acc['Address'])): ?>
             <p class="detail-address"><?= htmlspecialchars($acc['Address']) ?></p>
@@ -74,7 +74,7 @@ $attractions = $nearbyAttr->fetchAll();
     <h2>Amenities</h2>
     <div class="amenity-tags">
         <?php foreach ($amenities as $a): ?>
-            <span class="badge">✓ <?= htmlspecialchars($a) ?></span>
+            <span class="badge"><?= htmlspecialchars($a) ?></span>
         <?php endforeach; ?>
     </div>
 </div>

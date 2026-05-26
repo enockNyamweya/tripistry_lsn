@@ -9,7 +9,7 @@ if (!file_exists($sqlFile)) {
 
 $sql = file_get_contents($sqlFile);
 
-// Strip DROP/CREATE DATABASE and USE lines — PDO is already connected to the correct DB
+// Strip DROP/CREATE DATABASE and USE lines : PDO is already connected to the correct DB
 $lines = explode("\n", $sql);
 $filtered = array_filter($lines, function($line) {
     $l = strtoupper(trim($line));

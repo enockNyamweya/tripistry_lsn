@@ -23,7 +23,7 @@ function match_traveller_to_groups($pdo, $travellerId) {
     $preferences = $stmt->fetchAll();
 
     if (empty($preferences)) {
-        // No history — recommend popular group trips
+        // No history : recommend popular group trips
         $stmt = $pdo->prepare('
             SELECT g.*, p.Title, p.Price, p.DurationDays,
                    d.City, d.Country,
@@ -84,7 +84,7 @@ function match_traveller_to_groups($pdo, $travellerId) {
             ? $group['currentEnrolment'] / $group['MaxCapacity']
             : 0;
         if ($capacityRatio > 0.5 && $capacityRatio < 0.95) {
-            $score += 5; // Almost full — join now
+            $score += 5; // Almost full : join now
         }
         // Penalty for full groups
         if ($group['currentEnrolment'] >= $group['MaxCapacity']) {

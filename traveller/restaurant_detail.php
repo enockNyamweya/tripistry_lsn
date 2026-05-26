@@ -41,14 +41,14 @@ $accommodations = $nearbyAcc->fetchAll();
 <div class="page-container">
 <div class="detail-hero">
     <div class="detail-hero-content" style="flex:1;">
-        <span class="badge">🍽️ <?= htmlspecialchars($rest['CuisineType'] ?? 'Various Cuisine') ?></span>
+        <span class="badge"><?= htmlspecialchars($rest['CuisineType'] ?? 'Various Cuisine') ?></span>
         <h1><?= htmlspecialchars($rest['Name']) ?></h1>
         <div class="detail-rating"><?= $starDisplay ?></div>
         <?php if (!empty($rest['City'])): ?>
-            <p class="detail-location">📍 <?= htmlspecialchars($rest['City'] . ', ' . $rest['Country']) ?></p>
+            <p class="detail-location"><?= htmlspecialchars($rest['City'] . ', ' . $rest['Country']) ?></p>
         <?php endif; ?>
         <?php if (!empty($rest['Address'])): ?>
-            <p class="detail-address">📍 <?= htmlspecialchars($rest['Address']) ?></p>
+            <p class="detail-address"><?= htmlspecialchars($rest['Address']) ?></p>
         <?php endif; ?>
         <?php if (!empty($rest['PriceRange'])): ?>
             <span class="badge" style="font-size:1rem;"><?= htmlspecialchars($rest['PriceRange']) ?></span>

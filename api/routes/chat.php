@@ -1,5 +1,5 @@
 <?php
-// api/routes/chat.php — Private chat between travellers and agencies
+// api/routes/chat.php; Private chat between travellers and agencies
 
 function requireChatAuth() {
     if (session_status() === PHP_SESSION_NONE) {
@@ -17,7 +17,7 @@ function handleChatRequest($method, $resource, $subResource) {
     $userId = requireChatAuth();
     $pdo = Database::getInstance();
 
-    // Auto-create MESSAGE table if missing — no separate migration needed
+    // Auto-create MESSAGE table if missing: no separate migration needed
     $pdo->exec("CREATE TABLE IF NOT EXISTS MESSAGE (
         MessageID INT AUTO_INCREMENT PRIMARY KEY,
         SenderID INT NOT NULL,

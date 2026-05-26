@@ -51,7 +51,7 @@ function getPaginatedResponse($pdo, $countQuery, $selectQuery, $params, $page, $
     }
     $offset = ($page - 1) * $limit;
 
-    // 2. Fetch data — cast to int to prevent injection
+    // 2. Fetch data : cast to int to prevent injection
     $limit = (int)$limit;
     $offset = (int)$offset;
     $paginatedQuery = $selectQuery . " LIMIT $limit OFFSET $offset";

@@ -8,7 +8,7 @@ $maxPrice = normalizeFilterPrice($_GET['max_price'] ?? '');
 if ($minPrice !== '' && $maxPrice !== '' && (float)$maxPrice < (float)$minPrice) {
     $maxPrice = '';
 }
-// Package list loaded via API (main.js — Load more button)
+// Package list loaded via API (main.js : Load more button)
 
 // Get all destinations for filter dropdown
 $destStmt = $pdo->query('SELECT DISTINCT City, Country FROM DESTINATION ORDER BY Country, City');
@@ -88,12 +88,12 @@ if ($compareIds) {
         <label class="filter-field">
             <span class="filter-label">Sort</span>
             <select name="sort">
-            <option value="price_asc" <?php echo $sort === 'price_asc' ? 'selected' : ''; ?>>Price: Low-High</option>
-            <option value="price_desc" <?php echo $sort === 'price_desc' ? 'selected' : ''; ?>>Price: High-Low</option>
-            <option value="rating_desc" <?php echo $sort === 'rating_desc' ? 'selected' : ''; ?>>Rating: High-Low</option>
-            <option value="rating_asc" <?php echo $sort === 'rating_asc' ? 'selected' : ''; ?>>Rating: Low-High</option>
-            <option value="duration_asc" <?php echo $sort === 'duration_asc' ? 'selected' : ''; ?>>Duration: Short-Long</option>
-            <option value="duration_desc" <?php echo $sort === 'duration_desc' ? 'selected' : ''; ?>>Duration: Long-Short</option>
+            <option value="price_asc" <?php echo $sort === 'price_asc' ? 'selected' : ''; ?>>Price: Low to High</option>
+            <option value="price_desc" <?php echo $sort === 'price_desc' ? 'selected' : ''; ?>>Price: High to Low</option>
+            <option value="rating_desc" <?php echo $sort === 'rating_desc' ? 'selected' : ''; ?>>Rating: High to Low</option>
+            <option value="rating_asc" <?php echo $sort === 'rating_asc' ? 'selected' : ''; ?>>Rating: Low to High</option>
+            <option value="duration_asc" <?php echo $sort === 'duration_asc' ? 'selected' : ''; ?>>Duration: Short to Long</option>
+            <option value="duration_desc" <?php echo $sort === 'duration_desc' ? 'selected' : ''; ?>>Duration: Long to Short</option>
             <option value="date_asc" <?php echo $sort === 'date_asc' ? 'selected' : ''; ?>>Date: Earliest</option>
             <option value="title_asc" <?php echo $sort === 'title_asc' ? 'selected' : ''; ?>>Title: A-Z</option>
         </select>

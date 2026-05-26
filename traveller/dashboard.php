@@ -5,7 +5,7 @@ requireTraveller();
 
 <div class="dashboard-hero">
     <div class="hero-content">
-        <h1>Welcome back, Explorer ✈️</h1>
+        <h1>Welcome back, Explorer</h1>
         <p>
             Discover top-rated trips, personalized recommendations,
             and trending destinations.
@@ -50,7 +50,7 @@ foreach ($stats as $s): ?>
 </div>
 
 <!-- TOP PACKAGES -->
-<h2 class="section-title">🔥 Top Rated Packages</h2>
+<h2 class="section-title">Top Rated Packages</h2>
 
 <div class="card-grid">
 
@@ -107,7 +107,7 @@ foreach ($topPackages as $p): ?>
 </div>
 
 <!-- RECOMMENDATION ENGINE -->
-<h2 class="section-title">🌍 Recommended For You</h2>
+<h2 class="section-title">Recommended For You</h2>
 <!--score =
 (accommodation_count * 1.5)
 + (restaurant_count * 1.2)

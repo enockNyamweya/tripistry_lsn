@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <?php renderViewportMeta(); ?>
-    <title>Register — Tripistry</title>
+    <title>Register | Tripistry</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
 </head>
 <body>

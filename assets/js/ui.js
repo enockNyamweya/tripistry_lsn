@@ -138,7 +138,7 @@ class UIController {
                         <h3>${UIController.esc(acc.Name)}</h3>
                         <span class="badge">${UIController.esc(acc.Type || 'Hotel')}</span>
                         <span class="stars" style="color:#f59e0b;margin-left:0.5rem;">${stars}</span>
-                        ${city ? `<p style="font-size:0.8rem;color:#64748b;margin-top:0.25rem;">📍 ${UIController.esc(city)}</p>` : ''}
+                        ${city ? `<p style="font-size:0.8rem;color:#64748b;margin-top:0.25rem;">${UIController.esc(city)}</p>` : ''}
                         <p style="font-weight:600;color:#059669;margin-top:0.5rem;">${UIController.formatMoney(acc.PricePerNight)} <span style="font-weight:400;color:#64748b;">/ night</span></p>
                     </div>
                 </a>`;
@@ -153,9 +153,9 @@ class UIController {
                     <div class="card-body">
                         <h3>${UIController.esc(r.Name)}</h3>
                         <span class="badge">${UIController.esc(cuisine)}</span>
-                        <span style="color:#f59e0b;margin-left:0.5rem;">${Number.isNaN(rating) ? '—' : '★'.repeat(Math.round(rating)) + ' ' + rating.toFixed(1)}</span>
+                        <span style="color:#f59e0b;margin-left:0.5rem;">${Number.isNaN(rating) ? 'N/A' : '★'.repeat(Math.round(rating)) + ' ' + rating.toFixed(1)}</span>
                         ${r.PriceRange ? `<span class="badge" style="margin-left:0.5rem;">${UIController.esc(r.PriceRange)}</span>` : ''}
-                        ${city ? `<p style="font-size:0.8rem;color:#64748b;margin-top:0.25rem;">📍 ${UIController.esc(city)}</p>` : ''}
+                        ${city ? `<p style="font-size:0.8rem;color:#64748b;margin-top:0.25rem;">${UIController.esc(city)}</p>` : ''}
                     </div>
                 </a>`;
             },
@@ -170,7 +170,7 @@ class UIController {
                         <h3>${UIController.esc(attr.Name)}</h3>
                         <span class="badge">${UIController.esc(type)}</span>
                         <span class="badge" style="margin-left:0.5rem;">${fee}</span>
-                        ${city ? `<p style="font-size:0.8rem;color:#64748b;margin-top:0.25rem;">📍 ${UIController.esc(city)}</p>` : ''}
+                        ${city ? `<p style="font-size:0.8rem;color:#64748b;margin-top:0.25rem;">${UIController.esc(city)}</p>` : ''}
                         <p>${UIController.esc(UIController.truncate(attr.Description, 100))}</p>
                     </div>
                 </a>`;

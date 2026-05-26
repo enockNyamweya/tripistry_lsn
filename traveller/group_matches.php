@@ -21,7 +21,7 @@ $matches = match_traveller_to_groups($pdo, $_SESSION['user_id']);
                 <div class="card-body">
                     <h3><?= htmlspecialchars($m['TripName']) ?></h3>
                     <p style="font-size:0.9rem;color:#64748b;"><?= htmlspecialchars($m['Title']) ?></p>
-                    <p>📍 <?= htmlspecialchars($m['City'] . ', ' . $m['Country']) ?></p>
+                    <p><?= htmlspecialchars($m['City'] . ', ' . $m['Country']) ?></p>
                     <p>R<?= number_format($m['Price'], 2) ?> · <?= $m['DurationDays'] ?> days</p>
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.5rem;">
                         <span class="badge"><?= $m['currentEnrolment'] ?>/<?= $m['MaxCapacity'] ?> enrolled</span>

@@ -25,10 +25,8 @@ html.force-desktop-view .navbar {
 
 /* Navigation Bar */
 .navbar {
-    background: var(--surface-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: var(--glass-border);
+    background: var(--surface-card);
+    border-bottom: var(--border-card);
     padding: 0.75rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -48,7 +46,7 @@ html.force-desktop-view .navbar {
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
     .nav-brand a {
-        background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
