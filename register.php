@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
     $confirm = trim($_POST['confirm_password'] ?? '');
-    $userType = $_POST['user_type'] ?? '';
+    $userType = trim($_POST['user_type'] ?? '');
 
     if (empty($email) || empty($password) || empty($confirm) || empty($userType)) {
         $error = 'Please fill in all fields.';
