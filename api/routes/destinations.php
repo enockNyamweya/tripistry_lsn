@@ -8,7 +8,7 @@ function handleDestinationsRequest($method, $id) {
         case 'GET':
             if ($id) {
                 $stmt = $pdo->prepare("SELECT * FROM DESTINATION WHERE DestinationID = :id");
-                $stmt->execute([':id' => $id]);
+                $stmt->execute([':id' => (int)$id]);
                 $destination = $stmt->fetch();
                 
                 if ($destination) {
