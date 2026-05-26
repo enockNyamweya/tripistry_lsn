@@ -1,8 +1,8 @@
 :root {
     /* Core Colors */
-    --primary: #112A46;
-    --primary-light: #1D4875;
-    --primary-dark: #0A1A2C;
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
     --secondary: #5A738E;
     --danger: #D32F2F;
     --success: #2E7D32;
@@ -21,7 +21,7 @@
     
     /* Borders & UI Elements */
     --border-light: #E2DED7;
-    --border-focus: #112A46;
+    --border-focus: #2563eb;
     
     /* Border Radii */
     --radius-sm: 4px;

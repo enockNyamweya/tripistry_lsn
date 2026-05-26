@@ -103,3 +103,13 @@ html.force-desktop-view .navbar {
         grid-template-columns: 1fr;
     }
 }
+
+.footer {
+    background: var(--surface-dark);
+    color: var(--text-inverse);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border-light);
+}

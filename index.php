@@ -27,7 +27,7 @@
     border-radius: 22px;
     display: inline-flex; align-items: center; justify-content: center;
     font-size: 2.6rem; font-weight: 800; color: white;
-    box-shadow: 0 20px 60px rgba(17, 42, 70, 0.2);
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2);
     margin-bottom: 2rem;
 }
 .welcome-page h1 {
@@ -53,13 +53,13 @@
     background: var(--primary);
     color: white; padding: 0.9rem 2.2rem; border-radius: 12px;
     font-size: 1rem; font-weight: 600; text-decoration: none;
-    box-shadow: 0 4px 20px rgba(17, 42, 70, 0.2);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
     transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 .welcome-buttons .btn-primary:hover {
     background: var(--primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(17, 42, 70, 0.3);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
 }
 .welcome-buttons .btn-outline {
     background: white; color: var(--primary); padding: 0.9rem 2.2rem;
@@ -68,6 +68,22 @@
     transition: border-color 0.2s, background 0.2s;
 }
 .welcome-buttons .btn-outline:hover { border-color: var(--primary); background: var(--bg-base); }
+
+body.theme-dark .welcome-page h1 {
+    color: #ffffff;
+}
+body.theme-dark .welcome-page .welcome-subtitle {
+    color: #cbd5e1;
+}
+body.theme-dark .welcome-buttons .btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border-color: #334155;
+}
+body.theme-dark .welcome-buttons .btn-outline:hover {
+    background: #112A46;
+    border-color: #60a5fa;
+}
 </style>
 
 <div class="welcome-page">

@@ -37,23 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <?php renderViewportMeta(); ?>
-    <title>Login | Tripistry</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
-</head>
-<body>
-<nav class="navbar">
-    <div class="nav-brand"><a href="<?php echo BASE_URL; ?>/index.php">Tripistry</a></div>
-    <div class="nav-links">
-        <a href="<?php echo BASE_URL; ?>/login.php">Login</a>
-        <a href="<?php echo BASE_URL; ?>/register.php">Register</a>
-    </div>
-</nav>
-<main class="container">
+<?php
+include __DIR__ . '/includes/header.php';
+?>
     <div class="auth-form">
         <h1>Login</h1>
         <?php if ($error): ?>
@@ -76,7 +62,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <strong>Demo:</strong> traveller@test.com / password &nbsp;|&nbsp; admin@tripistry.com / password
         </p>
     </div>
-</main>
-<footer class="footer"><p>&copy; <?php echo date('Y'); ?> Tripistry</p></footer>
-</body>
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>

@@ -52,24 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+include __DIR__ . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <?php renderViewportMeta(); ?>
-    <title>Register | Tripistry</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
-</head>
-<body>
-<nav class="navbar">
-    <div class="nav-brand"><a href="<?php echo BASE_URL; ?>/index.php">Tripistry</a></div>
-    <div class="nav-links">
-        <a href="<?php echo BASE_URL; ?>/login.php">Login</a>
-        <a href="<?php echo BASE_URL; ?>/register.php">Register</a>
-    </div>
-</nav>
-<main class="container">
     <div class="auth-form">
         <h1>Register</h1>
         <?php if ($error): ?>
@@ -123,8 +107,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
         <p class="auth-link">Already have an account? <a href="<?php echo BASE_URL; ?>/login.php">Login here</a></p>
     </div>
-</main>
-<footer class="footer"><p>&copy; <?php echo date('Y'); ?> Tripistry</p></footer>
 <script>
 function toggleFields() {
     var type = document.getElementById('user_type').value;
@@ -132,5 +114,4 @@ function toggleFields() {
     document.getElementById('agencyFields').style.display = type === 'Agency' ? 'block' : 'none';
 }
 </script>
-</body>
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>
