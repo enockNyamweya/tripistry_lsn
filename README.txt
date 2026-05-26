@@ -164,25 +164,26 @@ Endpoints:
 
 1. Enhanced UI/UX: Top-rated packages, recommendation engine scoring destinations by
    attractions/accommodations/restaurants, skeleton loading, and hover animations.
-   * How to verify: Log in as traveller (traveller@test.com / password), go to the Dashboard
+   How to verify: Log in as traveller (traveller@test.com / password), go to the Dashboard
      to see top-rated packages and recommended destinations with scores.
 2. Security Features: CSRF tokens, login rate limiting, session hardening, and XSS wrapper.
-   * How to verify: Try logging in with a wrong password 5 times in a row. You will be locked
+   How to verify: Try logging in with a wrong password 5 times in a row. You will be locked
      out for 5 minutes with a "Too many login attempts" message.
 3. Group Matching Algorithm: Matches solo travellers to group trips based on destination
    preferences, budget, duration, and booking history (includes/group_matcher.php).
-   * How to verify: Log in as traveller, go to /traveller/group_matches.php. If you have
+   How to verify: Log in as traveller, go to /traveller/group_matches.php. If you have
      bookings, it displays matched group trips with percentage match scores.
 4. AI Integration: Lexicon-based sentiment analysis on reviews, classifying comments as
    Positive/Neutral/Negative with confidence scores (includes/sentiment.php).
-   * How to verify: Log in as traveller, book a package, and write a review with words like
+   How to verify: Log in as traveller, book a package, and write a review with words like
      "amazing" or "terrible". The review card shows a badge (e.g. Positive 85% or Negative 60%).
 5. Advanced Features: Google Calendar export for bookings, destination recommendation engine,
    and private 1-to-1 chat system between travellers and agencies.
-   * How to verify: Log in as traveller, go to My Bookings, and click "Add to Google Calendar"
+   How to verify: Log in as traveller, go to My Bookings, and click "Add to Google Calendar"
      on any booking. Open the Chat section to message any travel agency.
 6. CI/CD Pipeline: GitHub Actions workflow validates PHP syntax, SQL schema, and file structure.
-   * How to verify: View the Actions tab on the GitHub repository to see the CI runs.
+   How to verify: View the Actions tab on the GitHub repository to see the CI runs.
+
 
 
 9. DEMO CREDENTIALS
@@ -201,11 +202,28 @@ Prerequisites:
   - PHP 7.4+ with PDO MySQL extension
   - MySQL 8.0+ (or MariaDB 10.3+)
 
-Quick Setup:
-  1. Configure .env with your database credentials
-  2. Run: php setup_db.php
-  3. Start server: php -S localhost:8080
-  4. Open: http://localhost:8080
+---
+
+Option A: Quick Setup (Standard PHP CLI Server)
+  1. Configure the `.env` file in the project root with your database credentials.
+  2. Run the database setup script:
+     php setup_db.php
+  3. Start the local development server:
+     php -S localhost:8080
+  4. Open in your browser: http://localhost:8080
+
+---
+
+Option B: XAMPP Setup (Apache + MariaDB)
+  1. Place the project folder in your XAMPP htdocs directory:
+     C:\xampp\htdocs\tripistry_lsn
+  2. Configure the `.env` file in the project root with your database credentials.
+  3. Run the database setup script using the XAMPP PHP CLI:
+     C:\xampp\php\php.exe setup_db.php
+  4. Ensure Apache and MySQL are running in the XAMPP Control Panel.
+  5. Open in your browser: http://localhost/tripistry_lsn/
+
+---
 
 The setup script automatically creates all 22 tables, seeds 10,000+ packages,
 40,000+ bookings, 30,000+ reviews, and sets up the chat messaging table.
