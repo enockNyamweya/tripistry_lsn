@@ -54,6 +54,7 @@ function handlePackagesRequest($method, $id) {
             } else if (isset($_GET['compare_destination'])) {
                 // Return packages for the same destination side-by-side
                 $destVal = $_GET['compare_destination'];
+                // upsert correction — unique param names for PDO
                 $query = "
                     SELECT p.PackageID, p.Title, p.Price, p.DurationDays, ta.AgencyName,
                         COALESCE((SELECT AVG(RatingScore) FROM REVIEW r WHERE r.PackageID = p.PackageID), 0) as AvgRating,
@@ -62,11 +63,12 @@ function handlePackagesRequest($method, $id) {
                     JOIN TRAVEL_AGENCY ta ON p.AgencyID = ta.UserID
                     JOIN HAS_DESTINATION hd ON p.PackageID = hd.PackageID
                     JOIN DESTINATION d ON hd.DestinationID = d.DestinationID
-                    WHERE (d.City LIKE :dest OR d.Country LIKE :dest OR d.DestinationID = :dest_id) AND p.Status = 'Active'
+                    WHERE (d.City LIKE :dest_city OR d.Country LIKE :dest_country OR d.DestinationID = :dest_id) AND p.Status = 'Active'
                 ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute([
-                    ':dest' => '%' . $destVal . '%',
+                    ':dest_city' => '%' . $destVal . '%',
+                    ':dest_country' => '%' . $destVal . '%',
                     ':dest_id' => is_numeric($destVal) ? (int)$destVal : -1
                 ]);
                 $packages = $stmt->fetchAll();

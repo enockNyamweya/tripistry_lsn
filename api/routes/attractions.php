@@ -32,7 +32,7 @@ function handleAttractionsRequest($method, $id) {
                 }
                 
                 $countQuery = "SELECT COUNT(1)" . $whereClause;
-                $selectQuery = "SELECT a.*, d.City, d.Country" . $whereClause;
+                $selectQuery = "SELECT a.*, d.City, d.Country" . $whereClause . " ORDER BY a.Name ASC";
                 
                 $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
                 $limit = isset($_GET['limit']) ? min(100, max(1, (int)$_GET['limit'])) : 20;
