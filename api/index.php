@@ -118,7 +118,7 @@ try {
 
         default:
             http_response_code(404);
-            echo json_encode(["message" => "Endpoint '$endpoint' not recognized."]);
+            echo json_encode(["message" => "Endpoint '" . htmlspecialchars($endpoint) . "' not recognized."]);
             break;
     }
 } catch (PDOException $e) {
